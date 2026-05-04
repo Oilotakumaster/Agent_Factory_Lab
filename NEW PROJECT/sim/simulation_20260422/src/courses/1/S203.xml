@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="" characterWidth="51.89%" characterHeight="100%" characterX="0px" characterY="0px" optionsWidth="60%" optionsHeight="100%" dialogStart="0.5" optionsX="0" optionsY="0"  flvPath="simulation/S203/video/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S203_startPage.jpg" srcWidth="772" paddingTop="40" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">你和Jack約好在簡報室進行面談。寒暄幾句之後，Jack直接問你為什麼找他面談，你接下來要如何應對呢？<br><br>
+本案例包含14回合，請在右下角選擇本次演練模式：<br/><br/>
+<li>一、練習(不計分)：演練過程中，你可隨時瀏覽各選項的教練回饋。</li><br>
+<li>二、測驗(有計分)：演練過程中，你將無法瀏覽教練回饋。演練結束後，成績將上傳學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="0AN"/>
+</page>
+			
+<page id="0AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="0AN.f4v">
+<dialogue>George，是出了什麼問題嗎？怎麼會想找我面談呢？</dialogue>
+<options>
+<link optionId="1AO" />
+<link optionId="1BO" />
+<link optionId="1CO" />
+</options>
+</page>			
+<option id="1AO" source="1AO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="ST2.1">5</score>
+<score objective="CP1.2">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>Jack，你做事一向認真負責，業績也都有達成。不過上個月有兩個客戶跟我反應，說你寄給他們的報價單價格寫錯了，害他們空歡喜一場。我想要瞭解一下狀況，看怎麼樣可以避免再發生這種錯誤。</text>
+
+
+
+
+<feedback>你採用了正確的三明治原則，既維護部屬自尊，又清楚說明他的績效落差。很好。</feedback>
+<link nextPageId="1AN"/>
+</option>
+
+<page id="1AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="1AN.f4v">
+<theme>不當回事</theme>
+<dialogue>喔，你是說那個報價單的問題啊，唉呀，一場誤會而已啦，沒什麼大不了的。我已經跟客戶道歉了，不用擔心啦！</dialogue>
+<options>
+<link optionId="2AO" />
+<link optionId="2BO" />
+<link optionId="2CO" />
+</options>
+</page>	<option id="1BO" source="1BO.mp3">
+<theme>缺乏肯定</theme>
+<scores>
+<score objective="ST2.1">1</score>
+<score objective="CP1.2">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>Jack，上個月有客戶跟我反應，說他們看了你寄的報價單之後，以為我們產品大降價，最後卻發現是空歡喜一場。這件事情你有印象嗎？</text>
+<feedback>你明確指出Jack的績效落差，這是對的。可是你的說法缺乏包裝，也沒講出你的期望，會讓部屬以你是專門來指責他的。</feedback>
+<link nextPageId="1AN"/>
+</option>
+	<option id="1CO" source="1CO.mp3">
+<theme>謾罵諷刺</theme>
+<scores>
+<score objective="ST2.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>Jack，你最近怎麼狀況一大堆，竟然連客戶的報價單都寫錯！人家還以為我們公司倒，要清倉太拍賣勒！怎樣？你是對手派來臥底的嗎？</text>
+<feedback>這種謾罵諷刺的說法，容易引起部屬的情緒反彈，對面談有害無益。</feedback>
+<link nextPageId="1CN"/>
+</option>
+
+<page id="1CN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S203_angry.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="1CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>唉呦，不過就是打錯幾個字嘛，不必這麼誇張吧？而且我也都跟客戶道歉了，他們也都接受了啊？你不用擔心啦！</dialogue>
+<options>
+<link optionId="2AO" />
+<link optionId="2BO" />
+<link optionId="2CO" />
+</options>
+</page>
+	
+<option id="2AO" source="2AO.mp3">
+<theme>連結大我價值</theme>
+<scores>
+<score objective="ST3.1">5</score>
+<score objective="CP1.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>Jack，一般email寫錯字是小事情，可是給客戶的正式報價單寫錯字可是大事情！你想一想，萬一客戶堅持要用你報錯的價格出貨，那麻煩不就大了？</text>
+
+
+
+
+
+<feedback>你的說法，能引導部屬思考他的績效落差對組織所造成的不利影響，讓他可以正視這個問題。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="2AN.f4v">
+<theme>不承認嚴重性</theme>
+<dialogue>如果硬要逼我們出貨，那當然會賠錢啊！可是我們又還沒有簽約，幹嘛要出貨？如果他們真的告上法院，我們也不會輸啊！</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="2BO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="ST3.1">3</score>
+<score objective="CP1.2">3</score>
+<score objective="CP3.2">3</score>
+</scores>
+<text>我怎麼可能不擔心？如果客戶堅持要用你報錯的價格出貨那怎麼辦？你一個月薪水才多少？賠得起嗎？</text>
+<feedback>你想藉由闡述績效落差的後果，讓Jack瞭解改善的價值這是正確的。可是你的說法夾雜了謾罵與諷刺，容易造成部屬反彈。</feedback>
+<link nextPageId="2AN"/>
+</option>	<option id="2CO" source="2CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="ST3.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP3.2">1</score>
+</scores>
+<text>你整天都讓我操心，不會不好意思嗎？我真希望我的神經跟你一樣粗，這樣我就不用擔心你明年的飯碗了！</text>
+
+
+
+
+<feedback>你想說服Jack正視他的績效落差，可是你所用的理由無法有效激勵他，而起你的嘲諷語氣也會導致他的反彈。</feedback>
+<link nextPageId="2CN"/>
+</option>
+<page id="2CN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S203_angry.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="2CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>George，這也不是多嚴重的事情，你幹嘛要這樣諷刺我！你如果真的希望我辭職，明講就好了，不需要這樣拐彎罵人吧！</dialogue>
+<options>
+<link optionId="2AO"/>
+<link optionId="2DO"/>
+</options>
+</page>	<option id="2DO" source="2DO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="ST3.1">3</score>
+<score objective="CP1.2">3</score>
+<score objective="CP3.2">3</score>
+</scores>
+<text>你有沒有想過，如果客戶堅持要用你報錯的價格出貨那怎麼辦？你一個月薪水才多少？賠得起嗎？ </text>
+<feedback>你想藉由闡述績效落差的後果，讓Jack瞭解改善的價值這是正確的。可是你的說法夾雜了謾罵與諷刺，容易造成部屬反彈。</feedback>
+<link nextPageId="2AN"/>
+</option>
+<option id="3AO" source="3AO.mp3">
+<theme>連結大我價值</theme>
+<scores>
+<score objective="ST3.1">5</score>
+<score objective="CP1.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>做生意講的是誠信，即使還沒正式簽約，報價單也是一種承諾。你把價格寫錯了，公司如果出貨就會賠錢；如果不出貨就會賠了形象！無論如何公司都會受到傷害，這個嚴重性你瞭解嗎？</text>
+
+<feedback>你發現Jack並不瞭解問題的嚴重性，所以引導他深入思考其後果，這是很正確的說服方式。</feedback>
+<link nextPageId="3AN"/>
+</option>
+<page id="3AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="3AN.f4v">
+<theme>願意承擔</theme>
+<dialogue>喔，這樣啊…我本來想說，寫幾個錯字而已，也沒什麼大不了的。不過聽您這樣一講，好像也蠻嚴重的。好吧，這次算我不對，以後我會小心一點，不會再出包了。</dialogue>
+<options>
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>連結大我價值</theme>
+<scores>
+<score objective="ST3.1">3</score>
+<score objective="CP1.2">1</score>
+<score objective="CP3.2">3</score>
+</scores>
+<text>你沒知識也要有常識，沒常識也要看電視啊！報價單是一種承諾你不知道嗎？你報錯價格，公司如果出貨一定會賠錢，不出貨就會賠了形象，這樣還不夠嚴重嗎？ </text>
+<feedback>你的說法對某些部屬而言可能是幽默，可是對大多數部屬而言卻是諷刺，容易引起反彈，不宜。</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S203_angry.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="3BN.f4v">
+<theme>勉強承擔</theme>
+<dialogue>好啦好啦，都是我不對，下次我會小心一點，這樣可以了吧？</dialogue>
+<options>
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3CO" source="3CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="ST3.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP3.2">1</score>
+</scores>
+<text>你是第一年當業務啊？哪有業務想和客戶打官司啊？打官司有包贏的嗎？你喔，都幾十歲的人了，怎麼做事還這麼莽撞！</text>
+
+
+
+
+
+<feedback>Jack的幾句推託之詞，被你逮到把柄而大肆批評。即使你覺得講贏了，卻也偏離了教導的框架，終究是節外生枝，得不償失。</feedback>
+<link nextPageId="3BN"/>
+</option>
+	
+<option id="4AO" source="4AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP3.1">5</score>
+</scores>
+<text>我很高興你願意承擔改善的責任！其實你平常做事是蠻謹慎的，會連續出錯我也很訝異。所以你可不可以告訴我，是什麼原因，導致你把報價單價格寫錯呢？</text>
+
+
+<feedback>很好，你能肯定Jack的擔當，並在鼓勵的同時，巧妙地引導他深入思考問題的成因。</feedback>
+<link nextPageId="4AN"/>
+</option>
+<page id="4AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="4AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我想…主要的原因，應該是我的檔案都太亂了吧。我的備份文件沒處理好，很容易搞丟東西，拷來拷去，一不小心就把價格搞錯了。</dialogue>
+<options>
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>威脅恐嚇</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>好，這可是你說的喔！那你以後就給我小心點，如果再出包，就別怪我不客氣了！知不知道？</text>
+
+<feedback>你以威脅語氣，要求部屬改善績效落差也沒詢問對方的意見，這樣很難讓部屬心悅誠服地接受你的教導。</feedback>
+<link nextPageId="4BN"/>
+</option>
+<page id="4BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="4BN.f4v">
+<theme>積極不悅</theme>
+<dialogue>喔…好，我知道了。我以後會小心一點。</dialogue>
+<options>
+<link optionId="4AO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="4CO" source="4CO.mp3">
+<theme>流程錯誤</theme>
+<scores>
+<score objective="CP2.3">1</score>
+<score objective="CP4.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>好吧，看在你態度良好的份上，這件事情我就不再追究了，今天面談就到這裡吧，以後自己要小心點，不要再犯同樣的錯誤，知道了沒有？</text>
+
+<feedback>雖然你寬厚仁慈，可是卻變成縱容濫情。你應該把面談步驟執行完畢，才能協助部屬改善績效落差！</feedback>
+<link nextPageId="4CN"/>
+</option>
+<page id="4CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="4CN.f4v">
+<theme>以為沒事很高興</theme>
+<dialogue>謝謝George，我以後一定會更小心，不會再犯同樣的錯誤了！</dialogue>
+<link nextPageId="4END"/>
+</page>	<page id="4END" type="scoreCard" background="S203.jpg">
+<text>你的技巧有疏失，以致於案例提早結束。請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text> 
+</page>
+<option id="5AO" source="5AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.2">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP3.1">5</score>
+</scores>
+<text>這部分我聽不太懂。你能不能描述一下你填寫報價單的過程，讓我知道你的實際操作步驟？</text>
+
+
+
+
+<feedback>Jack的說法含糊不清，你在此時選擇以不慍不怒的態度，請他加以澄清，是非常正確的作法。</feedback>
+<link nextPageId="5AN"/>
+</option>
+<page id="5AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="5AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我通常都是拿一份舊的報價單，把它改成新的報價單。嗯…不過最近我負責的客戶越來越多，檔案也越來越複雜，一不小心就會拿錯檔案，報價單就跟著錯囉。</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>不耐批評</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="CP2.1">3</score>
+</scores>
+<text>寄錯報價單跟檔案備份有什麼關係？你的理由我實在聽不懂！拜託你講得有條理一點好不好？</text>
+
+<feedback>Jack 的說法含糊不清，你請他講得有條理一些，這個方向沒錯。但你詢問技巧不佳，語氣也顯得不耐煩，容易引起部屬的反感。</feedback>
+<link nextPageId="5BN"/>
+</option>
+<page id="5BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_angry.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="5BN.f4v">
+<theme>不悅</theme>
+<dialogue>好…我一向都是把舊的報價單拿來改成新的報價單…現在檔案越來越多，很容易拿錯，報價單就跟著錯了啊！</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>不耐批評</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>早就叫你要把重要檔案作備份，你就是不聽。你看，現在終於出問題了吧？</text>
+
+<feedback>你在還沒有瞭解問題原委的情況下，就開始痛罵部屬的缺失。而這個缺失，也不是原始設定的績效落差。這樣節外生枝，會偏離預定的教導框架！</feedback>
+<link nextPageId="5CN"/>
+</option>
+<page id="5CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_angry.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="5CN.f4v">
+<theme>不悅反駁</theme>
+<dialogue>我的檔案都有備份，這本來就沒問題！是你聽錯了！</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5DO"/>
+</options>
+</page>	<option id="5DO" source="5DO.mp3">
+<theme>不耐批評</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>你講得顛三倒四，亂七八糟，誰會聽得懂？拜託你講得有條理一點好不好？</text>
+<feedback>Jack 的說法含糊不清，你請他講得有條理一些，這個方向沒錯。但你詢問技巧不佳，語氣也顯得不耐煩，容易引起部屬的反感。</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+<option id="6AO" source="6AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>嗯，隨著你的業績成長，負責的客戶也會越來越多。按照這個趨勢下去，出錯的次數也將越來越多。所以我希望你能想出一些方法來防止這個問題，你覺得呢？ </text>
+
+
+
+
+
+<feedback>你正面看待Jack的疏失，並藉由客觀的分析，引導Jack瞭解問題的必然性，並引導他尋找解決問題的對策。這是非常好的技巧。</feedback>
+<link nextPageId="6AN"/>
+</option>
+<page id="6AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="6AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我是有想過…如果能把檔案整理得好一點，不要像現在這麼亂七八糟的，應該就可以順利找到檔案，不會再有這種問題了！</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6BO" source="6BO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">3</score>
+</scores>
+<text>你這種粗心大意的作法，當然容易出錯。難怪客戶接二連三地抱怨。你難道沒有想過，要把這個作法，好好改一改嗎？</text>
+<feedback>你用負面觀點來看待Jack 的行為，並採取批評謾罵的態度，這難以讓他心悅誠服！ </feedback>
+<link nextPageId="6BN"/>
+</option>
+<page id="6BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="6BN.f4v">
+<theme>消極同意</theme>
+<dialogue>好啦好啦，以後我會小心一點，把檔案整理得好一些，這樣可以了吧？</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>諷刺謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">1</score>
+</scores>
+<text>檔案多就可以寫錯價格喔？那會計管的錢多就可以數錯鈔票嗎？你不要亂找藉口，要面對問題！知不知道？</text>
+
+
+
+
+<feedback>你武斷地認定Jack是在找藉口，又以諷刺語氣，斥責他的行為。這都不利於教導的進行。</feedback>
+<link nextPageId="6BN"/>
+</option>
+	
+<option id="7AO" source="7AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>那你可不可以告訴我，接下來打算怎麼整理檔案，確保以後不會出錯呢？</text>
+
+
+
+<feedback> Jack雖然提出對策，但內容不夠明確，所以你請他提出更深入的解釋。這是很好的應對方式。</feedback>
+<link nextPageId="7AN"/>
+</option>
+<page id="7AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="7AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我想…我會把檔案都重新命名吧！讓檔名中包含客戶代碼、建檔日期、以及版本順序。檔名寫得清清楚楚，就不容易搞混了。</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>過度放心</theme>
+<scores>
+<score objective="CP4.2">1</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>既然你已經知道該怎麼做了，我就不再追問細節了。剩下的就交給你自己處理囉。</text>
+<feedback>你在不清楚Jack的對策的情況下，就放心讓他自行解決了。這種大而化之的管理方式，面對非常優秀的部屬也許可行，但對大多數的部屬而言，卻是錯誤的。</feedback>
+<link nextPageId="7BN"/>
+</option>
+<page id="7BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="7BN.f4v">
+<theme>消極同意</theme>
+<dialogue>好啊，這個部分我會好好處理的，您不用擔心。</dialogue>
+<options>
+<link optionId="8AO"/>
+<link optionId="8BO"/>
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme>過度掌控</theme>
+<scores>
+<score objective="CP3.2">1</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>檔案整理不是重點！真正的重點是檔案名稱啦！你應該把客戶代碼、建檔日期、以及版本順序都寫在檔名裡，這樣以後找起檔案來自然會很準確！</text>
+<feedback>你在不清楚Jack的對策時，就直接加以反駁，並提出你認為的好方法。雖然你的方法可能是對的，但如果能藉由引導技巧讓部屬自己講出這些方法，才是更高段的主管喔！ </feedback>
+<link nextPageId="7CN"/>
+</option>
+<page id="7CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="7CN.f4v">
+<theme>消極同意</theme>
+<dialogue>這個我知道，其實我剛剛也是想要把檔名改成這個樣子的…</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+</options>
+</page>	
+<option id="8AO" source="8AO.mp3">
+<theme>肯定發言</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP3.3">5</score>
+</scores>
+<text>嗯，這的確是個好方法。那除了檔名之外，還有沒有其他原因，會導致你的報價單出錯呢？</text>
+<feedback>很好，你肯定Jack的意見，同時引導他更全面地尋找可能的原因。</feedback>
+<link nextPageId="8AN"/>
+</option>
+<page id="8AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="8AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>嗯…應該…差不多就是這個樣子了吧？我看不出還有別的原因耶！</dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+<link optionId="9CO" />
+</options>
+</page>	<option id="8BO" source="8BO.mp3">
+<theme>懷疑質問</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP3.3">1</score>
+<score objective="CP3.2">3</score>
+</scores>
+<text>那你再想想看還有沒有別的原因？不可能這麼簡單就解決了吧？</text>
+<feedback>雖然你也懂得引導部屬思考，但你的語氣中充滿不信任。這種負面說法，不利於後續的溝通。</feedback>
+<link nextPageId="8AN"/>
+</option>
+		
+<option id="9AO" source="9AO.mp3">
+<theme>提供建議</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.1">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>我在想，沒有養成檢查的習慣可能也是個原因吧。如果你在寄出報價單之前，都能仔細檢查所有內容，一定也可以防止許多錯誤。你覺得呢？</text>
+<feedback>相當好！你給予Jack具體的建議，而且是採取協商的口吻，這樣將讓部屬更樂於與你互動。</feedback>
+<link nextPageId="9AN"/>
+</option>
+<page id="9AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="9AN.f4v">
+<theme>欣然同意</theme>
+<dialogue>喔，對喔，有時候我一忙起來，就會忘了要在寄出前再做一次檢查。以後的確應該要更小心一些才是。</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10BO"/>
+<link optionId="10CO"/>
+</options>
+</page>	<option id="9BO" source="9BO.mp3">
+<theme>指責</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP4.1">5</score>
+<score objective="CP4.3">3</score>
+</scores>
+<text>我看你一向粗心大意。在寄出報價單之前，一定都沒有檢查的習慣吧？你如果有做，就不會出那麼多紕漏啦！</text>
+<feedback>你雖然提供Jack具體的建議，卻採用批評責備的語氣，這不利教導進行。</feedback>
+<link nextPageId="9BN"/>
+</option>
+<page id="9BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="9BN.f4v">
+<theme>不太爽</theme>
+<dialogue>ㄟ…偶爾會忘記。太忙了啊！好啦，這以後我會改進！</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10BO"/>
+<link optionId="10CO"/>
+</options>
+</page>	<option id="9CO" source="9CO.mp3">
+<theme>指責</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP4.1">3</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>沒有才有鬼哩！你自己說，你在寄出報價單之前，有沒有檢查的習慣？你如果有做我頭給你！</text>
+<feedback>你雖然想指引Jack找出原因，卻採用批評嘲諷的口吻，不利教導進行。</feedback>
+<link nextPageId="9BN"/>
+</option>
+	
+<option id="10AO" source="10AO.mp3">
+<theme>行動方案</theme>
+<scores>
+<score objective="ST0.1">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>很好！接下來，你可不可以把我們剛剛的想法，整理成一個具體的行動方案，說明你打算在什麼時間，完成什麼事情，來落實這些對策呢？</text>
+
+
+
+<feedback>相當好！你有按照面談的步驟，在此時請Jack提出行動方案，並明確說出你期待的內容！</feedback>
+<link nextPageId="10AN"/>
+</option>
+<page id="10AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="10AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>嗯，我想…首先我要重建檔名，讓檔名能包含客戶代碼、建檔日期、以及版本編號。還有…我要養成檢查的習慣，寄出報價單以前要核對一下內容。就這樣對吧？</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11BO" />
+<link optionId="11CO" />
+</options>
+</page>	<option id="10BO" source="10BO.mp3">
+<theme>不夠具體</theme>
+<scores>
+<score objective="ST0.1">3</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>很好！那你可不可以告訴我，以後要怎麼做，才不會犯下同樣的錯誤呢？</text>
+
+<feedback>你所提出的問題，範圍太大，方向也不明確，這會讓Jack很難明確回應。</feedback>
+<link nextPageId="10BN"/>
+</option>
+<page id="10BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S203_embarrassed.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="10BN.f4v">
+<theme>模糊回應</theme>
+<dialogue>我啊，我應該要更謹慎一點，更小心一點，不要粗心大意，造成大家的困擾。</dialogue>
+<options>
+<link optionId="10AO" />
+<link optionId="10CO" />
+</options>
+</page>	<option id="10CO" source="10CO.mp3">
+<theme>錯誤步驟</theme>
+<scores>
+<score objective="ST0.1">1</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>很好，那你可不可以告訴我，你打算在什麼時候，把你的行動方案加以落實呢？</text>
+
+
+
+
+<feedback>此時行動方案都還沒定出來，你就要Jack回答落實的時間，太操之過急了！</feedback>
+<link nextPageId="11AN"/>
+</option>
+	
+<option id="11AO" source="11AO.mp3">
+<theme>具體提問</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>這個行動方案聽起來很不錯，你什麼時候可以完成？</text>
+
+
+
+<feedback>非常好。你注意到Jack的行動方案中少了完成時間，並以正面語氣提出你的質疑。</feedback>
+<link nextPageId="11AN"/>
+</option>
+<page id="11AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="11AN.f4v">
+<theme>具體回應</theme>
+<dialogue>嗯，我想…明天下班前完成，應該是沒問題！</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>	<option id="11BO" source="11BO.mp3">
+<theme>草草了事</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>嗯，這個行動方案很完整，那我就不擔心了。</text>
+<feedback>你沒有注意到，Jack的行動方案中沒有完成時間嗎？</feedback>
+<link nextPageId="11BN"/>
+</option>
+<page id="11BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="11BN.f4v">
+<theme>消極回應</theme>
+<dialogue>應該就是這樣，不會有問題啦。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>	<option id="11CO" source="11CO.mp3">
+<theme>負面說法</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>你怎麼都不講出完成時間？還想繼續拖下去嗎？</text>
+
+
+<feedback>你注意到Jack沒有提出完成時間，這是正確的。但你以質疑的語氣問他，這就沒有必要了。</feedback>
+<link nextPageId="11AN"/>
+</option>
+	
+<option id="12AO" source="12AO.mp3">
+<theme>CP4.2</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>嗯，很好，那你明天整理好檔案之後，把電腦畫面Print Screen下來寄給我，讓我可以好好欣賞一下你的改善成果！</text>
+<feedback>非常好，你提出的稽核方式簡單有效，而且還很技巧地把它的目的說成是「欣賞成果」。</feedback>
+<link nextPageId="12AN"/>
+</option>
+<page id="12AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="12AN.f4v">
+<theme>欣然同意</theme>
+<dialogue>好啊，當然沒問題囉。</dialogue>
+<options>
+<link optionId="13AO"/>
+<link optionId="13BO"/>
+<link optionId="13CO"/>
+</options>
+</page>	<option id="12BO" source="12BO.mp3">
+<theme>缺乏考核</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>好，那你一定要按照計畫，確實進行，不要拖延敷衍，讓我操心。</text>
+<feedback>你用「道德勸說」的方式勉勵Jack落實專案，這種方式效果有限，應該改用更具體有效的稽核方式！</feedback>
+<link nextPageId="12BN"/>
+</option>
+<page id="12BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="12BN.f4v">
+<theme>消極同意</theme>
+<dialogue>好，我知道，沒問題的啦。</dialogue>
+<options>
+<link optionId="13AO"/>
+<link optionId="13BO"/>
+<link optionId="13CO"/>
+</options>
+</page>	<option id="12CO" source="12CO.mp3">
+<theme>缺乏考核</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>這是你說的喔？那就要說到做到，不要總是光說不練！你如果繼續犯同樣的錯誤，那就別怪我不客氣了，知不知道？</text>
+<feedback>你用「威脅恐嚇」的方式要求Jack落實專案。這種方式不見得有效，而且會引起部屬反感，還不如找個具體有效的稽核方式。</feedback>
+<link nextPageId="12BN"/>
+</option>
+	
+<option id="13AO" source="13AO.mp3">
+<theme>引導總結</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>很好，今天的會談相當順利，現在可不可以請你做個總結，簡單說明一下我們今天面談的目的、行動方案、以及考核方式？</text>
+<feedback>很好！請Jack做總結，可確認他是否記住面談結論，避免雙方認知落差。</feedback>
+<link nextPageId="13AN"/>
+</option>
+<page id="13AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="13AN.f4v">
+<theme>積極同意</theme>
+<dialogue>今天的面談目的…是希望我不要寫錯報價單。方法就是要…把檔案重新命名，而且要養成寄信前檢查內容的習慣。時間嘛…要在明天下班前把檔案整理完畢，完成後要把結果印出來給你看。差不多就是這個樣子，沒錯吧？</dialogue>
+<options>
+<link optionId="14AO"/>
+<link optionId="14BO"/>
+<link optionId="13BO"/>
+</options>
+</page>	<option id="13BO" source="13BO.mp3">
+<theme>草草了事</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.2">1</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>好，那今天的面談就到這裡，如果沒別的事，你就可以回去了，我還有事要忙。</text>
+<feedback>你這種草草了事的態度，會讓Jack忽視本次面談成果，也不會認真加以落實。</feedback>
+<link nextPageId="13BN"/>
+</option>
+<page id="13BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S203_neutral.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="13BN.f4v">
+<theme>消極同意</theme>
+<dialogue>好…謝謝George，那我回去了。</dialogue>
+<link nextPageId="14END"/>
+</page>	<option id="13CO" source="13CO.mp3">
+<theme>威脅恐懼</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.2">1</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>好，該講的我都講了，剩下的就靠你自己努力了。如果做不到，講再多也是屁話，你回去自己好好想一想，我就不多說了。</text>
+<feedback>你的語氣冷漠而敷衍，也沒有考核Jack 是否掌握到面談重點，這種負面態度，會導致Jack提不起勁來落實計畫。</feedback>
+<link nextPageId="13BN"/>
+</option>
+	
+<option id="14AO" source="14AO.mp3">
+<theme>肯定+引導總結</theme>
+<scores>>
+<score objective="CP1.1">5</score>
+<score objective="CP1.2">5</score>
+<score objective="ST3.1">5</score>
+
+</scores>	
+<text>嗯，非常好的規劃。我相信如果你能好好落實這個計畫，就不會再發生類似問題了。你的客戶滿意度會更高，績效自然也會更好囉！</text>
+<feedback>很好。你展現了充分的肯定與支持，這將能夠激勵Jack，讓他更有信心與意願，去落實這個改善計畫！</feedback>
+<link nextPageId="14AN"/>
+</option>
+<page id="14AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S203_happy.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="14AN.f4v">
+<theme>積極同意</theme>
+<dialogue>謝謝George，我也希望有更好的績效。你放心，我會努力做出成績的！</dialogue>
+<link nextPageId="14END"/>
+</page>	<option id="14BO" source="14BO.mp3">
+<theme>懷疑</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>看你平常打混摸魚，沒想到做起結論來還頭頭是道！你啊，最好記住自己講的話，不要一走出門就給我忘得一乾二淨了，知不知道？</text>
+<feedback>你這種「負面的稱讚」，還真令人哭笑不得啊！</feedback>
+<link nextPageId="14BN"/>
+</option>
+
+<page id="14BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S203_sad.f4v" name="Jack" mediaType="video" background="S203.jpg" videoSource="14BN.f4v">
+<theme>消極同意</theme>
+<dialogue>我知道啦，我盡量就是了！</dialogue>
+<link nextPageId="14END"/>
+</page>	<page id="14END" type="scoreCard" background="S203.jpg">
+<text>恭喜你，你已經演練完本案例的所有面談步驟。接下來請點選右上方「技巧檢討」頁籤，察看你的演練成績。</text> 
+</page>
+		
+</nodes>
+<objectives>
+<category id="CP1" name="尊重肯定">
+<objective id="CP1.1" name="正面說法"/>
+<objective id="CP1.2" name="避免謾罵"/>
+<objective id="CP1.3" name="肯定貢獻"/>
+</category>
+<category id="CP2" name="主動傾聽">
+<objective id="CP2.1" name="詢問澄清確認"/>
+<objective id="CP2.2" name="同理心"/>
+<objective id="CP2.3" name="同理非同意"/>
+</category>
+<category id="CP3" name="促進參與">
+<objective id="CP3.1" name="鼓勵發言"/>
+<objective id="CP3.2" name="引導思考"/>
+<objective id="CP3.3" name="肯定參與"/>
+</category>
+<category id="CP4" name="授權與能">
+<objective id="CP4.1" name="提供資源"/>
+<objective id="CP4.2" name="考核督導"/>
+<objective id="CP4.3" name="掌舵而不駕馭"/>
+</category>
+<category id="CP5" name="具體明確">
+<objective id="CP5.1" name="避免含糊"/>
+<objective id="CP5.2" name="SMART績效目標"/>
+<objective id="CP5.3" name="提供佐證資料"/>
+</category>
+<category id="ST" name="步驟相關技巧">
+<objective id="ST0.1" name="掌握流程"/>
+<objective id="ST2.1" name="三明治原則"/>
+<objective id="ST3.1" name="連結價值"/>
+</category>
+</objectives>
+<stages>
+<stage id="ST1" name="找出績效落差"/>
+<stage id="ST2" name="闡明績效落差"/>
+<stage id="ST3" name="鼓勵承擔責任"/>
+<stage id="ST4" name="探討原因對策"/>
+<stage id="ST5" name="發展行動方案"/>
+<stage id="ST6" name="建立考核機制"/>
+<stage id="ST7" name="總結面談結果"/>
+</stages>
+</simulation>				

@@ -1,0 +1,8 @@
+<course name="專案管理技巧" label="課程目錄" src="assets/courses/PM_logo.jpg">
+	<node type="chapter" id="103901" label="專案管理技巧">
+		<embed>sl/PM/story.html</embed>
+	</node>
+</course>
+
+		
+	

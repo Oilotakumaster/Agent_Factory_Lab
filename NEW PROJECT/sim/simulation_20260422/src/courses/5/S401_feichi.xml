@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="coach" characterWidth="88%" characterHeight="" characterX="-140px" characterY="-20px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0" dialogStart="0.5" flvPath="simulation/S401/graphic/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S401_startPage.jpg" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text><![CDATA[<div style="width:90%; float:right; margin-top:150px; margin-right:50px><textformat indent="0">請點選右下角「練習」按鈕，等出現選項後，從中點選一個George最該採用的開場話術。選項旁的小圖示也可點選，將提供教練對該選項的評論分析。</div>]]></text>
+<link nextPageId="1AN"/>
+</page>
+
+<page id="1AN" type="character" stage="1.1" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<theme>XXXX</theme>
+<dialogue>（等待George詢問）</dialogue>
+<options header="請選擇最佳開場句：" coachHeader="您的選擇：" pos="2,1,3">
+<link optionId="2AO" />
+<link optionId="2BO" />
+<link optionId="2CO" />
+</options>
+</page>
+		
+<option id="2AO" source="2AO.mp3">
+<theme>開場寒暄尊重肯定</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="1.1">5</score>
+<score objective="1.2">5</score>
+</scores>
+<text>Lisa你好，我是George，業務部的主管，負責這場面試。很謝謝你大老遠從台中趕來參加我們的面試。一路上還好吧？有沒有塞車？</text>
+
+<feedback>很好，你能在面談一開始，先主動自我介紹並感謝對方的參與，這是很好的開場方式！ </feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="1.1" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXXX</theme>
+<dialogue>有塞了一下子，不過我有預留時間，所以沒有影響到。</dialogue>
+<options header="請選擇最佳引導說明：" pos="3,2,1">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="aside.mp3">
+<theme>開場寒暄輕視怠慢</theme>
+<scores>
+<score objective="C1">3</score>
+<score objective="1.1">3</score>
+<score objective="1.2">3</score>
+</scores>
+<text>Lisa你好，我是George，負責你的面試。咦？你的履歷資料有沒有帶？喔，我這裡有一份，沒事。今天來沒塞車吧？</text>
+
+<feedback>面談前，評分員應做好相關準備工作，不要讓應徵者覺得受輕視怠慢。請再選一次。</feedback>
+</option>
+	<option id="2CO" source="aside.mp3">
+<theme>開場寒暄輕率隨便</theme>
+<scores>
+<score objective="C1">1</score>
+<score objective="1.1">1</score>
+<score objective="1.2">3</score>
+</scores>
+<text>Lisa你好，我是George，負責你的面試。那…我們就開始吧！ </text>
+
+
+
+<feedback>開場時，要表現出對應徵者的歡迎與尊重，勿輕率隨便。請再選一次。</feedback>
+</option>
+
+<option id="3AO" source="3AO.mp3">
+<theme>尊重肯定、說明流程、正確引導</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="C6">5</score>
+<score objective="1.3">5</score>
+</scores>
+<text>我們這次招聘的目的，是要找一個專案經理。你的學經歷都相當優秀，所以才會請您來面談，當面請教你幾個問題。這樣可以嗎？</text>
+
+<feedback>很好，先簡單說明一下面談目的，同時展現你對他的尊重與肯定。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="1.2" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>好啊，這是我的榮幸，當然沒問題囉。</dialogue>
+<options header="請選擇最佳引導說明：" pos="1,3,2">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page> 	<option id="3BO" source="aside.mp3">
+<theme>態度傲慢，引導錯誤</theme>
+<scores>
+<score objective="C1">1</score>
+<score objective="C6">3</score>
+<score objective="1.3">3</score>
+</scores>
+<text>我們公司在這個產業也算數一數二了，所以我們的篩選也非常嚴格，總不能沒看過你，就隨隨便便讓你進來吧？這也就是今天把你找來的原因，你懂吧？</text>
+<feedback>你對自己公司有信心當然是好事，可是過於高傲而貶低對方就不好了。請再選一次。</feedback>
+</option>
+	<option id="3CO" source="aside.mp3">
+<theme>過高期望，引導錯誤</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="C6">1</score>
+<score objective="1.3">3</score>
+</scores>
+<text>我們這次招聘的目的，是要找一個專案經理。你的學經歷是所有應徵者中最優秀的，進入我們公司大概沒什麼問題，所以今天的目的只是想認識一下你而已，這樣你瞭解嗎？</text>
+<feedback>你不應該單憑履歷資料就推論Lisa是最佳人才，不然何必進行面談呢？另外，你也不應該在一開始就給Lisa過高的期望，以免他輕忽了面談的重要性。請再選一次。</feedback>
+</option>
+
+<option id="4AO" source="4AO.mp3">
+<theme>介紹流程，正確引導</theme>
+<scores>
+<score objective="C6">5</score>
+<score objective="C7">5</score>
+<score objective="1.3">5</score>
+</scores>
+<text>今天的面試有三個階段：第一個階段是10分鐘的「履歷補充」，我會請你補充一下你的履歷背景，讓資料更完整。第二個階段是30分鐘的「經驗分享」，我會請你分享一些工作經驗，並說明一下處理過程。第三個階段是10分鐘的「問答時間」，讓你可以詢問關於這個職位，或關於我們公司的任何問題。整個流程合計大約是五十分鐘。這樣可以嗎？</text>
+<feedback>很好，把流程先說明清楚，讓Lisa有所準備，不會因為不確定流程而產生焦慮。 </feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="1.3" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>謝謝您說明地這麼清楚，我一定會全力以赴，盡量配合。</dialogue>
+<options header="請選擇最佳引導說明：" pos="2,3,1">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="aside.mp3">
+<theme>錯誤介紹，錯誤引導</theme>
+<scores>
+<score objective="C6">3</score>
+<score objective="C7">3</score>
+<score objective="1.3">1</score>
+</scores>
+<text>今天的面試本來預計是50分鐘，可是因為我們比較晚開始，所以只剩下40分鐘。不過你不用擔心，我還是會把該問的問題問完，不會有影響的！這樣你OK吧？
+</text>
+
+
+
+
+<feedback> 「面試減少10分鐘」這句話會讓Lisa產生焦慮，甚至懷疑你們已經有內定對象了。這些焦慮與懷疑會影響他後續的表現，不宜。請再選一次。</feedback>
+</option>
+	<option id="4CO" source="aside.mp3">
+<theme>錯誤介紹，錯誤引導</theme>
+<scores>
+<score objective="C6">1</score>
+<score objective="C7">3</score>
+<score objective="1.3">1</score>
+</scores>
+<text>等一下的流程其實很簡單：我問你答，知道就知道，不知道就不知道，當作是聊天就可以了，沒什麼好緊張的，這樣OK吧？
+</text>
+
+
+
+
+<feedback> 你可能是想讓Lisa放鬆心情才把流程講地很簡單，但你的說明過於模糊，反而會讓讓Lisa因為不確定流程而產生焦慮。請再選一次。</feedback>
+</option>
+
+<option id="5AO" source="5AO.mp3">
+<theme>尊重，保密，正確引導 </theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="C6">5</score>
+<score objective="1.4">5</score>
+</scores>
+<text>對了，今天的面談內容，我會絕對保密，所以你可以放心地說出你的想法。另外，我們公司很在乎誠信，所以我希望你提供的都是真實的資料，才能促進雙方的互信與瞭解。這樣可以嗎？</text>
+<feedback>很好，告訴對方你會保密，並暗示對方必須提供真實資料，這樣才能讓評鑑結果準確有效。
+</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="1.4" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme> </theme>
+<dialogue>好的，這個我瞭解，絕對沒問題！</dialogue>
+<options header="請選擇最佳引導說明：" pos="1,2">
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>	<option id="5BO" source="aside.mp3">
+<theme>錯誤說明提示 </theme>
+<scores>
+<score objective="C1">3</score>
+<score objective="C6">1</score>
+<score objective="1.4">1</score>
+</scores>
+<text>喔，對了，我先申明一下，我們公司非常在乎員工的誠信。所以你要嘛就不要講，要嘛就講真話，可是千萬不要講謊話，不然被抓到，後果就很嚴重了，這樣你懂吧？</text>
+
+<feedback>這段話的內容沒錯，可是表達方式令人不舒服。請再選一次。
+</feedback>
+</option>
+	<option id="5CO" source="aside.mp3">
+<theme>錯誤說明提示 </theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="C6">1</score>
+<score objective="1.4">3</score>
+</scores>
+<text>今天的內容，是不對外公開的，所以你想怎麼講都可以，資料越多越好，這樣才能夠證明你的經驗和能力喔！</text>
+
+
+<feedback>這段話可能會讓應徵者為了求得好表現，而誇大渲染其經驗，讓評鑑失去準確度。請再選一次。
+</feedback>
+</option>
+
+<option id="6AO" source="6AO.mp3">
+<theme>轉場自然，正確引導，掌握流程</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="C4">5</score>
+<score objective="1.3">5</score>
+</scores>
+<text>那接下來我們就來討論你的履歷背景，希望你能幫我們做一些補充說明，讓資料更完整。</text>
+
+<feedback>很好，你的說法相當正面，能讓應徵者樂於分享。</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="1.4" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Lisa" mediaType="graphic" background="S401.jpg" graphicSource="6AN.png" audioSource="6AN.mp3">
+<theme>XXX</theme>
+<dialogue>好的，那您請問吧，我會盡量回答。</dialogue>
+<link nextPageId="6AEND"/>
+</page>
+
+<page id="6AEND" type="scoreCard" background="S401.jpg" srcWidth="772" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text>「開場技巧」之演練到此告一段落，請繼續閱讀下個章節，或在右下角點選「重新開始」，再演練一次。</text>
+</page>	<option id="6BO" source="aside.mp3">
+<theme>錯誤轉場</theme>
+<scores>
+<score objective="C2">3</score>
+<score objective="C4">3</score>
+<score objective="1.3">3</score>
+</scores>
+<text>好，那接下來我會指出你履歷上幾個可疑的地方，希望你能解釋清楚，減少我們的疑慮。</text>
+
+<feedback>這幾句話稍嫌負面，不夠尊重對方。請再選一次。</feedback>
+</option>
+	
+</nodes>
+<objectives>
+<category id="C" name="溝通原則">
+<objective id="C1" name="尊重肯定"/>
+<objective id="C2" name="避免批評"/>
+<objective id="C3" name="主動釐清"/>
+<objective id="C4" name="鼓勵參與"/>
+<objective id="C5" name="耐心等候"/>
+<objective id="C6" name="正確引導"/>
+<objective id="C7" name="掌握流程"/>
+<objective id="C8" name="轉折自然"/>
+</category>
+
+<category id="1" name="開場技巧">
+<objective id="1.1" name="表達歡迎"/>
+<objective id="1.2" name="自我介紹"/>
+<objective id="1.3" name="說明流程"/>
+<objective id="1.4" name="承諾保密"/>
+</category>
+</objectives>
+<stages>
+<stage id="1.1" name="開場寒暄"/>
+<stage id="1.2" name="說明流程"/>
+<stage id="1.3" name="提醒注意事項"/>
+<stage id="1.4" name="引導到下一步驟"/>
+</stages>
+</simulation>		

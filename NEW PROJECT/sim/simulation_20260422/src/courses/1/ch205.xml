@@ -1,0 +1,27 @@
+<node type="chapter" id="205" label="案例五：MIS維修流程不清楚">	
+	<lesson label="1.任務說明">
+		<page type="imageText" background="assets/images/S205_bg1.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">你是鴻展公司的營運處經理。<br><br>
+上個月業務部主管跟你抱怨，說他們送修電腦到MIS部門時，負責維修的John都無法明確回覆問題，導致他們必須每天問進度，最後竟等了兩個星期才修好。為了釐清原委，你也訪談了幾個同仁，發現大家都有一致的抱怨：MIS的電腦維修流程不清楚。<br><br>
+你覺得這是一個不容忽視的績效落差，決定把John找來進行教導面談…</div>]]>		
+		</page>
+	</lesson>	
+	<lesson label="2.部屬背景">
+		<page type="imageText" background="assets/images/S205_bg2.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">John，30歲，年資2年，MIS工程師。<br><br>
+主要負責公司的軟硬體故障排除、兼任網路管理及網頁設計。<br/><br/>
+個性溫和木訥，不擅溝通，不愛改變。做事慢條斯理，雖然最後總能把事情做完，但也常因拖延而誤事。</div>]]>		
+		</page>
+	</lesson>	
+	<!--<lesson label="SL">
+			<embed>sl/COA_1-1_web/story.html</embed>
+		</lesson>-->
+	<lesson label="3.展開面談">
+		<simulation>courses/1/S205.xml</simulation>    	
+	</lesson>
+	<lesson label="4.技巧檢討">
+		<page type="simulationRecords">
+		</page>
+	</lesson>
+</node> 
+	

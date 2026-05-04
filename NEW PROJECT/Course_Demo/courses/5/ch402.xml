@@ -1,0 +1,34 @@
+<node type="chapter" id="402" label="步驟二：釐清履歷案例">	
+	<lesson label="1.前情提要">
+    	<page type="imageText" background="assets/images/S402_bg.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:120px">George完成開場之後，將進入釐清履歷步驟…<br><br>
+			此時，George打開了Lisa的履歷資料，瀏覽先前劃上紅線之處，準備請Lisa針對這些有疑問的地方加以釐清…</div>]]>		
+		</page>
+	</lesson>
+ 	<lesson label="2.任務說明">
+    	<page type="imageText" background="assets/images/S401_bg.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你的任務，是繼續扮演<font color="#F40020">George</font>與Lisa互動。你必須採取正確的<font color="#F40020">釐清履歷技巧</font>及<font color="#F40020">溝通原則</font>，才能順利完成本任務！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">履歷資料</font>認識Lisa的背景，然後再<font color="#F40020">進行演練</font>，最後在<font color="#F40020">技巧分析</font>中，瀏覽演練成績。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>		
+		</page>
+	</lesson>
+	
+	<lesson label="3.履歷資料">
+    	<page type="imageText" background="assets/images/S401_bg2.jpg">
+			<![CDATA[<div style="width:48%; float:right; margin-top:120px; margin-right:0px><textformat indent="0">Lisa的履歷重點如下：<br/></textformat>
+					<textformat indent="-20">
+						<li>2019.01～current C公司 專案經理。</li>
+						<li>2016.04～2018.06 B公司 業務專員，獲得「優秀員工」獎。</li>
+						<li>2015.07～2016.03 A公司 業務專員。</li>
+					</textformat></div>]]>		
+		</page>
+	</lesson>	
+	 <lesson label="4.進行演練">
+    	<simulation>courses/5/S402.xml</simulation>    	
+ 	</lesson>
+ 	<lesson label="5.技巧檢討">
+    	<page type="simulationRecords">
+    	</page>
+ 	</lesson>
+ </node> 

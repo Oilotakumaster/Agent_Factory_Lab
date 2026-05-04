@@ -1,0 +1,8 @@
+<course name="會議管理" label="課程目錄" src="assets/courses/MM_logo.jpg">
+	<node type="chapter" id="102501" label="會議管理">
+		<embed>sl/MM/story.html</embed>
+	</node>
+</course>
+
+		
+	

@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="" characterWidth="51.89%" characterHeight="100%" characterX="0px" characterY="0px" optionsWidth="60%" optionsHeight="100%" dialogStart="0.5" optionsX="0" optionsY="0"  flvPath="simulation/S205/video/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S205_startPage.jpg" srcWidth="772" paddingTop="40" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">John準時來到你的辦公室。他並不清楚今天會談的目的，所以進門之後就直接問你…<br/><br/>
+本案例包含24回合，請在右下角選擇本次演練模式：<br/><br/>
+<li>一、練習(不計分)：演練過程中，你可隨時瀏覽各選項的教練回饋。</li><br>
+<li>二、測驗(有計分)：演練過程中，你將無法瀏覽教練回饋。演練結束後，成績將上傳學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="0AN"/>
+</page>
+
+<page id="0AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="0AN.f4v">
+<dialogue>George，今天是要討論什麼事情啊？</dialogue>
+<options>
+<link optionId="1AO" />
+<link optionId="1BO" />
+<link optionId="1CO" />
+</options>
+</page>			
+<option id="1AO" source="1AO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>John，你做事一向認真，交辦的任務也都能順利達成。但最近我發現，同仁因為不清楚電腦維修流程而有許多誤會。所以我希望你能在兩個星期內，公布一套清楚的SOP，這樣可以嗎？</text>
+<feedback>很好，你以三明治原則開場。既維護其自尊，又指出其績效落差，也清楚說明你的期望。</feedback>
+<link nextPageId="1AN"/>
+</option>
+
+<page id="1AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="1AN.f4v">
+<theme>認知落差</theme>
+<dialogue>咦…這就奇怪了，從來沒有人跟我抱怨說維修流程不清楚啊？是誰跟你講的啊？</dialogue>
+<options>
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>	<option id="1BO" source="1BO.mp3">
+<theme>缺乏包裝</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.1">3</score>
+<score objective="ST2.1">3</score>
+</scores>
+<text>John，最近大家都在抱怨，說電腦的維修流程亂七八糟，害他們的工作也不順利。所以我希望你用心一點，把維修流程整理好，這樣可以吧？</text>
+<feedback>雖然你說出期望，但整段話的內容模糊不清，語氣也相當負面，應該改進。</feedback>
+<link nextPageId="1BN"/>
+</option>
+
+<page id="1BN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="1BN.f4v">
+<theme>心灰意冷</theme>
+<dialogue>什麼啊？這怎麼可能！送修流程已經很清楚了啊？不然我哪來這麼多電腦要修啊？該不會是有人在說我壞話吧？</dialogue>
+<options>
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>	<option id="1CO" source="1CO.mp3">
+<theme>避重就輕</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">1</score>
+<score objective="ST2.1">1</score>
+</scores>
+<text>John，你脾氣很好，跟大家相處愉快。不過你在修理電腦方面，花太多時間了，也許應該調整一下，績效才會更好！</text>
+<feedback>你把話說得太委婉，面談目的也沒講清楚。John會不清楚你的用意，還以為你在誇獎他呢！</feedback>
+<link nextPageId="1CN"/>
+</option>
+
+<page id="1CN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="1CN.f4v">
+<theme>誤會</theme>
+<dialogue>謝謝George肯定，以後我會好好安排時間，不要花那麼多在維修電腦。那除了這個問題以外，你還有什麼指示嗎？</dialogue> 
+<options>
+<link optionId="1AO"/>
+<link optionId="1BO"/>
+</options>
+</page>	
+<option id="2AO" source="2AO.mp3">
+<theme> 解釋澄清</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="CP5.3">5</score>
+</scores>
+<text>維修記錄都有記載啊。例如：上個月業務部門報修的4台電腦，等了兩個星期才修好。這件事你有印象嗎？</text>
+<feedback>你能具體資料，清楚說明問題，又能以詢問口氣，給部屬解釋的機會，相當好！</feedback>
+<link nextPageId="2AN"/>
+</option>
+<page id="2AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="2AN.f4v">
+<theme>推拖延遲</theme>
+<dialogue>喔，原來你是講這件事啊。也是啦，是有讓他們多等了幾天啦！可是我也沒辦法啊，報修的電腦就是那麼多，我每天都已經加班了還是修不完，我還能怎麼辦呢？</dialogue>
+<options>
+<link optionId="3AO"/>
+<link optionId="3BO"/>
+<link optionId="3CO"/>
+</options>
+</page>	<option id="2BO" source="2BO.mp3">
+<theme>語句模糊</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="CP5.1">3</score>
+
+</scores>
+<text>前不久不是有個部門送修一批電腦，拖了好久才修好，這件事情你知道吧？</text>
+<feedback>你懂得詢問部屬，這是對的。可是你在描述事件時，不夠具體，應該改進。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_sad.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="2BN.f4v">
+<theme>一知半解</theme>
+<dialogue>這什麼時候的事啊？我怎麼一點印象都沒有！該不會是你聽錯了吧？</dialogue>
+<options>
+<link optionId="2AO"/>
+<link optionId="2DO"/>
+</options>
+</page>	<option id="2CO" source="2CO.mp3">
+<theme>武斷假設</theme>
+<scores>
+<score objective="CP2.1">1</score>
+<score objective="CP5.1">1</score>
+
+</scores>
+<text>你不用管是誰說的。無風不起浪，你如果都有準時把電腦修好，誰會這麼無聊去說你的壞話呢？</text>
+<feedback>你沒有說明事情的原委，也沒有給予部屬解釋的機會。這樣部屬是不可能服氣的啊！</feedback>
+<link nextPageId="2CN"/>
+</option>
+
+<page id="2CN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="2CN.f4v">
+<theme>傷心難過</theme>
+<dialogue>我已經每天都加班了，你怎麼還這樣說我，我實在…唉…算了，我也沒什麼好說了。</dialogue>
+<options>
+<link optionId="3AO"/>
+<link optionId="3BO"/>
+<link optionId="3CO"/>
+</options>
+</page>	<option id="2DO" source="2DO.mp3">
+<theme> 解釋澄清</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP5.1">3</score>
+</scores>
+<text>你少胡扯了，我怎麼可能聽錯！上個月業務部門不是報修了4台電腦嗎？結果拖了兩個星期才修好。這件事情你難道都忘光了嗎？</text>
+<feedback>雖然你有具體說明事情原委，但夾雜了批評謾罵後，就讓焦點模糊了。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<option id="3AO" source="3AO.mp3">
+<theme>連結大我價值</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.2">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>你工作一向認真，這點我非常肯定。不過，同仁們的電腦，是幫公司賺錢的工具。你把這些工具維修好，就是在幫公司賺錢，這樣你瞭解嗎？</text>
+<feedback>很好，你能同理部屬的感受，並給予適當的鼓勵。而且你還能引導部屬，瞭解績效改善的價值，非常好。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="3AN.f4v">
+<theme>無奈接受</theme>
+<dialogue>你說的我都知道啦…不然這樣吧，以後只要是業務部送來的電腦，我都優先處理，這樣可以嗎？</dialogue>
+<options>
+<link optionId="4AO"/>
+<link optionId="4BO"/>
+<link optionId="4CO"/>
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>無同理心</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP2.2">3</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>我知道你都有加班，可是加班要有效果啊！如果每天都加班了，事情還是沒做好，那有什麼用呢？</text>
+
+<feedback>John渴望他的貢獻能得到你的肯定，可是你完全忽略他的感受。而且，也沒有引導他去瞭解改善績效的價值。</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="3BN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>好啦好啦，不用說那麼多啦…反正以後只要業務部送來的電腦，我都優先處理，這樣總可以了吧！</dialogue>
+<options>
+<link optionId="4AO"/>
+<link optionId="4BO"/>
+<link optionId="4CO"/>
+</options>
+</page>	<option id="3CO" source="3CO.mp3">
+<theme>無同理心</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>我們公司是責任制！工作沒做完，自然要加班，這有什麼稀奇？我加班的天數還比你還多呢，你有聽過我抱怨嗎？</text>
+<feedback>你的說法，完全漠視John渴望被鼓勵的需求，反而批評他愛抱怨。非常不利於教導進行。</feedback>
+<link nextPageId="3BN"/>
+</option>
+	
+<option id="4AO" source="4AO.mp3">
+<theme> SMART </theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>倒也不是要有差別待遇。我主要是希望你能公布一套標準的作業流程，讓大家有清楚的指引可以參考，你也不用重複回答問題，工作就可以輕鬆一些啊。</text>
+<feedback>很好。你能清楚說明你的期望，並把你的期望和John的個人利益結合，作為激勵他的誘因。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="4AN.f4v">
+<theme>擔心能力不夠</theme>
+<dialogue>建立標準作業流程？ㄟ…這個聽起來好像很複雜的樣子，我不知道能不能做得出來啊…</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+<link optionId="5CO"/>
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>模糊不清</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">1</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>好，反正不管你怎麼處理，就是不要讓我再接到他們主管打來的抱怨電話了，這樣夠清楚了吧？ </text>
+<feedback>你所訂的目標越來越模糊，語氣也顯得不耐煩，不利於教導進行。</feedback>
+<link nextPageId="4BN"/>
+</option>
+
+<page id="4BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="4BN.f4v">
+<theme>爽快答應</theme>
+<dialogue>沒問題，以後就這麼辦吧！讓他們沒藉口可以吵了！</dialogue>
+<link nextPageId="4END"/>
+</page>	<option id="4CO" source="4CO.mp3">
+<theme>生氣謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.1">3</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>你是在說反話還是真聽不懂？我是希望你公布一套清楚的流程，不是要給業務部特權，這樣懂了沒有？</text>
+<feedback>你的負面說法令部屬氣餒。而既然部屬不懂了，你就該提出更清楚的說明，不是重複先前的說法！</feedback>
+<link nextPageId="4CN"/>
+</option>
+
+<page id="4CN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="4CN.f4v">
+<theme>態度消極</theme>
+<dialogue>懂，反正你是老闆，你說了算！不過我先講喔…這個什麼標準流程的，我可沒做過，可能要花不少時間喔。</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+<link optionId="5CO"/>
+</options>
+</page>	<page id="4END" type="scoreCard" background="S205.jpg">
+<text>你的應對方式有明顯缺失，以致於演練無法繼續。請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text> 
+</page>
+<option id="5AO" source="5AO.mp3">
+<theme>給予支持鼓勵</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>別擔心，你的經驗豐富，維修技術也強，所缺的只是整合能力而已，而這部分我也會全力協助你，一定可以順利完成的！</text>
+<feedback>很好，你聽出John缺乏信心，就加以鼓勵，並主動給予協助。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="5AN.f4v">
+<theme>承擔責任</theme>
+<dialogue>嗯…好吧…你都已經這樣講了，我如果再推託，就太說不過去了。好！你放心，我會想辦法拼看看。</dialogue>
+<options>
+<link optionId="6AO"/>
+<link optionId="6BO"/>
+<link optionId="6CO"/>
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>諷刺調侃</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>你不要還沒開始做事就怕成這樣！不過就是寫個公告，又不是要你去編六法全書，沒那麼難啦！</text>
+<feedback>聽得出來你是有心鼓勵John，可是這種負面說法，難以激勵部屬啊！</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+<page id="5BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="5BN.f4v">
+<theme>無法勝任</theme>
+<dialogue>好啦好啦…我做就是了，不過到時候如果做不好，就不要怪我喔。</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="6BO"/>
+<link optionId="6CO"/>
+</options>
+</page>
+	<option id="5CO" source="5CO.mp3">
+<theme>懷疑能力</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>寫這些流程本來就是你份內的工作，你居然都不會？這樣說我倒是開始懷疑你的能力了…</text>
+<feedback>部屬誠心說出他的顧慮，反而成為你批評他的藉口。這樣他將來就不肯真心跟你溝通了！</feedback>
+<link nextPageId="5CN"/>
+</option>
+
+<page id="5CN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S205_sad.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="5CN.f4v">
+<theme>沒有信心</theme>
+<dialogue>嗯…我可能…能力真的比較差吧，而且以前沒有做過，怕做不好，你要不要找別人來做啊？</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+</options>
+</page>
+	
+<option id="6AO" source="6AO.mp3">
+<theme>詢問澄清＋引導思考</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.1">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>謝謝你願意承擔這個任務，那我們一起來解決吧！你可不可以描述一下這次業務同仁送修電腦的經過，讓我瞭解瓶頸出在哪裡？</text>
+<feedback>你肯定John承擔責任，並提供協助，開始診斷問題。這都是很好的教導技巧！ </feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="6AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>可以啊，我記得是上個月月初吧？業務部送來電腦要修，啊那時候我正好在幫福委會寫一個網頁，所以我就跟他們說，這要多等幾天喔，啊他們也說OK，沒有關係呀！</dialogue>
+<options>
+<link optionId="7AO"/>
+<link optionId="7BO"/>
+</options>
+</page>	<option id="6BO" source="6BO.mp3">
+<theme>諷刺調侃</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP1.2">1</score>
+</scores>
+<text>對嘛，這才像話啊！你在公司也那麼久了，如果連這麼簡單的事情也做不好，那以後的發展就很令人擔心啦。</text>
+<feedback>你的鼓勵聽起來真是令人洩氣啊。換個說法吧！</feedback>
+<link nextPageId="6BN"/>
+</option>
+
+<page id="6BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="6BN.f4v">
+<theme>語氣冷淡</theme>
+<dialogue>喔，我知道，我會努力的。</dialogue>
+<options>
+<link optionId="6AO"/>
+<link optionId="6CO"/>
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>草草結束</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>非常好！那你回去好好想一下，看看問題出在哪裡？想通了再來跟我討論。我還有很多事要忙，你可以先回去了。</text>
+<feedback>你的教導過於草率，完全沒有應用正確的教導步驟。</feedback>
+<link nextPageId="6CN"/>
+</option>
+
+<page id="6CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="6CN.f4v">
+<theme>語氣冷淡</theme>
+<dialogue>好，我知道，那我回去了。</dialogue>
+<link nextPageId="6END"/>
+</page>
+	<page id="6END" type="scoreCard" background="S205.jpg">
+<text>你的面談技巧不純熟，錯失許多步驟。請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text>
+</page>
+<option id="7AO" source="7AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>那他們當場就知道還要再等兩個星期嗎？</text>
+<feedback>很好，在發現John的溝通過程可能有瑕疵時，你能夠善用詢問技巧，請他加以釐清！</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+<page id="7AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="7AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>怎麼可能知道？送修就是排隊啊，先來的先修，後來的後修。運氣好的時候，一下子就輪到了。運氣不好的時候，可能碰到難搞的case，後面的就只好多等幾天囉。</dialogue>
+<options>
+<link optionId="8AO"/>
+<link optionId="8BO"/>
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>假設武斷</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>廢話，你又沒說清楚還要等兩個星期，人家當然回答沒問題啊！</text>
+<feedback>雖然你的推論可能是正確的，但這種武斷的態度及負面的說法，會引起部屬反感！</feedback>
+<link nextPageId="7BN"/>
+</option>
+
+<page id="7BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="7BN.f4v">
+<theme>覺得被質疑</theme>
+<dialogue>這種事情怎麼可能說得準啊？我又沒有要騙他們！送修時間本來就是靠運氣，大家都一樣，我也沒有偏心啊。不然你還要我怎樣嘛！</dialogue>
+<options>
+<link optionId="8AO"/>
+<link optionId="8BO"/>
+</options>
+</page>		
+<option id="8AO" source="8AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.2">5</score>
+<score objective="CP2.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>嗯，我也瞭解，要精準預估修復時間的確是很困難的。可是如果同仁的電腦有急用，卻只能癡癡的等，難免會抱怨啊。所以，你這邊有沒有急件的申請流程呢？</text>
+<feedback>很好。你先同理部屬的處境，然後也引導他同理別人的處境。</feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="8AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>通常啊，如果有急用的話，報修的同仁自己會講啦，那我就會注意一下，調整一下排程。可是如果他們沒講，我當然不會知道啊！</dialogue>
+<options>
+<link optionId="9AO"/>
+<link optionId="9BO"/>
+</options>
+</page>	<option id="8BO" source="8BO.mp3">
+<theme>假設武斷</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">1</score>
+</scores>
+<text>這樣看來，你的處理方式還真的是沒什麼彈性，連個急件申請流程都沒有，難過人家會四處抱怨！</text>
+<feedback>你絲毫不顧John的難處，大肆批評。也沒有引導John去思考可能的解決途徑。</feedback>
+<link nextPageId="8AN"/>
+</option>
+		
+<option id="9AO" source="9AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>如果你在同仁送修電腦時，就主動問他們的緊急程度，可不可以化解這個問題呢？</text>
+<feedback>你藉由正確的引導，鼓勵John思考對策。</feedback>
+<link nextPageId="9AN"/>
+</option>
+
+<page id="9AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="9AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>有些事情是只能做不能說啊！如果我真的一個一個問，我跟你保證啊，每個送修的同仁都會說他們有急用，那結果還不是一樣啊！</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10BO"/>
+<link optionId="10CO"/>
+</options>
+</page>	<option id="9BO" source="9BO.mp3">
+<theme>假設武斷</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP3.2">1</score>
+<score objective="CP4.3">3</score>
+</scores>
+<text>你應該在同仁送修電腦時，就主動詢問他們的緊急程度才對！怎麼還要等人家講，這樣太被動了吧？</text>
+<feedback>雖然你所提供的對策可能有效，但是你強勢態度及責備語氣，無法讓部屬心悅誠服。</feedback>
+<link nextPageId="9AN"/>
+</option>		
+<option id="10AO" source="10AO.mp3">
+<theme>詢問澄清</theme>
+<scores>
+<score objective="CP1.2">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>你的意思是：送修的緊急程度，是由報修的人自己決定？你自己沒有一套判定的標準，是嗎？</text>
+<feedback>你用了「確認性問句」，釐清John的說法。很好。</feedback>
+<link nextPageId="10AN"/>
+</option>
+
+<page id="10AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="10AN.f4v">
+<theme>為難</theme>
+<dialogue>呃…也不能這樣說啦！這一行做久了，多多少少也看得出來哪些可以等，哪些又不能等。可是…這都是靠現場判斷，要我現在憑空講出來，太難為我了吧！</dialogue>
+<options>
+<link optionId="11AO"/>
+<link optionId="11BO"/>
+</options>
+</page>	<option id="10BO" source="10BO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>你沒有試怎麼會知道？你就是不懂得創新，老是用舊方法做事情，才會讓同仁抱怨連連。</text>
+<feedback>你直接譴責John的態度，沒有給予John說明補充的機會。</feedback>
+<link nextPageId="10BN"/>
+</option>
+
+<page id="10BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="10BN.f4v">
+<theme>有點生氣</theme>
+<dialogue>這有什麼好試的啊？用肚臍想也知道啊！你不信的話，自己來試看看好了，保證每個來送修的都說是急件！</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10CO"/>
+</options>
+</page>	<option id="10CO" source="10CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>你頭殼壞了啊？人家講什麼你就信喔？你自己難道沒有一套判定的標準嗎？</text>
+<feedback>雖然你有詢問John的想法，但你採用批評謾罵的型式，會引起部屬反感！</feedback>
+<link nextPageId="10AN"/>
+</option>
+	
+<option id="11AO" source="11AO.mp3">
+<theme>開放式問句</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>嗯，這個狀況我瞭解了。那我問你另外一個問題：同仁送修電腦後，在等待修復的期間如果有急用，你有沒有提供什麼備案，讓他們有電腦用呢？</text>
+<feedback>很好，你以平和的語氣，詢問John的處理方式。而且把討論焦點放在具體的做事方法，而不是抽象的態度或個性。</feedback>
+<link nextPageId="11AN"/>
+</option>
+
+<page id="11AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="11AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>碰到這種狀況，我是會告訴他們一些撇步啦，必要的時候，我還會把測試中的電腦借給他們哩。不過啊，這不能公開啊，免得大家都跟我借，我哪裡生得出這麼多電腦？</dialogue>
+<options>
+<link optionId="12AO"/>
+<link optionId="12BO"/>
+</options>
+</page>	<option id="11BO" source="11BO.mp3">
+<theme>負面說法</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP2.1">5</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>好吧好吧，這個問題就先算了。我另外還聽同仁抱怨，說他們在等待電腦修復的時候，找你借電腦，你都一副愛理不理的樣子，有沒有這回事？</text>
+<feedback>你能詢問John的意見，這是正確的。但在句子中，充滿太多對部屬態度及個性的批評，沒有聚焦在具體的行為，這就不對了！</feedback>
+<link nextPageId="11BN"/>
+</option>
+<page id="11BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_angry.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="11BN.f4v">
+<theme>有點生氣</theme>
+<dialogue>是誰這樣說的？太誇張了吧？我哪一次不是有求必應！有時候還把測試中的電腦借給他們哩！</dialogue>
+<options>
+<link optionId="12AO"/>
+<link optionId="12BO"/>
+</options>
+</page>		
+<option id="12AO" source="12AO.mp3">
+<theme>確認性問句</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>嗯…從你描述的狀況中，我發現你其實已經有一套作業流程了，只是這套流程並沒有公開給同仁知道而已。你覺得我這樣講，對嗎？</text>
+<feedback>你以正面說法來描述John的現況，並巧妙點出後續改進方向，請John確認，這是非常聰明的作法。</feedback>
+<link nextPageId="12AN"/>
+</option>
+
+<page id="12AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_sad.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="12AN.f4v">
+<theme>熱烈回應</theme>
+<dialogue>對對對，就是這個樣子。說真的，只要能幫得上忙，我當然會盡力啊，只是…嗯…他們都不知道我做事的方法，還以為我在敷衍他們，其實我根本不是這樣的人。</dialogue>
+<options>
+<link optionId="13AO"/>
+<link optionId="13BO"/>
+</options>
+</page>	<option id="12BO" source="12BO.mp3">
+<theme>武斷假設</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP1.2">3</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>嗯。從你的描述中，我發現你的流程的確有問題。該公布的都沒公布，難怪引起這麼多抱怨，你自己都沒有想過要改進嗎？</text>
+<feedback>你以負面說法來描述John的現況。即使講的再有道理，也會引起部屬的抗拒。</feedback>
+<link nextPageId="12BN"/>
+</option>
+
+<page id="12BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_sad.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="12BN.f4v">
+<theme>欲言又止</theme>
+<dialogue>唉，這種事情，講起來容易，做起來難啊！如果簡單的話我早就做了，還會拖到今天嗎？你沒看我也是整天加班，從來沒敷衍過任何人啊！</dialogue>
+<options>
+<link optionId="13AO"/>
+<link optionId="13BO"/>
+</options>
+</page>
+		
+<option id="13AO" source="13AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.2">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>是啊，我知道你向來都很為同仁著想的。為了讓大家都能體會你的用心，我們是不是該把你心中的這套流程寫出來，讓大家都看到呢？</text>
+<feedback>很好，你展現同理心，肯定John的貢獻，同時巧妙地將「改善績效落差」與他「尋求認同」的心理需求連結起來，能有效激勵他！</feedback>
+<link nextPageId="13AN"/>
+</option>
+<page id="13AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="13AN.f4v">
+<theme>同意</theme>
+<dialogue>嗯…你這樣講也是有道理啦。好啊，那我就聽從你的指示吧。可是，我不太知道該怎麼開始做耶，你可以說清楚一點嗎？</dialogue>
+<options>
+<link optionId="14AO"/>
+<link optionId="14BO"/>
+<link optionId="14CO"/>
+</options>
+</page>	<option id="13BO" source="13BO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.2">1</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>每個人心中都有一把尺，有沒有敷衍就看個人感受，爭辯是沒有用的。現在的重點，應該是想辦法把流程具體化，公開化，不要再像過去一樣黑箱作業！</text>
+<feedback>雖然你言之成理，但你的負面說法，忽略了John尋求認同的心理需求，降低了說服力。</feedback>
+<link nextPageId="13BN"/>
+</option>
+<page id="13BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="13BN.f4v">
+<theme>無奈接受</theme>
+<dialogue>好吧。您是老闆，您怎麼說，我怎麼做，那接下來要做什麼呢？</dialogue>
+<options>
+<link optionId="14AO"/>
+<link optionId="14BO"/>
+<link optionId="14CO"/>
+</options>
+</page>		
+<option id="14AO" source="14AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP5.2">5</score>
+</scores>
+<text>關於同仁無法知道何時修復的問題，你能不能在同仁送修電腦時，就當場根據經驗，預估還要等幾天才可以修好？</text>
+<feedback>你鼓勵John想出對策，而且你所設定的工作目標，內容清楚而具體。很好。</feedback>
+<link nextPageId="14AN"/>
+</option>
+
+<page id="14AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="14AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>這個嘛…嗯…不然我乾脆把待修的電腦數量，以及每台電腦預估的修復時間都公布在我辦公室的白板好了，這樣同仁一看就可以推測還要等多久，這樣可以吧？</dialogue>
+<options>
+<link optionId="15AO"/>
+<link optionId="15BO"/>
+</options>
+</page>	<option id="14BO" source="14BO.mp3">
+<theme>問題不清</theme>
+<scores>
+<score objective="CP3.1">5</score>
+<score objective="CP5.2">1</score>
+</scores>
+<text>嗯…你能不能想出一個方法，讓同仁送修電腦後，能夠安安靜靜，不要有任何抱怨？</text>
+<feedback>你鼓勵John想出對策，這是對的。但你所設定的目標「安安靜靜，不要有任何抱怨」卻太模糊空洞了。</feedback>
+<link nextPageId="14BN"/>
+</option>
+<page id="14BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="14BN.f4v">
+<theme>疑惑不已</theme>
+<dialogue>這個…不太可能吧？抱怨多多少少總是有一些啊？ 怎麼可能不抱怨呢？</dialogue>
+<options>
+<link optionId="14DO"/>
+<link optionId="14CO"/>
+</options>
+</page>	<option id="14CO" source="14CO.mp3">
+<theme>問題不清</theme>
+<scores>
+<score objective="CP3.1">5</score>
+<score objective="CP5.2">1</score>
+</scores>
+<text>嗯…你能不能想出一個方法，讓維修流程不要再有問題？</text>
+<feedback>你鼓勵John想出對策，很好。可是你所設定的目標「讓維修流程不要再有問題」，則太抽象空洞了。</feedback>
+<link nextPageId="14CN"/>
+</option>
+<page id="14CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="14CN.f4v">
+<theme>疑惑不已</theme>
+<dialogue>這個…我不知道耶？問題總是一大堆啊！怎麼可能沒有問題呢？</dialogue>
+<options>
+<link optionId="14DO"/>
+<link optionId="14BO"/>
+</options>
+</page>	<option id="14DO" source="14DO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.1">5</score>
+<score objective="CP5.2">5</score>
+</scores>
+<text>嗯，那你能不能幫忙想個方法，讓同仁在送修電腦的當場，就可以知道要等幾天才可以修好？</text>
+<feedback>你鼓勵John想出對策，而且你所設定的工作目標，內容清楚而具體。很好。</feedback>
+<link nextPageId="14AN"/>
+</option>
+<option id="15AO" source="15AO.mp3">
+<theme>引導思考＋提供資源</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP3.2">5</score>
+<score objective="CP3.3">5</score>
+<score objective="CP1.3">5</score>
+</scores>
+<text>嗯，把維修排程公布在白板上是個好方法。不過，網頁設計不正好是你的專長？不如公布在網頁上，讓同仁可以隨時查閱進度，是不是更方便呢？</text>
+<feedback>很好，你先肯定他的意見，然後引導他找出更好的解決方法。</feedback>
+<link nextPageId="15AN"/>
+</option>
+<page id="15AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="15AN.f4v">
+<theme>欣然接受</theme>
+<dialogue>對吼！對吼！我怎麼沒想到呢！好好好，沒問題，那我就寫個網頁，隨時公布最新進度。</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+</options>
+</page>	<option id="15BO" source="15BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP3.2">3</score>
+<score objective="CP3.3">3</score>
+</scores>
+<text>我不贊成這個做法，這樣太沒效率了。我覺得你應該寫個網頁，把維修排程公布在上面，讓大家可以隨時查詢才好！</text>
+<feedback>雖然John的想法不如你周全，但是你強烈否定的語氣，將令他感到沮喪。</feedback>
+<link nextPageId="15BN"/>
+</option>
+<page id="15BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_sad.f4v" name="John"  mediaType="video"  background="S205.jpg"  videoSource="15BN.f4v">
+<theme>勉強接受</theme>
+<dialogue>好，你怎麼說，我就怎麼做。寫網頁就寫網頁，沒什麼大不了！</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+</options>
+</page>
+		
+<option id="16AO" source="16AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP1.3">5</score>
+<score objective="CP3.2">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>嗯，太好了，大家一定會感謝有這個網頁的！另外，關於優先順序，你是不是也可以公布一下你的評估標準，讓同仁可以自行評估是否可以申請急件，就不用一直問你，浪費你時間了？</text>
+<feedback>你肯定John的投入，並引導他繼續思考，而且還把改善績效的價值和他個人需求結合在一起，這都是很好的技巧。</feedback>
+<link nextPageId="16AN"/>
+</option>
+<page id="16AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="16AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>這個喔…嗯…可能要花一些時間喔…我目前是有一些想法啦，不過還不完整。等我想清楚了，再把他們公布在白板…啊…再把他們公布在網站上！</dialogue>
+<options>
+<link optionId="17AO"/>
+<link optionId="17BO"/>
+</options>
+</page>	<option id="16BO" source="16BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP3.2">3</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>對啊，這才像話嘛！喔，還有，關於優先順序，你也應該把急件的標準公布出來，不要黑箱作業，搞得大家都來找我抱怨，這樣我還有空做別的事嗎？</text>
+<feedback>你把John的投入視為理所當然，而你的說法也充滿負面用詞。另外，你所點出的價值，與你自己的需求比較有關，與他的需求反而無關，缺乏說服力。</feedback>
+<link nextPageId="16AN"/>
+</option>		
+<option id="17AO" source="17AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>很好。另外還有一個問題：同仁的電腦如果送修太久而影響工作時，你是否也可以提供一些替代方案呢？</text>
+<feedback>你肯定John的意見，同時引導他繼續思考另一個問題的對策，並鼓勵他自己想出方法。</feedback>
+<link nextPageId="17AN"/>
+</option>
+<page id="17AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="17AN.f4v">
+<theme>解釋釐清</theme>
+<dialogue>嗯…我是可以把一些應變方法公布在網頁上給大家參考啦。再不然…我乾脆準備兩台備用電腦，讓有急用的同仁可以先借用，這樣的服務應該讓人沒話講了吧？</dialogue>
+<options>
+<link optionId="18AO"/>
+<link optionId="18BO"/>
+<link optionId="18CO"/>
+</options>
+</page>	<option id="17BO" source="17BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">3</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>很好。另外還有一個問題就是，你可不可以想辦法弄兩台備用電腦，讓送修同仁可以借用？</text>
+<feedback>你肯定John的參與，指出另一個問題，並提供對策。但你直接就講出答案，將減少他成長的空間。</feedback>
+<link nextPageId="17BN"/>
+</option>
+<page id="17BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="17BN.f4v">
+<theme>照章行事</theme>
+<dialogue>好，沒問題，我都有記下來了！</dialogue>
+<options>
+<link optionId="18AO"/>
+<link optionId="18BO"/>
+<link optionId="18CO"/>
+</options>
+</page>		
+<option id="18AO" source="18AO.mp3">
+<theme>引導方案</theme>
+<scores>
+<score objective="ST0.1">5</score>
+<score objective="CP5.2">5</score>
+</scores>
+<text>嗯，很好，看來我們已經找到許多好方法了。那現在可不可以請你把這些方法，整理成一套具體的行動方案，告訴我你接下來會在什麼時間點，完成什麼工作項目，讓維修流程能夠準時完成呢？</text>
+<feedback>你能清楚地掌握面談流程，在此時進入「發展行動方案」的步驟。而且你給予 John清楚具體的目標，讓他的思考可以聚焦。</feedback>
+<link nextPageId="18AN"/>
+</option>
+<page id="18AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="18AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>行動方案？要這麼正式喔！呃…我想我會在這星期五之前，把「維修排程表」先做好。然後…下星期五之前，把「急件申請條件」以及「送修期間替代方案」也寫好。最後會把相關條文都公布在辦公室的白板上。</dialogue>
+<options>
+<link optionId="19AO"/>
+<link optionId="19BO"/>
+</options>
+</page>	<option id="18BO" source="18BO.mp3">
+<theme>過早結束</theme>
+<scores>
+<score objective="ST0.1">1</score>
+<score objective="CP5.2">3</score>
+</scores>
+<text>嗯，很好，這是非常好的作法。接下來，我希望你能訂定出一個考核方案，讓我知道你接下來會怎麼管理自己的進度，落實這些對策！</text>
+<feedback>你的面談流程有誤，過早進入「建立考核機制」的步驟。</feedback>
+<link nextPageId="18END"/>
+</option>
+	<option id="18CO" source="18CO.mp3">
+<theme>過早結束</theme>
+<scores>
+<score objective="ST0.1">1</score>
+<score objective="CP5.2">1</score>
+</scores>
+<text>相當好，這是非常好的作法。看來你都知道該怎麼做了，我就不再細問了。那今天的面談就告一段落了，你回去後要好好努力喔！加油！</text>
+<feedback>你的面談步驟有誤，太早結束了。</feedback>
+<link nextPageId="18END"/>
+</option>	<page id="18END" type="scoreCard" background="S205.jpg">
+<text>你的面談技巧不純熟，錯失許多步驟。請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text> 
+</page>
+<option id="19AO" source="19AO.mp3">
+<theme>詢問矛盾</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>嗯，這個行動計畫的內容很完整，不過你剛剛不是說要把流程公布在網頁上嗎？怎麼現在變成是公布在白板上呢？</text>
+<feedback>很好，你有認真考核John的行動方案，並注意到他的疏失。</feedback>
+<link nextPageId="19AN"/>
+</option>
+<page id="19AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="19AN.f4v">
+<theme>清楚回應</theme>
+<dialogue>喔，對對對，應該是要公布在網頁上才對。那我還要多一個星期來寫網頁，剛剛那兩件事情都順延一個星期吧！</dialogue>
+<options>
+<link optionId="20AO"/>
+<link optionId="20BO"/>
+<link optionId="20CO"/>
+</options>
+</page>	<option id="19BO" source="19BO.mp3">
+<theme>沒發現問題</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>嗯，這個行動方案的內容很完整，時間規劃也很合理，那我就等著下星期五看你的成果囉！</text>
+<feedback>你的鼓勵令人感到溫暖。但你卻忽略了方案中一個明疏失，沒有盡到督導責任。</feedback>
+<link nextPageId="19BN"/>
+</option>
+<page id="19BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="19BN.f4v">
+<theme>想起疏失</theme>
+<dialogue>啊，抱歉，我剛剛說錯了！相關的條文應該要公布在網頁上才對。那我還要多一個星期來寫網頁，剛剛那兩件事情都順延一個星期吧！</dialogue>
+<options>
+<link optionId="20AO"/>
+<link optionId="20BO"/>
+<link optionId="20CO"/>
+</options>
+</page>		
+<option id="20AO" source="20AO.mp3">
+<theme>督導考核</theme>
+<scores>
+<score objective="CP4.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>很好，現在計畫已經很具體了，接下來就要看你的執行力了。你可不可以告訴我，打算如何考核自己的專案進度，確保所有工作項目都能準時完成呢？</text>
+<feedback>很好，你要求John自己提出一套考核機制。適度的授權，但又不至於放任不管。</feedback>
+<link nextPageId="20AN"/>
+</option>
+<page id="20AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="20AN.f4v">
+<theme>清楚回應</theme>
+<dialogue>這個不會有問題啦。我一向都把待辦事項寫在白板上，做完才擦掉。我等一下也會把剛剛講的工作項目都寫在上面，每天進門都會看到，想忘也忘不了啊！</dialogue>
+<options>
+<link optionId="21AO"/>
+<link optionId="21BO"/>
+<link optionId="21CO"/>
+</options>
+</page>	<option id="20BO" source="20BO.mp3">
+<theme>過度管控</theme>
+<scores>
+<score objective="CP4.2">5</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>嗯，很好。為了協助你落實這個計畫，我希望你每天都寄一份工作進度表給我，告訴我當天做了哪些事情，完成哪些進度！</text>
+<feedback>你鉅細靡遺地考核John的專案進度。這種熱忱令人欽佩，但也可能累死自己。</feedback>
+<link nextPageId="20BN"/>
+</option>
+<page id="20BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="20BN.f4v">
+<theme>無奈接受</theme>
+<dialogue>喔，管這麼仔細呀！好吧，那我就每天下班前寄一份工作報告給你吧。</dialogue>
+<options>
+<link optionId="21AO"/>
+<link optionId="21BO"/>
+<link optionId="21CO"/>
+</options>
+</page>	<option id="20CO" source="20CO.mp3">
+<theme>過度信任</theme>
+<scores>
+<score objective="CP4.2">1</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>現在計畫已經有了，接下來就要看你的執行力了。希望你自己要多加注意，千萬不要疏忽了，知道吧？</text>
+<feedback>你過度信任John，沒有要求他訂定一套考核機制。</feedback>
+<link nextPageId="20CN"/>
+</option>
+<page id="20CN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="20CN.f4v">
+<theme>過度自信</theme>
+<dialogue>沒問題啦，我也不是菜鳥了，這些小事不用你操心啦。</dialogue>
+<options>
+<link optionId="21AO"/>
+<link optionId="21BO"/>
+<link optionId="21CO"/>
+</options>
+</page>	
+<option id="21AO" source="21AO.mp3">
+<theme>提供資源</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>很好，那我就拭目以待囉。那這個專案，還有沒有什麼需要我幫忙的地方呢？</text>
+<feedback>很好，你主動提供協助，讓他感受到你的支持與鼓勵。</feedback>
+<link nextPageId="21AN"/>
+</option>
+<page id="21AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="21AN.f4v">
+<theme>熱情回應</theme>
+<dialogue>嗯…有一件事情我的確沒有什麼把握…想請你幫忙。就是啊，我寫的東西，都是自己想的，直接公布的話，好像太囂張了…可不可以請你先看一下，由你這邊公布，比較有公信力呢？</dialogue>
+<options>
+<link optionId="22AO"/>
+<link optionId="22BO"/>
+<link optionId="22CO"/>
+</options>
+</page>	<option id="21BO" source="21BO.mp3">
+<theme>不提供資源</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP4.1">3</score>
+</scores>
+<text>嗯，看來你的問題都已經有答案了，那我應該不用再操心這件事，可以忙我自己的工作了吧？</text>
+<feedback>你的語氣雖然有表達關心，但卻不夠正面。</feedback>
+<link nextPageId="21AN"/>
+</option>
+
+	<option id="21CO" source="21CO.mp3">
+<theme>不提供資源</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>很好，那你就把這行動方案好好落實吧，不要又出現一些亂七八糟的問題，還要我幫你收拾爛攤子啊！</text>
+<feedback>你這負面的語氣，會讓部屬覺得這是燙手山芋，不想提供協助。</feedback>
+<link nextPageId="21AN"/>
+</option>
+	
+<option id="22AO" source="22AO.mp3">
+<theme>提供資源</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>這當然沒問題，到時候你把文件寄給我，我就會幫你review一下。不過，為了讓同仁看到你的貢獻，我建議由你來公告比較適合。但你可以在郵件中說明這是我們兩個一起擬定的，這樣別人就不會說你自作主張了。</text>
+<feedback>很好。你瞭解John的難處，也願意協助。但你也懂得授權的分際，並非有求必應，照單全收。</feedback>
+<link nextPageId="22AN"/>
+</option>
+<page id="22AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="22AN.f4v">
+<theme>熱情回應</theme>
+<dialogue>喔，這樣子啊！嗯，應該也可以吧。好啊，那就這樣說定囉！謝謝George，那我沒有別的問題了。</dialogue>
+<options>
+<link optionId="23AO"/>
+<link optionId="23BO"/>
+<link optionId="23CO"/>
+</options>
+</page>	<option id="22BO" source="22BO.mp3">
+<theme>過度提供資源</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">1</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>這當然沒問題，反正你有什麼問題，儘管來找我就是了，我一定會幫你完成，不用擔心啦。</text>
+<feedback>你對部屬全力協助的精神令人感動。但照單全收的作法將讓自己焦頭爛額，也無法培養部屬獨立自主的能力。</feedback>
+<link nextPageId="22BN"/>
+</option>
+<page id="22BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="22BN.f4v">
+<theme>開心</theme>
+<dialogue>哇，大恩大德，真是太感謝了。這樣我就不用擔心了，如果到時候真的有問題，就再找你幫忙囉。</dialogue>
+<options>
+<link optionId="23AO"/>
+<link optionId="23BO"/>
+<link optionId="23CO"/>
+</options>
+</page>	<option id="22CO" source="22CO.mp3">
+<theme>忽略問題</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP2.3">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>你想太多啦！只要你寫得有道理，沒有人會覺得你太囂張啦。你要有自信一點，不要整天擔心這擔心那的。如果真有問題，就到時候再說吧！</text>
+<feedback>你忽略John的顧慮，想以加油打氣的方式來化解他的問題。但這種方式並無法有效解決問題。</feedback>
+<link nextPageId="22BN"/>
+</option>
+	
+<option id="23AO" source="23AO.mp3">
+<theme>正面引導</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.2">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>很好！那我們今天的面談也差不多告一段落了。最後能不能請你把今天討論的結論，做一個重點整理？說明一下今天面談的目的、行動方案的內容、以及自我考核的方式呢？</text>
+<feedback>你以正面的語氣，引領John進入面談的最後步驟。同時設定明確的議題，讓他有具體的思考方向。</feedback>
+<link nextPageId="23AN"/>
+</option>
+<page id="23AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S205_happy.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="23AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>呃…今天面談的目的嘛…就是要公佈維修流程囉。至於行動方案嘛…就是要在這週五寫好網頁，下週五完成「維修排程表」，然後再隔一個星期，完成「急件申請條件」以及「送修期間替代方案」。還有…考核方式嘛…就是要把這些項目寫在我的白板上，看有沒有準時完成。差不多就是這樣子，沒錯吧？</dialogue>
+<options>
+<link optionId="24AO"/>
+<link optionId="24BO"/>
+</options>
+</page>	<option id="23BO" source="23BO.mp3">
+<theme>過早結束</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>很好！那時間也差不多了，今天的面談就告一段落吧。如果你能夠落實這個行動方案，不僅能讓同仁的滿意度更高，也會讓你的績效更好！我很期待看到你的成果，加油喔！</text>
+<feedback>你的語氣很正面，但是你卻忘了請他做一個總結，很可惜。</feedback>
+<link nextPageId="24AN"/>
+</option>
+	<option id="23CO" source="23CO.mp3">
+<theme>草率結束</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>嗯，那差不多就是這樣了。你就好好落實這計畫吧！要記住，公司付你薪水，是請你來做事的，不是來打混的，如果連這種小事都做不好，那將來還能做什麼大事呢？加油囉！</text>
+
+<feedback>你的語氣負面，步驟也錯誤，難以有效激勵部屬！</feedback>
+<link nextPageId="24BN"/>
+</option>
+	
+<option id="24AO" source="24AO.mp3">
+<theme>積極肯定</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP3.3">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>非常好！John，今天很高興能和你一起訂出這個行動方案，如果你能夠好好落實，不僅能讓同仁對MIS的滿意度更高，也會讓你的績效更好！我很期待看到你的成果，加油喔！</text>
+<feedback>很好，你能以正面的語氣，肯定John在面談中的表現。同時鼓勵他把改善績效的價值，與個人職涯發展目標結合。</feedback>
+<link nextPageId="24AN"/>
+</option>
+<page id="24AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S205_neutral.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="24AN.f4v">
+<theme>熱情回應</theme>
+<dialogue>好啊好啊，我會盡量努力，希望不要讓你失望。那我回去忙囉，再見。</dialogue>
+<link nextPageId="24END"/>
+</page>	<option id="24BO" source="24BO.mp3">
+<theme>負面</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP3.3">1</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>嗯，那差不多就是這樣了。你就好好落實這計畫吧！要記住，公司付你薪水，是請你來做事的，不是來打混的，如果連這種小事都做不好，那將來還能做什麼大事呢？加油囉！</text>
+<feedback>你的語氣顯得負面，讓人覺得部屬只是來聽你訓話的，只是公司的生產工具，沒有什麼更高的價值。</feedback>
+<link nextPageId="24BN"/>
+</option>
+<page id="24BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S205_embarrassed.f4v" name="John" mediaType="video" background="S205.jpg" videoSource="24BN.f4v">
+<theme>消極以對</theme>
+<dialogue>喔，好，我知道了，那我回去囉。</dialogue>
+<link nextPageId="24END"/>
+</page>	<page id="24END" type="scoreCard" background="S205.jpg">
+<text>恭喜你，你已經演練完本案例的所有面談步驟。接著請點選「技巧檢討」頁籤，察看你的演練成績。</text> 
+</page>
+
+	
+</nodes>
+<objectives>
+<category id="CP1" name="尊重肯定">
+<objective id="CP1.1" name="正面說法"/>
+<objective id="CP1.2" name="避免謾罵"/>
+<objective id="CP1.3" name="肯定貢獻"/>
+</category>
+<category id="CP2" name="主動傾聽">
+<objective id="CP2.1" name="詢問澄清確認"/>
+<objective id="CP2.2" name="同理心"/>
+<objective id="CP2.3" name="同理非同意"/>
+</category>
+<category id="CP3" name="促進參與">
+<objective id="CP3.1" name="鼓勵發言"/>
+<objective id="CP3.2" name="引導思考"/>
+<objective id="CP3.3" name="肯定參與"/>
+</category>
+<category id="CP4" name="授權與能">
+<objective id="CP4.1" name="提供資源"/>
+<objective id="CP4.2" name="考核督導"/>
+<objective id="CP4.3" name="掌舵而不駕馭"/>
+</category>
+<category id="CP5" name="具體明確">
+<objective id="CP5.1" name="避免含糊"/>
+<objective id="CP5.2" name="SMART績效目標"/>
+<objective id="CP5.3" name="提供佐證資料"/>
+</category>
+<category id="ST" name="步驟相關技巧">
+<objective id="ST0.1" name="掌握流程"/>
+<objective id="ST2.1" name="三明治原則"/>
+<objective id="ST3.1" name="連結價值"/>
+</category>
+</objectives>
+<stages>
+<stage id="ST1" name="找出績效落差"/>
+<stage id="ST2" name="闡明績效落差"/>
+<stage id="ST3" name="鼓勵承擔責任"/>
+<stage id="ST4" name="探討原因對策"/>
+<stage id="ST5" name="發展行動方案"/>
+<stage id="ST6" name="建立考核機制"/>
+<stage id="ST7" name="總結面談結果"/>
+</stages>
+</simulation>			

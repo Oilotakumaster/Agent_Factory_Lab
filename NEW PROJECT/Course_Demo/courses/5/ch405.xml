@@ -1,0 +1,35 @@
+<node type="chapter" id="405" label="步驟五：追問案例">  
+    <lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S403_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">George在探問<font color="#F40020">主動積極</font>職能時，使用了很多追問句，但他不確定自己是否使用得當。<br><br>
+所以他就把曾使用過的追問句都集合起來，希望你告訴他，哪些是最有效的追問句…</div>]]>       
+        </page>
+    </lesson> 	
+	<lesson label="2.任務說明">
+        <page type="imageText" background="assets/images/S402_task.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你這次的任務，依舊是擔任<font color="#F40020">George的顧問</font>，協助他找到最佳追問句。你必須採用正確的<font color="#F40020">追問技巧</font>及<font color="#F40020">溝通技巧</font>，才能順利完成本任務！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">職能清單</font>中，瞭解主動積極的行為指標，然後才開始<font color="#F40020">進行演練</font>。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	     
+        </page>
+    </lesson>	      
+    <lesson label="3.職能清單">
+        <page type="imageText" background="assets/images/S403_task.jpg">
+            <![CDATA[<div style="width:50%; float:right; padding:90px">
+            <font color="#F40020">一、主動積極：</font>
+                    <textformat indent="-20">
+                        <li>歸屬不明之任務，能主動爭取。</li>
+                        <li>不清楚之處，能主動澄清、詢問、確認。</li>
+                        <li>採取預防性措施，避免問題發生。</li>
+                        <li>獨立作業，不需監督。</li>
+                        <li>超越工作範圍。</li></textformat></div>]]>      
+        </page>
+    </lesson>   
+     <lesson label="4.進行演練">
+        <simulation>courses/5/S405.xml</simulation>       
+    </lesson>
+    <lesson label="5.技巧檢討">
+        <page type="simulationRecords">
+        </page>
+    </lesson>
+ </node> 

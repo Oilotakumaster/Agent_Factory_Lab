@@ -1,0 +1,37 @@
+<node type="chapter" id="499" label="案例二：持續學習(評估)">	
+ 	<lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S401_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">鴻展公司資訊部門將招聘一名MIS工程師, Simon是應徵者之一，由George負責面試。<br><br>
+此時George已經完成對<font color="#F40020">持續學習</font>職能的探問，但他卻無法從Simon的回應中，辨別出所隱含的職能高低。所以他就把Simon的各種回應都彙集起來，請你幫忙評估…</div>]]>       
+        </page>
+    </lesson> 	     
+    <lesson label="2.任務說明">
+    	<page type="imageText" background="assets/images/S402_bg.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你這次的任務，是擔任<font color="#F40020">George的顧問</font>，協助他從Simon的回應中，挑出可獲得最高職能評分的回應！你必須具備正確的<font color="#F40020">評估技巧</font>，才能順利完成本任務！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">職能清單</font>中，瞭解持續學習的行為指標，然後再開始<font color="#F40020">進行演練</font>。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	  		
+		</page>
+	</lesson>	
+ 	<lesson label="3.職能清單">
+    	<page type="imageText" background="assets/images/S401_bg1.jpg">
+			<![CDATA[<div style="width:50%; float:right; padding:90px">待聘職務：資訊部MIS工程師。所需職能及行為指標如下：<br><br>
+<font color="#F40020">持續學習：</font>
+					<textformat indent="-20">
+						<li>把挑戰視為學習機會。</li>
+						<li>能分辨出自己需要學習的地方。</li>
+						<li>能找出適合自己的學習方式。</li>
+						<li>積極將學習成果應用在工作中。</li>
+						<li>願意承擔學習中所遭遇的困難或風險。</li><br>
+						主動積極（略）<br><br>
+						團隊合作（略）</textformat></div>]]>				
+		</page>
+	</lesson>
+ 	<lesson label="4.展開面談">
+    	<simulation>courses/5/S499.xml</simulation>    	
+ 	</lesson>
+ 	<lesson label="5.技巧檢討">
+    	<page type="simulationRecords">
+    	</page>
+ 	</lesson>
+ </node> 

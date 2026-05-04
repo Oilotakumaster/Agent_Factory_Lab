@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木人巷 - Gemini Live POC</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #f5f5f5; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
+        .status { margin: 20px 0; color: #666; }
+        button { padding: 12px 24px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: 0.2s; margin: 5px; }
+        #btnConnect { background: #4285f4; color: white; }
+        #btnTalk { background: #e0e0e0; color: #999; cursor: not-allowed; }
+        #btnTalk.active { background: #ea4335; color: white; cursor: pointer; }
+        #btnTalk.recording { background: #ff0000; box-shadow: 0 0 10px rgba(255,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>🤖 虛擬人語音大腦測試</h2>
+        <div class="status" id="statusText">系統狀態: 未連線</div>
+        
+        <div>
+            <button id="btnConnect">1. 連線至伺服器</button>
+        </div>
+        <div style="margin-top: 20px;">
+            <button id="btnTalk" disabled>2. 按住說話</button>
+        </div>
+    </div>
+
+    <script>
+        const btnConnect = document.getElementById('btnConnect');
+        const btnTalk = document.getElementById('btnTalk');
+        const statusText = document.getElementById('statusText');
+        
+        let ws = null;
+        let audioContext = null;
+
+        btnConnect.addEventListener('click', async () => {
+            statusText.innerText = "連線中...";
+            // 建立 WebSocket 連線到我們的 Node 後端
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            ws = new WebSocket(`${protocol}//${window.location.host}`);
+            
+            ws.onopen = () => {
+                statusText.innerText = "✅ 已連線，請說話";
+                btnConnect.style.display = 'none';
+                btnTalk.disabled = false;
+                btnTalk.classList.add('active');
+                
+                // 初始化音訊播放器
+                audioContext = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: 24000 });
+            };
+
+            ws.onmessage = async (event) => {
+                // 接收後端傳來的 JSON (Gemini 格式)
+                const data = JSON.parse(event.data);
+                
+                if (data.serverContent && data.serverContent.modelTurn) {
+                    const parts = data.serverContent.modelTurn.parts;
+                    for (const part of parts) {
+                        if (part.inlineData && part.inlineData.data) {
+                            // 這裡收到的是 Base64 編碼的 PCM 音訊，需要播放
+                            playAudioFromBase64(part.inlineData.data);
+                        }
+                    }
+                }
+            };
+
+            ws.onclose = () => {
+                statusText.innerText = "❌ 連線已中斷";
+                btnTalk.disabled = true;
+                btnTalk.classList.remove('active');
+            };
+        });
+
+        // 簡化的音訊播放函式
+        async function playAudioFromBase64(base64String) {
+            const binaryString = atob(base64String);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            // Gemini 傳回的是 24kHz PCM 16-bit
+            const int16Array = new Int16Array(bytes.buffer);
+            const audioBuffer = audioContext.createBuffer(1, int16Array.length, 24000);
+            const channelData = audioBuffer.getChannelData(0);
+            for (let i = 0; i < int16Array.length; i++) {
+                channelData[i] = int16Array[i] / 32768.0;
+            }
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(audioContext.destination);
+            source.start();
+        }
+
+        // 注意：為了保持程式碼簡潔作為 POC 展示，這裡省略了麥克風錄音 (MediaRecorder/AudioWorklet) 傳送的實作。
+        // 完整的錄音實作需透過 AudioContext 擷取 16kHz PCM 傳送 JSON。
+        
+        btnTalk.addEventListener('mousedown', () => {
+            if (!ws || ws.readyState !== WebSocket.OPEN) return;
+            btnTalk.classList.add('recording');
+            btnTalk.innerText = '錄音中...';
+            // 這裡可以傳送一段文字測試，驗證系統是否通順
+            const msg = {
+                clientContent: {
+                    turns: [{
+                        role: "user",
+                        parts: [{ text: "你好，請用中文做個簡短的自我介紹" }]
+                    }],
+                    turnComplete: true
+                }
+            };
+            ws.send(JSON.stringify(msg));
+        });
+
+        btnTalk.addEventListener('mouseup', () => {
+            btnTalk.classList.remove('recording');
+            btnTalk.innerText = '按住說話';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<node type="chapter" id="406" label="步驟六：結語案例">  
+   <lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S401_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">George在探問完職能清單所有職能後，面談即將步入尾聲…<br><br>
+			此時，Lisa顯然有些疑慮與困惑，George該如何處理，才能讓面談圓滿結束呢？</div>]]>       
+        </page>
+    </lesson> 
+   
+   <lesson label="2.任務說明">
+        <page type="imageText" background="assets/images/S402_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你這次的任務，則是扮演<font color="#F40020">George</font>，對Lisa執行結語步驟。你必須採用正確的<font color="#F40020">結語技巧</font>及<font color="#F40020">溝通原則</font>，才能順利完成本任務！</li><br>
+<li>如果你選擇接受本任務，請點選<font color="#F40020"></font>進行演練頁籤。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	     
+        </page>
+    </lesson>
+       
+    <lesson label="3.進行演練">
+        <simulation>courses/5/S406.xml</simulation>       
+    </lesson>
+    <lesson label="4.技巧檢討">
+        <page type="simulationRecords">
+        </page>
+    </lesson>
+ </node> 

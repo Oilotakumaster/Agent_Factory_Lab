@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木人巷 - 企業培訓顧問</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <!-- 認證畫面 Overlay (保留) -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-modal">
+            <div class="auth-icon">🔒</div>
+            <h2 style="color: #333">企業安全登入系統</h2>
+            <p style="margin-bottom: 30px;">本內訓平台受高等級安全防護，<br>請使用已授權的 Google 帳戶登入以驗證身分。</p>
+            
+            <!-- 傳統帳號密碼登入區塊 -->
+            <div class="custom-login-form">
+                <input type="text" id="userId" placeholder="請輸入帳號 (User ID)" autocomplete="off" class="login-input">
+                <input type="password" id="password" placeholder="請輸入密碼" class="login-input">
+                <button class="custom-login-btn" onclick="handleTraditionalLogin()">登入系統</button>
+            </div>
+            
+            <p id="auth-error" class="auth-error" style="display:none; margin-top:20px;">登入驗證失敗，請重試</p>
+        </div>
+    </div>
+
+    <!-- 頂部宣傳網址 Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">木人巷</div>
+        <div class="nav-user">
+            <span>公司簡介</span>
+            <span class="active">套裝課程</span>
+            <span>專案服務</span>
+            <span>電子報</span>
+        </div>
+    </nav>
+
+    <!-- 主要內容區：採用 KJ Simulation 真實的 三欄式卡片排版 -->
+    <main class="container">
+        
+        <div class="grid-container" id="courses-grid">
+            <!-- 課程卡片將會由 JavaScript 動態從 Courses.xml 載入並產生 -->
+        </div>
+
+    </main>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <p>木人巷股份有限公司 | 電話: +886-2-26789120 | 信箱: service@kjsimulation.com | 地址: 239 新北市鶯歌區尖山埔路151號</p>
+        <p class="copyright">Copyright 2012 - 2026 | All Rights Reserved | KJ Simulation Inc.</p>
+    </footer>
+
+    <!-- 影片播放 Modal (獨立覆蓋層) -->
+    <div id="video-modal" class="video-modal" style="display:none;">
+        <div class="course-player-container">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            
+            <!-- 左側章節目錄 -->
+            <div class="course-sidebar" id="course-sidebar">
+                <h3 id="course-player-title">課程名稱</h3>
+                <ul id="course-chapters-list" class="chapter-list">
+                    <!-- 章節將由 JS 動態產生 -->
+                </ul>
+            </div>
+            
+            <!-- 右側影片播放區 -->
+            <div class="course-video-area">
+                <div class="modal-iframe-wrapper" id="modal-iframe-wrapper">
+                    <!-- Iframe 將由 Javascript 動態載入 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 頁面載入時，先動態讀取 Courses.xml 並產生所有課程卡片
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // 加入時間戳記避免瀏覽器快取舊的 XML
+                const response = await fetch('Courses.xml?v=' + new Date().getTime());
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, "text/xml");
+                
+                const folder = xmlDoc.getElementsByTagName("courses")[0].getAttribute("folder").replace(/\\/g, '/');
+                const courseNodes = xmlDoc.getElementsByTagName("course");
+                
+                const grid = document.getElementById('courses-grid');
+                grid.innerHTML = ''; 
+                
+                // 根據使用者要求，只產生一開始的前 3 個影片
+                const maxCourses = Math.min(3, courseNodes.length);
+                for(let i=0; i<maxCourses; i++) {
+                    const id = courseNodes[i].getAttribute("id");
+                    const label = courseNodes[i].getAttribute("label");
+                    const src = folder + courseNodes[i].getAttribute("src");
+                    const desc = courseNodes[i].textContent.trim();
+                    
+                    const cardHTML = `
+                        <div class="course-card" id="course-card-${id}" data-course-id="course_${id}">
+                            <div class="video-container thumb-mode" onclick="openCoursePlayer(${id})">
+                                <img src="${src}" alt="課程預覽" class="course-thumb-img">
+                                <div class="enter-course-btn">進入課程</div>
+                            </div>
+                            <div class="course-title">${label}</div>
+                            <p class="course-desc">${desc}</p>
+                        </div>
+                    `;
+                    grid.insertAdjacentHTML('beforeend', cardHTML);
+                }
+            } catch (e) {
+                console.error("無法載入課程清單:", e);
+            }
+        });
+
+        // 傳統帳號密碼登入邏輯，連線回舊版的 Azure C# App Server
+        async function handleTraditionalLogin() {
+            const userIdInput = document.getElementById('userId').value;
+            const passwordInput = document.getElementById('password').value;
+            const errorMsg = document.getElementById('auth-error');
+            
+            if (!userIdInput || !passwordInput) {
+                errorMsg.style.display = 'block';
+                errorMsg.innerText = "請完整輸入帳號與密碼！";
+                return;
+            }
+
+            errorMsg.style.display = 'block';
+            errorMsg.innerText = "連線至 Azure 舊版主機驗證中...";
+            errorMsg.style.color = "#ccc";
+
+            try {
+                // 將帳號密碼直接丟給原版的 Azure C# API 進行查核
+                const apiUrl = `https://courseserviceazure20251029225833-gphmevf4a9dcfae8.japanwest-01.azurewebsites.net/course/login/${encodeURIComponent(userIdInput)}/${encodeURIComponent(passwordInput)}`;
+                const res = await fetch(apiUrl);
+                
+                if (res.ok) {
+                    const data = await res.json();
+                    
+                    // 根據舊版 API 設計，如果有權限會回傳如 ["1", "4", "5"]，沒權限會回傳 []
+                    if (Array.isArray(data) && data.length > 0) {
+                        console.log("Welcome:", userIdInput);
+                        console.log("Allowed courses from Azure:", data);
+                        window.currentUserId = userIdInput; // 儲存供稍後產生加密網址使用
+                        
+                        // 轉換成新版前端要的格式: "1" -> "course_1"
+                        const permitted_courses = data.map(id => `course_${id}`);
+                        
+                        // 根據資料庫回傳的清單，判定哪些要上鎖
+                        applyPermissions(permitted_courses);
+                        
+                        // 移除登入牆
+                        const authOverlay = document.getElementById('auth-overlay');
+                        authOverlay.style.opacity = '0';
+                        setTimeout(() => {
+                            authOverlay.style.display = 'none';
+                        }, 300);
+                    } else {
+                        errorMsg.innerText = "帳號或密碼錯誤，請重新輸入！";
+                        errorMsg.style.color = "#ff4444";
+                    }
+                } else {
+                    errorMsg.innerText = "權限驗證失敗，發生錯誤";
+                    errorMsg.style.color = "#ff4444";
+                }
+            } catch(e) {
+                errorMsg.innerText = "無法連線至資料庫伺服器";
+                errorMsg.style.color = "#ff4444";
+            }
+        }
+
+        // 根據權限自動將沒買的課鎖起來
+        function applyPermissions(allowedCourses) {
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const courseIdStr = card.getAttribute('data-course-id');
+                if (!allowedCourses.includes(courseIdStr)) {
+                    lockCourse(card);
+                }
+            });
+        }
+
+        function lockCourse(courseElement) {
+            const videoContainer = courseElement.querySelector('.video-container');
+            videoContainer.onclick = null;
+            
+            // 替換為鎖定模式的 class
+            videoContainer.classList.remove('thumb-mode');
+            videoContainer.classList.add('locked-mode');
+            videoContainer.style.border = "4px solid #ddd";
+            
+            // 移除進入按鈕，加入鎖頭重疊層
+            const btn = videoContainer.querySelector('.enter-course-btn');
+            if (btn) btn.remove();
+            
+            const lockHTML = `
+                <div class="lock-overlay">
+                    <div class="lock-icon">🔒</div>
+                </div>
+            `;
+            videoContainer.insertAdjacentHTML('beforeend', lockHTML);
+            
+            courseElement.querySelector('.course-title').style.color = "#999";
+        }     
+
+        // 開啟課程播放器：讀取該課程專屬的 Content.xml，產生左側目錄與右側影片
+        async function openCoursePlayer(courseId) {
+            try {
+                // 讀取課程目錄 XML
+                const response = await fetch(`courses/${courseId}/Content.xml`);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, "text/xml");
+                
+                const courseNode = xmlDoc.getElementsByTagName("course")[0];
+                const courseTitle = courseNode.getAttribute("name") || courseNode.getAttribute("label");
+                
+                // 設定左側標題
+                document.getElementById('course-player-title').innerText = courseTitle;
+                
+                // 取得所有章節節點
+                const chapters = xmlDoc.getElementsByTagName("node");
+                const chaptersList = document.getElementById('course-chapters-list');
+                chaptersList.innerHTML = '';
+                
+                let firstVideoUrl = null;
+
+                for(let i=0; i<chapters.length; i++) {
+                    const chapter = chapters[i];
+                    if (chapter.getAttribute("type") === "chapter") {
+                        const label = chapter.getAttribute("label");
+                        // 嘗試取得 <embed> 標籤作為影片網址，如果沒有，則找文字內容
+                        const embedNode = chapter.getElementsByTagName("embed")[0];
+                        let videoUrl = embedNode ? embedNode.textContent.trim() : chapter.textContent.trim();
+                        
+                        // 修正一些可能包含 XML 標籤遺留的問題
+                        videoUrl = videoUrl.replace(/<\/?[^>]+(>|$)/g, "").trim();
+
+                        if (!firstVideoUrl && videoUrl) firstVideoUrl = videoUrl;
+
+                        const li = document.createElement('li');
+                        li.className = 'chapter-item';
+                        li.innerText = label;
+                        li.onclick = function() {
+                            // 點擊章節時切換樣式與影片
+                            document.querySelectorAll('.chapter-item').forEach(el => el.classList.remove('active'));
+                            this.classList.add('active');
+                            playVideo(courseId, videoUrl);
+                        };
+                        
+                        chaptersList.appendChild(li);
+                    }
+                }
+
+                // 顯示 Modal
+                document.getElementById('video-modal').style.display = 'flex';
+                
+                // 預設播放第一個章節
+                if (firstVideoUrl) {
+                    document.querySelector('.chapter-item').classList.add('active');
+                    playVideo(courseId, firstVideoUrl);
+                }
+
+            } catch (e) {
+                console.error("無法載入課程內容:", e);
+                alert("無法載入該課程內容");
+            }
+        }
+
+        // 播放影片邏輯 (加入 Dacast 動態加密票券驗證)
+        async function playVideo(courseId, originalUrl) {
+            const wrapper = document.getElementById('modal-iframe-wrapper');
+            wrapper.innerHTML = `<div style="color:white; padding: 20px; text-align:center;">正在向 Azure 伺服器申請加密票券...</div>`;
+
+            try {
+                // 1. 向 Azure C# 主機申請 5 分鐘專屬加密網址
+                const userId = window.currentUserId || 'guest';
+                const apiUrl = `https://courseserviceazure20251029225833-gphmevf4a9dcfae8.japanwest-01.azurewebsites.net/course/getSecureVideoUrl/${courseId}/${userId}`;
+                
+                const res = await fetch(apiUrl);
+                
+                if (res.ok) {
+                    const data = await res.json();
+                    // 2. 拿到加密網址後，才開始在 iframe 裡面播放
+                    console.log("獲得 Dacast 加密網址:", data.secureUrl);
+                    wrapper.innerHTML = `<iframe src="${data.secureUrl}" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>`;
+                } else {
+                    wrapper.innerHTML = `<div style="color:red; padding: 20px;">申請加密影片失敗！請確認 Azure API 是否正常</div>`;
+                }
+            } catch (e) {
+                console.error("加密連線異常:", e);
+                wrapper.innerHTML = `<div style="color:red; padding: 20px;">無法連線至 Azure 售票亭伺服器</div>`;
+            }
+        }
+
+        // 關閉影片 Modal
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const wrapper = document.getElementById('modal-iframe-wrapper');
+            modal.style.display = 'none';
+            wrapper.innerHTML = ''; // 清空 iframe 以停止播放背景聲音
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--<course name="招募面談" label="招募面談模擬訓練學程" src="assets/courses/TS_logo.jpg" treeWidth="260">
+		<node type="chapter" id="100101" label="【基礎知識篇】">
+				<embed>sl/COA_1-1_web/story.html</embed>
+		</node>
+	<node type="folder" label="【模擬演練篇】">
+		<node type="chapter" label="案例一：持續學習(提問、追問)">courses/5/ch408.xml</node> 
+		<node type="chapter" label="案例二：持續學習(評估)">courses/5/ch409.xml</node> 
+	</node>
+</course>
+-->
+<!--
+<course name="招募面談" label="招募面談模擬訓練學程" src="assets/courses/TS_logo.jpg" treeWidth="260">
+ 	<node type="chapter" id="100101" label="■   模組一：基礎知識">
+				<embed>sl/TS1/story.html</embed>
+	</node>
+	<node type="chapter" id="100102" label="■   模組二：面談步驟">
+				<embed>sl/TS2/story.html</embed>
+	</node>
+	<node type="folder" label="模組三：模擬演練">
+		<node type="chapter" label="持續學習【提問及追問】">courses/5/ch408.xml</node> 
+		<node type="chapter" label="持續學習【評估】">courses/5/ch409.xml</node> 
+		<node type="chapter" label="團隊合作【提問及追問】">courses/5/ch410.xml</node> 
+		<node type="chapter" label="團隊合作【評估】">courses/5/ch411.xml</node> 
+		<node type="chapter" label="研發創新【提問及追問】">courses/5/ch412.xml</node>
+	</node>
+</course>
+-->
+<course name="招募面談" label="招募面談模擬訓練學程" src="assets/courses/TS_logo.jpg" treeWidth="230">
+ 	<node type="chapter" id="100501" label="■   模組一：基礎知識">
+				<embed>sl/TS1/story.html</embed>
+	</node>
+	<node type="chapter" id="100502" label="■   模組二：面談步驟">
+				<embed>sl/TS2/story.html</embed>
+	</node>
+	<node type="chapter" id="100503" label="■   模組三：模擬演練">
+				<embed>sl/TS3/story.html</embed>
+	</node>
+</course>

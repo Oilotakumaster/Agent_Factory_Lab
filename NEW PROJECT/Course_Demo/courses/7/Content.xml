@@ -1,0 +1,5 @@
+<course name="績效診斷" label="課程目錄" src="assets/courses/PA_logo.jpg">
+	<node type="chapter" id="100701" label="績效診斷">
+		<embed>sl/PA/story.html</embed>
+	</node>
+</course>	

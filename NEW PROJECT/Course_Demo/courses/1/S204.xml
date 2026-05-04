@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="" characterWidth="51.89%" characterHeight="100%" characterX="0px" characterY="0px" optionsWidth="60%" optionsHeight="100%" dialogStart="0.5" optionsX="0" optionsY="0"  flvPath="simulation/S204/video/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S204_startPage.jpg" srcWidth="772" paddingTop="40" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">你和Kelly約好在會議室進行面談。Kelly並不知道此次面談目的，所以一進門後就主動詢問…<br><br>
+本案例包含16回合，請在右下角選擇本次演練模式：<br/><br/>
+<li>一、練習(不計分)：演練過程中，你可隨時瀏覽各選項的教練回饋。</li><br>
+<li>二、測驗(有計分)：演練過程中，你將無法瀏覽教練回饋。演練結束後，成績將上傳學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="1AN"/>
+</page>
+			
+<page id="1AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="1AN.f4v">
+<dialogue>George你說要找我開會，怎麼了，有什麼事嗎？</dialogue>
+<options>
+<link optionId="2AO" />
+<link optionId="2BO" />
+<link optionId="2CO" />
+</options>
+</page>			
+
+<option id="2AO" source="2AO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>Kelly，這一陣子你為了辦公室搬遷的事經常加班，真是辛苦你了。不過有同仁反應，說你打算延後公布搬遷日期，所以我想瞭解一下狀況，如果可以的話，還是要準時在明天公布才好！</text>
+<feedback>很好，你懂得運用三明治原則開場，這樣既可以顧及部屬的自尊，又可以清楚說明本次面談的目的。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="2AN.f4v">
+<theme>推拖延遲</theme>
+<dialogue>其實我也想早一點公布搬家日期啦…可是…我到目前為止，都還沒有找到最合適的搬家公司，我希望你能再給我兩個星期，讓我把這件事情做好來。</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="2BO.mp3">
+<theme>目標不清</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">3</score>
+<score objective="ST2.1">3</score>
+</scores>
+<text>Kelly，有關搬家這件事情，同仁們已經有許多抱怨了，內容我就不多說了，你可不可以老實告訴我，到底是什麼原因，變成這個狀況啊？</text>
+
+
+
+
+<feedback>「同仁有抱怨」是負面說法，改用「同仁反應」會比較好。而且，績效落差的內容要說清楚，避免用「內容我就不多說了」這種啟人疑竇的說法。另外，在還沒陳述績效落差，鼓勵承擔責任之前，也不宜進入原因之探討。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="2BN.f4v">
+<theme>推拖延遲</theme>
+<dialogue>沒什麼狀況啊？只是需要多一些時間而已啦。你如果願意再多等兩個星期，我保證會給你一個完美的成果！</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2CO" source="2CO.mp3">
+<theme>目標不清</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.1">1</score>
+<score objective="ST2.1">1</score>
+</scores>
+<text>Kelly，你最近工作態度好像有些散漫，很多事情都沒有趕上應有的節奏，這樣下去不太好喔，希望你可以趕快恢復過去的水準。</text>
+
+
+
+
+<feedback>你應該清楚說明Kelly績效落差的內容，而不是用「工作有些散漫」這種籠統的字眼。另外，你希望他達成的目標也要說清楚一些，而不是「趕快恢復過去的水準」。</feedback>
+<link nextPageId="2CN"/>
+</option>
+
+<page id="2CN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="2CN.f4v">
+<theme>誤會</theme>
+<dialogue>態度散漫？你是說上星期遲到三次的問題嗎？抱歉啦，我最近工作比較累，早上常常爬不起來，我一定會改進的，你不用擔心啦。</dialogue>
+<options>
+<link optionId="2DO" />
+<link optionId="2EO" />
+</options>
+</page>	<option id="2DO" source="2DO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>其實我是想跟你討論搬家的事情。這一陣子你為了辦公室搬遷的事經常加班，真是辛苦你了。不過有同仁反應，說你打算延後公布搬遷日期，所以我想瞭解一下狀況，如果可以的話，還是要準時在明天公布才好！</text>
+
+<feedback>很好，你懂得運用三明治原則，除了可以顧及部屬的自尊，又可以清楚地讓部屬明白本次面談的目的。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<option id="2EO" source="2EO.mp3">
+<theme>定義不清</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.1">3</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>我是要跟你討論搬家日期無法準時公布的問題啦！你可不可以老實告訴我，到底是什麼原因，變成這個狀況啊？ </text>
+<feedback>能在一開場清楚說明面談目的是對的，但是如果能夠包裝一下，緩和一下對部屬自尊心的衝擊，效果會更好。另外，在還沒陳述績效落差，鼓勵承擔責任之前，也不宜進入原因之探討。</feedback>
+<link nextPageId="2BN"/>
+</option>
+<option id="3AO" source="3AO.mp3">
+<theme>連結價值</theme>
+<scores>
+<score objective="CP1.3">5</score>
+<score objective="CP3.2">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>我很肯定你追求完美的態度，可是時程的掌握也非常重要啊。畢竟新辦公室的租約都已經簽了，如果延後兩個星期才搬家，公司要多付出多少租金你知道嗎？</text>
+
+<feedback>很好。你能先肯定他的用心，然後再引導他思考績效落差的後果，以瞭解改善的價值。</feedback>
+<link nextPageId="3AN"/>
+</option>
+<page id="3AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="3AN.f4v">
+<theme>恍然大悟</theme>
+<dialogue>啊…對喔，晚搬家要多付房租喔，我算一下，嗯…這個…加起來…哇…居然會多出30萬耶。看來真的是不能拖了，好，我會想辦法準時公布搬家日期的。</dialogue>
+<options>
+<link optionId="4AO"/>
+<link optionId="4BO"/>
+<link optionId="4CO"/>
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP3.2">3</score>
+<score objective="ST3.1">3</score>
+</scores>
+<text>你有沒有成本概念啊？晚兩個星期搬家，公司得多付多少房租啊？你給我算清楚，可別因為貪小便宜，反而害公司損失更多啊！</text>
+
+
+<feedback>雖然你想要藉由說明後果，讓Kelly瞭解改善績效的價值。可是你的說法過於負面，對方將難以接受。</feedback>
+<link nextPageId="3AN"/>
+</option>
+	<option id="3CO" source="3CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP3.2">3</score>
+<score objective="ST3.1">3</score>
+</scores>
+<text>不過就是搬家嘛！又不是登陸月球！怎麼搞得這麼複雜？還得晚兩個星期，這樣公司得多付多少房租你知道嗎？ </text>
+
+
+<feedback>雖然你想要藉由說明後果，讓Kelly瞭解改善績效的價值，可是你的說法充滿嘲諷謾罵，容易引起情緒反彈。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+	
+
+
+
+
+
+<option id="4AO" source="4AO.mp3">
+<theme>澄清詢問</theme>
+<scores>
+<score objective="CP1.3">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP2.2">5</score>
+</scores>
+<text>我很高興你願意即時調整你的做法，不過我也看得出來，你在尋找搬家公司時，有遭遇一些困難，可以告訴我出了什麼狀況嗎？</text>
+<feedback>非常好。你先肯定部屬勇於承擔，同理他的處境，然後詢問他的理由。</feedback>
+<link nextPageId="4AN"/>
+</option>
+<page id="4AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_sad.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="4AN.f4v">
+<theme>委屈敘述</theme>
+<dialogue>唉呦，還不就是想要幫公司多省一些錢，所以我就找了七家搬家公司來估價啊，可是到今天為止，只有五家寄來報價單，還有兩家沒消息，我就是卡在這裡，才一直沒有辦法做決定啊。</dialogue>
+<options>
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>諷刺批評</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP1.3">1</score>
+<score objective="CP2.1">3</score>
+</scores>
+<text>知道就好！那你現在老老實實告訴我，到底是哪裡卡住了？為什麼拖這麼久還沒決定呢？</text>
+
+<feedback>你把部屬承擔的態度視為理所當然，接著又不耐煩地要求他說明原因，這些都不利於教導的進行。</feedback>
+<link nextPageId="4AN"/>
+</option>
+	<option id="4CO" source="4CO.mp3">
+<theme>諷刺批評</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP1.3">1</score>
+</scores>
+
+<text>我就說嘛，薑是老的辣。你們這些年輕人，做事都不用大腦，連房租的成本都沒有考慮進來。</text>
+
+
+<feedback>部屬願意承擔責任，你不僅沒有讚許，反而當成賣弄自己能力的機會！</feedback>
+<link nextPageId="4AN"/>
+</option>	
+<option id="5AO" source="5AO.mp3">
+<theme>肯定貢獻＋澄清詢問</theme>
+<scores>
+<score objective="CP1.3">5</score>
+<score objective="CP2.1">5</score>
+<score objective="CP2.2">5</score>
+</scores>
+<text>哇，你還真有心，找了這麼多廠商來比價啊！不過即使少了兩家，也還有五家啊，為什麼還要等呢？</text>
+
+<feedback>很好。你同理Kelly他的想法，感謝他的用心，然後誠心詢問他矛盾之處。</feedback>
+<link nextPageId="5AN"/>
+</option>
+<page id="5AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_embarrassed.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="5AN.f4v">
+<theme>解釋說明</theme>
+<dialogue>其實喔，我都有打聽過了，這兩家沒寄報價單的廠商，正好是同業公認價格最低廉的，如果沒讓他們參加比價，那真是太可惜了。</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>假設武斷</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>有五家的報價單就很夠啦，還有什麼好等的呢？難道你跟這兩家廠商有什麼特殊交情嗎？</text>
+
+
+
+
+<feedback>你對於尚未釐清之事，就隨意武斷假設，這將導致雙方隔閡，不利於教導進行。</feedback>
+<link nextPageId="5BN"/>
+</option>
+<page id="5BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="5BN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>真是好心沒好報！我想幫公司省錢，你居然會懷疑我？你如果不相信我，乾脆找別人來做好了！</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP2.1">3</score>
+</scores>
+<text>你就是這麼婆婆媽媽！明明三家廠商比價就夠了，為什麼搞出七家來呢？而且時間到了沒寄報價單就是棄權啦，有什麼好等的呢？</text>
+
+<feedback>你完全忽略部屬的用心，而且在沒有澄清問題成因前，就斥責他的行為。</feedback>
+<link nextPageId="5CN"/>
+</option>
+<page id="5CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="5CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>我也是求好心切啊！這兩家沒寄報價單的廠商，正好是同業公認價格最低廉的。你如果不在乎公司多花冤枉錢的話，那我也沒什麼好說了！</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	
+<option id="6AO" source="6AO.mp3">
+<theme>提供指導</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP4.1">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>我理解你為公司節省成本的用心，不過你在分析各報價單的成本時，應該把延遲成本也算進去，這樣比價的結果才準確啊！</text>
+
+<feedback>你展現了同理心，體諒部屬的用心。而且你對於部屬所忽略的重點，也適時地提供指導。這些都是非常好的技巧運用。</feedback>
+<link nextPageId="6AN"/>
+</option>
+<page id="6AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="6AN.f4v">
+<theme>聽不懂</theme>
+<dialogue>這聽起來好複雜啊？不就是貨比三家不吃虧嗎？所以我才想說，如果能多找幾家廠商來比價，就可以找到最划算的方案啦！</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6BO" source="6BO.mp3">
+<theme>不知如何指導</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP4.1">3</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>我知道你是想幫公司節省成本。可是你評估成本的方法好像有問題，感覺起來怪怪的，不太合理。</text>
+
+
+<feedback>雖然你展現出同理心，理解Kelly的用心，並指出其可能錯誤之處。但是你所給予的指導過於模糊不清。具體一些會更好！</feedback>
+<link nextPageId="6BN"/>
+</option>
+<page id="6BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="6BN.f4v">
+<theme>XXX</theme>
+<dialogue>不會啊，我覺得很合理啊，反正貨比三家不吃虧，我們多找幾家廠商來比價，一定可以找到最划算的方案啦！</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>如果不能準時搬家，報價再低都是屁話！你喔，都來公司幾年了，居然連個簡單的專案成本都算不清楚，真是白混了！</text>
+<feedback>你沒有展現同理心去體諒Kelly的用心，只會一昧地斥責。另外，你也沒有發揮你主管的能力，協助部屬找出問題癥結。</feedback>
+<link nextPageId="6CN"/>
+</option>
+<page id="6CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="6CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>成本概念我當然有啊！不然我為什麼要找七家廠商來比價！至於能不能準時搬家，當然是看情況啊，你怪我有什麼用？</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	
+<option id="7AO" source="7AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.1">5</score>
+<score objective="CP1.2">5</score>
+</scores>
+<text>好，那我帶著你一起來分析吧！你先告訴我，現有五家廠商中，最貴和最便宜的報價各是多少？</text>
+
+<feedback>相當好！你發現部屬的思考方式不周全時，能夠耐著性子，並善用自己的知識及經驗，逐步引導他尋求問題的根源。</feedback>
+<link nextPageId="7AN"/>
+</option>
+<page id="7AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="7AN.f4v">
+<theme>認真回覆</theme>
+<dialogue>現在最貴的報價是80萬，最便宜的是60萬，差了20萬耶。如果另外兩家也報價的話，也許還會再便宜一些喔。</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">3</score>
+<score objective="CP4.1">3</score>
+<score objective="CP1.2">3</score>
+</scores>
+<text>你當PM之前難道沒學過成本分析嗎？唉，算了，我也認了，那你先告訴我，目前最貴和最便宜的報價分別是多少？</text>
+
+<feedback>你給予Kelly具體的協助與建議，這是好的。不過你在引導的過程中，卻充滿不耐煩、不情願，相當可惜。</feedback>
+<link nextPageId="7BN"/>
+</option>
+<page id="7BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="7BN.f4v">
+<theme>不爽回答</theme>
+<dialogue>到目前為止，最貴的是80萬，最便宜的是60萬。如果多等幾天，也許還有更便宜的。</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">3</score>
+<score objective="CP4.1">3</score>
+<score objective="CP1.2">1</score>
+</scores>
+<text>你豬頭啊，成本分析又不是菜市場買菜，哪有那麼簡單啊？那我問你，現在最貴和最便宜的報價分別是多少？</text>
+
+
+<feedback>你給予Kelly具體的協助，這是好的。不過你在過程中，使用了謾罵嘲諷的語句，這會引起他情緒的反彈。</feedback>
+<link nextPageId="7BN"/>
+</option>
+	
+<option id="8AO" source="8AO.mp3">
+<theme>引導式問法</theme>
+<scores>
+<score objective="CP4.1">5</score>
+<score objective="CP3.2">5</score>
+<score objective="CP5.3">5</score>
+</scores>
+<text>這樣看來，另外兩家的報價頂多可以再少個幾萬元，所以你如果「做錯決定」，就得多付這幾萬元的價差啦。但是，如果你為了等這兩家而「延遲決定」，就得多付30萬的房租啊！這中間的差別你看出來了嗎？</text>
+
+<feedback>非常好。你提出具體的數據給部屬參考，並引導部屬思考方案的利弊得失。</feedback>
+<link nextPageId="8AN"/>
+</option>
+<page id="8AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_sad.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="8AN.f4v">
+<theme>豁然開朗</theme>
+<dialogue>嗯…沒想到延遲決定的成本居然比做錯決定還要高。看來我成本分析的技巧的確需要改進。</dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+<link optionId="9CO" />
+</options>
+</page>	<option id="8BO" source="8BO.mp3">
+<theme>批評責備</theme>
+<scores>
+<score objective="CP5.3">3</score>
+<score objective="CP1.2">3</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>如果延兩個禮拜才搬，光房租就要多花30萬，這哪裡有划算？你還看不清楚嗎？</text>
+
+
+
+<feedback>你提出具體數字來引導部屬，這是對的。可是你的說法如此負面，部屬將很難接受</feedback>
+<link nextPageId="8BN"/>
+</option>
+<page id="8BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="8BN.f4v">
+<theme>不爽回答</theme>
+<dialogue>好…謝謝您的提醒，讓我瞭解成本分析的技巧，以後我會改進，這樣可以了吧？ </dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+<link optionId="9CO" />
+</options>
+</page>	<option id="8CO" source="8CO.mp3">
+<theme>批評謾罵</theme>
+<scores>
+<score objective="CP5.3">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>便宜有什麼用？多出來的房租讓你賠更多啊！你這個專案經理是怎麼當的，怎麼一副狀況外的樣子？</text>
+
+
+<feedback>你的論點如果有具體數字來證明，會更有說服力！而你語氣如果如果能避免謾罵，部屬也會比較樂於接受。</feedback>
+<link nextPageId="8BN"/>
+</option>
+	
+<option id="9AO" source="9AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>嗯，既然你已經掌握更精準的成本概念了，那接下來，你會怎麼挑選廠商呢？</text>
+
+
+<feedback>很好，你善用引導技巧，讓Kelly從「思考原因」繼續深入到「思考對策」。</feedback>
+<link nextPageId="9AN"/>
+</option>
+<page id="9AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="9AN.f4v">
+<theme>誠懇反省</theme>
+<dialogue>嗯，這樣看來，只要能夠準時搬家，即使搬家費貴個幾萬塊，也還是很划算的。</dialogue>
+<options>
+<link optionId="10AO" />
+<link optionId="10BO" />
+<link optionId="10CO" />
+</options>
+</page>	<option id="9BO" source="9BO.mp3">
+<theme>牽拖算舊帳</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>我記得你上次的專案也有同樣的毛病，你怎麼老是犯同樣的錯呢？</text>
+
+<feedback>你應該引導部屬繼續尋找問題的對策，而不是偏離主軸，去翻他的舊帳。</feedback>
+<link nextPageId="9BN"/>
+</option>
+<page id="9BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="9BN.f4v">
+<theme>不爽語氣</theme>
+<dialogue>你幹嘛要一直翻舊帳，這兩個專案性質完全不同，沒有必要扯在一起吧？</dialogue>
+<options>
+<link optionId="10AO" />
+<link optionId="10BO" />
+</options>
+</page>	<option id="9CO" source="9CO.mp3">
+<theme>斥責謾罵</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>早就告訴過你！no decision 就是bad decision，你就是不當一回事，現在吃到苦頭了吧！</text>
+
+<feedback>你應該繼續部屬繼續尋找問題的對策，而不是以幸災樂禍的口吻，嘲弄他的缺失！</feedback>
+<link nextPageId="9CN"/>
+</option>
+<page id="9CN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="9CN.f4v">
+<theme>不爽語氣</theme>
+<dialogue>好啦好啦，您說的對，以後您的指示我都會牢記在心，這樣可以了吧？</dialogue>
+<options>
+<link optionId="10AO" />
+<link optionId="10BO" />
+<link optionId="10CO" />
+</options>
+</page>	
+<option id="10AO" source="10AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="ST0.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>是啊，專案管理是個有趣的挑戰，值得用心學習。那接下來，你能不能訂出一個具體的行動方案，告訴我接下來你打算在什麼時間，做什麼事情，才能準時公布搬家日期呢？</text>
+<feedback>很好，你能掌握面談流程，在此時引導Kelly從先前找出的原因及對策中，整理出一套完整的行動方案。</feedback>
+
+<link nextPageId="10AN"/>
+</option>
+<page id="10AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="10AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我想…我會馬上打電話催那兩家廠商送報價單，如果今天下班前沒傳來，那就不等了。然後…我會在明天早上做出決定，看是哪一家得標。剩下的就是跑簽約流程了，這大概需要兩天。趕一趕的話，應該可以在後天宣布搬家日期。這只比預計晚一天公布，應該沒關係吧？</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11BO" />
+<link optionId="11CO" />
+</options>
+</page>	<option id="10BO" source="10BO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">3</score>
+<score objective="ST0.1">5</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>好啊，那你說說看，接下來你會怎麼辦，才能夠讓問題順利解決？</text>
+
+
+<feedback>很好，你能掌握流程，引導Kelly制訂行動方案。不過你沒有提供明確的指引，將使得Kelly 無所適從。</feedback>
+<link nextPageId="10BN"/>
+</option>
+<page id="10BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_embarrassed.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="10BN.f4v">
+<theme>答錯方向</theme>
+<dialogue>我會把延遲成本也考慮進來，重新找出一個最划算的方案，不會再犯同樣的錯誤了。</dialogue>
+<options>
+<link optionId="10DO" />
+<link optionId="10CO" />
+</options>
+</page>	<option id="10CO" source="10CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>很好，能夠有這樣的反省也不錯了，以後做成本分析時，要想得深入一點，知道吧？那如果沒其他事的話，今天的面談就到此結束，你可以回去了。</text>
+
+
+<feedback>你的面談流程錯誤～太早結束面談了！你應該繼續和Kelly討論出具體的行動方案才對。</feedback>
+<link nextPageId="16BN"/>
+</option>
+
+
+	<option id="10DO" source="10DO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="ST0.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>我想我先前的說法可能不清楚，讓你有所誤會。我其實是希望你能訂出一個具體的行動方案，告訴我接下來你打算在什麼時間，做什麼事情，讓你可以準時公布搬家日期呢？</text>
+
+
+<feedback>很好，你能掌握面談流程，在此時引導Kelly從先前找出的原因及對策中，整理出一套完整的行動方案。</feedback>
+<link nextPageId="10AN"/>
+</option>
+
+<option id="11AO" source="11AO.mp3">
+<theme>引導思考</theme>
+<scores>
+<score objective="CP4.3">5</score>
+<score objective="CP3.2">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>簽約流程應該不會影響搬家日期吧？所以你如果先公布搬家日期，再跑簽約流程，就可以多讓同仁有多一天的準備時間，這樣是不是更好呢？</text>
+<feedback>對於部屬思慮不周之處，你提供適時的建議，並採用商量的語氣，能給部屬充分的思考與成長空間。</feedback>
+<link nextPageId="11AN"/>
+</option>
+<page id="11AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="11AN.f4v">
+<theme>欣然接受</theme>
+<dialogue>咦，對喔，這樣就可以準時在明天公布了。好，那我就先公布搬家日期，再跑簽約流程。謝謝George的提醒。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>	<option id="11BO" source="11BO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="CP4.3">3</score>
+<score objective="CP3.2">3</score>
+<score objective="CP4.2">3</score>
+</scores>
+<text>簽約流程和搬家日期無關！你應該先公布搬家日期，再去忙簽約流程，這樣就可以讓同仁有多一天的準備時間，懂嗎？ </text>
+
+<feedback>對於部屬思慮不周之處，你提供具體的建議。不過，過度掌控可能會縮減部屬的成長空間。</feedback>
+<link nextPageId="11BN"/>
+</option>
+<page id="11BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="11BN.f4v">
+<theme>中性</theme>
+<dialogue>喔，好，謝謝George，我知道了。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>	<option id="11CO" source="11CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP3.2">1</score>
+<score objective="CP4.2">1</score>
+<score objective="CP4.3">1</score>
+</scores>
+<text>你只要跟我討論大方向就可以了，至於執行面的細節，你自己決定就好，不用什麼事情都告訴我，我相信你的決定。</text>
+
+
+<feedback>你放手讓Kelly完全自主，這是一步險棋。對於傑出的部屬，這種策略也許可行，但對絕大多數部屬而言，這種策略等於是放任不管。</feedback>
+<link nextPageId="11BN"/>
+</option>
+	
+<option id="12AO" source="12AO.mp3">
+<theme>考核機制</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">5</score>
+<score objective="CP5.1">5</score>
+</scores>
+<text>為了確保整個方案能按照計畫進行，你可不可以訂出幾個關鍵工作，在關鍵工作完成時跟我展示一下你的成果，讓我知道你的進度都有準時達成？</text>
+
+<feedback>很好。你懂得利用正面說法，把「管理考核」形容成「展示成果」，並清楚說明你的期待。</feedback>
+<link nextPageId="12AN"/>
+</option>
+<page id="12AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="12AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>嗯…好啊，那明天早上選定廠商後，我會立即電話通知您。寫完公告之後，我也會先寄給您過目。至於簽約…你當然會看到合約，這也沒問題啊。</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+<link optionId="13CO" />
+</options>
+</page>	<option id="12BO" source="12BO.mp3">
+<theme>考核機制</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.2">5</score>
+<score objective="CP5.1">3</score>
+</scores>
+<text>為了防止你又出現拖延的問題，你能不能在關鍵工作完成時，都通知我一聲，讓我可以監督你的進度呢？</text>
+
+
+<feedback>你打算協助Kelly建立考核機制，這是正確的，但你的說法過於負面，而且內容模糊，部屬將難以接受。</feedback>
+<link nextPageId="12AN"/>
+</option>
+	<option id="12CO" source="12CO.mp3">
+<theme>考核</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="ST0.1">1</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>我相信你有能力順利執行這個方案，所以我就不再過問細節了！但你一定要全力以赴，掌握時程，絕對不能耽擱，知不知道？</text>
+
+<feedback>你希望藉由「叮嚀鼓勵」，讓部屬能做好自我稽核，但這是絕對不夠的，應該要協助他建立考核機制才對。</feedback>
+<link nextPageId="12CN"/>
+</option>
+<page id="12CN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="12CN.f4v">
+<theme>簡單回應</theme>
+<dialogue>這我都知道，沒問題啦，您放心吧。</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+<link optionId="13CO" />
+</options>
+</page>	
+<option id="13AO" source="13AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP4.1">5</score>
+<score objective="CP1.1">5</score>
+</scores>
+<text>很好，這樣我就放心多了，那有沒有什麼需要我幫忙的地方呢？</text>
+
+<feedback>非常好。你懂得主動提供部屬協助。這樣不僅能讓Kelly感受到你的支持，也能讓方案更有效率地進行。</feedback>
+<link nextPageId="13AN"/>
+</option>
+<page id="13AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="13AN.f4v">
+<theme>有點擔心</theme>
+<dialogue>嗯…法務最近要審核的案子蠻多的，我送件的話可能會拖很久。如果可以的話，希望您能打個電話關照一下，請他們加速處理。</dialogue>
+<options>
+<link optionId="14AO" />
+<link optionId="14BO" />
+<link optionId="14CO"/>
+</options>
+</page>	<option id="13BO" source="13BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP4.1">5</score>
+<score objective="CP1.1">3</score>
+</scores>
+<text>嗯，那有什麼需要我操心的地方？</text>
+
+<feedback>雖然你主動提供Kelly協助，不過如果能夠採取更正面的說法，會讓他更感受到你的誠意。</feedback>
+<link nextPageId="13AN"/>
+</option>
+	<option id="13CO" source="13CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP4.1">1</score>
+<score objective="CP1.1">1</score>
+</scores>
+<text>那剩下的瑣瑣碎碎的事情，你應該有能力自己解決吧？</text>
+<feedback>你一副「別來煩我」的樣子，相信Kelly 即使真的有困難，也不太敢找你幫忙吧。</feedback>
+<link nextPageId="13AN"/>
+</option>
+	
+<option id="14AO" source="14AO.mp3">
+<theme>熱情協助</theme>
+<scores>
+<score objective="CP4.1">5</score>
+<score objective="CP1.1">5</score>
+</scores>
+<text>這沒問題，我會打個電話請他們以急件處理。這樣應該就OK了吧？</text>
+
+<feedback>很好。雖然打電話只是舉手之勞，但對部屬而言，很可能就是莫大的幫忙了。</feedback>
+<link nextPageId="14AN"/>
+</option>
+<page id="14AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="14AN.f4v">
+<theme>非常高興</theme>
+<dialogue>太好了，那我就先謝謝您的大恩大德囉。</dialogue>
+<options>
+<link optionId="15AO" />
+<link optionId="15BO" />
+</options>
+</page>	<option id="14BO" source="14BO.mp3">
+<theme>認為小事</theme>
+<scores>
+<score objective="CP4.1">3</score>
+<score objective="CP2.2">1</score>
+</scores>
+<text>這種小事情，應該不需要我出面，你自己處理就可以了，真的不行的話再來找我吧？</text>
+
+<feedback>你不在乎Kelly的尷尬感受，又一副「小事別來煩我」的態度，這會讓他覺得氣餒沮喪。</feedback>
+<link nextPageId="14BN"/>
+</option>
+<page id="14BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S204_embarrassed.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="14BN.f4v">
+<theme>勉為其難</theme>
+<dialogue>喔，這樣啊，好吧！</dialogue>
+<options>
+<link optionId="15AO" />
+<link optionId="15BO" />
+</options>
+</page>	<option id="14CO" source="14CO.mp3">
+<theme>不耐煩</theme>
+<scores>
+<score objective="CP4.1">3</score>
+<score objective="CP1.1">1</score>
+</scores>
+<text>我早就告訴你要加快腳步了你就不聽，現在才要我去幫你插隊！這我不幫行嗎？拜託以後不要這樣了，知道嗎？
+</text>
+<feedback>雖然你願意提供協助，但是你的語氣充滿了不耐煩、不情願。相信不管誰聽了都不會好受。</feedback>
+<link nextPageId="14AN"/>
+</option>
+	
+<option id="15AO" source="15AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP4.2">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>好啊，如果沒別的問題，就請你幫忙做個總結，把今天的面談目的，行動方案，以及檢核方式都摘要說明一下。</text>
+<feedback>在此時請Kelly做總結是很好的作法。這樣既可以協助他整理重點，又可以考核他的整體規劃能力。</feedback>
+<link nextPageId="15AN"/>
+</option>
+<page id="15AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S204_neutral.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="15AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>好的。今天面談的目的，是希望能準時在明天公布搬家日期。行動方案呢…是今天要拿到所有報價單；明天要確認得標廠商，同時公布搬家日期；後天則要跑完簽約流程。至於檢核方式呢，就是在所有重要工作完成時都要先通知您一聲。對不對？</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+<link optionId="16CO"/>
+</options>
+</page>	<option id="15BO" source="15BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP4.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>好，如果沒別的問題的話，今天的會談就告一段落了。回去之後，好好努力把工作順利完成，我對你有信心，加油！</text>
+
+<feedback>你應該請Kelly針對本次面談做個總結，以確認他記住面談重點，不然回去後可能就忘得一乾二淨囉！</feedback>
+<link nextPageId="16AN"/>
+</option>		
+<option id="16AO" source="16AO.mp3">
+<theme>積極肯定</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="ST2.1">5</score>
+<score objective="CP3.3">5</score>
+
+</scores>
+<text>嗯，講得非常具體清楚，代表你的確有用心參與討論。相信你一定可以順利執行這個方案，準時公布搬家日期！我對你有信心，加油喔！</text>
+<feedback>很好，你能在面談結束時，不吝給予讚美與支持，將讓Kelly他更有信心、更有意願地去落實改善計畫。</feedback>
+<link nextPageId="16AN"/>
+</option>
+<page id="16AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S204_happy.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="16AN.f4v">
+<theme>充滿信心</theme>
+<dialogue>謝謝George的鼓勵與教導，我覺得學到好多東西喔，我會努力加油，不會辜負您的期望的！</dialogue>
+<link nextPageId="16END"/>
+</page>	<option id="16BO" source="16BO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="ST2.1">3</score>
+<score objective="CP3.3">3</score>
+
+</scores>
+<text>很好，那你自己要多加油，不要整天都要我操心啊。那今天就這樣了，沒事的話你可以回去了！</text>
+
+
+<feedback>雖然你懂得在面談結束時鼓勵Kelly，但你的說法馬虎敷衍。你應該多給一些肯定，多用一些正面說法，而且也應該改善的價值，講的更具體一些。</feedback>
+<link nextPageId="16BN"/>
+</option>
+<page id="16BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="16BN.f4v">
+<theme>不太爽</theme>
+<dialogue>好。那我回去忙囉，謝謝George。</dialogue>
+<link nextPageId="16END"/>
+</page>	<option id="16CO" source="16CO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="ST2.1">1</score>
+<score objective="CP3.3">1</score>
+
+</scores>
+<text>聽起來不錯，希望做起來也一樣好，不要光說不練啊！以後記得要即時做決定，別犯同樣的錯，知道嗎？</text>
+
+
+<feedback>面談結束時，應該給予鼓勵與支持，不要顯得馬虎草率，這會影響部屬落實的意願。</feedback>
+<link nextPageId="16CN"/>
+</option>
+<page id="16CN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S204_angry.f4v" name="Kelly" mediaType="video" background="S204.jpg" videoSource="16CN.f4v">
+<theme>不太爽</theme>
+<dialogue>喔，好，我知道了，謝謝George。</dialogue>
+<link nextPageId="16END"/>
+</page>	<page id="16END" type="scoreCard" background="S204.jpg">
+<text>恭喜你，你已經演練完本案例的所有面談步驟。接下來請點選右上方「技巧檢討」頁籤，察看演練成績。</text> 
+</page>
+
+</nodes>
+<objectives>
+<category id="CP1" name="尊重肯定">
+<objective id="CP1.1" name="正面說法"/>
+<objective id="CP1.2" name="避免謾罵"/>
+<objective id="CP1.3" name="肯定貢獻"/>
+</category>
+<category id="CP2" name="主動傾聽">
+<objective id="CP2.1" name="詢問澄清確認"/>
+<objective id="CP2.2" name="同理心"/>
+<objective id="CP2.3" name="同理非同意"/>
+</category>
+<category id="CP3" name="促進參與">
+<objective id="CP3.1" name="鼓勵發言"/>
+<objective id="CP3.2" name="引導思考"/>
+<objective id="CP3.3" name="肯定參與"/>
+</category>
+<category id="CP4" name="授權與能">
+<objective id="CP4.1" name="提供資源"/>
+<objective id="CP4.2" name="考核督導"/>
+<objective id="CP4.3" name="掌舵而不駕馭"/>
+</category>
+<category id="CP5" name="具體明確">
+<objective id="CP5.1" name="避免含糊"/>
+<objective id="CP5.2" name="SMART績效目標"/>
+<objective id="CP5.3" name="提供佐證資料"/>
+</category>
+<category id="ST" name="步驟相關技巧">
+<objective id="ST0.1" name="掌握流程"/>
+<objective id="ST2.1" name="三明治原則"/>
+<objective id="ST3.1" name="連結價值"/>
+</category>
+</objectives>
+<stages>
+<stage id="ST1" name="找出績效落差"/>
+<stage id="ST2" name="闡明績效落差"/>
+<stage id="ST3" name="鼓勵承擔責任"/>
+<stage id="ST4" name="探討原因對策"/>
+<stage id="ST5" name="發展行動方案"/>
+<stage id="ST6" name="建立考核機制"/>
+<stage id="ST7" name="總結面談結果"/>
+</stages>
+</simulation>			

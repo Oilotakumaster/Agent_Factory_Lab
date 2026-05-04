@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation characterWidth="85%" characterHeight="" characterX="-200px" characterY="0px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0px" dialogStart="0.5" flvPath="simulation/S411/graphic/">
+<nodes>
+<page id="0Start" type="startPage" stage="5.1" background="assets/images/S411_startPage.jpg">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">請在右下角選擇本案例的演練模式(本案例將播放George的聲音)：<br/><br/>
+<li>若選擇「練習(不計分)」，系統將在你點選選項之前，就提供教練回饋。</li><br>
+<li>若選擇「測驗(計分)」，系統將在你點選選項之後，才提供教練回饋。案例結束後(9回合)，若有必要，系統亦可將成績傳到貴公司學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="1AN"/>
+</page>
+ 
+<page id="1AN" type="character"  idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S411.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<theme>提問BEI </theme>
+<dialogue>請問你過去和別人合作所完成的專案中，哪一個是挑戰最多，難度最高的？能不能簡單描述一下？</dialogue>
+<options header="請選出Janie的最佳回應：" coachHeader="您的選擇：" pos="3,2,1">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>		
+<option id="2AO" source="2AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.3">5</score>
+<score objective="4.2">5</score>
+
+</scores>
+<text>有啊，大四的時候，我和其他兩個同學合作完成了一個畢業專題，製作了 一個多媒體訓練課程。</text>
+
+<feedback>很好，這個經驗的確符合「團隊合作」職能，也是具體經驗，是三個選項中最適合的情境。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="4.3"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXX</theme>
+<dialogue>這個專案的目的是什麼？當初面臨的挑戰有哪些呢？</dialogue>
+<options pos="2,1,3">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="2BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.3">5</score>
+<score objective="4.2">3</score>
+</scores>
+<text>我曾經和兩個同學一起組讀書會，準備期末考試。</text>
+
+
+<feedback>對於「團隊合作」而言，讀書會比起最佳選項，其與職能的契合度稍微低了一些。請再選一次。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+
+<page id="2BN" type="character"  stage="4.3" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S411.jpg" graphicSource="1AN.png" audioSource="aside.mp3">
+<theme>提問BEI </theme>
+<dialogue>請問你過去和別人合作所完成的專案中，哪一個是挑戰最多，難度最高的？能不能簡單描述一下？</dialogue>
+<options header="請選出Janie的最佳回應：" coachHeader="您的選擇：" pos="2,1">
+<link optionId="2AO"/>
+<link optionId="2CO"/>
+</options>
+</page>	<option id="2CO" source="2CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.3">1</score>
+<score objective="4.2">1</score>
+</scores>
+<text>呃…跟別人合作，每次都會被拖累，所以我比較習慣獨立作業，可以把事情做得比較好。可以讓我講一些自己所完成的專案嗎？</text>
+<feedback>這個回應無法作為團隊合作的行為事例，需要進一步引導。請再選一次。</feedback>
+<link nextPageId="2CN"/>
+</option>
+
+
+<page id="2CN" type="character"  stage="4.3" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S411.jpg" graphicSource="1AN.png" audioSource="aside.mp3">
+<theme>提問BEI </theme>
+<dialogue>請問你過去和別人合作所完成的專案中，哪一個是挑戰最多，難度最高的？能不能簡單描述一下？</dialogue>
+<options header="請選出Janie的最佳回應：" coachHeader="您的選擇：" pos="2,1">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+</options>
+</page>
+<option id="3AO" source="3AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">5</score>
+<score objective="4.6">5</score>
+</scores>
+<text>這是系上規定我們要在畢業前完成的一個作品，總共有六個學分，為期一年！挑戰喔？主要就是大家的專長都不一樣，修課時間也都不同，要溝通想法就已經夠難了，還要公平分配任務，還要克服技術挑戰，還要和專案的客戶溝通，厚，真的是一堆挑戰啊。</text>
+<feedback>很好，Janie所描述的「情境」，的確考驗「團隊合作」職能，而他的描述也吻合行為指標之一「瞭解團隊目標以及各成員之角色職責」。 </feedback>
+<link nextPageId="3AN"/>
+</option>
+
+
+<page id="3AN" type="character" stage="4.2"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩…那這個專案的成員是怎麼產生的？是系上幫你們安排呢？還是你們自己找的啊？</dialogue>
+<options pos="1,2,3">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">1</score>
+<score objective="4.6">1</score>
+
+</scores>
+<text>這是系上規定的一個作業。主要的挑戰，就是要看我們有沒有把書讀懂，真的做出一個實際的成品！</text>
+
+
+
+<feedback>Janie的回應顯示，這個情境對他而言是「專業知識」的挑戰。所以你還需要進一步引導他往「團隊合作」的方向思考，否則他所描述的情節與行動，將難以證明其「團隊合作」職能。請再選一次。</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="4.3"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="2AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>這個專案的目的是什麼？當初面臨的挑戰有哪些呢？</dialogue>
+<options pos="1,2">
+<link optionId="3AO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="3CO" source="3CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">1</score>
+<score objective="4.6">1</score>
+</scores>
+<text>這是系上規定我們要在畢業前完成的東西啦！挑戰喔？主要就是選隊友吧？選到豬隊友你就死定了！像我就選到兩個白癡，差點被他們搞死。</text>
+
+
+
+<feedback>聽到這裡，可以知道Janie的確有一個關於「團隊合作」的痛苦經驗。而其語句也透露，他的團隊合作職能有待加強，因為不符合「以公平、誠信、尊重、體諒之方式對待成員。」的行為指標
+。請再選一次。</feedback>
+<link nextPageId="3CN"/>
+</option>
+
+<page id="3CN" type="character" stage="4.3"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="2AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>這個專案的目的是什麼？當初面臨的挑戰有哪些呢？</dialogue>
+<options pos="1,2">
+<link optionId="3AO" />
+<link optionId="3BO" />
+</options>
+</page>
+<option id="4AO" source="4AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">5</score>
+</scores>
+<text>系上為了公平起見，都是用抽籤決定小組成員，抽到誰就是誰，沒得挑啊。</text>
+
+<feedback>很好，這個團隊是由一群性格不同的同學所組成的，對團隊合作職能的挑戰相當高。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+
+<page id="4AN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>哇！看來三個人的專長都不一樣嘛！那你們怎麼公平地分配任務呢？而分配的方法又是誰決定呢？</dialogue>
+<options pos="1,2,3">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">3</score>
+</scores>
+<text>系上讓我們自己組隊，所以我就和兩個好朋友一起組隊囉。</text>
+
+
+<feedback>這個團隊基本上是由好朋友組成的，其「團隊合作」的挑戰度比起最佳選項，稍微低了一些。請再選一次。</feedback>
+<link nextPageId="4BN"/>
+</option>
+
+<page id="4BN" type="character" stage="4.2"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="3AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>恩…那這個專案的成員是怎麼產生的？是系上幫你們安排呢？還是你們自己找的啊？</dialogue>
+<options pos="2,1">
+<link optionId="4AO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="4CO" source="4CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.5">3</score>
+<score objective="4.6">1</score>
+</scores>
+<text>系上原本是讓同學自己組隊，可是不知道為什麼，沒人告訴我這件事情，所以我就落單啦。後來我只好讓老師指定隊員，沒得挑啊。</text>
+<feedback>這個經歷顯示，Janie可能有被同學排斥的現象，是人際關係不好的徵兆。請再選一次。</feedback>
+<link nextPageId="4CN"/>
+</option>
+
+<page id="4CN" type="character" stage="4.2"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="3AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>恩…那這個專案的成員是怎麼產生的？是系上幫你們安排呢？還是你們自己找的啊？</dialogue>
+<options pos="1,2">
+<link optionId="4AO" />
+<link optionId="4BO" />
+</options>
+</page>
+<option id="5AO" source="5AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.6">5</score>
+</scores>
+<text>專案要講公平很難啊，能順利畢業才是關鍵啦。好在大家有什麼專長彼此也都清楚，所以第一次開會時我就提議，先把專案的工作項目列出來，大家按照專長來認領，結果一下子就分配好了。</text>
+<feedback>很好，Janie的行為，符合「樂意分享訊息，提供支援，促進團隊成功。」「以公平、誠信、尊重、體諒之方式對待成員。」兩個行為指標。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>那後來專案進行中，有沒有發生過組員不做事而拖累整體進度的問題？那你都怎麼處理？</dialogue>
+<options pos="1,2,3">
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.6">3</score>
+</scores>
+<text>要公平當然難啊，差點沒吵起來。最後有個組員提議，乾脆所有的事情都三個人一起做，這樣比較公平。大家就都接受啦。</text>
+
+<feedback>看來Janie是個逆來順受，相當配合的人，但缺乏以積極作為來促進團隊成功。請再選一次。</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+
+
+
+<page id="5BN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="4AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>哇！看來三個人的專長都不一樣嘛！那你們怎麼公平地分配任務呢？而分配的方法又是誰決定呢？</dialogue>
+<options pos="1,2">
+<link optionId="5AO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.6">1</score>
+</scores>
+<text>我這人比較隨和，不喜歡跟人爭。所以這些事情都給另外一個組員決定，反正他也愛現，想法一大堆。我反正沒差，就隨他去吧。</text>
+
+<feedback>這些陳述顯示Janie在「樂意分享訊息，提供支援，促進團隊成功。」「以公平、誠信、尊重、體諒之方式對待成員。」兩個行為指標的表現並不理想。請再選一次。</feedback>
+<link nextPageId="5CN"/>
+</option>
+
+<page id="5CN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="4AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>哇！看來三個人的專長都不一樣嘛！那你們怎麼公平地分配任務呢？而分配的方法又是誰決定呢？</dialogue>
+<options pos="1,2">
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page>
+<option id="6AO" source="6AO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="4.6">5</score>
+</scores>
+<text>有啊，有一個組員要補托福，不能來開會，我就建議把會議改用Skype來開會，讓他可以參與。不過後來他還是很少來開會，我只好提議，和另外一個隊員分攤他的工作，可是他的分數要比我們低一些，他也同意了。</text>
+
+<feedback>很好，Janie的行為，符合「樂意分享訊息，提供支援，促進團隊成功。」「以公平、誠信、尊重、體諒之方式對待成員。」兩個行為指標。</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="6AN.png" audioSource="6AN.mp3">
+<theme>XXX</theme>
+<dialogue>那整個專案過程中，專案小組的行程有沒有和你的個人行程衝突過？請舉一個例子，並告訴我你當時怎麼處理？</dialogue>
+<options pos="2,3,1">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6BO" source="6BO.mp3">
+<theme>表達個人主觀意見</theme>
+<scores>
+<score objective="4.6">3</score>
+</scores>
+<text>有啊，有一個隊員說要補托福，不能來開會。我和另一個隊員就去找老師，希望老師把他調離我們這一組，免得拖累我們。不過老師不同意，後來只好隨便他了。</text>
+
+<feedback>Janie的行為，在「樂意分享訊息，提供支援，促進團隊成功。」「以公平、誠信、尊重、體諒之方式對待成員。」兩個行為指標中，不如最佳選項。請再選一次。</feedback>
+<link nextPageId="6BN"/>
+</option>
+
+
+<page id="6BN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="5AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那後來專案進行中，有沒有發生過組員不做事而拖累整體進度的問題？那你都怎麼處理？</dialogue>
+<options pos="2,1">
+<link optionId="6AO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>太早結束</theme>
+<scores>
+<score objective="4.3">1</score>
+<score objective="4.4">1</score>
+</scores>
+<text>團隊合作，當然會碰到這種情況啊！這個時候，我們就該坐下來一起討論原因，互相體諒，互相支援，問題自然就會解決了。</text>
+
+<feedback>Janie所描繪的景象雖然美好，卻只是個理論性回應，需要請他舉出實例，此時無法計分。請再選一次。</feedback>
+<link nextPageId="6CN"/>
+</option>
+
+
+<page id="6CN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="5AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那後來專案進行中，有沒有發生過組員不做事而拖累整體進度的問題？那你都怎麼處理？</dialogue>
+<options pos="2,1">
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>
+<option id="7AO" source="7AO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="4.6">5</score>
+</scores>
+<text>專案的行程很早就是三個人一起排定的，當然要遵守啊。所以我每次都有到，只有一次，因為要參加姊姊的婚禮，無法參加，不過我有打電話跟大家改期喔。</text>
+
+<feedback>很好，代表他有符合「執行團隊決議，置團隊利益於個人利益之上。」的行為指標。</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+
+<page id="7AN" type="character" stage="4.5"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="7AN.png" audioSource="7AN.mp3">
+<theme>XXX</theme>
+<dialogue>那這個專案後來的成果怎麼樣？組員們到現在還有聯絡嗎？</dialogue>
+<options pos="2,1,3">
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme> FU Leading </theme>
+<scores>
+<score objective="4.3">1</score>
+</scores>
+<text>沒有ㄟ，從來都沒有這種問題。</text>
+
+
+
+
+
+<feedback>一個為期一年的專案，居然沒有和個人時間發生過任何衝突，不太合理。你必須追問，瞭解原因才可以，此時無法給分。請再選一次。</feedback>
+<link nextPageId="7BN"/>
+</option>
+
+<page id="7BN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="6AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那整個專案過程中，專案小組的行程有沒有和你的個人行程衝突過？請舉一個例子，並告訴我你當時怎麼處理？</dialogue>
+<options pos="1,2">
+<link optionId="7AO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme> FU Leading </theme>
+<scores>
+<score objective="4.6">1</score>
+</scores>
+<text>時間衝突喔…當然難免啊。因為我爸爸生病常要照顧，另外我有打工也不能遲到，而且男朋友要考試我也要陪他唸書，所以我偶爾會請假，好在大家都還蠻體諒的。</text>
+
+<feedback>Janie的私人理由常常凌駕在團隊決議之上。不符合「執行團隊決議，置團隊利益於個人利益之上。」的行為指標。請再選一次。</feedback>
+<link nextPageId="7CN"/>
+</option>
+
+<page id="7CN" type="character" stage="4.4"  idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="6AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那整個專案過程中，專案小組的行程有沒有和你的個人行程衝突過？請舉一個例子，並告訴我你當時怎麼處理？</dialogue>
+<options pos="1,2">
+<link optionId="7AO" />
+<link optionId="7BO" />
+</options>
+</page>
+<option id="8AO" source="8AO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="4.7">5</score>
+</scores>
+<text>後來我們那組得了全班第三名，還有獎金1500元喔。大家都很高興。現在還是好朋友啊，上個月我們還聚餐勒！</text>
+
+<feedback>很好，這個結果顯示，該團隊運作相當順暢，感情也很好。雖然這個成就屬於全體，但Janie的團隊合作職能也有一定的貢獻。</feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="4.3"  idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="8AN.png" audioSource="8AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩，這是一個相當好的經驗，謝謝你跟我分享。另外，我剛剛在你的履歷表上也看到，你曾經擔任合唱團的活動股股長，那能不能告訴我，哪一次的活動最令你難忘？</dialogue>
+<link nextPageId="8AEND"/>
+</page>
+<page id="8AEND" type="scoreCard" background="S411.jpg">
+<text>恭喜你完成本案例的所有步驟。</text> 
+</page>	<option id="8BO" source="8BO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="4.7">3</score>
+</scores>
+<text>後來就做完了啊，老師打完成績我們就畢業了。現在大家都忙著找工作，已經很久沒有聯絡了。</text>
+
+
+<feedback>這個結果顯示，該團隊的運作可能不順暢，雖然這不見得是Janie的責任。但另一個選項，卻提供了更好的職能證據。請再選一次。</feedback>
+<link nextPageId="8BN"/>
+</option>
+
+<page id="8BN" type="character" stage="4.5"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="7AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那這個專案後來的成果怎麼樣？組員們到現在還有聯絡嗎？</dialogue>
+<options pos="1,2">
+<link optionId="8AO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="8CO" source="8CO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="4.7">3</score>
+<score objective="4.3">3</score>
+</scores>
+<text>後來我申請延畢，所以就退出畢專小組，由另外兩個同學繼續完成。好久都沒聯絡了，也不知道他們現在在哪裡了。</text>
+
+<feedback>這個結果相當不尋常，必須深入追問，以瞭解其退出原因是否和團隊合作能力有關。但目前看來，這是個減分的結果。請再選一次。</feedback>
+<link nextPageId="8CN"/>
+</option>
+
+<page id="8CN" type="character" stage="4.5"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Janie" mediaType="graphic" background="S411.jpg" graphicSource="7AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那這個專案後來的成果怎麼樣？組員們到現在還有聯絡嗎？</dialogue>
+<options pos="1,2">
+<link optionId="8AO" />
+<link optionId="8BO" />
+</options>
+</page>
+</nodes>
+<objectives>
+<category id="4" name="評估技巧">
+<objective id="4.1" name="須具備四要素"/>
+<objective id="4.2" name="須契合目標職能"/>
+<objective id="4.3" name="須為真實經驗"/>
+<objective id="4.4" name="應徵者須為主角"/>
+<objective id="4.5" name="情境應有難度"/>
+<objective id="4.6" name="行動應符合行為指標"/>
+<objective id="4.7" name="結果應符合預期"/>
+</category>
+</objectives>
+
+<stages>
+<stage id="4.1" name="評估內容"/>
+<stage id="4.2" name="評估情境"/>
+<stage id="4.3" name="評估角色"/>
+<stage id="4.4" name="評估行動"/>
+<stage id="4.5" name="評估結果"/>
+</stages>
+</simulation>		

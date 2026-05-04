@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木人巷 HR 權限控制台</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .admin-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .status-badge {
+            font-size: 14px;
+            background: #e8f0fe;
+            color: #1a73e8;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-weight: normal;
+        }
+        
+        /* 登入牆區塊 */
+        #login-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+        }
+        
+        /* 權限表格區塊 */
+        #dashboard-section {
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #555;
+        }
+        tr:hover { background-color: #f1f3f5; }
+        
+        .email-cell { font-weight: bold; }
+        .course-checkboxes label {
+            margin-right: 15px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .course-checkboxes input { margin-right: 5px; }
+
+        .save-btn {
+            background-color: #34a853;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .save-btn:hover { background-color: #2b8b45; }
+        
+        #error-msg {
+            color: #d32f2f;
+            background: #fde0e0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <h1>
+            <span>🛡️ 木人巷 HR 權限控制台</span>
+            <span class="status-badge" id="admin-identity">尚未登入</span>
+        </h1>
+
+        <div id="login-section">
+            <h3 style="color: #666; margin-bottom: 20px;">此頁面僅限超級管理員登入</h3>
+            <div id="g_id_onload"
+                data-client_id="826098872175-uvv1odj4podc0dvhpp5oe5rk2u01nnk8.apps.googleusercontent.com"
+                data-callback="handleAdminLogin"
+                data-auto_prompt="false">
+            </div>
+            <div class="g_id_signin"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left">
+            </div>
+        </div>
+        
+        <div id="error-msg"></div>
+
+        <div id="dashboard-section">
+            <p>請勾選學員允許觀看的影片，按下儲存後，學員在前端頁面重新整理即可生效。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>學員信箱 (Email)</th>
+                        <th>開放課程權限</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body">
+                    <!-- Javascript 動態填寫 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 載入 Google 登入套件 -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <script>
+        let adminToken = ""; // 暫存管理員的金鑰
+
+        async function handleAdminLogin(response) {
+            if (!response.credential) return;
+            adminToken = response.credential;
+            
+            // 嘗試跟後端要資料 (這會順便驗證是不是管理員)
+            fetchUsersList();
+        }
+
+        async function fetchUsersList() {
+            try {
+                const res = await fetch('/api/admin/get_users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token: adminToken })
+                });
+                
+                const data = await res.json();
+                
+                if (res.ok) {
+                    // 成功登入且是管理員！
+                    document.getElementById('login-section').style.display = 'none';
+                    document.getElementById('error-msg').style.display = 'none';
+                    document.getElementById('dashboard-section').style.display = 'block';
+                    document.getElementById('admin-identity').innerText = "管理員實體已登入";
+                    
+                    renderTable(data);
+                } else {
+                    // 不是管理員，被踢出來了
+                    document.getElementById('error-msg').style.display = 'block';
+                    document.getElementById('error-msg').innerText = "❌ 拒絕存取：" + data.error;
+                }
+            } catch(e) {
+                alert("伺服器連線失敗");
+            }
+        }
+
+        function renderTable(usersData) {
+            const tbody = document.getElementById('user-table-body');
+            tbody.innerHTML = '';
+            
+            for (const email in usersData) {
+                const courses = usersData[email]; // array like ["course_1", "course_3"]
+                
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="email-cell">${email}</td>
+                    <td class="course-checkboxes">
+                        <label><input type="checkbox" id="c1_${email}" ${courses.includes('course_1') ? 'checked' : ''}> 管理會議</label>
+                        <label><input type="checkbox" id="c2_${email}" ${courses.includes('course_2') ? 'checked' : ''}> 顧問式銷售</label>
+                        <label><input type="checkbox" id="c3_${email}" ${courses.includes('course_3') ? 'checked' : ''}> 新手主管</label>
+                    </td>
+                    <td>
+                        <button class="save-btn" onclick="saveUser('${email}')">儲存變更</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            }
+        }
+
+        async function saveUser(targetEmail) {
+            const newCourses = [];
+            if(document.getElementById(`c1_${targetEmail}`).checked) newCourses.push("course_1");
+            if(document.getElementById(`c2_${targetEmail}`).checked) newCourses.push("course_2");
+            if(document.getElementById(`c3_${targetEmail}`).checked) newCourses.push("course_3");
+
+            // 呼叫更新 API
+            const res = await fetch('/api/admin/update_user', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    token: adminToken,
+                    targetEmail: targetEmail,
+                    newCourses: newCourses
+                })
+            });
+
+            if(res.ok) {
+                alert(`已經成功更新 ${targetEmail} 的觀看權限！\n請您打開學員網頁重新整理看看。`);
+            } else {
+                alert(`更新失敗，憑證可能已過期`);
+            }
+        }
+    </script>
+</body>
+</html>

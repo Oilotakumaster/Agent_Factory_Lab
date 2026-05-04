@@ -1,0 +1,7 @@
+<course name="招募面談 PART II:案例演練" label="招募面談 PART II:案例演練" src="assets/courses/TS_logo.jpg" treeWidth="260">
+	<node type="chapter" label="1.案例演練：持續學習(提問、追問)">courses/102/ch408.xml</node> 
+	<node type="chapter" label="2.案例演練：持續學習(評估)">courses/102/ch409.xml</node> 
+	<node type="chapter" label="3.案例演練：團隊合作(提問、追問)">courses/102/ch410.xml</node> 
+	<node type="chapter" label="4.案例演練：團隊合作(評估)">courses/102/ch411.xml</node> 
+	<node type="chapter" label="5.案例演練：研發創新(提問、追問)">courses/102/ch412.xml</node> 
+</course>

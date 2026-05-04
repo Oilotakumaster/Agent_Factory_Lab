@@ -1,0 +1,8 @@
+<course name="職場倫理" label="課程目錄" src="assets/courses/EICC_logo.jpg">
+	<node type="chapter" id="102901" label="職場倫理">
+		<embed>sl/EICC/story.html</embed>
+	</node>
+</course>
+
+		
+	

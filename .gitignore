@@ -1,0 +1,18 @@
+# å¿½ç•¥å¤§æª”æ¡ˆ
+project2/app/*.zip
+*.zip
+*.mp4
+*.pth
+*.db
+
+# å¿½ç•¥è™›æ“¬ç’°å¢ƒèˆ‡å¥—ä»¶å¤¾
+venv/
+.venv/
+env/
+node_modules/
+__pycache__/
+
+# ©¿²¤¨p±Kª÷Æ_
+*-key.json
+credentials.json
+.env*

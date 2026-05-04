@@ -1,0 +1,33 @@
+<node type="chapter" id="201" label="案例一：行政助理太常請假">	
+	<!--<lesson label="1.課程注意事項">
+    	<page type="imageText" background="assets/images/S205_bg7.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:110px">本模組共包含五個案例，請您務必要<font color="#F40020">依照案例一、案例二、案例三、案例四、案例五的順序</font>，來依序完成這五個案例，以確保「案例成績、閱讀時數」能順利回傳平台。<br><br>
+另外，每一個案例的通過標準則是：需點選「<font color="#F40020">測驗(計分)</font>」按鈕進入演練，並且「<font color="#F40020">得分率為100%</font>」，才會視同通過。</div>]]>		
+		</page>
+	</lesson>-->		
+	<lesson label="1.任務說明">
+		<page type="imageText" background="assets/images/S205_bg3.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">你是鴻展公司的業務經理。下週是期中績效面談的時刻，所以你開始分析部屬們的工作表現…<br><br>
+在考核Amy的工作紀錄時，你發現她各項表現都不錯，但請假天數顯然太多了～現在才第二季，她的病假卻已經都請光了，事假也只剩兩天。如果這情況持續下去，不僅影響部門運作，也影響他的考績！<br><br>
+所以你決定找他來面談，以協助她改善這個績效落差。</div>]]>		
+		</page>
+	</lesson>	
+	<lesson label="2.部屬背景">
+		<page type="imageText" background="assets/images/S205_bg4.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">Amy，女，26歲，目前擔任行政助理，進公司剛滿一年。<br><br>
+在工作方面，他對於交辦事項多能準時完成，但常因請假而找不到人。<br/><br/>
+在個性方面，他有些內向拘謹，平時與同事互動不多，下班後很少參加同事聚會。</div>]]>		
+		</page>
+	</lesson>	
+	<!--<lesson label="SL">
+			<embed>sl/COA_1-1_web/story.html</embed>
+		</lesson>-->
+	<lesson label="3.展開面談">
+		<simulation>courses/1/S201.xml</simulation>    	
+	</lesson>
+	<lesson label="4.技巧檢討">
+		<page type="simulationRecords">
+		</page>
+	</lesson>
+</node> 
+	

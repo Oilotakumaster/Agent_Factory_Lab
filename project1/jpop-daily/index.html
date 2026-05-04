@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="每天為您推薦三首精選日本流行音樂 (J-Pop)。每日更新，發現新聲音！">
+    <title>J-Pop Daily Picks 🎵 | 每日日音推薦</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="app-container">
+        <header>
+            <div class="logo">J-POP <span>DAILY</span></div>
+            <h1 id="today-date">今天</h1>
+            <p class="subtitle">為您準備的 3 首精選日本流行音樂</p>
+        </header>
+
+        <main id="music-container" class="grid-container">
+            <!-- 音樂卡片將由 JS 動態生成在這裡 -->
+        </main>
+        
+        <footer>
+            <button id="refresh-btn" class="btn">換一組推薦 (預覽明日)</button>
+            <p>Made with ❤️ for J-Pop lovers</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

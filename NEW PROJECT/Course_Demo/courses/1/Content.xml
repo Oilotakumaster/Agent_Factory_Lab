@@ -1,0 +1,46 @@
+<course name="教導能力" label="教導能力模擬訓練學程" src="assets/courses/COA_logo.jpg" treeWidth="230">
+ 	<node type="chapter" id="100101" label="■   模組一：工作教導之價值與挑戰">
+				<embed>sl/COA1/story.html</embed>
+	</node>
+	<node type="chapter" id="100102" label="■   模組二：工作教導之溝通原則">
+				<embed>sl/COA2/story.html</embed>
+	</node>
+	<node type="chapter" id="100103" label="■   模組三：工作教導之面談步驟">
+				<embed>sl/COA3/story.html</embed>
+	</node>
+	<node type="chapter" id="100104" label="■   模組四：工作教導之模擬演練">
+				<embed>sl/COA4/story.html</embed>
+	</node>
+</course>
+
+
+
+<!--<course name="教導能力" label="教導能力模擬訓練學程" src="assets/courses/COA_logo.jpg" treeWidth="260">
+ 	<node type="chapter" id="100101" label="1.課程內容講解">
+				<embed>sl/COA_1-1_web/story.html</embed>
+	</node>
+	<node type="chapter" label="2.案例演練：行政助理太常請假">courses/1/ch205.xml</node> 
+	<node type="chapter" label="3.案例演練：組長不配合推動ERP">courses/1/ch205.xml</node> 
+	<node type="chapter" label="4.案例演練：業務常寄錯報價單給客戶">courses/1/ch205.xml</node> 
+	<node type="chapter" label="5.案例演練：專員未準時公佈搬家日期">courses/1/ch205.xml</node> 
+	<node type="chapter" label="6.案例演練：MIS維修流程不清楚">courses/1/ch205.xml</node> 
+</course>
+-->
+
+<!--<course name="教導能力" label="課程目錄" src="assets/courses/COA_logo.jpg" treeWidth="260">
+	<node type="chapter" label="課程簡介">
+		<page>courses/1/test.xml</page>
+		<node type="chapter" id="100101" label="案例五：MIS維修流程不清楚">
+			courses/1/ch205.xml
+		</node>
+		<node type="folder" label="課程簡介2">
+			<node type="chapter" id="100101" label="教導能力2">
+				<embed>sl/COA_1-1_web/story.html</embed>
+			</node>
+		</node>
+	</node>
+	<node type="folder" label="單元測驗">
+		<node type="chapter" label="案例五：MIS維修流程不清楚">courses/1/ch205.xml</node> 
+	</node>
+</course>
+-->

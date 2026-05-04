@@ -1,0 +1,8 @@
+<course name="創新推廣" label="課程目錄" src="assets/courses/INNO2_logo.jpg">
+	<node type="chapter" id="103001" label="創新推廣">
+		<embed>sl/INNO2/story.html</embed>
+	</node>
+</course>
+
+		
+	

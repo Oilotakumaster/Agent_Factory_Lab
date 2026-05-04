@@ -1,0 +1,8 @@
+<course name="電腦檔案管理" label="課程目錄" src="assets/courses/FM_logo.jpg">
+	<node type="chapter" id="102401" label="電腦檔案管理">
+		<embed>sl/FM/story.html</embed>
+	</node>
+</course>
+
+		
+	

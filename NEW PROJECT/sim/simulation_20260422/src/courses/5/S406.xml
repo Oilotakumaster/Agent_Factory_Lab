@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="coach" characterWidth="88%" characterHeight="" characterX="-140px" characterY="-20px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0" dialogStart="0.5" flvPath="simulation/S406/graphic/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S406_startPage.jpg" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text><![CDATA[<div style="width:90%; float:right; margin-top:150px; margin-right:50px><textformat indent="0">請點選右下角「練習」按鈕，等出現選項後，從中點選一個George最該採用的結語話術。選項旁的小圖示也可點選，將提供對該話術的教練回饋。</div>]]></text>
+<link nextPageId="1AN"/>
+</page>
+
+<page id="1AN" type="character" stage="6.1" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Lisa" mediaType="graphic" background="S406.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<dialogue>（等候George詢問…）</dialogue>
+<options header="請選擇最佳的引導說明：" coachHeader="您的選擇：" pos="1,2">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+</options>
+</page>	
+	
+<option id="2AO" source="2AO.mp3">
+<theme>善意引導</theme>
+<scores>
+<score objective="C4">5</score>
+<score objective="C6">5</score>
+<score objective="6.1">5</score>
+</scores>
+<text>謝謝你剛剛跟我分享了這麼多的工作經驗，接下來我就把發球權交給你，換你來問問題。看看你對於職務內容、公司文化，甚至附近有哪些好吃的餐廳…有沒有什麼想知道的？</text>
+
+<feedback>很好，面談過程中，要保留一些時間讓應徵者問問題。招募像是相親一樣，必需雙方情投意合，互相瞭解，才能有圓滿的未來。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="6.2"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Lisa" mediaType="graphic" background="S406.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXX</theme>
+<dialogue>呃，我想知道我今天的表現好不好？錄取的機會多高？那…接下來的流程會是怎麼樣？</dialogue>
+<options header="請選擇最佳的回應：" pos="2,1">
+<link optionId="3AO" />
+<link optionId="3BO" />
+</options>
+</page>	<option id="2BO" source="aside.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="C4">1</score>
+<score objective="C6">1</score>
+<score objective="6.1">1</score>
+</scores>
+<text>好，我想問的都已經問完了，接下來就看你有沒有什麼想問的。如果沒有的話，那我們今天的面談就可以早點結束了。</text>
+
+
+<feedback>這段話顯得沒什麼誠意，好像要趕人家走似的。不宜，請再選一次。</feedback>
+</option>
+	
+<option id="3AO" source="3AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="C6">5</score>
+<score objective="6.2">5</score>
+
+</scores>
+<text>你今天的表現很好，符合我們的期望。不過因為還有兩個應徵者要面談，所以我現在還沒有辦法給你確切的答案。但我會在兩個星期內完成所有面談，到時候不論結果如何，我們都會馬上通知你，這樣可以嗎？</text>
+
+<feedback>很好，這段話相當得體，不僅尊重對方，也保留彈性。但實際應用時你要自己拿捏分寸，如果對方是個百年難見的奇才，你當然要更積極一些去爭取對方，以免被別家公司搶走啦。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="6.1"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S406.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>兩個星期是嗎？好，那我可以等。請問我可以順便請教你一些薪資福利方面的事情嗎？【註：接下來，George便逐一回答Lisa的問題…最後就到了結束面談的時候了…】</dialogue>
+<options header="請選擇最佳的結語：" coachHeader="您的選擇：" pos="1,2">
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page> 	
+	<option id="3BO" source="aside.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="C1">1</score>
+<score objective="C6">1</score>
+<score objective="6.2">1</score>
+
+</scores>
+<text>很抱歉，這些都是公司機密，我不能跟你說。你再等兩個星期看看吧，時間到了我們自然會有人通知你，不要急。</text>
+
+
+
+
+<feedback>人家連出生年月日、身份證字號、相片都給你了，你卻連後續流程都不肯透露，這樣實在說不過去！請再選一次。</feedback>
+</option>
+
+	
+		
+<option id="5AO" source="5AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="6.3">5</score>
+<score objective="C6">5</score>
+<score objective="C8">5</score>
+</scores>
+<text>好，看來你對於這個職務已經相當瞭解了，後續如果還有別的問題，歡迎你隨時打電話來問我。那今天的面談就進行到這裡，很高興認識你，希望將來有緣可以成為工作伙伴。</text>
+
+<feedback>講得很好，不僅掌控了面談的時間，也給予Lisa後續詢問的機會，同時也表達了對Lisa的尊重與期待。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="6.3"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S406.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>哪裡哪裡，我也很高興有這個機會認識您，希望未來還有榮幸，可以在貴公司工作。</dialogue>
+<options header="請選擇最佳的回應：" pos="1,2" >
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>	<option id="5BO" source="aside.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="6.3">1</score>
+<score objective="C6">1</score>
+<score objective="C8">1</score>
+</scores>
+<text>呃…等一下我還有很重要的事要忙，所以今天的面談就到此結束吧。如果還有什麼問題，就等錄取之後再討論吧！</text>
+
+
+<feedback>即使你等一下真的要忙，也不要這樣講，讓人家覺得你敷衍了事，不夠尊重。請再選一次。</feedback>
+</option>
+
+	
+<option id="6AO" source="6AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="6.3">5</score>
+</scores>
+<text>好，那我送你去坐電梯吧。</text>
+
+<feedback>很好，給予應徵者尊重與體貼！為公司建立好形象。</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="6.3" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Lisa" mediaType="graphic" background="S406.jpg" graphicSource="6AN.png" audioSource="6AN.mp3">
+<theme>XXX</theme>
+<dialogue>謝謝，麻煩您了。</dialogue>
+<link nextPageId="6AEND"/> 
+</page>
+
+<page id="6AEND" type="scoreCard" background="S406.jpg" >
+<text>「結語技巧」之演練到此告一段落，請繼續閱讀其他章節，或者在右下角點選「重新開始」，再演練一次。</text>
+</page>
+	<option id="6BO" source="aside.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="C1">3</score>
+<score objective="6.3">3</score>
+</scores>
+<text>你等一下出門，直走後向右轉就可以到電梯間。那我就不送囉，慢走！</text>
+
+<feedback>不管對方表現如何，起碼遠來是客，還是要送到門口吧？請再選一次。</feedback>
+</option>
+
+	
+</nodes>
+<objectives>
+<category id="C" name="溝通原則">
+<objective id="C1" name="尊重肯定"/>
+<objective id="C2" name="避免批評"/>
+<objective id="C3" name="主動釐清"/>
+<objective id="C4" name="鼓勵參與"/>
+<objective id="C5" name="耐心等候"/>
+<objective id="C6" name="正確引導"/>
+<objective id="C7" name="掌握流程"/>
+<objective id="C8" name="轉折自然"/>
+</category>
+
+
+<category id="6" name="結語技巧">
+<objective id="6.1" name="提供發問機會"/>
+<objective id="6.2" name="說明後續流程"/>
+<objective id="6.3" name="表達感謝尊重"/>
+</category>
+</objectives>
+<stages>
+<stage id="6.1" name="解答疑惑"/>
+<stage id="6.2" name="說明後續流程"/>
+<stage id="6.3" name="溫馨結語"/>
+</stages>
+</simulation>		

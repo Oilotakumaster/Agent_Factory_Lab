@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 翻譯 Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fa-solid fa-language"></i>
+                    <h1>AI 翻譯 Agent</h1>
+                </div>
+                <button id="info-btn" class="icon-btn info-btn" title="查看操作指南"><i class="fa-solid fa-circle-info"></i> 指南</button>
+            </div>
+            <p class="subtitle">快速、精準的即時翻譯助手</p>
+        </header>
+
+        <main class="translator-container">
+            <!-- Left Side: Input -->
+            <div class="panel input-panel">
+                <div class="panel-header">
+                    <select id="source-lang" class="lang-select">
+                        <option value="Autodetect">自動偵測 (Auto)</option>
+                        <option value="zh-TW" selected>繁體中文 (Chinese)</option>
+                        <option value="en">英文 (English)</option>
+                        <option value="ja">日文 (Japanese)</option>
+                        <option value="ko">韓文 (Korean)</option>
+                    </select>
+                    <button id="clear-btn" class="icon-btn" title="清空內容"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea id="source-text" placeholder="請輸入要翻譯的文字..." spellcheck="false"></textarea>
+                    <div class="char-count"><span id="char-current">0</span> / 5000</div>
+                </div>
+            </div>
+
+            <!-- Swap Button -->
+            <div class="swap-container">
+                <button id="swap-btn" class="icon-btn swap-btn" title="對調語言"><i class="fa-solid fa-right-left"></i></button>
+            </div>
+
+            <!-- Right Side: Output -->
+            <div class="panel output-panel">
+                <div class="panel-header">
+                    <select id="target-lang" class="lang-select">
+                        <option value="zh-TW">繁體中文 (Chinese)</option>
+                        <option value="en" selected>英文 (English)</option>
+                        <option value="ja">日文 (Japanese)</option>
+                        <option value="ko">韓文 (Korean)</option>
+                    </select>
+                    <button id="copy-btn" class="icon-btn" title="複製翻譯"><i class="fa-regular fa-copy"></i></button>
+                </div>
+                <div class="textarea-wrapper">
+                    <div id="loading" class="loading-overlay hidden">
+                        <div class="spinner"></div>
+                        <p>思考中...</p>
+                    </div>
+                    <textarea id="target-text" placeholder="翻譯結果將顯示在此..." readonly></textarea>
+                </div>
+            </div>
+        </main>
+
+        <div class="action-container">
+            <button id="translate-btn" class="primary-btn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> 開始翻譯
+            </button>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">已複製到剪貼簿！</div>
+
+        <!-- Info Modal -->
+        <div id="info-modal" class="modal hidden">
+            <div class="modal-content info-content">
+                <div class="modal-header">
+                    <h2><i class="fa-solid fa-book"></i> 操作指南</h2>
+                    <button id="close-info-btn" class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li><i class="fa-solid fa-keyboard"></i> <strong>快捷翻譯</strong>：輸入完畢後按 <code>Ctrl + Enter</code> 直接翻譯。</li>
+                        <li><i class="fa-solid fa-right-left"></i> <strong>語言對調</strong>：點擊畫面中央按鈕，瞬間切換輸入/輸出語言。</li>
+                        <li><i class="fa-regular fa-copy"></i> <strong>一鍵複製</strong>：點擊右側上方按鈕將翻譯結果複製到剪貼簿。</li>
+                        <li><i class="fa-solid fa-trash-can"></i> <strong>快速清空</strong>：點擊左側上方垃圾桶圖示清除所有文字。</li>
+                        <li><i class="fa-solid fa-language"></i> <strong>自動偵測</strong>：來源語言預設可「自動偵測」您輸入的各國語言。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木人巷 - 企業培訓顧問</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+    <!-- 認證畫面 Overlay (保留) -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-modal">
+            <div class="auth-icon">🔒</div>
+            <h2 style="color: #333">企業安全登入系統</h2>
+            <p style="margin-bottom: 30px;">本內訓平台受高等級安全防護，<br>請使用已授權的 Google 帳戶登入以驗證身分。</p>
+            
+            <!-- Google Login API Config -->
+            <div id="g_id_onload"
+                 data-client_id="826098872175-uvv1odj4podc0dvhpp5oe5rk2u01nnk8.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleGoogleLogin"
+                 data-auto_prompt="false">
+            </div>
+
+            <!-- Google Login Button UI -->
+            <div class="g_id_signin" style="display:flex; justify-content:center;"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+            
+            <p id="auth-error" class="auth-error" style="display:none; margin-top:20px;">登入驗證失敗，請重試</p>
+        </div>
+    </div>
+
+    <!-- 頂部宣傳網址 Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">木人巷</div>
+        <div class="nav-user">
+            <span>公司簡介</span>
+            <span class="active">套裝課程</span>
+            <span>專案服務</span>
+            <span>電子報</span>
+        </div>
+    </nav>
+
+    <!-- 主要內容區：採用 KJ Simulation 真實的 三欄式卡片排版 -->
+    <main class="container">
+        
+        <div class="grid-container">
+            
+            <!-- Column 1 -->
+            <div class="course-card">
+                <div class="video-container">
+                    <iframe id="e65adbfa-b579-e2bb-919a-170b0d562a65-vod-91c12faf-0dc4-4b50-9269-019d05d4654b" src="https://iframe.dacast.com/vod/e65adbfa-b579-e2bb-919a-170b0d562a65/91c12faf-0dc4-4b50-9269-019d05d4654b" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                </div>
+                <div class="course-title">會議管理</div>
+                <p class="course-desc">開會對職場人士而言，是跟上班打卡一樣的必要責任！但大多數的會議，卻因為缺乏效率，而成為員工擺脫不掉的夢魘。本單元帶您掌握會議不踩雷的核心原則。</p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="course-card">
+                <div class="video-container">
+                    <iframe id="e65adbfa-b579-e2bb-919a-170b0d562a65-vod-91132b76-a6d4-4a4f-8146-cd04439ae881" src="https://iframe.dacast.com/vod/e65adbfa-b579-e2bb-919a-170b0d562a65/91132b76-a6d4-4a4f-8146-cd04439ae881" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                </div>
+                <div class="course-title">顧問式銷售話術</div>
+                <p class="course-desc">企業的生存關鍵，在於能不能把產品順利銷售給客戶！然而客戶多半是愛挑剔、疑心病、不懂裝懂、自尊心比天高。透過互動式案例拆解，這堂課讓您面對高難度客戶仍能侃侃而談。</p>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="course-card">
+                <div class="video-container">
+                     <iframe id="e65adbfa-b579-e2bb-919a-170b0d562a65-vod-2a80f859-e62c-4e0a-9a89-543dbd3668fd" src="https://iframe.dacast.com/vod/e65adbfa-b579-e2bb-919a-170b0d562a65/2a80f859-e62c-4e0a-9a89-543dbd3668fd" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay;encrypted-media" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+                </div>
+                <div class="course-title">電腦檔案管理</div>
+                <p class="course-desc">隨著數位科技的日益普及，企業同仁越來越習慣將工作成果以電腦檔案來儲存，導致「檔案管理不當」的問題也越來越嚴重。建立高效率的目錄結構，是全公司生產力躍升的關鍵第一步。</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- 底部 Footer -->
+    <footer class="footer">
+        <p>木人巷股份有限公司 | 電話: +886-2-26789120 | 信箱: service@kjsimulation.com | 地址: 239 新北市鶯歌區尖山埔路151號</p>
+        <p class="copyright">Copyright 2012 - 2026 | All Rights Reserved | KJ Simulation Inc.</p>
+    </footer>
+
+    <script>
+        // Google 認證成功後的回呼機制
+        function handleGoogleLogin(response) {
+            if (response.credential) {
+                const authOverlay = document.getElementById('auth-overlay');
+                authOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    authOverlay.style.display = 'none';
+                }, 300); // 漸隱退出畫面
+            } else {
+                document.getElementById('auth-error').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

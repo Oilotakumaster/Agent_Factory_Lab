@@ -1,0 +1,27 @@
+<node type="chapter" id="202" label="案例二：組長不配合推動ERP">	
+	<lesson label="1.任務說明">
+		<page type="imageText" background="assets/images/S205_bg4.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">你是鴻展公司的營運處長。最近公司開始導入新的ERP系統，預定在四個月後正式上線，各部門都如火如荼，加緊趕工中…<br><br>
+但今天早上你瀏覽了各部門的導入進度時，卻發現業務部的進度明顯落後，你擔心這將導致整個ERP專案無法如期完成。<br><br>
+所以你決定把業務部的ERP專案負責人Mason找來面談，希望能改善他的績效落差…</div>]]>		
+		</page>
+	</lesson>	
+	<lesson label="2.部屬背景">
+		<page type="imageText" background="assets/images/S205_bg7.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">Mason，男，32歲，目前擔任業務部經理，公司年資 4 年，業界年資3年。<br><br>
+其經驗豐富，分析推理能力強，喜歡謀定而後動，討厭臨時抱佛腳。<br/><br/>
+由於自恃甚高，很有主見，對於不認同之任務往往不願配合，所以升遷並不順利，常有懷才不遇之慨。</div>]]>		
+		</page>
+	</lesson>	
+	<!--<lesson label="SL">
+			<embed>sl/COA_1-1_web/story.html</embed>
+		</lesson>-->
+	<lesson label="3.展開面談">
+		<simulation>courses/1/S202.xml</simulation>    	
+	</lesson>
+	<lesson label="4.技巧檢討">
+		<page type="simulationRecords">
+		</page>
+	</lesson>
+</node> 
+	

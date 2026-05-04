@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora | 後台管理資料</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-table-wrapper {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        th {
+            background: rgba(129, 140, 248, 0.2);
+            color: var(--primary-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .clear-btn {
+            background: rgba(251, 113, 133, 0.2);
+            color: #fecdd3;
+            border: 1px solid rgba(251, 113, 133, 0.3);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-left: 10px;
+        }
+
+        .clear-btn:hover {
+            background: rgba(251, 113, 133, 0.4);
+            color: #fff;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container admin-container">
+        <div class="glass-panel">
+            <div class="admin-header">
+                <div>
+                    <div class="brand" style="margin-bottom: 5px;">
+                        <i class="fa-solid fa-server"></i>
+                        <span>Aurora 系統資料庫</span>
+                    </div>
+                    <p class="subtitle" style="margin-bottom: 0px;">目前儲存在本地瀏覽器中的註冊名單</p>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 回發布前台</a>
+                    <button class="clear-btn" id="clear-db"><i class="fa-solid fa-trash-can"></i> 清除資料</button>
+                </div>
+            </div>
+
+            <div class="glass-table-wrapper">
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th>使用者名稱 (Name)</th>
+                            <th>電子郵件 (Email)</th>
+                            <th>加密密碼 (Password)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-body">
+                        <!-- Users will be populated here -->
+                    </tbody>
+                </table>
+                <div id="empty-state" class="empty-state hidden">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>資料庫目前是空的</h3>
+                    <p>請先前往登入頁面試著註冊幾筆帳號！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const users = JSON.parse(localStorage.getItem('aurora_users') || '[]');
+            const tbody = document.getElementById('users-body');
+            const emptyState = document.getElementById('empty-state');
+            const table = document.getElementById('users-table');
+            const clearBtn = document.getElementById('clear-db');
+
+            function renderUsers() {
+                tbody.innerHTML = '';
+                if (users.length === 0) {
+                    table.classList.add('hidden');
+                    emptyState.classList.remove('hidden');
+                } else {
+                    table.classList.remove('hidden');
+                    emptyState.classList.add('hidden');
+                    
+                    users.forEach(user => {
+                        const tr = document.createElement('tr');
+                        // Hide password lightly for aesthetic
+                        const hiddenPassword = '•'.repeat(Math.max(6, user.password.length));
+                        
+                        tr.innerHTML = `
+                            <td><i class="fa-regular fa-user" style="margin-right:8px; opacity:0.5"></i> ${user.name}</td>
+                            <td>${user.email}</td>
+                            <td title="${user.password}" style="cursor:help; letter-spacing:2px;">${hiddenPassword}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+            }
+
+            renderUsers();
+
+            clearBtn.addEventListener('click', () => {
+                if (confirm('確定要清空所有已經註冊的使用者資料嗎？此操作無法還原。')) {
+                    localStorage.removeItem('aurora_users');
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

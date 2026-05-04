@@ -1,0 +1,8 @@
+<course name="主動學習" label="課程目錄" src="assets/courses/CL_logo.jpg">
+	<node type="chapter" id="103601" label="主動學習">
+		<embed>sl/CL/story.html</embed>
+	</node>
+</course>
+
+		
+	

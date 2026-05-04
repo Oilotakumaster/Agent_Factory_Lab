@@ -1,0 +1,59 @@
+<node type="chapter" id="408" label="案例一：持續學習(提問、追問)">	
+ 	 	<!--<lesson label="1.課程注意事項">
+    	<page type="imageText" background="assets/images/S401_task.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:110px">本模組共包含五個案例，請您務必要<font color="#F40020">依照案例一、案例二、案例三、案例四、案例五的順序</font>，來依序完成這五個案例，以確保「案例成績、閱讀時數」能順利回傳平台。<br><br>
+另外，每一個案例的通過標準則是：需點選「<font color="#F40020">測驗(計分)</font>」按鈕進入演練，並且「<font color="#F40020">得分率為100%</font>」，才會視同通過。</div>]]>		
+		</page>
+	</lesson>-->	
+	 <lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S403_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">鴻展公司資訊部門將招聘一名MIS工程師,負責網路系統之維護營運工作，Simon是應徵者之一，由George負責面試。<br><br>
+此時George已經完成開場、釐清履歷等步驟，即將進入<font color="#F40020">探問職能</font>階段。於是他瀏覽了職能清單，首先要探問的是<font color="#F40020">持續學習</font>職能…</div>]]>       
+        </page>
+    </lesson> 	     
+    <lesson label="2.任務說明">
+    	<page type="imageText" background="assets/images/S402_bg.jpg">
+			 <![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你的任務，是<font color="#F40020">扮演George</font>，並採用正確的<font color="#F40020">提問技巧、追問技巧、溝通原則</font>，從與Simon的互動中，蒐集到<font color="#F40020">持續學習</font>職能的<font color="#F40020">兩個完整而有效的行為事例</font>！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">職能清單</font>中，瞭解該職能及其行為指標，然後在<font color="#F40020">履歷資料</font>中，瞭解Simon的背景，然後<font color="#F40020">進行演練</font>。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	     		
+		</page>
+	</lesson>	
+ 	<lesson label="3.職能清單">
+    	<page type="imageText" background="assets/images/S401_bg1.jpg">
+			<![CDATA[<div style="width:50%; float:right; padding:90px">待聘職務：資訊部MIS工程師。所需職能及行為指標如下：<br><br>
+<font color="#F40020">持續學習：</font>
+					<textformat indent="-20">
+						<li>把挑戰視為學習機會。</li>
+						<li>能分辨出自己需要學習的地方。</li>
+						<li>能找出適合自己的學習方式。</li>
+						<li>積極將學習成果應用在工作中。</li>
+						<li>願意承擔學習中所遭遇的困難或風險。</li><br>
+						主動積極(略)<br><br>
+						團隊合作(略)</div>]]>		
+		</page>
+	</lesson>
+ 	<lesson label="4.履歷資料">
+    	<page type="imageText" background="assets/images/S401_bg2.jpg">
+			<![CDATA[<div style="width:50%; float:right; padding:90px"><textformat indent="0">Simon，男，27歲。<br><br>
+			嗜好：喜歡爬山、攀岩、騎腳踏車、聽音樂。<br/><br/></textformat>
+				<textformat indent="0">學歷：</textformat>
+					<textformat indent="-20">
+						<li>2015.09 ～ 2018.05 D大學資訊管理系學士。</li><br>
+					</textformat>
+				<textformat indent="0">經歷：</textformat>
+					<textformat indent="-20">
+						<li>2019.03 ～ current   E公司 軟體工程師。</li>
+						<li>2018.07 ～ 2018.02 D公司 測試工程師。</li>
+						<li>2017.09 ～ 2018.05 系學會副會長。</li>
+					</textformat></div>]]>		
+		</page>
+	</lesson>	
+	 <lesson label="5.進行演練">
+    	<simulation>courses/5/S408.xml</simulation>    	
+ 	</lesson>
+ 	<lesson label="6.技巧檢討">
+    	<page type="simulationRecords">
+    	</page>
+ 	</lesson>
+ </node>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制面板 - Nexus Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+    <nav class="sidebar">
+        <div class="brand">
+            <i class="fa-solid fa-bolt"></i> Nexus Auth
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#"><i class="fa-solid fa-house"></i> 首頁總覽</a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i> 個人檔案</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> 帳號設定</a></li>
+        </ul>
+        <div class="logout-section">
+            <button id="logout-btn" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> 登出</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-content">
+        <header class="dash-header">
+            <div>
+                <h1 id="welcome-text">歡迎回來</h1>
+                <p class="date-text" id="current-date">載入中...</p>
+            </div>
+            <div class="user-profile">
+                <div class="avatar" id="user-avatar">U</div>
+            </div>
+        </header>
+
+        <section class="cards-grid">
+            <div class="dash-card">
+                <div class="card-icon blue"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="card-info">
+                    <h3>帳號狀態</h3>
+                    <p>已驗證 (安全)</p>
+                </div>
+            </div>
+            <div class="dash-card">
+                <div class="card-icon green"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                <div class="card-info">
+                    <h3>上次登入時間</h3>
+                    <p id="last-login">今天</p>
+                </div>
+            </div>
+            <div class="dash-card">
+                <div class="card-icon purple"><i class="fa-solid fa-cloud"></i></div>
+                <div class="card-info">
+                    <h3>雲端空間使用率</h3>
+                    <p>2.4 GB / 15 GB</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="welcome-banner">
+            <div class="banner-content">
+                <h2>系統通知</h2>
+                <p>這是一個模擬登入成功後的受保護頁面（Protected Route）。如果你試圖把 LocalStorage 的 Session 清掉再進入這頁，將會被系統自動攔截並強制導回登入頁。</p>
+            </div>
+        </section>
+    </main>
+    <script src="auth.js"></script>
+    <script>
+        // Dashboard specific logic: Check if logged in!
+        document.addEventListener('DOMContentLoaded', () => {
+            const session = JSON.parse(localStorage.getItem('nexus_session'));
+            if (!session || !session.isLoggedIn) {
+                // Kick out to login
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Fill UI with user info
+            const currentUser = session.user;
+            document.getElementById('welcome-text').textContent = `歡迎回來, ${currentUser.name}`;
+            
+            // Set initial avatar letter
+            document.getElementById('user-avatar').textContent = currentUser.name.charAt(0).toUpperCase();
+
+            // Set date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = new Date().toLocaleDateString('zh-TW', options);
+
+            const timeOptions = { hour: '2-digit', minute: '2-digit' };
+            document.getElementById('last-login').textContent = `今日 ${new Date().toLocaleTimeString('zh-TW', timeOptions)}`;
+        });
+    </script>
+</body>
+</html>

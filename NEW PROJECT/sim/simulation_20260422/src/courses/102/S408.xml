@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation  characterWidth="80%" characterHeight="" characterX="-190px" characterY="0px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0px" dialogStart="0.5" flvPath="simulation/S408/graphic/">
+<nodes>
+<page id="0Start" type="startPage" stage="5.1" background="assets/images/S408_startPage.jpg" srcWidth="772"  paddingTop="50" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">請在右下角選擇本案例的演練模式。可反覆演練，直到滿意為止：<br/><br/>
+<li>若選擇「練習(不計分)」，系統將在你點選選項之前，就提供教練回饋。</li><br>
+<li>若選擇「測驗(計分)」，系統將在你點選選項之後，才提供教練回饋。案例結束後（14回合），若有必要，系統亦可將成績傳到貴公司學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="1AN"/>
+</page>
+ 
+
+<page id="1AN" type="character" 
+stage="5.1"  idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<theme>XXXX</theme>
+<dialogue>（等待George詢問…）</dialogue>
+<options header="請選擇最佳提問句：" coachHeader="您的選擇：" pos="2,1,3">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>			
+<option id="2AO" source="2AO.mp3">
+<theme>提問（BEI）</theme>
+<scores>
+<score objective="3.1">5</score>
+<score objective="3.2">5</score>
+<score objective="3.3">5</score>
+</scores>
+<text>在你擔任軟體工程師的這幾年，你有沒有承擔過技術難度超過你能力的專案？</text>
+
+<feedback>很好，這是一個與需要「持續學習」職能才能克服的情境。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯…我想想，應該是沒有吧。</dialogue>
+<options header="請選擇最佳追問句：" pos="3,2,1">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page> 	<option id="2BO" source="2BO.mp3">
+<theme>提問（理論）</theme>
+<scores>
+<score objective="3.1">5</score>
+<score objective="3.2">5</score>
+<score objective="3.3">1</score>
+</scores>
+<text>如果你的主管要你負責一個技術難度超過你能力的任務，你會怎麼辦？</text>
+
+<feedback> 這是假設性提問，即使Simon回答地頭頭是道，也不代表他真的能做到。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="2BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="2BN.png" audioSource="2BN.mp3">
+<theme>XXX</theme>
+<dialogue>我想…我會先分析一下自己到底缺了哪些技術。</dialogue>
+<link nextPageId="2BN2"/>
+</page>
+
+<page id="2BN2" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="2BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="2BN2.png" audioSource="2BN2.mp3">
+<theme>XXX</theme>
+<dialogue>可以的話，就去找幾本書來看看，不然就是去請教高手吧！</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1">
+<link optionId="2AO" />
+<link optionId="2CO" />
+</options>
+</page>	<option id="2CO" source="2CO.mp3">
+<theme>提問（引導）</theme>
+<scores>
+<score objective="3.1">1</score>
+<score objective="3.2">3</score>
+<score objective="3.3">1</score>
+</scores>
+<text>你覺得一個優秀的軟體工程師應該怎麼做，才能克服技術不足的問題？</text>
+
+<feedback> 這是一個理論性提問。即使Simon回答地頭頭是道，也不代表他真的能做到。 </feedback>
+<link nextPageId="2CN"/>
+</option>
+
+<page id="2CN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="2CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="2CN.png" audioSource="2CN.mp3">
+<theme>XXX</theme>
+<dialogue>彼得杜拉克曾經說過，二十一世紀是知識工作者的世紀。</dialogue>
+<link nextPageId="2CN2"/>
+</page>
+<page id="2CN2" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="2CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="2CN2.png" audioSource="2CN2.mp3">
+<theme>XXX</theme>
+<dialogue>身為一個知識工作者，當然就是要隨時吸收新知，讓自己的技術保持在最新的狀態啊！</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="2AO" />
+<link optionId="2BO" />
+</options>
+</page>	
+<option id="3AO" source="3AO.mp3">
+<theme>提問（BEI）</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="C3">5</score>
+<score objective="C4">5</score>
+</scores>
+<text>你的意思是，你這三年來撰寫程式所使用的技術，都在你剛進公司時就已經具備了嗎？ </text>
+
+<feedback>很好，釐清一下。因為這種情形不太可能。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>當然不是啦！我的意思是，軟體技術每天都在進步。</dialogue>
+<link nextPageId="3AN2"/>
+</page> 
+<page id="3AN2" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="3AN2.png" audioSource="3AN2.mp3">
+<theme>XXX</theme>
+<dialogue>我們自己當然也要跟著提昇，才能符合客戶的要求啊。</dialogue>
+<options header="請選擇最佳提問句：" pos="2,3,1">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>提問（理論）</theme>
+<scores>
+<score objective="C2">1</score>
+<score objective="C3">3</score>
+<score objective="C4">1</score>
+</scores>
+<text>怎麼可能？這太誇張了吧？難道你這三年來的技術完全沒有提昇嗎？</text>
+
+<feedback>可以釐清，但避免使用這種批評的語氣。</feedback>
+<link nextPageId="3AN"/>
+</option>
+	<option id="3CO" source="3CO.mp3">
+<theme>提問（引導）</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="C4">1</score>
+<score objective="C6">1</score>
+</scores>
+<text>喔，好，沒關係，那我繼續問下一個題目好了。</text>
+
+<feedback>你不應該這麼早就放棄了。你應該要瞭解他為什麼說不出這些經驗，多鼓勵一下，或者換個方法再問一次。 </feedback>
+<link nextPageId="3CN"/>
+</option>
+
+<page id="3CN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="3CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="3CN.png" audioSource="3CN.mp3">
+<theme>XXX</theme>
+<dialogue>蝦？不好意思，可不可以請您再問一次？</dialogue>
+<options pos="2,1">
+<link optionId="4AO" />
+<link optionId="4BO" />
+</options>
+</page>	
+<option id="4AO" source="4AO.mp3">
+<theme>提問（BEI）</theme>
+<scores>
+<score objective="3.3">5</score>
+<score objective="3.4">5</score>
+</scores>
+<text>那你能不能跟我分享一個實際經驗，是你的技術因為客戶的要求而提昇？</text>
+<feedback>很好，你換了一個說法，再問一次。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>好啊，就曾經有一個客戶，需要用Oracle開發資料庫。</dialogue>
+<link nextPageId="4AN2"/>
+</page>
+
+<page id="4AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="4AN2.png" audioSource="4AN2.mp3">
+<theme>XXX</theme>
+<dialogue>可是當時我只會使用MySQL，不過最後我還是把Oracle學好了。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2,3">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>假設</theme>
+<scores>
+<score objective="3.3">1</score>
+<score objective="3.4">5</score>
+</scores>
+<text>那你告訴我，當你的技術低於客戶要求時，你會如何提昇技術？</text>
+
+<feedback>這是個假設性提問。不宜。</feedback>
+<link nextPageId="4BN"/>
+</option>
+
+<page id="4BN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="4BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="4BN.png" audioSource="4BN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯…就想辦法去找書來看、找人來問、上網查資料囉。</dialogue>
+<options pos="2,1">
+<link optionId="4AO" />
+<link optionId="4CO" />
+</options>
+</page> 	<option id="4CO" source="4CO.mp3">
+<theme>提問（BEI）</theme>
+<scores>
+<score objective="3.3">1</score>
+<score objective="3.4">1</score>
+</scores>
+<text>所以如果你的技術不符合客戶需求時，你會自己想辦法去找書、問人、上網，提昇自己技術，直到符合客戶的要求嗎？</text>
+<feedback>這是引導性問題，不宜。</feedback>
+<link nextPageId="4CN"/>
+</option>
+
+<page id="4CN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="4CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="4CN.png" audioSource="4CN.mp3">
+<theme>XXX</theme>
+<dialogue>當然囉，不然怎麼辦呢？</dialogue>
+<options pos="1,3">
+<link optionId="4AO" />
+<link optionId="4BO" />
+</options>
+</page> 	
+<option id="5AO" source="5AO.mp3">
+<theme>追問（BEI）</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+</scores>
+<text>這是個怎麼樣的專案？規模多大？內容是什麼？</text>
+
+<feedback>很好，這個追問可以協助分析情境挑戰的難度。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>喔，這是一個貿易公司的進銷存系統，專案金額大概是五百萬元左右。</dialogue>
+<link nextPageId="5AN2"/>
+
+</page>
+<page id="5AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="5AN2.png" audioSource="5AN2.mp3">
+<theme>XXX</theme>
+<dialogue>我們有三個人負責要在四個月內完成。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,3,2">
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>追問（主觀意見）</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.2">1</score>
+<score objective="5.5">1</score>
+</scores>
+<text>Oracle太貴了啦，大企業才需要，你們只是中小企業，為什麼不考慮微軟的MSSQL呢？</text>
+
+<feedback>這段話是你的主觀意見，如果是當作聊天還可以，如果是要用它來評估職能，則屬多餘。</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+<page id="5BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="5BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="5BN.png" audioSource="5BN.mp3">
+<theme>XXX</theme>
+<dialogue>對啊，我也覺得用微軟的MSSQL就可以了。</dialogue>
+<link nextPageId="5BN2"/>
+</page>
+
+<page id="5BN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="5BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="5BN2.png" audioSource="5BN2.mp3">
+<theme>XXX</theme>
+<dialogue>不過客戶就是這樣指定，我也沒辦法啊！</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="5AO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>追問（職能無關）</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">1</score>
+
+</scores>
+<text>這個客戶在找你們之前，有沒有找過別的廠商？</text>
+
+<feedback>這個追問沒有重點，無法用來評鑑Simon的職能。純屬多餘。</feedback>
+<link nextPageId="5CN"/>
+</option>
+
+<page id="5CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="5CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="5CN.png" audioSource="5CN.mp3">
+<theme>XXX</theme>
+<dialogue>這我就不清楚了。我是簽約之後才參與這個專案的。</dialogue>
+<options pos="2,1">
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page>	
+<option id="6AO" source="6AO.mp3">
+<theme>追問（BEI）</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.5">5</score>
+<score objective="C3">5</score>
+
+</scores>
+<text>那你們三個人是如何分工呢？</text>
+
+<feedback>很好。Simon用「我們」來描述所面對的挑戰，所以你必須請他釐清所扮演的角色，以瞭解他所承擔的責任是否與職能有關？</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="6AN.png" audioSource="6AN.mp3">
+<theme>XXX</theme>
+<dialogue>一個是系統分析師，一個是專案經理，而我則是負責軟體設計。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1,3">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page> 	<option id="6BO" source="6BO.mp3">
+<theme>引導</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.5">1</score>
+<score objective="C3">1</score>
+
+</scores>
+<text>你在這個專案裡面，一定是負責軟體設計吧？ </text>
+
+<feedback>這是個引導性追問，難以得到最真實的答案。</feedback>
+<link nextPageId="6BN"/>
+</option>
+
+<page id="6BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="6BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="6BN.png" audioSource="6BN.mp3">
+<theme>XXX</theme>
+<dialogue>對啊，我就是負責軟體設計的。</dialogue>
+<options header="請選擇最佳追問句：" pos="3,2,1">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>無關</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.5">1</score>
+<score objective="C2">1</score>
+</scores>
+<text>三個人花四個月就可以寫出來的軟體，你們居然收費500萬。你們公司也賺太多了吧？</text>
+
+<feedback>這是主觀意見。無論Simon如何回答，都無法讓你更精準地評鑑其「持續學習」職能。</feedback>
+<link nextPageId="6CN"/>
+</option>
+
+<page id="6CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="6CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="6CN.png" audioSource="6CN.mp3">
+<theme>XXX</theme>
+<dialogue>呃…報價是業務那邊的事情，這我就不太清楚了。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2,3">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	
+<option id="7AO" source="7AO.mp3">
+<theme>追問（BEI）</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+</scores>
+<text>你當時用了哪些方法，把Oracle學好呢？</text>
+
+<feedback>很好，以開放性問句，請Simon描述其行動，看是否符合「持續學習」的行為指標。</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+<page id="7AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7AN.png" audioSource="7AN.mp3">
+<theme>XXX</theme>
+<dialogue>喔，當然就先找Oracle 的書來看啊。資料庫的語法其實都大同小異啦。</dialogue>
+<link nextPageId="7AN2"/>
+</page>
+
+<page id="7AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7AN2.png" audioSource="7AN2.mp3">
+<theme>XXX</theme>
+<dialogue>所以我花了一個星期就差不多弄懂了，剩下的問題就要靠實戰技巧來解決了。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1">
+<link optionId="8AO" />
+<link optionId="9BO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>無關</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.2">1</score>
+</scores>
+<text>你當初用了哪些方法，讓三個人能夠順利合作呢</text>
+
+<feedback>如果你的目的是要探問「團隊合作」職能，這個追問就有道理，但此時是要探問「持續學習」職能，應該把目標放在Simon針對學習所採取的行動。</feedback>
+<link nextPageId="7BN"/>
+</option>
+
+<page id="7BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7BN.png" audioSource="7BN.mp3">
+<theme>XXX</theme>
+<dialogue>我啊，就是乖乖按照他們開出的規格設計程式，不要想東想西的。</dialogue>
+<link nextPageId="7BN2"/>
+</page>
+
+<page id="7BN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7BN2.png" audioSource="7BN2.mp3">
+<theme>XXX</theme>
+<dialogue>然後準時完成作品，不要拖延！這樣他們就很偷笑了啦。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="7AO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme>追問（引導）</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>那你當時有沒有去找一些書來看，或者找幾個高手來問？</text>
+<feedback>這是引導性追問，不宜。</feedback>
+<link nextPageId="7CN"/>
+</option>
+
+<page id="7CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7CN.png" audioSource="7CN.mp3">
+<theme>XXX</theme>
+<dialogue>對啊，我第一個動作就是去找書來看。</dialogue>
+<link nextPageId="7CN2"/>
+
+</page>
+
+<page id="7CN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="7CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="7CN2.png" audioSource="7CN2.mp3">
+<theme>XXX</theme>
+<dialogue>如果還有問題就去請教學長。</dialogue>
+<options pos="2,1">
+<link optionId="7AO" />
+<link optionId="7BO" />
+</options>
+</page>	
+<option id="8AO" source="8AO.mp3">
+<theme>追問（BEI）</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="C3">5</score>
+<score objective="5.2">5</score>
+</scores>
+<text>能不能說明一下你所謂的「實戰技巧」是什麼意思？ </text>
+
+<feedback>很好，請Simon多描述其行動，看是否可以找出更多符合「持續學習」行為指標的證據。</feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="8AN.png" audioSource="8AN.mp3">
+<theme>XXX</theme>
+<dialogue>呵呵，就是一些撇步啊。</dialogue>
+<link nextPageId="8AN2"/>
+</page> 
+
+<page id="8AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="8AN2.png" audioSource="8AN2.mp3">
+<theme>XXX</theme>
+<dialogue>我就先把公司以前用Oracle完成的作品拿來當範本，邊改邊學。碰到不懂的地方，就找學長教。</dialogue>
+<link nextPageId="8AN3"/>
+
+</page>
+<page id="8AN3" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="8AN3.png" audioSource="8AN3.mp3">
+<theme>XXX</theme>
+<dialogue>再不然就去Google一下。現在網路實在太好用了，都不知道以前的人沒有網路怎麼過活。</dialogue>
+<options header="請選擇最佳追問句：" pos="3,2,1">
+<link optionId="9AO" />
+<link optionId="9BO" />
+<link optionId="9CO" />
+</options>
+</page>			
+<option id="9AO" source="9AO.mp3">
+<theme>追問：BEI </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那後來專案的成果如何？</text>
+
+<feedback>很好，請Simon描述其專案成果，以確定其行動的確化解了情境挑戰。</feedback>
+<link nextPageId="9AN"/>
+</option>
+
+<page id="9AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="9AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="9AN.png" audioSource="9AN.mp3">
+<theme>XXX</theme>
+<dialogue>後來就準時完工啦。然後老闆就指派另一個專案給我們繼續忙囉。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,3,2">
+<link optionId="10AO" />
+<link optionId="10BO" />
+<link optionId="10CO" />
+</options>
+</page>	<option id="9BO" source="9BO.mp3">
+<theme>追問：引導</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>那後來主管一定很滿意你的成果囉？</text>
+
+<feedback>這是引導性問句，不宜。</feedback>
+<link nextPageId="9BN"/>
+</option>
+
+<page id="9BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="9BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="9BN.png" audioSource="9BN.mp3">
+<theme>XXX</theme>
+<dialogue>是啊，老闆很滿意，還當面誇獎我哩！</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="9AO" />
+<link optionId="9CO" />
+</options>
+</page>	<option id="9CO" source="9CO.mp3">
+<theme>追問：理論</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.3">1</score>
+</scores>
+<text>如果沒有人可以問，也沒有Google可以用，你會怎麼克服這個難關？</text>
+
+<feedback> 這是個理論性問題，而且其解法也不適用於真實世界。這是個多餘的追問。</feedback>
+<link nextPageId="9CN"/>
+</option>
+
+<page id="9CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="9CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="9CN.png" audioSource="9CN.mp3">
+<theme>XXX</theme>
+<dialogue>那…那就是要多看書，多練習吧，不然怎麼辦呢？</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="9AO" />
+<link optionId="9BO" />
+</options>
+</page>	
+<option id="10AO" source="10AO.mp3">
+<theme>追問：BEI </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那客戶覺得專案成果如何？後來和你們的關係怎麼樣？</text>
+
+<feedback> Simon的回答過於模糊，所以你換個方法再追問一次。 </feedback>
+<link nextPageId="10AN"/>
+</option>
+
+<page id="10AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="10AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="10AN.png" audioSource="10AN.mp3">
+<theme>XXX</theme>
+<dialogue>客戶喔，我猜應該是很滿意吧，不然不會在半年後又跟我們簽了另一個約。</dialogue>
+<options header="請選擇最佳提問句：" pos="2,1">
+<link optionId="11AO" />
+<link optionId="11BO" />
+</options>
+</page>	<option id="10BO" source="10BO.mp3">
+<theme>追問：BEI </theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.2">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>嗯。那客戶一定也很滿意你們的成果囉？</text>
+
+<feedback> 這是引導性問句，不宜。 </feedback>
+<link nextPageId="10BN"/>
+</option>
+
+<page id="10BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="10BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="10BN.png" audioSource="10BN.mp3">
+<theme>XXX</theme>
+<dialogue>當然啊，所以半年後又跟我們簽了另外一個約。</dialogue>
+<options header="請選擇最佳提問句：" pos="2,1">
+<link optionId="11AO" />
+<link optionId="11BO" />
+</options>
+</page>	<option id="10CO" source="10CO.mp3">
+<theme>追問：BEI </theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">1</score>
+<score objective="5.5">1</score>
+</scores>
+<text>能夠開始進行下一個專案，你一定很高興吧？ </text>
+
+<feedback> 這個問題，無法讓你所蒐集的行為事例更完整。這是多餘的追問。 </feedback>
+<link nextPageId="10CN"/>
+</option>
+
+<page id="10CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="10CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="10CN.png" audioSource="10CN.mp3">
+<theme>XXX</theme>
+<dialogue>呃…對啊，當然囉。</dialogue>
+<options header="請選擇最佳提問句：" pos="1,2">
+<link optionId="11AO" />
+<link optionId="11BO" />
+</options>
+</page>	
+<option id="11AO" source="11AO.mp3">
+<theme>探問BEI </theme>
+<scores>
+<score objective="C4">5</score>
+<score objective="C7">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>嗯，這是一個相當有價值的經驗，謝謝你的分享。接下來可不可以請你再分享幾個經驗？</text>
+
+<feedback> 很好，你先感謝他的配合，讓他願意繼續分享。接著適時地引導他再提出另外一個行為事例。 </feedback>
+<link nextPageId="11AN"/>
+</option>
+
+<page id="11AN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="11AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="11AN.png" audioSource="11AN.mp3">
+<theme>XXX</theme>
+<dialogue>好啊，當然沒問題囉。</dialogue>
+<options header="請選擇最佳提問句：" pos="1,2">
+<link optionId="12AO" />
+<link optionId="12BO" />
+</options>
+</page>	<option id="11BO" source="11BO.mp3">
+<theme>追問：Leading </theme>
+<scores>
+<score objective="C4">1</score>
+<score objective="C7">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>嗯，在這個例子中，你能把挑戰當作學習的機會，並且找出最好的學習方式，來提昇自己的技術，證明你具有持續學習的職能。希望你在下個例子中，也能展示同樣的特質。</text>
+
+<feedback> 你講太多了，把想要觀察的重點都講出來了。不宜。 </feedback>
+<link nextPageId="11AN"/>
+</option>
+		
+<option id="12AO" source="12AO.mp3">
+<theme>探問BEI </theme>
+<scores>
+<score objective="3.1">5</score>
+<score objective="3.2">5</score>
+<score objective="3.3">5</score>
+</scores>
+<text>你有沒有承擔過陌生職務的經驗？剛開始什麼都不懂，可是後來卻能完全進入狀況？</text>
+
+<feedback> 很好，這是一個適合「持續學習」發揮的情境挑戰。 </feedback>
+<link nextPageId="12AN"/>
+</option>
+
+<page id="12AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="12AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="12AN.png" audioSource="12AN.mp3">
+<theme>XXX</theme>
+<dialogue>陌生職務喔…啊，也有！去年我們公司接了一個股票資訊網站的案子，要我擔任系統分析師。</dialogue>
+<link nextPageId="12AN2"/>
+</page>
+
+<page id="12AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="12AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="12AN2.png" audioSource="12AN2.mp3">
+<theme>XXX</theme>
+<dialogue>這種職務我根本沒碰過，差點被他搞死。</dialogue>
+<options header="請選擇最佳追問句：" pos="3,2,1">
+<link optionId="13AO" />
+<link optionId="13BO" />
+<link optionId="13CO" />
+</options>
+</page>	<option id="12BO" source="12BO.mp3">
+<theme>追問：Leading </theme>
+<scores>
+<score objective="3.1">3</score>
+<score objective="3.3">1</score>
+<score objective="3.4">1</score>
+</scores>
+<text>如果你被指派一個陌生的職務，你一樣可以運用剛剛講的那些學習策略，迅速進入狀況嗎？</text>
+<feedback> 這是一個引導性，也是一個假設性的提問，不宜。 </feedback>
+<link nextPageId="12BN"/>
+</option>
+
+<page id="12BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="12BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="12BN.png" audioSource="12BN.mp3">
+<theme>XXX</theme>
+<dialogue>當然囉，那有什麼問題！</dialogue>
+<options header="請選擇最佳追問句：" pos="3,2,1">
+<link optionId="13AO" />
+<link optionId="13BO" />
+<link optionId="13CO" />
+</options>
+</page>		
+<option id="13AO" source="13AO.mp3">
+<theme>探問BEI </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+</scores>
+<text>這個職務為什麼由你負責？對你而言，它的困難點有哪些呢？</text>
+
+<feedback> 很好，這個追問可以協助你瞭解情境的難度。 </feedback>
+<link nextPageId="13AN"/>
+</option>
+
+<page id="13AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="13AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="13AN.png" audioSource="13AN.mp3">
+<theme>XXX</theme>
+<dialogue>唉，這個說來就話長了，原本這個案子根本和我無關，可是好死不死，負責系統分析的學長居然開刀去了，老闆就要我接下來啦。</dialogue>
+<link nextPageId="13AN2"/>
+</page>
+<page id="13AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="13AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="13AN2.png" audioSource="13AN2.mp3">
+<theme>XXX</theme>
+<dialogue>可是我對股票根本就一竅不通，哪裡懂什麼EPS、本益比的。我實在很傷腦筋！</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2,3">
+<link optionId="14AO" />
+<link optionId="14BO" />
+<link optionId="14CO" />
+</options>
+</page>	<option id="13BO" source="13BO.mp3">
+<theme>無關職能 </theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">3</score>
+</scores>
+<text>喔，你們公司接的案子種類這麼多，不會有產品定位不清的問題嗎？</text>
+<feedback> 這個追問無法協助你鑑別職能。多餘。</feedback>
+<link nextPageId="13BN"/>
+</option>
+
+
+<page id="13BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="13BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="13BN.png" audioSource="13BN.mp3">
+<theme>XXX</theme>
+<dialogue>呃，對啊，好像真的有這個問題，不過細節我就不太清楚了。</dialogue>
+<options header="請選擇最佳追問句：" pos="1,2">
+<link optionId="13AO" />
+<link optionId="13CO" />
+</options>
+</page>
+	<option id="13CO" source="13CO.mp3">
+<theme>職能無關 </theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">1</score>
+</scores>
+<text>你做過股票資訊網站啊？那你一定有很多明牌吧？怎麼樣，報幾支來聽聽吧？</text>
+<feedback> 這個追問無法協助你鑑別職能，而且有假公濟私之嫌，應避免！ </feedback>
+<link nextPageId="13CN"/>
+</option>
+
+
+<page id="13CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="13CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="13CN.png" audioSource="13CN.mp3">
+<theme>XXX</theme>
+<dialogue>呃，這個網站我已經很久沒有碰了…不然我再去問一下以前的同事好了，看看有什麼消息沒有。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1">
+<link optionId="13AO" />
+<link optionId="13BO" />
+</options>
+</page>
+	
+<option id="14AO" source="14AO.mp3">
+<theme>追問BEI </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那你後來做了什麼事情，來克服這些挑戰？</text>
+
+<feedback> 很好，瞭解其採取的行動，看是否符合行為指標。</feedback>
+<link nextPageId="14AN"/>
+</option>
+
+<page id="14AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="14AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="14AN.png" audioSource="14AN.mp3">
+<theme>XXX</theme>
+<dialogue>呵呵，我就趕快去買了一本「你也可以成為股票高手」，弄懂股票到底是什麼東西。</dialogue>
+<link nextPageId="14AN2"/>
+</page> 
+
+<page id="14AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="14AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="14AN2.png" audioSource="14AN2.mp3">
+<theme>XXX</theme>
+<dialogue>然後我再上網找一些類似的網站，看看別人是怎麼設計的。</dialogue>
+<link nextPageId="14AN3"/>
+</page>
+<page id="14AN3" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="14AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="14AN3.png" audioSource="14AN3.mp3">
+<theme>XXX</theme>
+<dialogue>最後我還真的花了十萬元到群益證券開戶，親自體驗網路下單的感覺。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1,3">
+<link optionId="15AO" />
+<link optionId="15BO" />
+<link optionId="15CO" />
+</options>
+</page>	<option id="14BO" source="14BO.mp3">
+<theme>追問BEI </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">1</score>
+</scores>
+<text>那你有沒有去閱讀相關書籍？或者親自買幾張股票來體驗一下？</text>
+
+<feedback> 這是引導性問題，不宜。</feedback>
+<link nextPageId="14BN"/>
+</option>
+
+<page id="14BN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="14BN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="14BN.png" audioSource="14BN.mp3">
+<theme>XXX</theme>
+<dialogue>呵呵，有啊有啊，你講的我都有做到，真的。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1">
+<link optionId="14AO" />
+<link optionId="14CO" />
+</options>
+</page>	<option id="14CO" source="14CO.mp3">
+<theme>無關問題</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">1</score>
+</scores>
+<text>你學長住院開刀的原因是什麼？是工作壓力太大了吧？現在好一點了嗎？</text>
+
+<feedback> 這個追問與「持續學習」職能無關，不宜。</feedback>
+<link nextPageId="14CN"/>
+</option>
+
+<page id="14CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="14CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="14CN.png" audioSource="14CN.mp3">
+<theme>XXX</theme>
+<dialogue>喔，他是急性盲腸炎，原本住院兩星期就可以回來了，不過後來他說要繼續休養，老闆只好要我接他的工作。</dialogue>
+<options header="請選擇最佳追問句：" pos="2,1">
+<link optionId="14AO" />
+<link optionId="14BO" />
+</options>
+</page>
+
+	
+<option id="15AO" source="15AO.mp3">
+<theme>專員採正面說法主動澄清誤解。</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+</scores>
+<text>嗯，很有意思。那最後成果如何呢？</text>
+
+<feedback> 很好，追問其結果，看Simon的行動是否克服了這個難關。 </feedback>
+<link nextPageId="15AN"/>
+</option>
+
+<page id="15AN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="15AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="15AN.png" audioSource="15AN.mp3">
+<theme>XXX</theme>
+<dialogue>哈，就蒙混過去啦。客戶聽我滿口術語，一副很懂股票的樣子，就很信任我，溝通起來非常順暢。</dialogue>
+<link nextPageId="15AN2"/>
+</page>
+<page id="15AN2" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="15AN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="15AN2.png" audioSource="15AN2.mp3">
+<theme>XXX</theme>
+<dialogue>而且啊，最後我買的股票居然還小賺20％，呵呵，這也算是額外的收穫吧。</dialogue>
+<link nextPageId="15AEND"/>
+</page>
+<page id="15AEND" type="scoreCard" background="S408.jpg">
+<text>恭喜你完成本案例的所有步驟。</text>
+</page>	<option id="15BO" source="15BO.mp3">
+<theme>專員採正面說法主動澄清誤解。</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>那客戶一定很滿意你的表現囉？</text>
+
+<feedback> 這是引導性問題，不宜。</feedback>
+<link nextPageId="15AN"/>
+</option>	<option id="15CO" source="15CO.mp3">
+<theme>專員採正面說法主動澄清誤解。</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="C7">1</score>
+</scores>
+<text>嗯。這個經驗的確不錯。那能不能請你再舉另一個經驗呢？</text>
+
+<feedback>太早結束了，還沒追問結果哩。 </feedback>
+<link nextPageId="15CN"/>
+</option>
+<page id="15CN" type="character" stage="5.3" idleMediaType="graphic" idleMediaSource="15CN_Idle.png" name="Simon" mediaType="graphic" background="S408.jpg" graphicSource="15CN.png" audioSource="15CN.mp3">
+<theme>XXX</theme>
+<dialogue>好啊，當然沒問題。</dialogue>
+<link nextPageId="15AEND"/>
+</page>
+	
+</nodes>
+<objectives>
+<category id="C" name="溝通原則">
+<objective id="C1" name="尊重肯定"/>
+<objective id="C2" name="避免批評"/>
+<objective id="C3" name="主動釐清"/>
+<objective id="C4" name="鼓勵參與"/>
+<objective id="C5" name="耐心等候"/>
+<objective id="C6" name="正確引導"/>
+<objective id="C7" name="掌握流程"/>
+<objective id="C8" name="轉折自然"/>
+</category>
+
+
+
+<category id="3" name="提問技巧">
+<objective id="3.1" name="包含情境衝突"/>
+<objective id="3.2" name="契合目標職能"/>
+<objective id="3.3" name="要求實際經驗"/>
+<objective id="3.4" name="避免暗示誘導"/>
+<objective id="3.5" name="保持觀點平衡"/>
+</category>
+
+
+<category id="5" name="追問技巧">
+<objective id="5.1" name="追問欠缺的元素"/>
+<objective id="5.2" name="追問職能相關內容"/>
+<objective id="5.3" name="追問具體經驗"/>
+<objective id="5.4" name="追問難以造假細節"/>
+<objective id="5.5" name="避免誘答"/>
+</category>
+</objectives>
+
+<stages>
+<stage id="5.1" name="提問"/>
+<stage id="5.3" name="追問"/>
+<stage id="5.4" name="引導說明"/>
+</stages>
+</simulation>			

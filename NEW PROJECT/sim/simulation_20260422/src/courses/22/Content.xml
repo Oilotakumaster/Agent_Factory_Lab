@@ -1,0 +1,8 @@
+<course  name="時間管理九原則" label="課程目錄" src="assets/courses/TM_logo.jpg">
+	<node type="chapter" id="102201" label="時間管理九原則">
+		<embed>sl/TM/story.html</embed>
+	</node>
+</course>
+
+		
+	

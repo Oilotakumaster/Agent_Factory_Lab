@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = CourseService
+build_property.ProjectDir = D:\Dropbox\C1Coding\CourseService\CourseServiceAzure_cors\CourseServiceAzure\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

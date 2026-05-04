@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="" characterWidth="51.89%" characterHeight="100%" characterX="0px" characterY="0px" optionsWidth="60%" optionsHeight="100%" dialogStart="0.5" optionsX="0" optionsY="0"  flvPath="simulation/S202/video/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S202_startPage.jpg" srcWidth="772" paddingTop="40" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">早上你打電話Mason，約好今天下午兩點要和他面談。現在他準時敲門進來，接下來你要如何應對呢？<br><br>
+本案例包含16回合，請在右下角選擇本次演練模式：<br/><br/>
+<li>一、練習(不計分)：演練過程中，你可隨時瀏覽各選項的教練回饋。</li><br>
+<li>二、測驗(有計分)：演練過程中，你將無法瀏覽教練回饋。演練結束後，成績將上傳學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="1AN"/>
+</page>	
+		
+<page id="1AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="1AN.f4v">
+<dialogue>George，你是約今天跟我面談吧？怎麼了？有什麼問題嗎？</dialogue>
+<options>
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>			
+<option id="2AO" source="2AO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>Mason，你做事一向負責，讓我相當信任。不過最近公司導入新的ERP系統，你的部門並沒有趕上進度，所以我想瞭解一下狀況，看看怎麼樣可以協助你準時完成導入工作？</text>
+
+
+
+<feedback>很好的開場！能兼顧部屬的自尊心，也能清楚說明績效落差。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="2AN.f4v">
+<theme>推拖延遲</theme>
+<dialogue>George，你說的問題我都知道啦，只是最近實在太忙了，每天都要加班。等過一陣子比較有空了，我一定會找時間投入，你不用擔心啦。</dialogue>
+<options>
+<link optionId="3AO"/>
+<link optionId="3BO"/>
+<link optionId="3CO"/>
+</options>
+</page>	<option id="2BO" source="2BO.mp3">
+<theme>缺乏修飾</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">3</score>
+<score objective="ST2.1">3</score>
+</scores>
+<text>Mason，上星期有同仁反應，說你的部門不配合公司新導入的ERP計畫。我今天找你來，就是想要談談這個問題。</text>
+
+
+
+<feedback>一開場就把面談目的講清楚是對的，但你缺乏包裝，聽起來非常負面，不利教導進行。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="2BN.f4v">
+<theme>橫生枝節</theme>
+<dialogue>誰說我不配合的？我都已經忙成這樣了，怎麼還有人這麼無聊，亂打小報告啊！公司如果不制止這種行為，誰還會想要認真工作啊？</dialogue>
+<options>
+<link optionId="3AO"/>
+<link optionId="3DO"/>
+</options>
+</page>	<option id="2CO" source="2CO.mp3">
+<theme>過於模糊</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">1</score>
+<score objective="ST2.1">1</score>
+</scores>
+<text>Mason，你最近好像心情不好，態度變得比較消極了？是不是對公司有什麼不滿，或者有什麼新的生涯規劃？</text>
+
+
+
+<feedback>你的開場含糊籠統，部屬可能會誤會你的用意，面談就容易偏離預定框架，節外生枝。</feedback>
+<link nextPageId="2CN"/>
+</option>
+
+<page id="2CN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="2CN.f4v">
+<theme>誤解</theme>
+<dialogue>心情不好？態度消極？怎麼可能？我應該只是太忙了，忘了跟你打招呼吧？不過您不用擔心啦，我是不會輕易離職的！</dialogue>
+<options>
+<link optionId="2DO"/>
+<link optionId="2EO"/>
+</options>
+</page>	<option id="2DO" source="2DO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>那就好。你做事一向負責，讓我相當信任。不過最近公司導入新的ERP系統，你的部門並沒有趕上進度，所以我想瞭解一下狀況，看看怎麼樣可以協助你準時完成導入工作？</text>
+
+<feedback>你做事一向負責，讓我相當信任。不過最近公司導入新的ERP系統，你的部門並沒有趕上進度，所以我想瞭解一下狀況，看看怎麼樣可以協助你準時完成導入工作？</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<option id="2EO" source="2EO.mp3">
+<theme>三明治原則</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP5.1">1</score>
+</scores>
+<text>那就好。因為上星期有同仁跟我反應，說你的部門不配合公司最近導入的ERP計畫，我今天找你來，就是想要談談這個問題。</text>
+<feedback>把面談的目的講清楚是對的，可是如果能夠稍微包裝一下，緩和一下對部屬自尊心的衝擊，效果會更好。</feedback>
+<link nextPageId="2BN"/>
+</option>
+<option id="3AO" source="3AO.mp3">
+<theme>大我價值</theme>
+<scores>
+<score objective="ST3.1">5</score>
+<score objective="CP2.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>新的ERP系統如果順利上線，很多事情都可以簡化，主管就不會這麼忙了啊！不過這專案需要跨部門合作，只要一個環節沒配合，整體成效就會大打折扣，所以你們部門的配合是非常重要的，這樣你瞭解嗎？</text>
+
+<feedback>很好。要讓部屬願意承擔責任，最簡單的方法就是讓他知道改善績效的價值！</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+
+<page id="3AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="3AN.f4v">
+<theme>願意承擔</theme>
+<dialogue>George，這些道理我都知道啦…只不過…唉…好啦好啦，我答應你，我馬上會投入這個專案，不會讓你為難的！</dialogue>
+<options>
+<link optionId="4AO"/>
+<link optionId="4BO"/>
+<link optionId="4CO"/>
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>缺乏同理心</theme>
+<scores>
+<score objective="ST3.1">1</score>
+<score objective="CP2.2">3</score>
+</scores>
+<text>我知道你很忙，可是那畢竟是個人立場。能不能請你從公司的立場來思考，看怎麼讓這個專案可以順利推動呢？</text>
+
+
+<feedback>你把部屬利益和公司利益一刀切開，沒有讓兩者進行連結，這樣是無法有效激發部屬的動機啊！</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg"
+videoSource="3BN.f4v">
+<theme>繼續推託延遲</theme>
+<dialogue>我哪有什麼立場？我就是時間不夠用啊！解決的方法很簡單，少給我一些事情不就結了嗎？</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3EO" />
+</options>
+</page>	<option id="3CO" source="3CO.mp3">
+<theme>批評謾罵</theme>
+<scores>
+<score objective="ST3.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+
+</scores>
+<text>還過一陣子哩…我都專門找你面談了，你還不知道事情的嚴重性嗎？不行！不能再拖拖拉拉了，我今天就要有答案，晚一天都不行！</text>
+
+<feedback>你這種斥責命令的方式，無法讓部屬心悅誠服，甚至可能導致情緒反彈，不宜。</feedback>
+<link nextPageId="3CN"/>
+</option>
+
+<page id="3CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="3CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>我拖拖拉拉？我都快過勞死了，你還這樣說我？好，你今天就要答案，晚一天都不行是吧？那我等一下就把答案放到你桌上！</dialogue>
+<link nextPageId="4END"/>
+</page>
+	<option id="3DO" source="3DO.mp3">
+<theme>批評謾罵</theme>
+<scores>
+<score objective="ST3.1">1</score>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+
+</scores>
+<text>都火燒屁股了，你還在擔心誰打小報告啊？你以為這樣拖下去問題會自己消失嗎？不行！我今天就要有答案，晚一天都不行！</text>
+<feedback>批評、諷刺、命令，都無法讓部屬瞭解改善績效所帶來的價值！</feedback>
+<link nextPageId="3CN"/>
+</option>
+
+<option id="3EO" source="3EO.mp3">
+<theme>批評謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+</scores>
+<text>誰時間夠用啊，當然要自己想辦法找時間啊？你以為公司會讓你這樣繼續拖拖拉拉下去嗎？不行，我今天就要有答案，晚一天都不行！</text>
+<feedback>批評、諷刺、命令，都無法讓部屬瞭解改善績效所帶來的價值！</feedback>
+<link nextPageId="3CN"/>
+</option>
+
+<option id="4AO" source="4AO.mp3">
+<theme>詢問原因</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>我很感謝你願意承擔責任，讓ERP專案可以順利推動。但我也看得出來，你顯然有遭遇到一些困難，你願不願意跟我談一談你的困難呢？</text>
+
+
+<feedback>你先肯定部屬的貢獻，再從體諒關懷的角度切入，請部屬說明問題成因，這是非常好的溝通。</feedback>
+<link nextPageId="4AN"/>
+</option>
+<page id="4AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="4AN.f4v">
+<theme>不切實際</theme>
+<dialogue>唉…其實我早就說過了…這個專案推動的時機不對，真的是太倉促了，起碼還要再等半年才比較合理。</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+<link optionId="5CO"/>
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>急切不耐</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP2.1">3</score>
+</scores>
+<text>那現在狀況到底是怎樣？你能不能老實告訴我，為什麼不肯配合導入ERP專案呢？</text>
+
+
+
+<feedback>你的態度過於急切，內容也帶著假設與武斷，將導致部屬不願真誠說明其難處。</feedback>
+<link nextPageId="4BN"/>
+</option>
+<page id="4BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="4BN.f4v">
+<theme>情緒反應</theme>
+<dialogue>我沒有不配合啊！我剛剛不是說過了嗎？最近的工作量實在太大了，根本忙不過來，你硬要說我不配合，這不是含血噴人嗎？</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+</options>
+</page>
+	<option id="4CO" source="4CO.mp3">
+<theme>流程錯誤</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>我很高興你願意承擔這個責任！那你現在能不能告訴我，打算在什麼時間，完成什麼工作，讓導入工作能準時達成呢？</text>
+<feedback>雖然你有肯定部屬負責的態度，但你在還沒分析出問題的原因及對策之前，就要求他提出行動方案，顯然太過急切。</feedback>
+<link nextPageId="4CN"/>
+</option>
+<page id="4CN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="4CN.f4v">
+<theme>消極抵抗</theme>
+<dialogue>準時完成？還有這麼多問題，怎麼可能準時完成？我早就跟你說過，這個專案推的時機根本就不對，起碼還要再等半年比較適合！</dialogue>
+<options>
+<link optionId="5AO"/>
+<link optionId="5BO"/>
+<link optionId="5CO"/>
+</options>
+</page>
+	<page id="4END" type="scoreCard" background="S202.jpg">
+<text>由於你的措辭不當，使得Mason憤而辭職，面談也就無法繼續進行。接下來請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text> 
+</page>
+<option id="5AO" source="5AO.mp3">
+<theme>同理鼓勵</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">5</score>
+<score objective="CP3.1">5</score>
+</scores>
+<text>我瞭解這個專案有些倉促，讓你壓力很大。不過既然公司已經決定推了，我們身為幹部，也只能全力配合啊。你在第一線，一定看得比較清楚，能不能告訴我，你看到了什麼問題？</text>
+
+
+<feedback>你同理部屬的處境，卻也沒有因此放棄改善績效的責任。接著你順勢鼓勵他，說出他所看到的原因！這都是非常好的技巧。</feedback>
+<link nextPageId="5AN"/>
+</option>
+<page id="5AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="5AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我是覺得喔…當然這也只是我個人的看法啦，這次ERP在推動之前，並沒有讓同仁瞭解它的價值。許多人覺得這件事情和本身業務無關，當然不會用心配合啦！</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>風涼話</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.1">1</score>
+</scores>
+<text>困難誰沒有啊！怎麼別的部門推得動，就你的部門推不動？我看你應該放下身段，去請教一下別的部門怎麼推的，不要不懂裝懂。</text>
+
+
+<feedback>你忽視部屬的壓力，並在未釐清原因前，就武斷地認定他是在找藉口。這樣的溝通，將無法讓部屬心悅誠服。</feedback>
+<link nextPageId="5BN"/>
+</option>
+<page id="5BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="5BN.f4v">
+<theme>隱忍不發</theme>
+<dialogue>你這樣講就太過份了，我怎麼可能不懂？明明就是宣導不夠才會出問題！不知道ERP專案的價值，誰會想要用心配合啊？</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>無同理＋謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.1">1</score>
+</scores>
+<text>ERP公司想什麼時候推就什麼時候推，這不是你可以決定的！你只要按照公司規劃，準時把導入工作完成就對了。</text>
+<feedback>你認為部屬不需要有想法，只要一個口令一個動作就可以了。這種管理風格，難以培養部屬獨立思考的能力。</feedback>
+<link nextPageId="5CN"/>
+</option>
+<page id="5CN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="5CN.f4v">
+<theme>隱忍不發</theme>
+<dialogue>好好好，算我多事。反正不管我說什麼，結論都是要準時導入是吧？可是現在大家都那麼忙，要怎麼推？你告訴我啊？</dialogue>
+<options>
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page>	
+<option id="6AO" source="6AO.mp3">
+<theme>詢問確認</theme>
+<scores>
+<score objective="CP2.1">5</score>
+</scores>
+<text>哦？去年年初不是有辦過一場說明會，宣導ERP專案的價值嗎？效果怎麼樣？</text>
+
+
+<feedback>你發現Mason 所講的和你的記憶有所衝突，於是你採取了正確的詢問技巧，請他加以釐清。很好。</feedback>
+<link nextPageId="6AN"/>
+</option>
+<page id="6AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_sad.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="6AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>那場說明會都是在唱高調！講來講去都是新系統對公司的好處，根本沒有點出對同仁的好處，所以同仁才會覺得事不關己啊！</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="6BO" source="6BO.mp3">
+<theme>無禮駁斥</theme>
+<scores>
+<score objective="CP2.1">1</score>
+</scores>
+<text>這個理由根本說不通！去年年初就已經辦過說明會了，該講的都講了！你不能因為少數幾個同仁沒有聽懂，就認定是宣導有問題啊！</text>
+<feedback>你發現Mason所講的和你的記憶有所衝突，於是你就認定他是以偏概全，這種武斷的態度，是無法讓他信服的。</feedback>
+<link nextPageId="6AN"/>
+</option>
+		
+<option id="7AO" source="7AO.mp3">
+<theme>肯定參與</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="CP3.3">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>喔，原來是這樣子啊，這的確是我原本沒想到的！那除了這點，你還有注意到別的問題嗎？</text>
+<feedback>相當好！雖然Mason對公司有所批評，你還是採取正面觀點來看待他的評論，並肯定他參與的態度，進而引導他回到面談主軸，繼續尋找更多的原因！</feedback>
+<link nextPageId="7AN"/>
+</option>
+<page id="7AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_sad.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="7AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>還有一個問題就是：導入之前，公司並沒有提供一套清楚的SOP，通通在亂槍打鳥！搞到最後，大家寧願觀望，先看看別人怎麼死的再說，誰也不想當白老鼠啊！</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>小題大作</theme>
+<scores>
+<score objective="CP2.1">3</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>那你把這些同仁的名單開給我，讓我知道是哪些人有這樣的想法！</text>
+
+
+
+<feedback>Mason只是提出他的觀察，結果你卻要他給你名單。你雖然有探問的精神，但探問的方向卻偏離面談主軸，變成節外生枝。</feedback>
+<link nextPageId="7BN"/>
+</option>
+<page id="7BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_sad.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="7BN.f4v">
+<theme>委婉拒絕</theme>
+<dialogue>George，你這樣太為難我了吧？我只是想要提醒公司，在宣導專案價值時，不要忽略同仁的感受！畢竟誰也不想當白老鼠啊！</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme>加以駁斥</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>公司付員工薪水，就是要員工幫公司做事，怎麼可以計較做這些事對自己有沒有好處？這太不像話了吧？</text>
+<feedback>Mason只是提出他的觀點，你卻直接批評反駁。這樣以後他就不願意和你分享真正的想法了。</feedback>
+<link nextPageId="7CN"/>
+</option>
+<page id="7CN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="7CN.f4v">
+<theme>隱忍不發</theme>
+<dialogue>我只是陳述事實而已，沒有要幫他們講話。不過公司做事情，偶爾也該考慮同仁的感受吧？畢竟誰也不想當白老鼠啊！</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	
+<option id="8AO" source="8AO.mp3">
+<theme>要求舉例</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>你可以舉一些例子，幫助我瞭解你所說的情況嗎？</text>
+
+<feedback>你對Mason的說法不清楚，所以採用開放式句型請他加以說明。這是非常正確的技巧。</feedback>
+<link nextPageId="8AN"/>
+</option>
+<page id="8AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="8AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>可以啊…最近大家都在問：新系統上線後，舊系統還要撐多久？新舊系統重疊期間，資料是不是要輸入兩次？也有同仁想知道，輸入的工作可不可以找工讀生來幫忙？這些雞毛蒜皮的問題一大堆啊！講都講不完啊！</dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+</options>
+</page>	<option id="8BO" source="8BO.mp3">
+<theme>武斷</theme>
+<scores>
+<score objective="CP2.1">3</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>會有這種心態的員工，也不會是什麼好員工，我希望你管好這些人，不要讓他們的想法影響到別人。</text>
+
+<feedback>你覺得Mason所提問題根本不存在，並認定員工的心態才是問題。這種武斷的態度，會讓Mason覺得再說什麼都是多餘的了。</feedback>
+<link nextPageId="8BN"/>
+</option>
+<page id="8BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_sad.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="8BN.f4v">
+<theme>無法苟同</theme>
+<dialogue>說實在的，這也不能怪他們啦！你有空自己去看看，就會發現導入的準備根本就不夠，連一套SOP都沒有，問題出了沒人理，根本是亂了一團啊！</dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+</options>
+</page>	<option id="8CO" source="8CO.mp3">
+<theme>諷刺反駁</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.1">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>什麼叫做白老鼠？這些人自己就是老鼠屎，壞了一鍋粥！不配合公司政策，居然還在旁邊看笑話。你怎麼可以縱容這些人呢？</text>
+<feedback>你從Mason的回應中找到語病，加以駁斥諷刺。這個語病其實和他的績效落差關係不大，可是現在卻成為新的爭議點，可說是節外生枝。</feedback>
+<link nextPageId="8BN"/>
+</option>
+
+	
+<option id="9AO" source="9AO.mp3">
+<theme>感謝</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP3.3">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>嗯，這樣看起來，公司的確應該在一開始，就準備好一套清楚的SOP，謝謝你指出這個問題。那你還有沒有要補充的地方？</text>
+
+<feedback>你扼要地覆述他的意見，讓他知道你瞭解他的想法，接著你感謝他的參與，然後繼續請他補充說明。這些都是非常好的技巧。</feedback>
+<link nextPageId="9AN"/>
+</option>
+<page id="9AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="9AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>其實…光是這兩個問題就已經夠麻煩啦…其他的問題比起來，都只是枝微末節啦。</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10BO"/>
+<link optionId="10CO"/>
+</options>
+</page>	<option id="9BO" source="9BO.mp3">
+<theme>駁斥</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP3.3">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>你就是想太多，擔心這個擔心那個！你要知道，任何政策都會有模糊空間，不能因為有人懷疑，就忘了主管的責任啊。</text>
+
+<feedback>你忽視他的感受，認定他的顧慮是杞人憂天，並批評他沒盡到主管責任。這些都會使他不願再和你真心交流</feedback>
+<link nextPageId="9BN"/>
+</option>
+<page id="9BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="9BN.f4v">
+<theme>隱忍不發</theme>
+<dialogue>我只是提出個人的想法啦，你如果覺得有用，那就聽聽看。如果覺得沒用，那就當我沒說好啦！</dialogue>
+<options>
+<link optionId="10AO"/>
+<link optionId="10BO"/>
+<link optionId="10CO"/>
+</options>
+</page>		
+<option id="10AO" source="10AO.mp3">
+<theme>肯定意見</theme>
+<scores>
+<score objective="CP3.1">5</score>
+<score objective="CP3.3">5</score>
+</scores>
+<text>嗯，你的觀察很敏銳，思慮也很清楚，相信你一定也有想到解決的方法了！可不可以也跟我分享一下呢？</text>
+
+<feedback>你肯定Mason的意見，鼓勵他繼續發表想法。這是相當好的作法。</feedback>
+<link nextPageId="10AN"/>
+</option>
+<page id="10AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="10AN.f4v">
+<theme>欲言又止</theme>
+<dialogue>方法當然是有啊，只是這些方法都不在我的權責範圍之內，講出來…搞不好你還以為我在推卸責任，我看…還是不要講比較保險啦。</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11BO" />
+<link optionId="11CO" />
+</options>
+</page>
+	<option id="10BO" source="10BO.mp3">
+<theme>肯定意見</theme>
+<scores>
+<score objective="CP3.1">3</score>
+<score objective="CP3.3">3</score>
+</scores>
+<text>那你倒是說說看，面對這些問題，能採取什麼解決方法？</text>
+
+
+<feedback>你鼓勵Mason發表意見，這是正確的作法。可是你的語氣中帶有「看好戲」的成分，敏感的部屬會覺得你根本就不想聽，就懶得講了。</feedback>
+<link nextPageId="10AN"/>
+</option>	<option id="10CO" source="10CO.mp3">
+<theme>武斷諷刺</theme>
+<scores>
+<score objective="CP3.1">1</score>
+<score objective="CP3.3">1</score>
+</scores>
+<text>提問題誰不會啊？但最重要的是要找到對策啊。不然只是發發牢騷有什麼用啊！</text>
+
+<feedback>你駁斥Mason的意見，認為他只是發牢騷，接下來他也懶得提出意見了。</feedback>
+<link nextPageId="10AN"/>
+</option>	
+<option id="11AO" source="11AO.mp3">
+<theme>提供資源</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP3.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>先不用考慮權責的問題，只要是好方法，我一定會想辦法促成的。你說吧，我會仔細聽的。</text>
+
+
+<feedback>你看出Mason受限於資源不足而有所顧慮，於是表明協助的意願，以鼓勵他勇敢說出想法。這是非常好的態度！</feedback>
+<link nextPageId="11AN"/>
+</option>
+
+<page id="11AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="11AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>(轉場：接著Mason提出了幾項具體建議，包括：一、成立一個跨部門的工作小組，重新宣導ERP專案對同仁本身的價值。二、公布一個詳盡的SOP，讓大家碰到問題時知道該怎麼處理。三、成立專門的窗口，隨時回答同仁的問題。然後他也提出一些憂慮…) 其實我也知道，這些想法如果沒有高層支持，基本上也只是廢話啦，你就當我發牢騷好啦。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>	<option id="11BO" source="11BO.mp3">
+<theme>不提供資源</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>你當然得講一些權責範圍內的方法啊。不然講了半天，還是得靠別人幫忙才能解決，這也太不負責任了吧？</text>
+
+<feedback>你顯然沒聽懂Mason的講法，也吝於提供任何資源協助，甚至還潑了他一桶冷水，這將導致他不想再和你溝通。</feedback>
+<link nextPageId="11BN"/>
+</option>
+
+<page id="11BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_sad.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="11BN.f4v">
+<theme>欲言又止</theme>
+<dialogue>能自己做的我當然會做，可是有些問題根本就是公司的政策造成的。我權限不足，能有什麼辦法？</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11DO" />
+</options>
+</page>
+	<option id="11CO" source="11CO.mp3">
+<theme>不提供資源</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP3.1">3</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>有什麼意見就快說吧，不要在那邊欲言又止的裝客氣！反正你講了我也沒把握能解決。</text>
+
+<feedback>雖然你鼓勵Mason發表想法，但你語帶諷刺，也沒展現協助的意願，這樣部屬是不可能講出真實想法的。</feedback>
+<link nextPageId="11AN"/>
+</option>	<option id="11DO" source="11DO.mp3">
+<theme>勉強提供資源</theme>
+<scores>
+<score objective="CP2.2">3</score>
+<score objective="CP3.1">3</score>
+<score objective="CP4.1">3</score>
+</scores>
+<text>好吧，不然你倒是說說看，公司政策應該怎麼改？你如果講得有道理，我可以考慮幫忙一下。</text>
+<feedback>你瞭解Mason的顧慮，也鼓勵他說出想法，並表明願意協助。但你的語氣顯得勉強，無法獲得部屬的信任。</feedback>
+<link nextPageId="11AN"/>
+</option>
+
+<option id="12AO" source="12AO.mp3">
+<theme>大力支持</theme>
+<scores>
+
+<score objective="CP2.1">5</score>
+<score objective="CP3.3">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>其實副總為了讓系統準時上線，一直在推動各種配套措施。你的建議很有道理，我會找他商量加以落實。那如果落實之後，你是不是就可以準時完成導入工作呢？</text>
+
+
+<feedback>你真是有魄力！不僅肯定Mason的想法，還決定親自找副總加以落實。有這樣的主管，Mason還能不感激涕零嗎？ </feedback>
+<link nextPageId="12AN"/>
+</option>
+<page id="12AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_happy.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="12AN.f4v">
+<theme>XXX</theme>
+<dialogue>真的嗎？哇，如果公司能夠做到這樣，那我跟你打包票，我們部門推起來一定沒問題！你放一百二十萬個心吧！</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+</options>
+</page>	<option id="12BO" source="12BO.mp3">
+<theme>吝於協助</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">3</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>對啊，你這些建議都需要跨部門合作才能落實，執行起來很困難。你可不可以提出一些比較好執行的想法呢？</text>
+
+
+
+
+<feedback>你的拒絕無可厚非，畢竟這些建議超乎你目前的權責。但如果你更願意付出，陪著部屬一起解決問題，部屬會更愛戴你的。</feedback>
+<link nextPageId="12BN"/>
+</option>
+<page id="12BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="12BN.f4v">
+<theme>怒氣急於反駁</theme>
+<dialogue>這些意見就是我所能想到最簡單可行的方法了。如果你有更好的方法，那你告訴我啊？</dialogue>
+<options>
+<link optionId="12DO" />
+<link optionId="12EO" />
+</options>
+</page>	<option id="12CO" source="12CO.mp3">
+<theme>何不食肉糜</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>這些建議你自己也可以落實啊！不過就寫寫SOP，回答一下同仁的問題嘛！也不是多難的事情，為什麼一定要推給高層呢？</text>
+
+
+<feedback>Mason的難處在於他的資源不夠，可是你不僅忽視他的處境，還指責他為推託，這種「何不食肉糜」的態度，會令部屬心寒的！</feedback>
+<link nextPageId="12CN"/>
+</option>
+<page id="12CN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_angry.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="12CN.f4v">
+<theme>急於反駁</theme>
+<dialogue>你講的當然輕鬆，可是你沒看到我已經忙得跟狗一樣了嗎？你是要我做死你才甘願嗎？</dialogue>
+<options>
+<link optionId="12DO" />
+<link optionId="12EO" />
+</options>
+</page>	<option id="12DO" source="12DO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP2.1">5</score>
+<score objective="CP3.3">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>好吧，不然我去找副總，看可不可以落實你的建議。那如果落實了，你是不是就可以準時完成導入工作呢？</text>
+<feedback>很好！你看出Mason的難處，決定大力支持，甚至會請副總協助。</feedback>
+<link nextPageId="12AN"/>
+</option>
+
+<option id="12EO" source="12EO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP4.1">2</score>
+</scores>
+<text>你的意見我會幫忙轉達給副總，看看是否能落實。如果他同意了，你應該就沒有理由拖延這個專案了吧？</text>
+<feedback>你雖然同意幫忙，但語氣顯得相當消極，而且你用「拖延」來形容Mason的表現，也可能傷了對方自尊心。</feedback>
+<link nextPageId="12EN"/>
+</option>
+<page id="12EN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="12EN.f4v">
+<theme>急於反駁</theme>
+<dialogue>如果公司能夠落實我的意見，那我敢打包票，導入工作一定可以準時完成！</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+</options>
+</page>
+<option id="13AO" source="13AO.mp3">
+<theme>具體目標</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP5.2">5</score>
+<score objective="ST0.1">5</score>
+</scores>
+<text>很好，你有這樣的信心，令我相當欣慰。那你可不可以告訴我，假如公司可以在兩個星期之內落實你的建議，那你接下來會在哪些時間？完成哪些工作？讓導入工作準時完成呢？</text>
+<feedback>相當好。你清楚地指出Mason應該思考的方向，並一步步引導他完成行動方案的設計。</feedback>
+<link nextPageId="13AN"/>
+</option>
+<page id="13AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="13AN.f4v">
+<theme>不想討論</theme>
+<dialogue>唉又，剩下的都是一些執行細節啦，我都已經寫在project裡了，沒什麼好講的…反正喔，該怎麼處理我都知道啦，你就不用擔心啦。</dialogue>
+<options>
+<link optionId="14AO" />
+<link optionId="14BO" />
+</options>
+</page>	<option id="13BO" source="13BO.mp3">
+<theme>過度信任</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP4.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>好，既然你這麼有信心，那我也不擔心你的實際做法了。那你接下來，打算用什麼方法來稽核你的專案進度，確保它能準時完成呢？ </text>
+<feedback>對部屬有信心是對的，可是還是要瞭解他的行動方案內容啊。不要隨便就跳過這個步驟喔！</feedback>
+<link nextPageId="15AN"/>
+</option>
+		
+<option id="14AO" source="14AO.mp3">
+<theme>瞭解行動方案</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.3">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>那太好了，原來你的行動方案早就準備好了。為了讓我的協助可以更符合你的需求，你可不可以說明一下你行動方案的內容呢？</text>
+
+<feedback>相當好 ！你以正面說法的技巧，把「管理考核」美化成「提供協助」，並繼續溫和而堅持地要Mason說清楚他的行動方案。</feedback>
+<link nextPageId="14AN"/>
+</option>
+
+<page id="14AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="14AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>(轉場：接著Mason把他先前準備好的project檔案打開，把日期、工作項目、應變措施都解釋得清清楚楚…，接著Mason說道…)這些就是我的規劃內容了，你覺得OK嗎？</dialogue>
+<options>
+<link optionId="15AO" />
+<link optionId="15BO" />
+<link optionId="15CO" />
+</options>
+</page>	<option id="14BO" source="14BO.mp3">
+<theme>縱容</theme>
+<scores>
+<score objective="CP2.3">1</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>好吧，你都這樣說了，我如果再追問下去，好像顯得不夠信任。那你自己好好執行，不要讓我丟臉啊。</text>
+
+<feedback>你過度體諒部屬的心情，以致於沒有盡到考核督導的職責。</feedback>
+<link nextPageId="14BN"/>
+</option>
+
+<page id="14BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="14BN.f4v">
+<theme>XXX</theme>
+<dialogue>安啦，所有的工作項目我都寫得清清楚楚的，你放一百二十萬個心吧。</dialogue>
+<options>
+<link optionId="15BO" />
+<link optionId="15CO" />
+<link optionId="15DO" />
+</options>
+</page>		
+<option id="15AO" source="15AO.mp3">
+<theme>考核督導</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>嗯，這個行動方案規劃得很好。接下來的挑戰就是執行力了！你打算用什麼方法來稽核這方案的進度及成果，確保它能準時完成呢？</text>
+
+
+
+<feedback>很好，你引導Mason建立管理考核機制，同時也掌握了適當的授權原則。</feedback>
+<link nextPageId="15AN"/>
+</option>
+ 
+<page id="15AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="15AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>我的習慣是每天都會檢查project的工作項目及完成進度。如果你想要知道的話，我可以每個星期都CC一份給你。不過，我比較擔心的，其實是公司這邊的配合度。我擔心決策過程太慢，或資訊不明確，又跑出許多新的問題…</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+</options>
+</page>	<option id="15BO" source="15BO.mp3">
+<theme>過度管制</theme>
+<scores>
+<score objective="CP3.2">1</score>
+<score objective="CP4.2">5</score>
+<score objective="CP4.3">3</score>
+</scores>
+<text>為了確保你的專案能夠準時完成，我希望你每天都把進度記在project裡，並在下班前寄一份給我。我看了如果覺得有問題，會隨時找你來問，這樣可以嗎？</text>
+
+<feedback>你協助建立管理考核機制，這是正確的。但如果能藉由引導的方式，讓部屬自己想出這些方法，那就更好了。</feedback>
+<link nextPageId="15BN"/>
+</option>
+<page id="15BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S202_embarrassed.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="15BN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>每天都要更新喔？好吧，如果你這麼關心我的進度的話，那我就每天寄給你啦！不過，我比較擔心的，其實是公司這邊的配合度。我擔心決策過程太慢，或資訊不明確，又跑出許多新的問題…</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+</options>
+</page>	<option id="15CO" source="15CO.mp3">
+<theme>多此一舉</theme>
+<scores>
+<score objective="CP4.2">1</score>
+<score objective="CP4.3">1</score>
+</scores>
+
+<text>這個行動方案感覺還不錯，應該沒什麼問題了，不過為了保險起見，能不能再多找幾個人看一看，免得有所疏漏。</text>
+
+
+
+<feedback>這只是個小專案，又不是登月計畫。身為主管，你應該能當場評估他的方案可不可行，不必再假手他人。</feedback>
+<link nextPageId="15CN"/>
+</option>
+<page id="15CN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S202_happy.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="15CN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>多找幾個人來看一看是沒什麼問題啦。不過，我比較擔心的，其實是公司這邊的配合度。我擔心決策過程太慢，或資訊不明確，又跑出許多新的問題…</dialogue>
+<options>
+<link optionId="16AO"/>
+<link optionId="16BO"/>
+</options>
+</page>	<option id="15DO" source="15DO.mp3">
+<theme>考核督導</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.2">5</score>
+<score objective="CP4.3">5</score>
+</scores>
+<text>好吧，那接下來的挑戰就是執行力了！你打算用什麼方法來稽核你的專案進度及成果，確保它能準時完成呢？</text>
+<feedback>很好，你引導Mason建立管理考核機制，同時也掌握適當的授權原則。</feedback>
+<link nextPageId="15BN"/>
+</option>
+<option id="16AO" source="16AO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP4.1">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>嗯，我瞭解你的顧慮。不然這樣好了，接下來每個星期二的早上11：00，我都把時間保留下來和你開會。你project也不用寄了，直接帶來討論，如果有什麼困難，我們就當面溝通解決，你覺得如何？</text>
+<feedback>很好，你理解Mason的顧慮，並主動提供協助，幫他把專案控管得更有效率。</feedback>
+<link nextPageId="16AN"/>
+</option>
+ 
+<page id="16AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S202_happy.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="16AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>謝謝George，這樣就萬無一失，不會有什麼問題了。</dialogue>
+<link nextPageId="16END"/>
+</page>	<option id="16BO" source="16BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>你專心顧好自己的工作就好了。公司這邊的問題，該讓你知道的我會讓你知道，其它的部分，你就不用操心了。</text>
+
+
+
+<feedback>你忽視Mason的需求，也吝於提供協助，一副拒人於千里之外的語氣，這樣子不僅無法和部屬真誠交流，也喪失了有效的考核機會。</feedback>
+<link nextPageId="16BN"/>
+</option>
+ 
+<page id="16BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S202_neutral.f4v" name="Mason" mediaType="video" background="S202.jpg" videoSource="16BN.f4v">
+<theme>XXX</theme>
+<dialogue>好吧，這樣也可以，如果到時候真的有問題，再看看要怎麼辦好了。</dialogue>
+<link nextPageId="16END"/>
+</page>	<page id="16END" type="scoreCard" background="S202.jpg">
+<text>本案例演練至此步驟即可。接下來請點選右上方「技巧檢討」頁籤，察看你在本案例的演練成績。</text> 
+</page>
+	
+</nodes>
+<objectives>
+<category id="CP1" name="尊重肯定">
+<objective id="CP1.1" name="正面說法"/>
+<objective id="CP1.2" name="避免謾罵"/>
+<objective id="CP1.3" name="肯定貢獻"/>
+</category>
+<category id="CP2" name="主動傾聽">
+<objective id="CP2.1" name="詢問澄清確認"/>
+<objective id="CP2.2" name="同理心"/>
+<objective id="CP2.3" name="同理非同意"/>
+</category>
+<category id="CP3" name="促進參與">
+<objective id="CP3.1" name="鼓勵發言"/>
+<objective id="CP3.2" name="引導思考"/>
+<objective id="CP3.3" name="肯定參與"/>
+</category>
+<category id="CP4" name="授權與能">
+<objective id="CP4.1" name="提供資源"/>
+<objective id="CP4.2" name="考核督導"/>
+<objective id="CP4.3" name="掌舵而不駕馭"/>
+</category>
+<category id="CP5" name="具體明確">
+<objective id="CP5.1" name="避免含糊"/>
+<objective id="CP5.2" name="SMART績效目標"/>
+<objective id="CP5.3" name="提供佐證資料"/>
+</category>
+<category id="ST" name="步驟相關技巧">
+<objective id="ST0.1" name="掌握流程"/>
+<objective id="ST2.1" name="三明治原則"/>
+<objective id="ST3.1" name="連結價值"/>
+</category>
+</objectives>
+<stages>
+<stage id="ST1" name="找出績效落差"/>
+<stage id="ST2" name="闡明績效落差"/>
+<stage id="ST3" name="鼓勵承擔責任"/>
+<stage id="ST4" name="探討原因對策"/>
+<stage id="ST5" name="發展行動方案"/>
+<stage id="ST6" name="建立考核機制"/>
+<stage id="ST7" name="總結面談結果"/>
+</stages>
+</simulation>			

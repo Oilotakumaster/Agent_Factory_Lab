@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STS 2 - A10 職業勝率總表</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>A10 勝率總表</h1>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <input type="text" id="global-search" placeholder="🔍 搜尋名稱..." oninput="renderUI()" style="background: rgba(0,0,0,0.4); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 8px; font-weight: bold; width: 160px; outline: none;">
+                <select id="version-selector" onchange="fetchStats()" style="background: rgba(22,27,34,0.8); color: #0ea5e9; border: 1px solid rgba(14,165,233,0.3); padding: 8px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                    <option value="all">全遊戲版本</option>
+                </select>
+                <div class="status" style="animation: none; background: rgba(255,255,255,0.1); border:none; color: #cbd5e1;">
+                    * 已過濾基本打防 / 獨立頭目遺物
+                </div>
+                <button class="export-btn" onclick="exportToCSV()">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z"/><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
+                    匯出為 Excel (CSV)
+                </button>
+            </div>
+        </header>
+
+        <div id="tabs-container" class="tabs">
+            <div class="loading-text">分析兩百多場紀錄中...</div>
+        </div>
+
+        <main id="stats-container" class="loading">
+            <div class="run-summary">
+                <div class="stat-card">
+                    <h3>A10 總局數</h3>
+                    <p id="total-runs">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>職業勝率</h3>
+                    <p id="win-rate">--%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>牌組厚度 (平均)</h3>
+                    <p id="avg-deck">--</p>
+                </div>
+                <div class="stat-card">
+                    <h3>殘存打/防 (平均)</h3>
+                    <p id="avg-base">--</p>
+                </div>
+            </div>
+            
+            <div class="analysis-grid">
+                
+                <!-- 先古之民遺物 (開局恩賜) -->
+                <div class="details list-view">
+                    <div class="list-header" style="flex-direction: column; align-items: stretch; gap: 10px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="margin: 0;">👑 關鍵樓層遺物</h3>
+                            <div class="sort-controls">
+                                <button id="a-sort-wr" onclick="setSort('ancient', 'win_rate')" class="sort-btn active">勝率</button>
+                                <button id="a-sort-pk" onclick="setSort('ancient', 'picked')" class="sort-btn">次數</button>
+                            </div>
+                        </div>
+                        <select id="boss-selector" onchange="fetchStats()" style="background: rgba(0,0,0,0.2); color: #c084fc; border: 1px solid rgba(192,132,252,0.3); padding: 5px; border-radius: 6px; font-size: 0.85rem; outline: none; cursor: pointer;">
+                            <option value="f1">開局恩賜 (Floor 1)</option>
+                            <option value="b1">第一章頭目遺物 (Floor 17~18)</option>
+                            <option value="b2">第二章頭目遺物 (Floor 34~35)</option>
+                        </select>
+                    </div>
+                    <ul id="all-special-relics" class="ranking-list scrollable"></ul>
+                </div>
+                
+                <div class="details list-view">
+                    <div class="list-header">
+                        <h3>🃏 核心卡牌</h3>
+                        <div class="sort-controls">
+                            <button id="c-sort-wr" onclick="setSort('card', 'win_rate')" class="sort-btn active">依勝率</button>
+                            <button id="c-sort-pk" onclick="setSort('card', 'picked')" class="sort-btn">依次數</button>
+                        </div>
+                    </div>
+                    <ul id="all-cards" class="ranking-list scrollable"></ul>
+                </div>
+                
+                <div class="details list-view">
+                    <div class="list-header">
+                        <h3>🏺 遊戲中遺物</h3>
+                        <div class="sort-controls">
+                            <button id="r-sort-wr" onclick="setSort('relic', 'win_rate')" class="sort-btn active">依勝率</button>
+                            <button id="r-sort-pk" onclick="setSort('relic', 'picked')" class="sort-btn">依次數</button>
+                        </div>
+                    </div>
+                    <ul id="all-relics" class="ranking-list scrollable"></ul>
+                </div>
+
+                <div class="details list-view">
+                    <div class="list-header" style="flex-direction: column; align-items: stretch; gap: 10px;">
+                        <h3 style="margin: 0; color: #ef4444;">☠️ 奪命殺手榜</h3>
+                        <div style="font-size: 0.85rem; color: #94a3b8;">終結你這場遊戲的敵人或事件</div>
+                    </div>
+                    <ul id="all-killers" class="ranking-list scrollable"></ul>
+                </div>
+
+                <div class="details list-view">
+                    <div class="list-header" style="flex-direction: column; align-items: stretch; gap: 10px;">
+                        <div style="display:flex; justify-content: space-between; align-items:center;">
+                            <h3 style="margin: 0; color: #f59e0b;">👿 頭目遭遇統計</h3>
+                        </div>
+                        <select id="act-selector" onchange="renderUI()" style="background: rgba(22,27,34,0.8); color: white; border: 1px solid rgba(255,255,255,0.1); padding: 6px; border-radius: 6px; font-size: 0.85rem; cursor: pointer;">
+                            <option value="all">全版圖總和</option>
+                            <option value="1">第一章頭目</option>
+                            <option value="2">第二章頭目</option>
+                            <option value="3">第三章頭目</option>
+                        </select>
+                    </div>
+                    <ul id="all-bosses" class="ranking-list scrollable"></ul>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let allData = {};
+        let currentChar = null;
+        
+        let cardSortBy = 'win_rate';
+        let relicSortBy = 'win_rate';
+        let ancientSortBy = 'win_rate';
+        
+        const curses = ["ASCENDERS_BANE", "CLUMSY", "DECAY", "DOUBT", "INJURY", "NORMALITY", "PAIN", "PARASITE", "REGRET", "SHAME", "WRITHE", "CURSE_OF_THE_BELL", "NECRONOMICURSE", "PRIDE"];
+        const colorless = ["APOTHEOSIS", "BANDAGE_UP", "BLIND", "DARK_SHACKLES", "DEEP_BREATH", "DISCOVERY", "DRAMATIC_ENTRANCE", "ENLIGHTENMENT", "FINESSE", "FLASH_OF_STEEL", "GOOD_INSTINCTS", "IMPATIENCE", "JACK_OF_ALL_TRADES", "MADNESS", "MASTER_OF_STRATEGY", "MAYHEM", "METAMORPHOSIS", "PANACEA", "PANIC_BUTTON", "PURITY", "SADISTIC_NATURE", "SECRET_TECHNIQUE", "SECRET_WEAPON", "SWIFT_STRIKE", "THE_BOMB", "THINKING_AHEAD", "TRANSMUTATION", "TRIP", "HAND_OF_GREED", "MAGNETISM", "CHRYSALIS", "BITE", "APPARITION", "JAX", "RITUAL_DAGGER"];
+
+        function getCardColorClass(cardName) {
+            if (curses.includes(cardName)) return "color-curse";
+            if (colorless.includes(cardName)) return "color-colorless";
+            if (currentChar === "THE_IRONCLAD" || currentChar === "IRONCLAD") return "color-ironclad";
+            if (currentChar === "THE_SILENT" || currentChar === "SILENT") return "color-silent";
+            if (currentChar === "THE_DEFECT" || currentChar === "DEFECT") return "color-defect";
+            if (currentChar === "THE_WATCHER" || currentChar === "WATCHER") return "color-watcher";
+            if (currentChar === "NECROBINDER" || currentChar === "THE_NECROBINDER") return "color-necrobinder";
+            return "color-class";
+        }
+
+        async function init() {
+            try {
+                const res = await fetch('/api/versions');
+                const versions = await res.json();
+                const selector = document.getElementById('version-selector');
+                versions.forEach(v => {
+                    const opt = document.createElement('option');
+                    opt.value = v;
+                    opt.innerText = "Patch " + v;
+                    selector.appendChild(opt);
+                });
+            } catch (e) {
+                console.error("無法取得版本資訊", e);
+            }
+            fetchStats();
+        }
+
+        async function fetchStats() {
+            try {
+                document.getElementById('stats-container').classList.add('loading');
+                const bossValue = document.getElementById('boss-selector').value;
+                const verValue = document.getElementById('version-selector').value;
+                const response = await fetch(`/api/stats?boss=${bossValue}&version=${verValue}`);
+                allData = await response.json();
+                
+                document.getElementById('stats-container').classList.remove('loading');
+                
+                const tabsContainer = document.getElementById('tabs-container');
+                tabsContainer.innerHTML = '';
+                
+                // 檢查先前的職業是否還存在於新數據中
+                let found = false;
+                for (const charId in allData) {
+                    if (charId === currentChar) found = true;
+                }
+                // 如果是空的或找不到先前的，就預設拿第一個
+                if (!found && Object.keys(allData).length > 0) {
+                    currentChar = Object.keys(allData)[0];
+                }
+                
+                for (const charId in allData) {
+                    const btn = document.createElement('button');
+                    btn.className = 'tab-btn' + (currentChar === charId ? ' active' : '');
+                    btn.innerText = charId;
+                    btn.onclick = () => {
+                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        currentChar = charId;
+                        renderUI();
+                    };
+                    tabsContainer.appendChild(btn);
+                }
+                
+                renderUI();
+            } catch (error) {
+                console.error("無法取得數據", error);
+            }
+        }
+
+        function setSort(type, criteria) {
+            if (type === 'card') {
+                cardSortBy = criteria;
+                document.querySelectorAll('#c-sort-wr, #c-sort-pk').forEach(b => b.classList.remove('active'));
+                document.getElementById(criteria === 'win_rate' ? 'c-sort-wr' : 'c-sort-pk').classList.add('active');
+            } else if (type === 'relic') {
+                relicSortBy = criteria;
+                document.querySelectorAll('#r-sort-wr, #r-sort-pk').forEach(b => b.classList.remove('active'));
+                document.getElementById(criteria === 'win_rate' ? 'r-sort-wr' : 'r-sort-pk').classList.add('active');
+            } else if (type === 'ancient') {
+                ancientSortBy = criteria;
+                document.querySelectorAll('#a-sort-wr, #a-sort-pk').forEach(b => b.classList.remove('active'));
+                document.getElementById(criteria === 'win_rate' ? 'a-sort-wr' : 'a-sort-pk').classList.add('active');
+            }
+            renderUI();
+        }
+
+        function sorter(a, b, criteria) {
+            if (criteria === 'win_rate') {
+                if (b.win_rate !== a.win_rate) return b.win_rate - a.win_rate;
+                return b.picked - a.picked;
+            } else {
+                if (b.picked !== a.picked) return b.picked - a.picked;
+                return b.win_rate - a.win_rate;
+            }
+        }
+
+        function renderListHTML(listData, targetId, defaultColorClass, totalOverallWinRate) {
+            const listEl = document.getElementById(targetId);
+            listEl.innerHTML = `
+                <li class="header-row">
+                    <span class="rank">#</span>
+                    <span class="name">名稱</span>
+                    <span class="picked">局數</span>
+                    <span class="wr">勝率</span>
+                </li>`;
+            listData.forEach((item, index) => {
+                let nameClass = defaultColorClass;
+                if (targetId === 'all-cards') {
+                    nameClass = getCardColorClass(item.name);
+                }
+                
+                let perfClass = '';
+                if (item.win_rate >= totalOverallWinRate) perfClass = 'good-wr';
+                else perfClass = 'bad-wr';
+                
+                listEl.innerHTML += `
+                    <li>
+                        <span class="rank">${index + 1}</span>
+                        <span class="name ${nameClass}">${item.name}</span>
+                        <span class="picked">${item.picked}</span>
+                        <span class="wr ${perfClass}">${item.win_rate}%</span>
+                    </li>`;
+            });
+        }
+
+        function renderKillerListHTML(listData, targetId, countLabel) {
+            const listEl = document.getElementById(targetId);
+            listEl.innerHTML = `
+                <li class="header-row">
+                    <span class="rank">#</span>
+                    <span class="name" style="width: 150px;">對象</span>
+                    <span class="picked" style="width: auto;">${countLabel}</span>
+                </li>`;
+            listData.forEach((item, index) => {
+                listEl.innerHTML += `
+                    <li>
+                        <span class="rank">${index + 1}</span>
+                        <span class="name" style="width: 150px; color: #ef4444;">${item.name}</span>
+                        <span class="picked" style="width: auto; font-weight: bold;">${item.kills !== undefined ? item.kills : item.count} 次</span>
+                    </li>`;
+            });
+        }
+
+        function renderUI() {
+            if (!currentChar || !allData[currentChar]) return;
+            const data = allData[currentChar];
+            
+            document.getElementById('total-runs').innerText = data.total_runs;
+            document.getElementById('win-rate').innerText = `${data.overall_win_rate}%`;
+            document.getElementById('avg-deck').innerText = data.avg_deck_size + " 張";
+            document.getElementById('avg-base').innerText = `${data.avg_strike} 打 / ${data.avg_defend} 防`;
+            
+            const q = document.getElementById('global-search').value.toLowerCase();
+            const actScope = document.getElementById('act-selector').value;
+            
+            const filteredCards = [...data.cards].filter(i => i.name.toLowerCase().includes(q));
+            const filteredRelics = [...data.relics].filter(i => i.name.toLowerCase().includes(q));
+            const filteredAncient = [...data.special_relics].filter(i => i.name.toLowerCase().includes(q));
+            const filteredKillers = [...data.deadly_monsters].filter(i => i.name.toLowerCase().includes(q));
+            
+            let bossArr = [];
+            if (actScope === "all") {
+                const combined = {};
+                for (let act in data.encountered_bosses) {
+                    for (let bossId in data.encountered_bosses[act]) {
+                        if (!combined[bossId]) combined[bossId] = 0;
+                        combined[bossId] += data.encountered_bosses[act][bossId];
+                    }
+                }
+                for (let bossId in combined) {
+                    bossArr.push({name: bossId, count: combined[bossId]});
+                }
+            } else {
+                const specList = data.encountered_bosses[actScope] || {};
+                for (let bossId in specList) {
+                    bossArr.push({name: bossId, count: specList[bossId]});
+                }
+            }
+            const filteredBosses = bossArr.filter(i => i.name.toLowerCase().includes(q));
+
+            const sortedCards = filteredCards.sort((a,b) => sorter(a, b, cardSortBy));
+            const sortedRelics = filteredRelics.sort((a,b) => sorter(a, b, relicSortBy));
+            const sortedAncient = filteredAncient.sort((a,b) => sorter(a, b, ancientSortBy));
+            const sortedKillers = filteredKillers.sort((a,b) => b.kills - a.kills);
+            const sortedBosses = filteredBosses.sort((a,b) => b.count - a.count);
+
+            renderListHTML(sortedAncient, 'all-special-relics', 'highlight-purple', data.overall_win_rate);
+            renderListHTML(sortedCards, 'all-cards', 'highlight-gold', data.overall_win_rate);
+            renderListHTML(sortedRelics, 'all-relics', 'highlight-cyan', data.overall_win_rate);
+            renderKillerListHTML(sortedBosses, 'all-bosses', '遭遇次數');
+            renderKillerListHTML(sortedKillers, 'all-killers', '致死次數');
+        }
+
+        function exportToCSV() {
+            if (!currentChar || !allData[currentChar]) return;
+            const data = allData[currentChar];
+            
+            // 使用 \uFEFF 讓 Excel 可以成功識別 UTF-8 編碼
+            let csvContent = "\uFEFF"; 
+            
+            csvContent += `職業,${currentChar}\n`;
+            csvContent += `A10總場次,${data.total_runs}\n`;
+            csvContent += `平均勝率,${data.overall_win_rate}%\n\n\n`;
+            
+            csvContent += `[開局先古之民恩賜]\n`;
+            csvContent += `排名,名稱,選擇局數,勝率(%)\n`;
+            [...data.ancient_relics].sort((a,b) => sorter(a,b, 'win_rate')).forEach((r, i) => {
+                csvContent += `${i+1},${r.name},${r.picked},${r.win_rate}\n`;
+            });
+
+            csvContent += `\n\n[卡牌數據庫]\n`;
+            csvContent += `排名,名稱,選取局數,勝率(%)\n`;
+            [...data.cards].sort((a,b) => sorter(a,b, 'win_rate')).forEach((c, i) => {
+                csvContent += `${i+1},${c.name},${c.picked},${c.win_rate}\n`;
+            });
+            
+            csvContent += `\n\n[遊戲中遺物]\n`;
+            csvContent += `排名,名稱,獲得局數,勝率(%)\n`;
+            [...data.relics].sort((a,b) => sorter(a,b, 'win_rate')).forEach((r, i) => {
+                csvContent += `${i+1},${r.name},${r.picked},${r.win_rate}\n`;
+            });
+            
+            csvContent += `\n\n[☠️ 奪命殺手榜]\n`;
+            csvContent += `排名,殺手/事件名稱,致死次數\n`;
+            [...data.deadly_monsters].sort((a,b) => b.kills - a.kills).forEach((m, i) => {
+                csvContent += `${i+1},${m.name},${m.kills}\n`;
+            });
+
+            csvContent += `\n\n[👿 頭目遭遇統計]\n`;
+            csvContent += `排名,頭目名稱,遭遇次數\n`;
+            let exportBossArr = [];
+            const actScope = document.getElementById('act-selector').value;
+            if (actScope === "all") {
+                const combined = {};
+                for (let act in data.encountered_bosses) {
+                    for (let bossId in data.encountered_bosses[act]) {
+                        if (!combined[bossId]) combined[bossId] = 0;
+                        combined[bossId] += data.encountered_bosses[act][bossId];
+                    }
+                }
+                for (let bossId in combined) {
+                    exportBossArr.push({name: bossId, count: combined[bossId]});
+                }
+            } else {
+                const specList = data.encountered_bosses[actScope] || {};
+                for (let bossId in specList) {
+                    exportBossArr.push({name: bossId, count: specList[bossId]});
+                }
+            }
+            exportBossArr.sort((a,b) => b.count - a.count).forEach((m, i) => {
+                csvContent += `${i+1},${m.name},${m.count}\n`;
+            });
+            
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `STS2_${currentChar}_A10勝率表.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        init();
+    </script>
+</body>
+</html>

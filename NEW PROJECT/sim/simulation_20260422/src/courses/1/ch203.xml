@@ -1,0 +1,27 @@
+<node type="chapter" id="203" label="案例三：業務常寄錯報價單給客戶">	
+	<lesson label="1.任務說明">
+		<page type="imageText" background="assets/images/S205_bg5.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">你是鴻展公司的業務部經理。上個月接到兩個客戶抱怨，說他們收到Jack寄去的報價單後，很滿意所提供的價格，下單後竟被通知是價格寫錯了，變成空歡喜一場。<br><br>
+你回想Jack最近的表現，發現他的確有些恍神。你擔心這類問題會持續發生，遲早會衍生重大傷害…<br><br>
+所以你決定把Jack找來進行面談，協助他克服這個績效落差。</div>]]>		
+		</page>
+	</lesson>	
+	<lesson label="2.部屬背景">
+		<page type="imageText" background="assets/images/S205_bg11.jpg">
+			<![CDATA[<div style="width:40%; float:right; margin-top:100px; margin-right:50px">業務專員Jack，男，28歲，公司年資2年。<br><br>
+負責推銷公司產品、傳達公司資訊、蒐集客戶情報等工作。<br/><br/>
+Jack個性活潑、衝勁也夠、企圖心相當強。一直想爭取升遷與加薪的機會，不過尚未如願。為人心直口快，做事大而化之，常因粗心大意而誤事。</div>]]>		
+		</page>
+	</lesson>	
+	<!--<lesson label="SL">
+			<embed>sl/COA_1-1_web/story.html</embed>
+		</lesson>-->
+	<lesson label="3.展開面談">
+		<simulation>courses/1/S203.xml</simulation>    	
+	</lesson>
+	<lesson label="4.技巧檢討">
+		<page type="simulationRecords">
+		</page>
+	</lesson>
+</node> 
+	

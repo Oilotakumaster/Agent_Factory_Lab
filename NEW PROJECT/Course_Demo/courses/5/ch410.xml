@@ -1,0 +1,53 @@
+<node type="chapter" id="410" label="案例三：團隊合作(提問、追問)">	
+ 	<lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S402_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">鴻展公司業務部門將招聘一名業務專員，負責公司產品之銷售推廣，Janie是應徵者之一，由George負責面試。<br><br>
+此時George已經完成開場、釐清履歷等步驟，即將進入<font color="#F40020">探問職能</font>階段。於是他瀏覽了職能清單，首先要探問的是<font color="#F40020">團隊合作</font>職能…</div>]]>       
+        </page>
+    </lesson> 	    
+    <lesson label="2.任務說明">
+    	<page type="imageText" background="assets/images/S401_bg.jpg">
+			<![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你的任務，是<font color="#F40020">扮演George</font>，並採用正確的<font color="#F40020">提問技巧、追問技巧、溝通原則</font>，從與Janie的互動中，蒐集到<font color="#F40020">團隊合作</font>職能的<font color="#F40020">兩個完整而有效的行為事例</font>！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">職能清單</font>中，瞭解該職能及其行為指標，然後在<font color="#F40020">履歷資料</font>中，瞭解Janie的背景，然後<font color="#F40020">進行演練</font>。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	 
+		</page>
+	</lesson>	
+ 	<lesson label="3.職能清單">
+    	<page type="imageText" background="assets/images/S401_bg1.jpg">
+			<![CDATA[<div style="width:50%; float:right; padding:90px">待聘職務：業務部業務專員。所需職能及行為指標如下：<br><br>
+<font color="#F40020">團隊合作：</font>
+					<textformat indent="-20">
+						<li>瞭解團隊目標以及各成員之角色職責。</li>
+                        <li>執行團隊決議，置團隊利益於個人利益之上。</li>
+                        <li>樂意分享訊息，提供支援，促進團隊成功。</li>
+                        <li>以公平、誠信、尊重、體諒之方式對待成員。</li>
+                        <li>願意給予回饋，也樂於接受回饋。</li><br>
+						客戶導向(略)<br><br>
+						說服能力(略)</textformat></div>]]>		
+		</page>
+	</lesson>
+ 	<lesson label="4.履歷資料">
+    	<page type="imageText" background="assets/images/S401_bg2.jpg">
+			<![CDATA[<div style="width:50%; float:right; padding:90px"><textformat indent="0">Janie，女，27歲。<br><br>
+			嗜好：柔道、看電影、自助旅行、聽音樂。<br/><br/></textformat>
+				<textformat indent="0">學歷：</textformat>
+					<textformat indent="-20">
+						<li>2017.09～2021.05 F大學中文系學士。</li><br>
+					</textformat>
+				<textformat indent="0">經歷：</textformat>
+					<textformat indent="-20">
+						<li>2020.09～2021.05 達美樂　工讀。</li>
+						<li>2019.03～2021.05 柔道社　副社長。</li>
+						<li>2017.12～2018.12 山地服務社　社員。</li>
+					</textformat></div>]]>		
+		</page>
+	</lesson>	
+	 <lesson label="5.展開面談">
+    	<simulation>courses/5/S410.xml</simulation>    	
+ 	</lesson>
+ 	<lesson label="6.技巧檢討">
+    	<page type="simulationRecords">
+    	</page>
+ 	</lesson>
+ </node> 

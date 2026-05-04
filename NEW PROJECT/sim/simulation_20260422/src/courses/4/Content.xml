@@ -1,0 +1,19 @@
+<course name="客戶服務" label="課程目錄" src="assets/courses/CS_logo.jpg" treeWidth="300">
+	<node type="folder" label="課程簡介">
+		<node type="chapter" id="100401" label="客戶服務">
+			<embed>sl/COA_1-1_web/story.html</embed>
+		</node>
+	</node>
+	<node type="folder" label="單元測驗">
+		<node type="chapter" label="案例一：XXXX">courses/5/ch408.xml</node> 
+	</node>
+</course>
+
+
+<course name="客戶服務" label="客戶服務模擬訓練學程" src="assets/courses/CS_logo.jpg" treeWidth="260">
+ 	<node type="chapter" id="100401" label="1.課程內容講解">
+				<embed>sl/COA_1-1_web/story.html</embed>
+	</node>
+	<node type="chapter" label="2.案例演練：B2C/銀行電話客服專員">courses/5/ch408.xml</node> 
+	<node type="chapter" label="3.案例演練：B2B/軟體公司專案經理">courses/5/ch409.xml</node> 
+</course>

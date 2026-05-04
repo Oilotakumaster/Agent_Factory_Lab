@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora | 登入</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="glass-panel">
+            <div class="brand">
+                <i class="fa-solid fa-bahai"></i>
+                <span>Aurora</span>
+            </div>
+            
+            <div class="form-wrapper login-active" id="form-wrapper">
+                
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form login-form">
+                    <h2>歡迎回來</h2>
+                    <p class="subtitle">登入以繼續您的奇幻旅程</p>
+
+                    <button type="button" class="btn google-btn" id="google-login">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                        <span>使用 Google 帳號登入</span>
+                    </button>
+                    
+                    <div class="divider">
+                        <span>或使用信箱登入</span>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope icon"></i>
+                        <input type="email" id="login-email" placeholder="電子郵件" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" id="login-password" placeholder="密碼" required>
+                        <i class="fa-regular fa-eye toggle-pwd" id="toggle-login-pwd"></i>
+                    </div>
+
+                    <div class="options">
+                        <label class="remember">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            <span>記住我</span>
+                        </label>
+                        <a href="#" class="forgot">忘記密碼？</a>
+                    </div>
+
+                    <div class="error-msg" id="login-error"></div>
+
+                    <button type="submit" class="btn primary-btn" id="login-btn">
+                        <span>立即登入</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="switch-form">
+                        還沒有帳號？ <a href="#" id="to-register">立即註冊</a>
+                    </p>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form register-form">
+                    <h2>建立帳號</h2>
+                    <p class="subtitle">加入我們，開啟無盡可能</p>
+
+                    <button type="button" class="btn google-btn" id="google-register">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+                        <span>使用 Google 帳號註冊</span>
+                    </button>
+                    
+                    <div class="divider">
+                        <span>或使用信箱註冊</span>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-regular fa-user icon"></i>
+                        <input type="text" id="reg-name" placeholder="使用者名稱" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope icon"></i>
+                        <input type="email" id="reg-email" placeholder="電子郵件" required autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock icon"></i>
+                        <input type="password" id="reg-password" placeholder="密碼" required>
+                        <i class="fa-regular fa-eye toggle-pwd" id="toggle-reg-pwd"></i>
+                    </div>
+
+                    <div class="error-msg" id="reg-error"></div>
+
+                    <button type="submit" class="btn primary-btn" id="reg-btn">
+                        <span>註冊帳號</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+
+                    <p class="switch-form">
+                        已經有帳號了？ <a href="#" id="to-login">返回登入</a>
+                    </p>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal hidden" id="success-modal">
+        <div class="modal-content glass-panel">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>註冊成功！</h3>
+            <p>您的帳號已成功建立，為您導向登入畫面...</p>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

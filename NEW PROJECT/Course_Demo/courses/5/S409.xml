@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation characterWidth="80%" characterHeight="" characterX="-150px" characterY="0px" optionsWidth="65%" optionsHeight="100%" optionsX="0" optionsY="0px" dialogStart="0.5" flvPath="simulation/S409/graphic/">
+<nodes>
+<page id="0Start" type="startPage" stage="5.1" background="assets/images/S409_startPage.jpg">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">請在右下角選擇本案例的演練模式(本案例將播放George的聲音)：<br/><br/>
+<li>若選擇「練習(不計分)」，系統將在你點選選項之前，就提供教練回饋。</li><br>
+<li>若選擇「測驗(計分)」，系統將在案例結束後，才提供教練回饋。案例結束後(8回合)，若有必要，系統亦可將成績傳到貴公司學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="1AN"/>
+</page>
+
+<page id="1AN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<dialogue>我請問你喔，你有沒有承擔過一個困難度超過你原本能力的專案，可是最後卻靠著自我學習，提昇自己能力，而把專案完成的經驗？</dialogue>
+<options header="請選出Simon的最佳回應：" coachHeader="您的選擇：" pos="1,2,3">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>		
+<option id="2AO" source="2AO.mp3">
+<theme>學習挑戰度高，職務關連性高</theme>
+<scores>
+<score objective="4.2">5</score>
+<score objective="4.5">5</score>
+<score objective="4.6">5</score>
+</scores>
+<text>我曾經被指派開發一個資料庫，客戶要求要用Oracle，可是當時我只懂得MySQL，所以我只好把Oracle學起來，才完成這個專案。</text>
+
+<feedback>很好，這個經驗的挑戰難度高，情境也符合未來職務，行動也符合行為指標。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+
+<page id="2AN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXXX</theme>
+<dialogue>哇~那這個專案規模多大？內容是什麼？啊你在其中又扮演了什麼角色？</dialogue>
+<options pos="3,2,1">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>
+
+	<option id="2BO" source="2BO.mp3">
+<theme>學習挑戰度中，職務關連性低。</theme>
+<scores>
+<score objective="4.2">3</score>
+<score objective="4.5">3</score>
+<score objective="4.6">5</score>
+</scores>
+<text>我大學擔任童軍團長的時候，有一次外賓來訪問，課外活動組要我負責英文簡報，這種事情我從來沒碰過，可是靠著自我充實，最後還是順利完成了。</text>
+<feedback>這個經驗的確符合需求，但其挑戰難度以及與未來職務的關連性，還比不上最佳選項，請重選一次！</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="1AN.png" audioSource="aside.mp3">
+<dialogue>我請問你喔，你有沒有承擔過一個困難度超過你原本能力的專案，可是最後卻靠著自我學習，提昇自己能力，而把專案完成的經驗？</dialogue>
+<options header="請選出Simon的最佳回應：" coachHeader="您的選擇：" pos="2,1">
+<link optionId="2AO"/>
+<link optionId="2CO"/>
+</options>
+</page>
+	<option id="2CO" source="2CO.mp3">
+<theme>職能相關性。</theme>
+<scores>
+<score objective="4.2">3</score>
+<score objective="4.3">3</score>
+<score objective="4.6">3</score>
+</scores>
+<text>我從小家境清寒，是靠著半工半讀才唸完大學。我是一個吃苦耐勞，不怕挑戰的人！</text>
+
+
+<feedback>「半工半讀唸完大學」可證明其具備「成就動機」與「毅力」等職能，但若就「持續學習」而言，現有資料還不夠契合其行為指標而言。請再選一次。</feedback>
+<link nextPageId="2CN"/>
+</option>
+
+
+<page id="2CN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="1AN.png" audioSource="aside.mp3">
+<dialogue>我請問你喔，你有沒有承擔過一個困難度超過你原本能力的專案，可是最後卻靠著自我學習，提昇自己能力，而把專案完成的經驗？</dialogue>
+<options header="請選出Simon的最佳回應：" coachHeader="您的選擇：" pos="1,2">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+</options>
+</page>
+
+<option id="3AO" source="3AO.mp3">
+<theme>學習挑戰度中，職務關連性高</theme>
+<scores>
+<score objective="4.4">5</score>
+<score objective="4.5">5</score>
+</scores>
+<text>喔，那是一個貿易商的進銷存系統啦，專案金額大概是300萬左右。總共有3個人負責，必需在4個月內完成。我擔任程式設計師，另外兩個則分別是專案經理以及系統分析師。</text>
+
+<feedback>很好，這個情境的挑戰難度相當高，也符合未來職務需求。而Simon所扮演的角色，也的確是主要執行者。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+
+<page id="3AN" type="character" stage="4.2" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩，那你當時做了什麼事情，來克服你技術不足的問題呢？</dialogue>
+<options pos="2,1,3">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="3BO.mp3">
+<theme>學習挑戰度高，職務關連性低</theme>
+<scores>
+<score objective="4.4">1</score>
+<score objective="4.5">5</score>
+</scores>
+<text>喔，那是一家百貨公司的進銷存系統，專案金額是1000萬元，耗時一年，總共有6個人負責，非常複雜。我當時是去支援技術文件的撰寫。</text>
+
+
+<feedback>這個情境的挑戰難度相當高，但Simon所扮演的角色卻非主要執行者。請再選一次。</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="2AN.png" audioSource="aside.mp3">
+<theme>XXXX</theme>
+<dialogue>那這個專案規模多大？內容是什麼？啊你在其中又扮演了什麼角色？</dialogue>
+<options pos="1,2">
+<link optionId="3AO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="3CO" source="3CO.mp3">
+<theme>學習挑戰度高，職務關連性可疑</theme>
+<scores>
+<score objective="4.4">1</score>
+<score objective="4.5">1</score>
+</scores>
+<text>喔，專案規模我不清楚啦，公司是不會讓我們知道這些細節的。我只記得有好幾個人都有參與這個專案，大家都忙得跟狗一樣，而我則是負責做一些修改測試的工作。</text>
+
+<feedback>Simon對情境的說明相當模糊，其所扮演的角色也無足輕重。請再選一次。</feedback>
+<link nextPageId="3CN"/>
+</option>
+
+
+
+<page id="3CN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="2AN.png" audioSource="aside.mp3">
+<theme>XXXX</theme>
+<dialogue>那這個專案規模多大？內容是什麼？啊你在其中又扮演了什麼角色？</dialogue>
+<options pos="2,1">
+<link optionId="3AO" />
+<link optionId="3BO" />
+</options>
+</page>
+<option id="4AO" source="4AO.mp3">
+<theme>完整涵蓋行為指標</theme>
+<scores>
+<score objective="4.6">5</score>
+</scores>
+<text>我剛開始是去找Oracle 的手冊來看。資料庫的語法都差不多，所以才花一個週末就看完了。然後我又去參考公司以前開發過的產品，有不懂的地方，就請學長幫忙。偶爾也會去Google找答案。現在網路實在太好用了，都不知道以前的人沒有網路怎麼活。</text>
+<feedback>Simon的行動涵蓋了好幾個「持續學習」的行為指標，如「找出需要學習的領域」、「找出適合自己的學習方式」、「將學習成果應用在工作」等，充分展現了職能。很好！</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+
+<page id="4AN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好，那後來客戶對開發的成果感覺如何？</dialogue>
+<options pos="2,1,3">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="4BO.mp3">
+<theme>行為指標低中</theme>
+<scores>
+<score objective="4.6">1</score>
+</scores>
+<text>基本上，我是把公司以前開發的產品拿來改。有不懂的時候，就找人來幫忙。我們team裡有一個學長對我很照顧，幫我解決了很多問題。他可以算是我的貴人，我到現在都還很感謝他。</text>
+<feedback> Simon的「行動」，比較符合「善用資源」職能，而單就「持續學習」而言，其行為表現並不符合行為指標，如「找出需要學習的領域」、「找出適合自己的學習方式」、「將學習成果應用在工作」。請再選一次。</feedback>
+<link nextPageId="4BN"/>
+</option>
+
+<page id="4BN" type="character" stage="4.2" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="3AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>恩，那你當時做了什麼事情，來克服你技術不足的問題呢？</dialogue>
+<options pos="2,1">
+<link optionId="4AO" />
+<link optionId="4CO" />
+</options>
+</page>
+	<option id="4CO" source="4CO.mp3">
+<theme>非預期職能</theme>
+<scores>
+<score objective="4.6">1</score>
+</scores>
+<text>我的主要策略，就是去說服客戶改用MySQL來開發。我告訴他們，MySQL的語法比較簡單，而且是免費，不像Oracle那麼貴，對中小企業非常划算。後來客戶真的接受我的勸告，改用mySQL。</text>
+<feedback> Simon的行動，展示了絕佳的「說服能力」，值得另外加分。但單就「持續學習」而言，並沒有呈現出符合行為指標的表現。請再選一次。</feedback>
+<link nextPageId="4CN"/>
+</option>
+
+
+
+<page id="4CN" type="character" stage="4.2" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="3AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>恩，那你當時做了什麼事情，來克服你技術不足的問題呢？</dialogue>
+<options pos="2,1">
+<link optionId="4AO" />
+<link optionId="4BO" />
+</options>
+</page>
+
+<option id="5AO" source="5AO.mp3">
+<theme>結果優異 </theme>
+<scores>
+<score objective="4.7">5</score>
+</scores>
+<text>他們蠻喜歡這個產品的，半年後還跟我們簽了另一個專案，主管本來希望我繼續接他們公司的案子，可是我忙不過來，就換我徒弟接了。</text>
+
+<feedback>這個「結果」，證明Simon的學習成果能順利解決問題，讓客戶以及主管相當滿意。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+
+<page id="5AN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，這的確是個相當有趣的故事。那可不可請你再回想一個經驗，是主管指派你負責一個從沒碰過的專案，可是你最後還是學會了必要的知識與技巧，完成這個任務。</dialogue>
+<options pos="1,2,3">
+<link optionId="6AO" />
+<link optionId="6BO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="5BO" source="5BO.mp3">
+<theme>結果不明</theme>
+<scores>
+<score objective="4.7">3</score>
+</scores>
+<text>客戶端通常都是PM在負責聯絡，所以我不知道他們覺得怎麼樣。應該…還不錯吧？沒有聽說有什麼糾紛啦。</text>
+
+<feedback> 這個「結果」語焉不詳，無法證明Simon的學習成果是否有順利解決問題。而同時，也透露出Simon並不太在乎他的專案成果，對品質的要求似乎也不高。請再選一次。</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+
+<page id="5BN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="4AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好，那後來客戶對開發的成果感覺如何？</dialogue>
+<options pos="1,2">
+<link optionId="5AO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="5CO" source="5CO.mp3">
+<theme>結果不好</theme>
+<scores>
+<score objective="4.7">3</score>
+</scores>
+<text>唉，客戶永遠是嫌東嫌西，不會滿意的啦，結果當然還是抱怨一堆啊，好在最後尾款都有拿到。</text>
+
+<feedback>這個「結果」，證明客戶並不滿意專案成品，你可以繼續追問客戶不滿意的原因，看是否與應徵者的職能有關。不過，目前這個選項非最佳結果，請再選一次。</feedback>
+<link nextPageId="5CN"/>
+</option>
+
+<page id="5CN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="4AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好，那後來客戶對開發的成果感覺如何？</dialogue>
+<options pos="2,1">
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page>
+<option id="6AO" source="6AO.mp3">
+<theme>職能相關 </theme>
+<scores>
+<score objective="4.5">5</score>
+<score objective="4.6">5</score>
+</scores>
+<text>嗯，有一次公司接了一個股票資訊網站的開發案。我原本負責軟體設計，結果負責系統分析的學長開刀住院了，我只好硬著頭皮幫忙作系統分析。可是我之前一點股票操作的經驗也沒有，要跟顧客討論需求，實在是非常大的挑戰。</text>
+
+<feedback>Simon所面對的情境的確有足夠難度，也必須用持續學習職能來克服，很可能成為一個高品質的行為事例。</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="6AN.png" audioSource="6AN.mp3">
+<theme>XXX</theme>
+<dialogue>那你後來做了什麼事情，來克服這些困難呢？</dialogue>
+<options pos="1,2,3">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page> 	<option id="6BO" source="6BO.mp3">
+<theme>職能相關 </theme>
+<scores>
+<score objective="4.5">3</score>
+<score objective="4.6">3</score>
+</scores>
+<text>嗯，有一次客戶很固執，我們整個Team的人都不知道該怎麼辦，大家就推派我去說服對方，希望他們能採用我們的方案。</text>
+
+
+
+<feedback>Simon舉的這個經驗，比較適合證明「溝通協商」職能，而非「持續學習」職能。比不上最佳選項。請再選一次。</feedback>
+<link nextPageId="6BN"/>
+</option>
+
+
+<page id="6BN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="5AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，這的確是個相當有趣的故事。那可不可請你再回想一個經驗，是主管指派你負責一個從沒碰過的專案，可是你最後還是學會了必要的知識與技巧，完成這個任務。</dialogue>
+<options pos="2,1">
+<link optionId="6AO" />
+<link optionId="6CO" />
+</options>
+</page>	<option id="6CO" source="6CO.mp3">
+<theme>職能相關 </theme>
+<scores>
+<score objective="4.5">1</score>
+<score objective="4.6">3</score>
+</scores>
+<text>嗯，有一次公司尾牙，我被派去跟其他部門的人合跳Sorry Sorry。天知道我根本沒有舞蹈細胞，可是逼不得已啊，也只好豁出去，給它拼了！</text>
+
+
+
+
+<feedback> Simon舉的這個經驗，可證明其勇氣，但與「持續學習」的行為指標，還不夠契合，比不上最佳選項。請再選一次。</feedback>
+<link nextPageId="6CN"/>
+</option>
+
+<page id="6CN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="5AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，這的確是個相當有趣的故事。那可不可請你再回想一個經驗，是主管指派你負責一個從沒碰過的專案，可是你最後還是學會了必要的知識與技巧，完成這個任務。</dialogue>
+<options pos="1,2">
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>
+<option id="7AO" source="7AO.mp3">
+<theme>展現行為指標</theme>
+<scores>
+<score objective="4.6">5</score>
+</scores>
+<text>呵呵，我就去買了一本「你也可以成為股票高手」，分析股票的運作原理。然後瀏覽各證券公司的網站，瞭解別人的設計手法。最後我乾脆也投資十萬元到群益證券開戶，親自體驗買賣股票的感覺。</text>
+
+<feedback> Simon在「行動」中，展現了「持續學習」職能的所有行為指標，包括「找出需要學習的領域、找出適合自己的學習方式、將學習成果應用在工作、承擔學習中所遭遇的困難或風險」，相當符合「行動」面向的評鑑標準。</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+<page id="7AN" type="character" stage="4.5" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="7AN.png" audioSource="7AN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好。那你的學習成果，有沒有對你的專案產生什麼影響啊？</dialogue>
+<options pos="3,2,1">
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7BO" source="7BO.mp3">
+<theme>行為指標</theme>
+<scores>
+<score objective="4.6">1</score>
+</scores>
+<text>後來我就請公司幫我找一個既懂股票操作，又懂軟體設計的工讀生來擔任我的助手。我帶著他一起把系統分析出來。</text>
+
+
+
+<feedback> Simon的「行動」，展現的是「領導統御」，並未展現「持續學習」的行為指標如「找出需要學習的領域、找出適合自己的學習方式、將學習成果應用在工作、承擔學習中所遭遇的困難或風險」。請再選一次。</feedback>
+<link nextPageId="7BN"/>
+</option>
+
+<page id="7BN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="6AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那你後來做了什麼事情，來克服這些困難呢？</dialogue>
+<options pos="2,1">
+<link optionId="7AO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="7CO" source="7CO.mp3">
+<theme>實際經驗</theme>
+<scores>
+<score objective="4.3">1</score>
+</scores>
+<text>一般說來，這種問題就是要靠恆心以及毅力啦。不懂的時候要問，不會的時候要學，被罵的時候要忍。最後問題總是能解決的！</text>
+
+
+
+<feedback>Simon所描述的「行動」只是理論性答案，並非實際經驗。請再選一次。</feedback>
+<link nextPageId="7CN"/>
+</option>
+
+
+
+
+
+
+<page id="7CN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="6AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="6AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>那你後來做了什麼事情，來克服這些困難呢？</dialogue>
+<options pos="1,2">
+<link optionId="7AO" />
+<link optionId="7BO" />
+</options>
+</page>
+<option id="8AO" source="8AO.mp3">
+<theme>XXX </theme>
+<scores>
+<score objective="4.7">5</score>
+</scores>
+<text>哈，客戶聽我滿口股市術語，一副很懂的樣子，根本看不出我是臨時抱佛腳，所以溝通就很順利喔。更有趣的是，我投資的股票還小賺20％喔，這也算是額外的收穫吧，哈哈。</text>
+
+<feedback>很好，Simon持續學習的「結果」，讓他和客戶之間的溝通順暢無礙，克服了當初的挑戰。而且所買股票居然還小賺20％，的確有學習成效！ </feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="4.5" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="8AN.png" audioSource="8AN.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好！</dialogue>
+<link nextPageId="8AEND"/>
+</page>
+
+<page id="8AEND" type="scoreCard" background="S409.jpg">
+<text>恭喜你完成本案例的所有步驟。</text> 
+</page>	<option id="8BO" source="8BO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.7">3</score>
+</scores>
+<text>後來？後來就結案了啊。新的案子一樣繼續來，忙得焦頭爛額，不過年終尾牙的時候，老闆有專門請我們到福華飯店吃了一場慶功宴，大家都很高興。</text>
+
+<feedback>這個回應內容雖然豐富，但卻沒有明確指出，當初的專案是否順利結案！畢竟老闆請尾牙不等於專案順利。非最高分解，請再選一次。</feedback>
+<link nextPageId="8BN"/>
+</option>
+
+<page id="8BN" type="character" stage="4.5" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="7AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好。那你的學習成果，有沒有對你的專案產生什麼影響啊？</dialogue>
+<options pos="1,2">
+<link optionId="8AO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="8CO" source="8CO.mp3">
+<theme>XXX</theme>
+<scores>
+<score objective="4.3">1</score>
+</scores>
+<text>後來做到一半，我就是被調到另外一個計畫了，所以不太知道後來結案情形如何？應該是有結案吧？</text>
+
+
+
+<feedback>這個回應，讓我們無法評估Simon的學習成果是否克服當初的挑戰。非最高分選項，請再選一次。</feedback>
+<link nextPageId="8CN"/>
+</option>
+
+<page id="8CN" type="character" stage="4.5" idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Simon" mediaType="graphic" background="S409.jpg" graphicSource="7AN.png" audioSource="aside.mp3">
+<theme>XXX</theme>
+<dialogue>嗯，很好。那你的學習成果，有沒有對你的專案產生什麼影響啊？</dialogue>
+<options pos="1,2">
+<link optionId="8AO" />
+<link optionId="8BO" />
+</options>
+</page>
+</nodes>
+<objectives>
+<category id="4" name="評估技巧">
+<objective id="4.1" name="須具備四要素"/>
+<objective id="4.2" name="須契合目標職能"/>
+<objective id="4.3" name="須為真實經驗"/>
+<objective id="4.4" name="應徵者須為主角"/>
+<objective id="4.5" name="情境應有難度"/>
+<objective id="4.6" name="行動應符合行為指標"/>
+<objective id="4.7" name="結果應符合預期"/>
+</category>
+</objectives>
+
+<stages>
+<stage id="4.1" name="評估內容"/>
+<stage id="4.2" name="評估情境"/>
+<stage id="4.3" name="評估角色"/>
+<stage id="4.4" name="評估行動"/>
+<stage id="4.5" name="評估結果"/>
+</stages>
+</simulation>		

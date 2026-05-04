@@ -1,0 +1,8 @@
+<course name="創新設計" label="課程目錄" src="assets/courses/INNO_logo.jpg">
+	<node type="chapter" id="102801" label="創新設計">
+		<embed>sl/INNO/story.html</embed>
+	</node>
+</course>
+
+		
+	

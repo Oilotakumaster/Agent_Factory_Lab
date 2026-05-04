@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊 - Nexus Auth</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-layout">
+    <div class="split-screen">
+        <div class="left-pane register-bg">
+            <div class="brand">
+                <i class="fa-solid fa-bolt"></i> Nexus Auth
+            </div>
+            <div class="hero-text">
+                <h2>加入我們。</h2>
+                <p>只需幾秒鐘即可建立帳號，開始您的專屬旅程。安全、快速、無縫接軌。</p>
+            </div>
+        </div>
+        <div class="right-pane">
+            <div class="form-container">
+                <div class="mobile-brand">
+                    <i class="fa-solid fa-bolt"></i> Nexus Auth
+                </div>
+                <h2>建立新帳號</h2>
+                <p class="subtitle">已經有帳號了？ <a href="index.html">返回登入</a></p>
+                
+                <form id="register-form">
+                    <div class="input-group">
+                        <label for="name">姓名 / Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">電子郵件 / Email</label>
+                        <div class="input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">設定密碼 / Password</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="password" placeholder="請輸入至少 6 位字元" minlength="6" required>
+                            <button type="button" class="toggle-pwd"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            我同意 <a href="#">服務條款</a> 與 <a href="#">隱私權政策</a>
+                        </label>
+                    </div>
+                    
+                    <div id="auth-error" class="error-msg hidden"></div>
+                    
+                    <button type="submit" class="submit-btn" id="register-btn">
+                        <span>立即註冊</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-content success-card">
+            <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+            <h2>註冊成功！</h2>
+            <p>您的帳號已成功建立。為您導向登入頁面...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

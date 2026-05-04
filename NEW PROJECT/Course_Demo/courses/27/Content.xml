@@ -1,0 +1,8 @@
+<course name="問題解決技巧" label="課程目錄" src="assets/courses/PROB_logo.jpg">
+	<node type="chapter" id="102701" label="問題解決技巧">
+		<embed>sl/PROB/story.html</embed>
+	</node>
+</course>
+
+		
+	

@@ -1,0 +1,35 @@
+<node type="chapter" id="404" label="步驟四：評估案例">  
+    <lesson label="1.前情提要">
+        <page type="imageText" background="assets/images/S403_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px">在提問之後，George面臨一個困擾：他無法從Lisa的各種回應中，辨別出所隱含的職能高低？<br><br>
+			所以他就把探問<font color="#F40020">主動積極</font>職能時，Lisa的各種回應都彙集起來，請你幫忙評估…</div>]]>       
+        </page>
+    </lesson>   
+	<lesson label="2.任務說明">
+        <page type="imageText" background="assets/images/S402_bg.jpg">
+            <![CDATA[<div style="width:60%; float:right; padding:120px"><textformat indent="-20">
+<li>你這次的任務，是擔任<font color="#F40020">George的顧問</font>，協助他從Lisa的回應中，挑出可獲得最高職能評分的回應！你必須具備正確的<font color="#F40020">評估技巧</font>，才能順利完成本任務！</li><br>
+<li>如果你選擇接受本任務，請先在<font color="#F40020">職能清單</font>中，瞭解主動積極的行為指標，然後再開始<font color="#F40020">進行演練</font>。</li><br>
+<li>而照例，如果你任務失敗，我們將否認知情，不會保留你的紀錄，本訊息也不會在五秒後自動引爆。Good luck！</li></textformat></div>]]>	   
+        </page>
+    </lesson>	
+    <lesson label="3.職能清單">
+        <page type="imageText" background="assets/images/S402_task.jpg">
+            <![CDATA[<div style="width:50%; float:right; padding:90px">
+            <font color="#F40020">一、主動積極：</font>
+                    <textformat indent="-20">
+                        <li>歸屬不明之任務，能主動爭取。</li>
+                        <li>不清楚之處，能主動澄清、詢問、確認。</li>
+                        <li>採取預防性措施，避免問題發生。</li>
+                        <li>獨立作業，不需監督。</li>
+                        <li>超越工作範圍。</li></textformat></div>]]>      
+        </page>
+    </lesson>   	
+    <lesson label="4.進行演練">
+        <simulation>courses/5/S404.xml</simulation>       
+    </lesson>
+    <lesson label="5.技巧檢討">
+        <page type="simulationRecords">
+        </page>
+    </lesson>
+ </node> 

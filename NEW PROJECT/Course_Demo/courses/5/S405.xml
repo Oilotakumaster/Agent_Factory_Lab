@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="coach" characterWidth="88%" characterHeight="" characterX="-140px" characterY="-20px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0" dialogStart="0.5" flvPath="simulation/S405/graphic/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S405_startPage.jpg" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text><![CDATA[<div style="width:90%; float:right; margin-top:150px; margin-right:50px><textformat indent="0">請點選右下角「練習」按鈕，等出現選項後，從中點選一個George最該採用的追問句。選項旁的小圖示也可點選，將提供對該追問句的教練回饋。</div>]]></text>
+<link nextPageId="1AN"/>
+</page>
+
+
+<page id="1AN" type="character" stage="5.1" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<dialogue>（等待George詢問）</dialogue>
+<options header="請選擇關於「積極主動」的最佳提問：" coachHeader="您的選擇：" pos="1,3,2">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>	
+	
+<option id="2AO" source="2AO.mp3">
+<theme>提問BEI </theme>
+<scores>
+<score objective="3.2">5</score>
+<score objective="3.3">5</score>
+<score objective="3.4">5</score>
+</scores>
+<text>你是否曾經在工作範圍之外，主動去做一些對公司有利的事情？請舉一個實際的例子。</text>
+<feedback>很好，你要求Lisa提出一個「具備積極主動職能的人」才會有的經驗。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="5.1"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩…我在B公司擔任業務員的時候，曾經主動幫公司辦一個技術論壇。</dialogue>
+<link nextPageId="2AN2"/>
+</page>
+<page id="2AN2" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="2AN2.png" audioSource="2AN2.mp3">
+<theme>XXX</theme>
+<dialogue>那原本不是我的工作，可是對公司是很有價值的！</dialogue>
+<options header="請選擇關於「情境」的最佳追問：" pos="2,1,3">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="aside.mp3">
+<theme>理論性問題</theme>
+<scores>
+<score objective="3.2">1</score>
+<score objective="3.3">1</score>
+<score objective="3.4">5</score>
+</scores>
+<text>你覺得孫悟空、豬八戒、沙悟淨三者在個性上有什麼不同？你最欣賞哪一個？為什麼？</text>
+<feedback>這是一個純理論性的提問，而且和「積極主動」職能無關。不宜用此方法提問。請再選一次。</feedback>
+</option>
+
+	<option id="2CO" source="aside.mp3">
+<theme>引導性問題</theme>
+<scores>
+<score objective="3.2">5</score>
+<score objective="3.3">1</score>
+<score objective="3.4">1</score>
+</scores>
+<text>我們這個工作很需要「積極主動」的人。你應該是個「積極主動」的人吧？對公司有利的事情，即使不在工作範圍內，你也會去做吧？
+</text>
+<feedback>這是個引導性提問，應徵者一聽就猜到你要的答案了，所以一點鑑別力也沒有。不宜。請再選一次。</feedback>
+</option>
+
+
+<option id="3AO" source="3AO.mp3">
+<theme> FU S/T </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>當時你面臨了什麼挑戰？為什麼想辦技術論壇？</text>
+
+<feedback>很好，你追問Lisa在這個經驗中所面臨的情境是否：1）具備足夠的難度、2）適合應用「積極主動」職能、3）會發生在未來職務上。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+
+
+<page id="3AN" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>因為客戶常常反應，說想多瞭解一下我們公司的技術及願景，也希望有機會和其他客戶交流使用經驗。</dialogue>
+<link nextPageId="3AN2"/>
+</page>
+<page id="3AN2" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="3AN2.png" audioSource="3AN2.mp3">
+<theme>XXX</theme>
+<dialogue>所以我就想，如果能夠辦一場技術論壇，不僅能夠服務客戶，也能建立品牌形象啊。</dialogue>
+<link nextPageId="3AN3"/>
+</page>
+<page id="3AN3" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="3AN3.png" audioSource="3AN3.mp3">
+<theme>XXX</theme>
+<dialogue>後來我就把這個想法在部門會議中提出來了。</dialogue>
+<options header="請選擇關於「情境」的最佳追問：" pos="1,2,3">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="aside.mp3">
+<theme>主觀意見</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="C2">1</score>
+<score objective="5.5">3</score>
+</scores>
+<text>辦技術論壇啊？這個想法是不錯啦，可是通常只有宣傳效果，很少有實質效益。你當初怎麼會有這樣的想法呢？</text>
+
+<feedback>追問的目的在於瞭解應徵者的行為，而不是要教導應徵者，甚至批評應徵者。請再選一次。</feedback>
+</option>
+
+	<option id="3CO" source="aside.mp3">
+<theme>FU Leading</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="5.2">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>恩，非常好，這個經驗的確可以證明你是個積極主動的人！能不能請你再深入描述一下當時你所面臨的挑戰，讓我看看你怎麼發揮主動積極的精神來克服？</text>
+
+<feedback>這段話是引導性問句，雖然可以鼓勵應徵者，卻讓你的提問失去評鑑效力。不宜。請再選一次。</feedback>
+</option>
+
+
+<option id="4AO" source="4AO.mp3">
+<theme>FU S/T</theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>要把論壇辦起來，你所遭遇的挑戰有哪些？</text>
+
+<feedback>Lisa 剛剛的回應，只是說明了這個任務的必要性，可是並沒有說明她所面對的挑戰是哪些，無法評估這個情境的挑戰難度，所以還要再追問這一點。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>一開始的挑戰，是怎麼去說服大家接受這個想法，接下來，就是要想辦法讓公司願意出錢啊。</dialogue>
+<link nextPageId="4AN2"/>
+</page>
+<page id="4AN2" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="4AN2.png" audioSource="4AN2.mp3">
+<theme>XXX</theme>
+<dialogue>最後的挑戰，當然就是好好把論壇辦成功囉。</dialogue>
+<options header="請選擇關於「行動」的最佳追問：" pos="3,1,2">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="aside.mp3">
+<theme> missing A </theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="C7">1</score>
+<score objective="5.5">5</score>
+</scores>
+<text>恩，這的確是個很棒的構想，那後來的成果如何？有沒有達成預期目標？</text>
+<feedback>到目前為止，你還沒有追問Lisa所面對的挑戰以及所採取的行動，所以還不必急著追問其成果了。請再選一次。</feedback>
+</option>
+
+
+	<option id="4CO" source="aside.mp3">
+<theme> FU主觀意見</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.5">1</score>
+<score objective="C7">1</score>
+</scores>
+<text>現在景氣這麼差，辦論壇的花費不少，主管應該不會同意吧？你在提出意見之前，有先做過成本效益分析嗎？</text>
+<feedback>你應該避免陳述個人主觀意見。更何況你這個追問，與「積極主動」的行為指標關連不大。請再選一次。</feedback>
+</option>
+
+
+<option id="5AO" source="5AO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那你做了哪些事情，來克服這些挑戰呢？ </text>
+
+
+<feedback> 很好，Lisa 所說的三個挑戰都具備相當難度，而且也適合以「積極主動」職能來克服。所以你繼續追問他所採取的行動。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>剛開始大家都覺得多一事不如少一事。</dialogue>
+<link nextPageId="5AN2"/>
+</page>
+<page id="5AN2" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="5AN2.png" audioSource="5AN2.mp3">
+<theme>XXX</theme>
+<dialogue>我就勸大家說，公司平常隨便刊個廣告就上百萬，如果論壇辦起來，就可以用更少的經費，換到更多的媒體版面！大家一聽覺得有道理，就開始支持了，只剩下老闆還是擔心不划算。</dialogue>
+<link nextPageId="5AN3"/>
+</page>
+<page id="5AN3" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="5AN3.png" audioSource="5AN3.mp3">
+<theme>XXX</theme>
+<dialogue>所以我乾脆把所需經費以及媒體曝光的效益都寫在白版上，這下連老闆都被說服了，後來就去跟上面爭取到經費，然後就執行囉！</dialogue>
+<options header="請選擇關於「角色」的最佳追問：" pos="1,3,2">
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>	<option id="5BO" source="aside.mp3">
+<theme>主觀意見</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="C7">1</score>
+<score objective="5.5">1</score>
+</scores>
+<text>換成我是你，我會先把成本效益分析做好之後，才提出這個構想，大家就比較容易接受，主管也比較願意給你經費。</text>
+<feedback>你現在是評分員，Lisa才是應徵者啊，所以，請你放下好為人師的天性，採取正確追問技巧。請再選一次。</feedback>
+</option>
+	<option id="5CO" source="aside.mp3">
+<theme>資料不完整</theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="C7">1</score>
+</scores>
+<text>恩，這是一個非常好的例子。能不能請你再提供一個類似的經驗？</text>
+
+
+
+<feedback>行為事例目前只完成「情境」，還缺乏「行動、角色、結果」等脈絡。此時不宜貿然開始另一個提問。請再選一次。</feedback>
+</option>
+
+<option id="7AO" source="7AO.mp3">
+<theme> FU A </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.3">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那執行的工作是誰負責的呢？</text>
+
+<feedback>很好，你希望更清楚釐清Lisa所扮演的角色，並藉由更豐富的資料，來觀察Lisa是否展現了「積極主動」所有的行為指標。</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+
+
+<page id="7AN" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="7AN.png" audioSource="7AN.mp3">
+<theme>XXX</theme>
+<dialogue>老闆說「個人造業個人擔」，問我要不要當承辦人？我想想也有道理，只好扛下來囉。</dialogue>
+<link nextPageId="7AN2"/>
+</page>
+<page id="7AN2" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="7AN2.png" audioSource="7AN2.mp3">
+<theme>XXX</theme>
+<dialogue>所以後來的專案管理、設計議程、邀請引言人等工作都是我負責。</dialogue>
+<link nextPageId="7AN3"/>
+</page>
+<page id="7AN3" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="7AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="7AN3.png" audioSource="7AN3.mp3">
+<theme>XXX</theme>
+<dialogue>而客戶的聯絡與接待則是公司同仁一起幫忙，至於場地布置、交通膳食等，則是外包給公關公司。</dialogue>
+<options header="請選擇關於「結果」的最佳追問：" pos="2,1,3">
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>	<option id="7BO" source="aside.mp3">
+<theme>主觀意見 </theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.3">3</score>
+<score objective="5.5">1</score>
+</scores>
+<text>你覺得，如果你一開始就把成本效益分析好，再提出你的想法，效果會不會更好？ </text>
+<feedback>你提供過多引導，Lisa當然會順著你的意見回答，你也就無法判定他是否具備「積極主動」的職能。請再選一次。</feedback>
+</option>
+
+	<option id="7CO" source="aside.mp3">
+<theme> 無關資料 </theme>
+<scores>
+<score objective="5.1">1</score>
+<score objective="5.2">1</score>
+<score objective="C7">1</score>
+</scores>
+<text>那你們老闆叫什麼名字？ </text>
+
+<feedback>除非你有特殊用意～例如藉由與對方老闆熟識來暗示Lisa要講真話，或者想要找出輕鬆議題來化解Lisa的緊張，否則這個追問是多餘的。請再選一次。</feedback>
+</option>
+
+
+<option id="8AO" source="8AO.mp3">
+<theme> FU R </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">5</score>
+</scores>
+<text>那後來成果如何呢？ </text>
+
+<feedback>很好，Lisa所描述的行動符合「積極主動」的定義，其項目也涵蓋了所有的行為指標。所以你接著要追問，其行動的結果是否有達成原先目標。</feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="5.3"  idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="8AN.png" audioSource="8AN.mp3">
+<theme>XXX</theme>
+<dialogue>後來總共有54家客戶110人來參加。而且還有五家媒體來採訪，其中一家還是電視台喔。</dialogue>
+<link nextPageId="8AN2"/>
+</page>
+<page id="8AN2" type="character" stage="5.1"  idleMediaType="graphic" idleMediaSource="8AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="8AN2.png" audioSource="8AN2.mp3">
+<theme>XXX</theme>
+<dialogue>總經理很高興，還發了一封mail給大家稱讚我喔。</dialogue>
+<options header="請選擇關於「積極主動」的下一個提問：" pos="2,1">
+<link optionId="9AO" />
+<link optionId="9BO" />
+</options>
+</page>	<option id="8BO" source="aside.mp3">
+<theme> 引導 </theme>
+<scores>
+<score objective="5.1">5</score>
+<score objective="5.2">5</score>
+<score objective="5.5">1</score>
+</scores>
+<text>這樣啊，那後來結果如何？主管一定對你的表現非常滿意吧？</text>
+
+<feedback>你這樣問，對方當然會說有啊！這是個引導式追問，要避免。請再選一次。</feedback>
+</option>
+
+	<option id="8CO" source="aside.mp3">
+<theme>掌握流程</theme>
+<scores>
+<score objective="5.1">3</score>
+<score objective="C2">3</score>
+<score objective="C7">1</score>
+</scores>
+<text>所以這個專案是靠很多人幫忙才完成的，不是你一個人的功勞嘛！我還想說你怎麼那麼厲害，一個人可以扛下這麼大一個專案。 </text>
+
+<feedback>你的評論帶有批評的意味，而且對於瞭解Lisa的職能毫無幫助。請再選一次。</feedback>
+</option>
+
+
+<option id="9AO" source="9AO.mp3">
+<theme>掌握流程</theme>
+<scores>
+<score objective="C4">5</score>
+<score objective="C7">5</score>
+<score objective="C8">5</score>
+</scores>
+<text>謝謝你的分享，這是個相當精采的例子，讓我想再多聽幾個。可不可以請你再舉一個經驗，同樣是你在工作範圍之外，主動去做一件對公司有利的事情？ </text>
+
+<feedback>很好，你已經完成一個行為事例的評估工作，可以再找另一個行為事例了。</feedback>
+<link nextPageId="9AN"/>
+</option>
+
+<page id="9AN" type="character" stage="5.1"  idleMediaType="graphic" idleMediaSource="9AN_Idle.png" name="Lisa" mediaType="graphic" background="S405.jpg" graphicSource="9AN.png" audioSource="9AN.mp3">
+<theme>XXX</theme>
+<dialogue>好啊，讓我再想一想，等一下喔！</dialogue>
+<link nextPageId="9AEND"/>
+</page>
+
+<page id="9AEND" type="scoreCard" background="S405.jpg" >
+<text>「追問技巧」之演練到此告一段落，請繼續閱讀下一個章節，或在右下角點選「重新開始」，再演練一次。</text>
+</page>
+	<option id="9BO" source="aside.mp3">
+<theme> 理論 </theme>
+<scores>
+<score objective="5.3">1</score>
+<score objective="5.4">1</score>
+</scores>
+<text>如果今天你再籌劃一次這樣的會議，你會做一樣的事情嗎？</text>
+
+<feedback>這是假設性提問，不論Lisa的回答如何，都無法用來評鑑其職能。請再選一次。</feedback>
+</option>
+	
+</nodes>
+<objectives>
+<category id="C" name="溝通原則">
+<objective id="C1" name="尊重肯定"/>
+<objective id="C2" name="避免批評"/>
+<objective id="C3" name="主動釐清"/>
+<objective id="C4" name="鼓勵參與"/>
+<objective id="C5" name="耐心等候"/>
+<objective id="C6" name="正確引導"/>
+<objective id="C7" name="掌握流程"/>
+<objective id="C8" name="轉折自然"/>
+</category>
+
+<category id="3" name="提問技巧">
+<objective id="3.1" name="包含情境衝突"/>
+<objective id="3.2" name="契合目標職能"/>
+<objective id="3.3" name="要求實際經驗"/>
+<objective id="3.4" name="避免暗示誘導"/>
+<objective id="3.5" name="保持觀點平衡"/>
+</category>
+
+<category id="5" name="追問技巧">
+<objective id="5.1" name="追問欠缺的元素"/>
+<objective id="5.2" name="追問職能相關內容"/>
+<objective id="5.3" name="追問具體經驗"/>
+<objective id="5.4" name="追問難以造假細節"/>
+<objective id="5.5" name="避免誘答"/>
+</category>
+</objectives>
+
+<stages>
+<stage id="5.1" name="提問"/>
+<stage id="5.2" name="追問"/>
+<stage id="5.3" name="引導說明"/>
+</stages>
+</simulation>		

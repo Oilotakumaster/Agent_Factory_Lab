@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="" characterWidth="51.89%" characterHeight="100%" characterX="0px" characterY="0px" optionsWidth="60%" optionsHeight="100%" dialogStart="0.5" optionsX="0" optionsY="0"  flvPath="simulation/S201/video/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S201_startPage.jpg" srcWidth="772" paddingTop="40" paddingLeft="420" paddingRight="30">
+<text><![CDATA[<div style="width:85%; float:right; margin-top:100px; margin-right:50px><textformat indent="-20">為了營造輕鬆的氣氛，你和Amy約好在剛蓋好的交誼廳面談。Amy準時來到，雙方寒暄互動，你輕鬆問他工作是否順利？打算接著就要切入主題…<br/><br/>
+本案例包含24回合，請在右下角選擇本次演練模式：<br/><br/>
+<li>一、練習(不計分)：演練過程中，你可隨時瀏覽各選項的教練回饋。</li><br>
+<li>二、測驗(有計分)：演練過程中，你將無法瀏覽教練回饋。演練結束後，成績將上傳學習平台。</li></textformat>]]>
+</text>
+<link nextPageId="0AN"/>
+</page>
+
+
+<page id="0AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="0AN.f4v">
+<dialogue>工作順不順利喔？嗯...應該還算不錯吧，沒什麼問題啊。</dialogue>
+<options>
+<link optionId="1AO"/>
+<link optionId="1BO"/>
+<link optionId="1CO"/>
+</options>
+</page>			
+<option id="1AO" source="1AO.mp3">
+<theme>三明治開場</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text>Amy，這半年來，你的工作完成度相當高，與同事的相處也很融洽。不過你的出勤記錄顯示，你的病假已經請滿了，事假也只剩兩天了。如果這個問題能夠改善的話，你的績效就會更好了，你覺得呢？</text>
+
+<feedback>很好，你以「三明治原則」開場。不僅維護他的自尊心，也把他的績效落差講出來，為這場面談定下清楚的框架。</feedback>
+<link nextPageId="1AN"/>
+</option>
+
+<page id="1AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S201_embarrassed.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="1AN.f4v">
+<theme>認知差距</theme>
+<dialogue>George，這不合理啊！我每次請假都有填假單，從來也沒有曠職過，而且我的請假天數也還在安全期限內，這怎麼會影響到我的績效呢？</dialogue>
+<options>
+<link optionId="2AO" />
+<link optionId="2BO" />
+<link optionId="2CO" />
+</options>
+</page>
+	<option id="1BO" source="1BO.mp3">
+<theme>缺乏包裝</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">5</score>
+<score objective="ST2.1">1</score>
+</scores>
+<text> Amy, 今天是期中面談，按照公司規定，我必須指出你的缺失，所以我就直說了…我覺得你上半年度事假、病假請太多了，再這樣下去，年底的考績一定很差，對於這個問題，你有沒有什麼想法？</text>
+<feedback>雖然你具體說出部屬的問題。但缺乏修飾的結果，可能會讓他覺得難堪，不利後續教導。</feedback>
+<link nextPageId="1AN"/>
+</option>
+	<option id="1CO" source="1CO.mp3">
+<theme>避重就輕</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP5.1">1</score>
+<score objective="ST2.1">1</score>
+</scores>
+<text>這個…你知道嘛！我們當主管，就是要幫部屬的績效打分數，而結果自然是幾家歡樂幾家愁。所以對於我接下來的評語，希望你不要太介意。</text>
+
+<feedback>你想要藉由輕鬆口吻，化解面談的尷尬。但這種模稜兩可的說法，反而模糊了面談的目的。</feedback>
+<link nextPageId="1CN"/>
+</option>
+
+<page id="1CN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S201_embarrassed.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="1CN.f4v">
+<theme>負面預期</theme>
+<dialogue>George，你的意思是說我今年的績效不好嗎？可是我的任務明明都有達成啊？績效怎麼可能會不好？</dialogue>
+<options>
+<link optionId="1AO" />
+<link optionId="1BO" />
+</options>
+</page>
+	
+<option id="2AO" source="2AO.mp3">
+<theme>解釋澄清</theme>
+<scores>
+<score objective="CP1.2">5</score>
+<score objective="CP5.1">5</score>
+<score objective="CP2.2">5</score>
+
+
+</scores>
+<text>嗯，我懂你的意思。不過，病假和事假有它的申請條件，和特休假是不一樣的。員工還是要盡量出勤才對，這樣你瞭解嗎？</text>
+
+<feedback>非常好。當部屬質疑你時，你能瞭解他的立場，並心平氣和地解釋。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="2AN.f4v">
+<theme>迴避責任</theme>
+<dialogue>可是大家都這樣啊，又不是只有我。Jamie上次去約會也是請病假啊，為什麼只有我被念，這不公平嘛…</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>
+	<option id="2BO" source="2BO.mp3">
+<theme>批評指責</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="CP5.1">3</score>
+<score objective="CP2.2">1</score>
+</scores>
+<text>從公司立場來看，同仁請假當然是能少就少，哪有什麼安全期限？你故意把假請光，根本就是在鑽公司制度的漏洞啊！</text>
+
+<feedback>你斥責他的說法，並以假設武斷的態度，猜測他的動機。這非常不利於教導的進行。</feedback>
+<link nextPageId="2BN"/>
+</option>
+
+<page id="2BN" type="character" stage="ST2" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="2BN.f4v">
+<theme>情緒反應</theme>
+<dialogue>可是我當初都有按照公司規定的流程請假啊，如果有問題，當初就不要准我啊。幹嘛准了又反悔，現在才來對我大小聲，這樣實在很過份耶！</dialogue>
+<options>
+<link optionId="2AO" />
+<link optionId="2DO" />
+</options>
+</page>
+	<option id="2CO" source="2CO.mp3">
+<theme>諷刺謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP5.1">1</score>
+<score objective="CP2.2">1</score>
+</scores>
+<text>我真佩服你的精打細算，一點都不浪費。既然你那麼會算，為什麼不乾脆請個八十天去環遊世界啊？</text>
+
+<feedback>你的諷刺言語，固然可以逞一時之快，卻也會傷害部屬自尊心，衍生許多副作用，不利後續的教導。</feedback>
+<link nextPageId="2BN"/>
+</option>
+	<option id="2DO" source="2DO.mp3">
+<theme>批評指責</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="CP5.1">3</score>
+<score objective="CP2.2">1</score>
+</scores>
+<text>請假當然可以，可是不能亂編理由啊！如果每個人都像你這樣，那公司到底還要不要做生意啊？</text>
+
+<feedback>你以假設武斷的態度，指責Amy亂編理由。這必會引起Amy反彈，不利於教導進行。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<option id="3AO" source="3AO.mp3">
+<theme>連結小我</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP3.2">5</score>
+<score objective="ST2.1">5</score>
+</scores>
+<text> Amy，你是一個非常有潛力的員工，將來被提報升遷的機會很多。可是如果將來審查時，因為你每年的事、病假都請光了，導致升遷不順利，你會不會覺得很可惜呢？</text>
+
+<feedback>非常好。你先肯定他的優點，維護他的自尊心，再把改善績效落差和他的個人利益連結起來，能有效激勵他產生動機。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="3AN.f4v">
+<theme>覺得委屈</theme>
+<dialogue>怎麼可以這樣…我平常都很認真，從來不打混的，請假當然是不得已啊，怎麼能因為這樣子就說我偷懶呢？</dialogue>
+<options>
+<link optionId="4AO" />
+<link optionId="4BO" />
+</options>
+</page>
+	<option id="3BO" source="3BO.mp3">
+<theme>批評指責</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP1.2">1</score>
+</scores>
+<text> Jamie 雖然也常請病假，但天數沒你這麼多啊，而且他還經常加班，那像你，下班就不知道躲哪裡去了，你怎麼能跟他比啊？</text>
+
+<feedback>你這種諷刺的說法，容易引起Amy的情緒反彈，風險相當高，不宜。</feedback>
+<link nextPageId="3BN"/>
+</option>
+
+<page id="3BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="3BN.f4v">
+<theme>覺得委屈</theme>
+<dialogue>為什麼不能跟他比？我跟他一起進公司的，學歷也沒有比他差，而且我常常比他早上班啊，這些你怎麼都不說？你根本就是偏心嘛！</dialogue>
+<options>
+<link optionId="3AO" />
+<link optionId="3CO" />
+</options>
+</page>
+	<option id="3CO" source="3CO.mp3">
+<theme>諷刺謾罵</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP1.2">1</score>
+</scores>
+<text>你管好你自己吧！才第二季就把事、病假請光了，擺明了就是偷懶打混！以後你如果因此無法升遷，就別怪我沒提醒你！</text>
+
+<feedback>你把改善績效落差和他的個人利益連結起來，這是正確的作法，但你的語氣太過負面了，變成威脅恐嚇了，不宜。</feedback>
+<link nextPageId="3AN"/>
+</option>
+	
+<option id="4AO" source="4AO.mp3">
+<theme>同理非同意</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP1.1">5</score>
+<score objective="ST3.1">5</score>
+</scores>
+<text>對啊，我知道你一向認真負責，如果讓別人誤會你偷懶，那就太可惜了。所以我才想找你討論提高出勤率的方法，讓別人看到真正的你！</text>
+
+<feedback>從Amy 的回應中，顯示他相當在意別人的看法。你的肯定與同理心，維護了他的自尊心。然後借力使力，藉由他「愛面子」的個性，引導他承擔改善的責任！</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="4AN.f4v">
+<theme>願意承擔，解釋澄清</theme>
+<dialogue>好吧，那以後我盡量少請一些假好了。其實…我請假那麼多，主要是因為我這兩年有在H大學的在職班進修。等我明年畢業，就不會有這個問題了。</dialogue>
+<options>
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>
+	<option id="4BO" source="4BO.mp3">
+<theme>無同理心</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP1.1">3</score>
+<score objective="ST3.1">1</score>
+</scores>
+<text>好啦，反正現在也還沒到升遷的時候，你也不用覺得委屈。我們還是回到主題，好好找出你請假的原因以及解決的對策吧！</text>
+<feedback>你急著想把面談拉回預設主題，可是卻操之過急，忽略了Amy的感受，不利於後續教導。</feedback>
+<link nextPageId="4BN"/>
+</option>
+
+<page id="4BN" type="character" stage="ST3" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="4BN.f4v">
+<theme>冷淡回應</theme>
+<dialogue>公司去年不是公告說，員工可以申請在職進修嗎？結果我就跑去念H大學的在職班啊，所以才會請這麼多假啊。等我明年畢業之後就好了啦。</dialogue>
+<options>
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>
+		
+<option id="5AO" source="5AO.mp3">
+<theme>同理＋引導思考</theme>
+<scores>
+<score objective="CP2.3">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>嗯，有心向學是好事，只要不影響工作，公司絕對是支持的。那你可不可以想出一些方法，讓你可以在不用請那麼多假的前提下，兼顧工作以及課業呢？</text>
+
+<feedback>既然Amy已經願意承擔改善責任了，而且也開始談起原因了。你正好可以順水推舟，一邊鼓勵他，一邊進行「探討成因及對策」的步驟！</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="5AN.f4v">
+<theme>言之成理</theme>
+<dialogue>這樣子啊…嗯…我想…如果…我能在開學選課的時候，不要選到和上班時間衝突的課，應該就可以少請一些假了吧！</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>
+	<option id="5BO" source="5BO.mp3">
+<theme>同理非同意</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">1</score>
+</scores>
+<text>哇～半工半讀啊？我也是苦讀出身的，瞭解其中辛酸。好吧，那這件事情就算了，以後自己斟酌一下，少請一些假，不要讓我太為難啊。</text>
+
+<feedback>Amy所說的原因，引起你的共鳴。但你誤把同理當成同意，就變成縱容，而放棄了主管的職責了。</feedback>
+<link nextPageId="5BN"/>
+</option>
+
+<page id="5BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="5BN.f4v">
+<theme>感激涕零</theme>
+<dialogue> George，謝謝你的體諒與通融，真的是太感動了，我以後一定會報答你的。</dialogue>
+<link nextPageId="5END"/>
+</page>
+	<option id="5CO" source="5CO.mp3">
+<theme>無同理＋謾罵</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+</scores>
+<text>還等你明年畢業？那今年工作都不用做了嗎？不行，這個問題不能拖，你在外面做什麼我不管，但上班時間就是要給我到！</text>
+
+<feedback>你的說法太粗糙，也沒有展現同理心，不利於後續教導。</feedback>
+<link nextPageId="5CN"/>
+</option>
+
+<page id="5CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="5CN.f4v">
+<theme>氣急敗壞</theme>
+<dialogue>好啦好啦，以後我在開學選課的時候，盡量不要選到和上班時間衝突的課，這樣你滿意了吧？</dialogue>
+<options>
+<link optionId="6AO" />
+<link optionId="6BO" />
+</options>
+</page>	<page id="5END" type="scoreCard" background="S201.jpg">
+<text>你過度體諒員工，以至於無法完成教導目的，協助他改善績效落差！
+接下來，請點選右上方「技巧檢討」頁籤，察看演練成績。或點選右下角「重新開始」，再演練一次。</text> 
+</page>
+
+<option id="6AO" source="6AO.mp3">
+<theme>促進參與＋引導</theme>
+<scores>
+<score objective="CP3.3">5</score>
+<score objective="CP3.1">5</score>
+</scores>
+<text>嗯，這的確是個好方法！那除了上課衝堂之外，還有沒有別的原因，也會導致你必須請假呢？</text>
+
+<feedback>非常好。你能肯定他的參與，鼓勵他繼續發言，找出問題的癥結。</feedback>
+<link nextPageId="6AN"/>
+</option>
+
+<page id="6AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="6AN.f4v">
+<theme>言之成理</theme>
+<dialogue>嗯…上課衝堂就是主要原因！其他的…就是一些突發狀況啦，像是親朋好友聚餐啦，健康檢查等等…事情一來，就只好請假啦…</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>
+	<option id="6BO" source="6BO.mp3">
+<theme>假設武斷</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>上課衝堂只是原因之一吧？你如果還有別的理由，現在就給我通通講出來，當場一次解決，免得到時候又找一些藉口來請假！</text>
+
+<feedback>你武斷地假設Amy是在找藉口，而且也打算一一戳破這些藉口。在這種情況下，Amy怎麼可能對你推心置腹呢？</feedback>
+<link nextPageId="6BN"/>
+</option>
+
+<page id="6BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="6BN.f4v">
+<theme>不滿</theme>
+<dialogue>請假本來就是員工的基本權利啊！像健康檢查，朋友聚餐，或者是一些突發狀況，都必須要請假才可以處理啊，難道這樣也有錯嗎？</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+<link optionId="7CO" />
+</options>
+</page>
+		
+<option id="7AO" source="7AO.mp3">
+<theme>體諒＋引導</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>這我瞭解，生活中難免會有一些突發狀況要處理，可是除了請假之外，應該還有別的方法啊，例如跟其他同仁換班啊，你有想過嗎？</text>
+
+<feedback>你先同理部屬的感受，接著又引導他思考方向，這是相當好的作法。</feedback>
+<link nextPageId="7AN"/>
+</option>
+
+<page id="7AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="7AN.f4v">
+<theme>解釋澄清</theme>
+<dialogue>唉，能夠跟別人換班當然是最好啦，可是我看大家都很忙啊！要麻煩人家改變行程，我不好意思開口啊！</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="8BO" />
+<link optionId="8CO" />
+</options>
+</page>
+	<option id="7BO" source="7BO.mp3">
+<theme>自以為是</theme>
+<scores>
+<score objective="CP1.2">3</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">5</score>
+</scores>
+<text>突發狀況誰沒有？可是別人都可以克服，怎麼你就沒辦法？你沒想過找其他同仁換班嗎？這樣就不用請事假了啊？</text>
+
+<feedback>雖然你指點部屬一個很好的方法，但你缺乏同理心的說話方式，容易引起反感，不利於後續溝通</feedback>
+<link nextPageId="7AN"/>
+</option>
+	<option id="7CO" source="7CO.mp3">
+<theme>反駁斥責</theme>
+<scores>
+<score objective="CP1.2">1</score>
+<score objective="CP2.2">1</score>
+<score objective="CP3.2">1</score>
+</scores>
+<text>小姐，我看你好像還沒搞懂狀況耶！你的事假天數都已經快破表了，居然還想用「跟朋友聚餐」的理由來請假？你是哪根筋不對勁，一定要我說重話嗎？</text>
+
+<feedback>你的語氣充滿謾罵與嘲諷，必然會導致部屬的反彈，不利教導進行。</feedback>
+<link nextPageId="7CN"/>
+</option>
+
+<page id="7CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="7CN.f4v">
+<theme>惱羞成怒</theme>
+<dialogue>你幹嘛要這麼兇？就是會有一些臨時出現的問題啊，這我有什麼辦法。我就不相信你從來沒有突發狀況！</dialogue>
+<options>
+<link optionId="7AO" />
+<link optionId="7BO" />
+</options>
+</page>
+	
+<option id="8AO" source="8AO.mp3">
+<theme>開放式問句</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP2.1">5</score>
+</scores>
+<text>同仁之間互相支援換班很正常啊。他這次幫你，你下次幫他，大家都方便，為什麼不好意思開口呢？</text>
+
+<feedback>你以正面的觀點以及平和的語氣，請Amy解釋其難處，這是很好的溝通技巧。</feedback>
+<link nextPageId="8AN"/>
+</option>
+
+<page id="8AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="8AN.f4v">
+<theme>解釋澄清</theme>
+<dialogue>換班常常要牽動好幾個人的行程啊。我才來沒多久，怎麼好意思這麼囂張呢？</dialogue>
+<options>
+<link optionId="9AO" />
+<link optionId="9BO" />
+<link optionId="9CO" />
+</options>
+</page>
+	<option id="8BO" source="8BO.mp3">
+<theme>武斷</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>換班這種事就得看交情啦。你平常一定很少幫別人，才會在需要時找不到人幫忙。</text>
+
+<feedback>雖然你講的可能是事實，但這種武斷式的說法不利於教導進行。</feedback>
+<link nextPageId="8BN"/>
+</option>
+
+<page id="8BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="8BN.f4v">
+<theme>怒氣回應</theme>
+<dialogue>說來說去，你就是不想再讓我請事假對不對？好啦好啦，換班的事情就當我沒說，反正大不了蹺課，也沒什麼了不起，這樣你滿意了吧？</dialogue>
+<options>
+<link optionId="8AO" />
+<link optionId="9CO" />
+</options>
+</page>
+	<option id="8CO" source="8CO.mp3">
+<theme>諷刺反駁</theme>
+<scores>
+<score objective="CP1.1">1</score>
+<score objective="CP2.1">1</score>
+</scores>
+<text>你平常不是很愛講話嗎，怎麼可能會不好意思？我看你就不要再找藉口了，換班這種小事情，自己要想辦法解決啦！</text>
+
+<feedback>你不僅武斷地認定他是在找藉口，甚至還諷刺他平日的言行舉止。這種說法容易引起他的情緒反彈。</feedback>
+<link nextPageId="8BN"/>
+</option>
+	
+<option id="9AO" source="9AO.mp3">
+<theme>同理＋提供資源</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>喔，原來如此…不然這樣子吧，下星期早會時，我會公開鼓勵同仁，在不妨礙公務的情況下，以換班代替請假，我會讓大家知道這是對公司有利的作法，這樣應該可以化解你的尷尬了吧？</text>
+
+<feedback>你同理部屬的處境，但也沒有因此縱容他的行為，而是善用主管的資源，協助他克服這個困難。這是非常好的作法。</feedback>
+<link nextPageId="9AN"/>
+</option>
+
+<page id="9AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="9AN.f4v">
+<theme>XXXX</theme>
+<dialogue>嗯…那太好了！這樣我在找人換班的時候，就不會覺得太尷尬了。只要找到人幫忙，就不用請假啦！</dialogue>
+<options>
+<link optionId="10AO" />
+<link optionId="10BO" />
+</options>
+</page>
+	<option id="9BO" source="9BO.mp3">
+<theme>同理＋CP4.1</theme>
+<scores>
+<score objective="CP2.2">5</score>
+<score objective="CP2.3">1</score>
+<score objective="CP4.1">3</score>
+</scores>
+<text>喔，原來如此…不然這樣子吧，以後只要你想和同事換班，就先跟我說，讓我幫你喬，這樣應該就沒問題了吧？</text>
+
+<feedback>你體會同理部屬的處境，也願意協助他克服困難，這是相當好的。但你所採取的方式，卻等於替他承擔責任，他就失去成長的機會了。</feedback>
+<link nextPageId="9AN"/>
+</option>
+	<option id="9CO" source="9CO.mp3">
+<theme>急於解決</theme>
+<scores>
+<score objective="CP2.2">1</score>
+<score objective="CP4.1">1</score>
+</scores>
+<text>這些都是細節問題，你應該可以自己想解決才對，不必在這裡跟我一一討論。</text>
+
+<feedback>你急於解決問題，既沒有同理部屬的處境，也沒有善用主管資源來協助部屬找出解決方法。</feedback>
+<link nextPageId="9CN"/>
+</option>
+
+<page id="9CN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_angry.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="9CN.f4v">
+<theme>暗自不爽</theme>
+<dialogue>好，我知道了，我會自己想辦法的，不用老闆操心。</dialogue>
+<options>
+<link optionId="9DO" />
+<link optionId="10BO" />
+</options>
+</page>
+	<option id="9DO" source="9DO.mp3">
+<theme>同理＋CP4.1</theme>
+<scores>
+<score objective="CP2.3">5</score>
+<score objective="CP2.2">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>不然這樣子吧，下星期早會的時候，我會公開鼓勵同仁在不妨礙公務的情況下，以換班代替請假，我會讓大家知道這是對公司有益的事情。這樣應該可以化解你的尷尬了吧？</text>
+
+<feedback>你同理部屬的處境，但也沒有因此縱容他的行為，而是善用主管的資源，協助他克服這個困難。這是非常好的作法。</feedback>
+<link nextPageId="9AN"/>
+</option>
+
+<option id="10AO" source="10AO.mp3">
+<theme>提供協助</theme>
+<scores>
+<score objective="CP1.1">5</score>
+<score objective="CP3.1">5</score>
+<score objective="CP4.1">5</score>
+</scores>
+<text>好…除了這些事情以外，還有沒有別的困難，是我可以協助解決的？</text>
+
+<feedback>你以正面說法，鼓勵部屬參與討論，也展現提供資源的誠意，這是相當好的。</feedback>
+<link nextPageId="10AN"/>
+</option>
+
+<page id="10AN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="10AN.f4v">
+<theme>熱情回應</theme>
+<dialogue>這樣就已經很好了，如果以後還有想到的話，再請George協助囉。</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11BO" />
+<link optionId="11CO" />
+</options>
+</page>
+	<option id="10BO" source="10BO.mp3">
+<theme>冷淡協助</theme>
+<scores>
+<score objective="CP1.1">3</score>
+<score objective="CP3.1">3</score>
+<score objective="CP4.1">3</score>
+</scores>
+<text>好啦，該講的我都講了，能幫的我也都幫了，剩下的就靠你自己努力了。你還有別的問題沒有？</text>
+
+<feedback>你的語氣顯得敷衍與不耐，不利於教導進行。</feedback>
+<link nextPageId="10BN"/>
+</option>
+
+<page id="10BN" type="character" stage="ST4" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="10BN.f4v">
+<theme>消極回應</theme>
+<dialogue>沒有，差不多就是這樣子了，沒別的問題了。</dialogue>
+<options>
+<link optionId="11AO" />
+<link optionId="11BO" />
+<link optionId="11CO" />
+</options>
+</page>
+		
+<option id="11AO" source="11AO.mp3">
+<theme>引導</theme>
+<scores>
+<score objective="CP3.1">5</score>
+<score objective="CP3.2">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>很好。剛剛我們已經找出不少方法了，現在你可不可以把它們整理成一套具體的行動方案？告訴我，未來你打算怎麼做，來提昇你的出勤率呢？</text>
+
+<feedback>很好，你引導部屬說出一套具體的行動方案，以利後續的執行與考核！</feedback>
+<link nextPageId="11AN"/>
+</option>
+
+<page id="11AN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="11AN.f4v">
+<theme>頭頭是道</theme>
+<dialogue>嗯，下學期我選課的時候，會盡量避開和上班時間衝堂的課。另外，如果有事不能來上班的話，我會盡量找同事換班。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>
+	<option id="11BO" source="11BO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="CP3.1">1</score>
+<score objective="CP3.2">1</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>好，那以後你自己要注意一些。選課時，不要選和上班時間衝突的課。有事不能來上班的話，就盡量先找人換班。這樣清楚了吧！</text>
+
+<feedback>雖然你給予的指示都是正確的，但如果能讓部屬自己說出這些內容，將可以獲得更好的教導效果。</feedback>
+<link nextPageId="11BN"/>
+</option>
+
+<page id="11BN" type="character" stage="ST5" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="11BN.f4v">
+<theme>消極回應</theme>
+<dialogue>有，我都清楚了，以後我會小心的。</dialogue>
+<options>
+<link optionId="12AO" />
+<link optionId="12BO" />
+<link optionId="12CO" />
+</options>
+</page>
+	<option id="11CO" source="11CO.mp3">
+<theme>放牛吃草</theme>
+<scores>
+<score objective="CP3.1">1</score>
+<score objective="CP3.2">1</score>
+<score objective="CP4.2">1</score>
+</scores>
+<text>現在問題的原因以及對策你都清楚了，希望你好好落實，不要讓我每天應付老闆之外，還要操心這種小事，好不好？</text>
+
+<feedback>你以為找出原因及對策之後，績效落差就解決了。其實這只是半路而已，還有很多考核管理的工作要進行喔！</feedback>
+<link nextPageId="11BN"/>
+</option>
+	
+<option id="12AO" source="12AO.mp3">
+<theme>引導</theme>
+<scores>
+<score objective="CP3.2">5</score>
+<score objective="CP4.2">5</score>
+</scores>
+<text>嗯，非常好，那你可不可以告訴我，你打算用什麼方法，來檢查自己的出勤率有沒有提昇呢？</text>
+
+<feedback>很好！要訂出管理考核方式，才能讓專案順利落實。</feedback>
+<link nextPageId="12AN"/>
+</option>
+
+<page id="12AN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="12AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>檢查自己的出勤率喔…現在每個月的薪資條上面都有顯示請假天數啊。而且，請假系統本身，也可以查出剩餘的天數啊。我會看這些資料，來理解自己的出勤率有沒有改善啦！</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+</options>
+</page>
+	<option id="12BO" source="12BO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="CP3.2">3</score>
+<score objective="CP4.2">3</score>
+</scores>
+<text>好，以後你送假單來的時候，我會詳細檢查你的請假天數，平常也會不定時考察你的出席率，免得你一點警覺性都沒有。</text>
+
+<feedback>你打算建立一套管理考核機制，這是正確的。但如果這些方法是讓部屬自己講出來的，成效會更好！</feedback>
+<link nextPageId="12BN"/>
+</option>
+
+<page id="12BN" type="character" stage="ST6" idleMediaType="video" idleMediaSource="S201_neutral.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="12BN.f4v">
+<theme>消極回應</theme>
+<dialogue>好，謝謝George的關心，有您的提醒，相信我的請假天數是不太可能超過規定的。</dialogue>
+<options>
+<link optionId="13AO" />
+<link optionId="13BO" />
+</options>
+</page>
+	<option id="12CO" source="12CO.mp3">
+<theme>過於急切</theme>
+<scores>
+<score objective="CP4.2">1</score>
+<score objective="ST0.1">1</score>
+</scores>
+<text>嗯，那今天的績效面談就進行到這裡，最後麻煩你把今天討論的重點整理一下，當作今天的結論。</text>
+
+<feedback>你太急於結束面談， 以至於忘了要建立管理考核機制了。</feedback>
+<link nextPageId="13AN"/>
+</option>
+	
+<option id="13AO" source="13AO.mp3">
+<theme>引導</theme>
+<scores>
+<score objective="ST0.1">5</score>
+<score objective="CP3.1">5</score>
+</scores>
+<text>好，那今天的績效面談就進行到這裡，最後可不可以麻煩你把今天面談的目的以及重點整理一下，當作今天的結論？</text>
+<feedback>的確，還要請部屬做一個總結，看看他是否能掌握面談的重點。</feedback>
+<link nextPageId="13AN"/>
+</option>
+
+<page id="13AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="13AN.f4v">
+<theme>具體清楚</theme>
+<dialogue>好啊，今天的面談目的嘛…就是要提高我的出勤率啊。方法就是…不要選到衝堂的課…還有…想請假的時候，先看看可不可以用換班的方式解決。還有，以後要注意看薪資條上面的請假天數有沒有降低。</dialogue>
+<options>
+<link optionId="14AO" />
+<link optionId="14BO" />
+</options>
+</page>
+	<option id="13BO" source="13BO.mp3">
+<theme>控制命令</theme>
+<scores>
+<score objective="ST0.1">3</score>
+<score objective="CP3.1">1</score>
+</scores>
+<text>好，那今天的績效面談就進行到這裡，我希望你記住，以後開學選課的時候，不要選和上班時間衝堂的課。如果有事不能來上班，要先以換班的方式解決。還有，請假前先看好自己的剩餘天數，不要超過。這樣聽清楚了嗎？</text>
+<feedback>這些內容都沒錯，錯在你應該誘導部屬自己講出來，而不是你自己講出來。</feedback>
+<link nextPageId="13BN"/>
+</option>
+
+<page id="13BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S201_sad.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="13BN.f4v">
+<theme>逆來順受</theme>
+<dialogue>有…都有聽清楚了，謝謝George.</dialogue>
+<options>
+<link optionId="14AO" />
+<link optionId="14BO" />
+</options>
+</page>
+		
+<option id="14AO" source="14AO.mp3">
+<theme>引導</theme>
+<scores>
+<score objective="CP3.3">5</score>
+<score objective="CP1.1">5</score>
+</scores>
+<text>很好，看來你都有抓到會談的重點，代表你有心解決這個問題。相信以後你的出勤率一定會提高，績效也會更好。我對你有信心，也期待你的表現喔！</text>
+
+<feedback>非常好，能夠在最後鼓勵部屬，讓他更有信心，更有勇氣，去面對未來的挑戰！ </feedback>
+<link nextPageId="14AN"/>
+</option>
+
+<page id="14AN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S201_happy.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="14AN.f4v">
+<theme>積極回應</theme>
+<dialogue>謝謝George的指導與鼓勵，我一定會好好加油，不會辜負您的期望的。</dialogue>
+<link nextPageId="14END"/>
+</page>
+	<option id="14BO" source="14BO.mp3">
+<theme>威脅警告</theme>
+<scores>
+<score objective="CP3.3">1</score>
+<score objective="CP1.1">1</score>
+</scores>
+<text>那今天就差不多這樣子啦！以後就看你自己的造化了。如果講了這麼多還是做不好，那以後就不要怪我不客氣囉。</text>
+
+<feedback>雖然你講的內容可能是實話，但這種負面的說法難免令人沮喪洩氣，改採正面的說法會比較好！ </feedback>
+<link nextPageId="14BN"/>
+</option>
+
+<page id="14BN" type="character" stage="ST7" idleMediaType="video" idleMediaSource="S201_embarrassed.f4v" name="Amy" mediaType="video" background="S201.jpg" videoSource="14BN.f4v">
+<theme>逆來順受</theme>
+<dialogue>好，我知道了，我會想辦法的，謝謝。</dialogue>
+<link nextPageId="14END"/>
+</page>
+	<page id="14END" type="scoreCard" background="S201.jpg">
+<text>恭喜你，你已經演練完本案例的所有面談步驟。接下來請點選右上方「技巧檢討」頁籤，察看你的演練成績。</text> 
+</page>	
+</nodes>
+<objectives>
+<category id="CP1" name="尊重肯定">
+<objective id="CP1.1" name="正面說法"/>
+<objective id="CP1.2" name="避免謾罵"/>
+<objective id="CP1.3" name="肯定貢獻"/>
+</category>
+<category id="CP2" name="主動傾聽">
+<objective id="CP2.1" name="詢問澄清確認"/>
+<objective id="CP2.2" name="同理心"/>
+<objective id="CP2.3" name="同理非同意"/>
+</category>
+<category id="CP3" name="促進參與">
+<objective id="CP3.1" name="鼓勵發言"/>
+<objective id="CP3.2" name="引導思考"/>
+<objective id="CP3.3" name="肯定參與"/>
+</category>
+<category id="CP4" name="授權與能">
+<objective id="CP4.1" name="提供資源"/>
+<objective id="CP4.2" name="考核督導"/>
+<objective id="CP4.3" name="掌舵而不駕馭"/>
+</category>
+<category id="CP5" name="具體明確">
+<objective id="CP5.1" name="避免含糊"/>
+<objective id="CP5.2" name="SMART績效目標"/>
+<objective id="CP5.3" name="提供佐證資料"/>
+</category>
+<category id="ST" name="步驟相關技巧">
+<objective id="ST0.1" name="掌握流程"/>
+<objective id="ST2.1" name="三明治原則"/>
+<objective id="ST3.1" name="連結價值"/>
+</category>
+</objectives>
+<stages>
+<stage id="ST1" name="找出績效落差"/>
+<stage id="ST2" name="闡明績效落差"/>
+<stage id="ST3" name="鼓勵承擔責任"/>
+<stage id="ST4" name="探討原因對策"/>
+<stage id="ST5" name="發展行動方案"/>
+<stage id="ST6" name="建立考核機制"/>
+<stage id="ST7" name="總結面談結果"/>
+</stages>
+</simulation>			

@@ -1,0 +1,7 @@
+<logins expirationText="Password Expired!">
+	<login userId="user001" pwd="pwd001" expiration="1/26/2010"/>
+	<login userId="user002" pwd="pwd002" />
+	<login userId="user003" pwd="pwd003" />
+	<login userId="user004" pwd="pwd004" />
+	<login userId="Nina" pwd="nina6699" expiration="10/15/2010"/>
+</logins>

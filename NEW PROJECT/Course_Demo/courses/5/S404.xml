@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="coach" characterWidth="88%" characterHeight="" characterX="-140px" characterY="-20px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0" dialogStart="0.5" flvPath="simulation/S404/graphic/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S404_startPage.jpg" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text><![CDATA[<div style="width:90%; float:right; margin-top:150px; margin-right:50px><textformat indent="0">請點選右下角「練習」按鈕，等出現選項後，從中點選一個可獲得最高職能評分的Lisa回應句。選項旁的小圖示也可點選，將提供對該回應句的教練回饋。</div>]]></text>
+<link nextPageId="1AN"/>
+</page>
+
+<page id="1AN" type="character" stage="4.3skb" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="George" mediaType="graphic" background="S404.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<dialogue>你是否曾經在工作範圍之外，主動去做一些對公司有利的事情？請舉一個實際的例子好嗎？</dialogue>
+<options header="請選出Lisa的最佳回應：" coachHeader="您的選擇：" pos="2,3,1">
+<link optionId="2AO"/>
+<link optionId="2BO"/>
+<link optionId="2CO"/>
+</options>
+</page>	
+	
+<option id="2AO" source="2AO.mp3">
+<theme>難度高，符合職能，符合未來</theme>
+<scores>
+<score objective="4.2">5</score>
+<score objective="4.5">5</score>
+<score objective="4.6">5</score>
+</scores>
+<text>我在C公司擔任專案經理的時候，公司有很多外包人員，但公司對成品的驗收並沒有SOP，造成很多爭議。所以我就主動設計了一套SOP，解決了這個問題。</text>
+
+<feedback>很好，這個經驗符合「主動積極」的行為指標，而且挑戰難度適中，Lisa 也是該職能的主要執行者。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="George" mediaType="graphic" background="S404.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXXX</theme>
+<dialogue>哇，很厲害喔！那在你設計SOP之前，你面對的情況是什麼樣子？能不能請你描述一下？</dialogue>
+<options header="請選出Lisa的最佳回應：" pos="3,1,2">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>
+
+	<option id="2BO" source="aside.mp3">
+<theme>難度高1，符合職能3，符合未來3</theme>
+<scores>
+<score objective="4.2">3</score>
+<score objective="4.5">3</score>
+<score objective="4.6">3</score>
+</scores>
+<text>我跟親朋好友聊天的時候，常常都主動幫公司講好話，說我們公司前景看好，大家都很相信喔。</text>
+
+<feedback>這個經驗比較接近「說服能力」職能，但和「主動積極」的關連不夠強。請重選一次！</feedback>
+</option>
+
+	<option id="2CO" source="aside.mp3">
+<theme>難度高1，符合職能3，符合未來3</theme>
+<scores>
+<score objective="4.2">1</score>
+<score objective="4.5">1</score>
+<score objective="4.6">3</score>
+</scores>
+<text>有一次公司決定買一台咖啡機，我就主動幫忙挑機器，後來煮出來的咖啡大家都讚不絕口！</text>
+
+<feedback>這個經驗的確有符合「主動積極」的某些行為指標，但比起最佳選項，難度低了一些。請重選一次！</feedback>
+</option>
+
+
+<option id="3AO" source="3AO.mp3">
+<theme></theme>
+<scores>
+<score objective="4.5">5</score>
+</scores>
+<text>我平常往來的外包人員差不多就有30個。他們的作品都需要反覆的溝通及審核，請款流程也非常複雜，所以常常出錯而引發爭議。</text>
+
+<feedback>Lisa所提的這個「情境」的確是個界定不清、指示不明的灰色地帶，需要具備「積極主動」的人來解決。而這個情境顯然在未來的職務上也會常發生。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+<page id="3AN" type="character" stage="4.4" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="George" mediaType="graphic" background="S404.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>那面對這樣的情況，你當初採取了什麼行動？ </dialogue>
+<options header="請選出Lisa的最佳回應：" pos="1,3,2">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="aside.mp3">
+<theme> </theme>
+<scores>
+<score objective="4.5">1</score>
+</scores>
+<text>當初公司的外包人員在請款時，常常忘了附上驗收單而被退件。我想說，如果可以在請款單上印個提醒文字，應該可以減少這個困擾。</text>
+
+<feedback>這個情境是「外包人員忘了附上驗收單」，情境的挑戰難度不高。請再選一次。</feedback>
+</option>
+	<option id="3CO" source="aside.mp3">
+<theme> </theme>
+<scores>
+<score objective="4.5">1</score>
+</scores>
+<text>有一次部門會議，大家紛紛抱怨說最近工作量很大，希望能多找一些外包人員來幫忙。</text>
+
+
+<feedback>這個情境目前看不出來和SOP有什麼關連，還要進一步追問才能判定。請再選一次。</feedback>
+</option>
+
+<option id="4AO" source="4AO.mp3">
+<theme>角色，指標廣，指標深入</theme>
+<scores>
+<score objective="4.3">5</score>
+<score objective="4.4">5</score>
+<score objective="4.6">5</score>
+</scores>
+<text>我就跟主管建議，讓我設計一套SOP，他說很好啊，還答應會全力支持。接著我就請部門的PM們把手邊相關的表格通通寄給我，讓我重新整理成一致的格式與內容，而且還畫出流程圖，請大家給回饋。改完之後我再請主管幫忙公告，然後放在主機讓大家下載，從此我們就有標準的SOP了。</text>
+
+<feedback>Lisa的行動涵蓋了「積極主動」所有的行為指標「歸屬不明之任務，能主動爭取」、「指示不清之處，能主動釐清」、「採取預防措施，避免問題發生」、「獨立作業，不需監督」、「超越工作範圍」。而且他的角色是主要的責任承擔者。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+<page id="4AN" type="character" stage="4.5" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="George" mediaType="graphic" background="S404.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩，很好，那後來SOP實施的結果怎麼樣？ </dialogue>
+<options header="請選出Lisa的最佳回應：" pos="2,1,3">
+<link optionId="5AO" />
+<link optionId="5BO" />
+<link optionId="5CO" />
+</options>
+</page>	<option id="4BO" source="aside.mp3">
+<theme>角色，理論</theme>
+<scores>
+<score objective="4.3">1</score>
+<score objective="4.4">1</score>
+<score objective="4.6">1</score>
+
+</scores>
+<text>碰到這種情況，我都會套用DMAIC手法，按照「定義、測量、分析、改善、控制」五個步驟，系統性地處理問題，所以都能順利解決。</text>
+
+
+<feedback> 這是個理論性回應，即使講得頭頭是道，也無法證明他真的有能力達成。除非你再追問：「能不能舉個實際經驗」，否則無法給分。請再選一次。</feedback>
+</option>
+	<option id="4CO" source="aside.mp3">
+<theme>角色，指標少，不深入</theme>
+<scores>
+<score objective="4.3">1</score>
+<score objective="4.4">1</score>
+<score objective="4.6">1</score>
+</scores>
+<text>我就去找主管，告訴他SOP的必要性。主管很支持我的想法，後來真的找了一個資深PM，把SOP做出來了。</text>
+
+
+
+<feedback> Lisa的行動雖符合「主動積極」職能，但他不是該行動的主要執行者。請再選一次。</feedback>
+</option>
+
+<option id="5AO" source="5AO.mp3">
+<theme>結果順利，直接原因 </theme>
+<scores>
+<score objective="4.7">5</score>
+</scores>
+<text>大家用起來都覺得很方便啊。三個月以後，主管還要我做出一個數位課程，教導新人如何使用這些流程表單喔。</text>
+
+<feedback>這個結果，代表Lisa的行動，確實化解了當初所面臨的挑戰。</feedback>
+<link nextPageId="5AN"/>
+</option>
+
+<page id="5AN" type="character" stage="4.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="George" mediaType="graphic" background="S404.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>恩，謝謝你的說明，這的確是個非常好的經驗。</dialogue>
+<link nextPageId="5AEND"/>
+</page>
+
+<page id="5AEND" type="scoreCard" background="S404.jpg" >
+<text>「評估技巧」之演練到此告一段落，請繼續閱讀下一個章節，或在右下角點選「重新開始」，再演練一次。</text>
+</page>
+	<option id="5BO" source="aside.mp3">
+<theme>結果不順利，直接原因</theme>
+<scores>
+<score objective="4.7">3</score>
+</scores>
+<text>後來因為大家的習慣都不一樣，所以這些表單就給大家參考，沒有硬性規定要用啦。</text>
+
+<feedback>這個結果，代表Lisa並沒有完整解決問題。請再選一次。</feedback>
+</option>
+	<option id="5CO" source="aside.mp3">
+<theme>內容真實性，無結果</theme>
+<scores>
+<score objective="4.7">1</score>
+</scores>
+<text>當然順利解決囉。我們公司只要是我負責的工作，一定都沒問題啦。</text>
+
+<feedback>這個回應是個籠統的描述，難以辨別真偽。請再選一次。</feedback>
+</option>
+
+</nodes>
+<objectives>
+<category id="4" name="評估技巧">
+<objective id="4.1" name="須具備四要素"/>
+<objective id="4.2" name="須契合目標職能"/>
+<objective id="4.3" name="須為真實經驗"/>
+<objective id="4.4" name="應徵者須為主角"/>
+<objective id="4.5" name="情境應有難度"/>
+<objective id="4.6" name="行動應符合行為指標"/>
+<objective id="4.7" name="結果應符合預期"/>
+</category>
+</objectives>
+
+<stages>
+<stage id="4.1" name="評估內容"/>
+<stage id="4.2" name="評估情境"/>
+<stage id="4.3" name="評估角色"/>
+<stage id="4.4" name="評估行動"/>
+<stage id="4.5" name="評估結果"/>
+</stages>
+</simulation>		

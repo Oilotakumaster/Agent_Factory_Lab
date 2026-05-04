@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<simulation mode="coach" characterWidth="88%" characterHeight="" characterX="-140px" characterY="-20px" optionsWidth="60%" optionsHeight="100%" optionsX="0" optionsY="0" dialogStart="0.5" flvPath="simulation/S402/graphic/">
+<nodes>
+<page id="0Start" type="startPage" background="assets/images/S402_startPage.jpg" playMode="coach" paddingTop="100" paddingLeft="400" paddingRight="50">
+<text><![CDATA[<div style="width:90%; float:right; margin-top:150px; margin-right:50px><textformat indent="0">請點選右下角「練習」按鈕，等出現選項後，從中點選一個George最該採用的釐清履歷話術。選項旁的小圖示也可點選，將提供對該話術的教練回饋。</div>]]></text>
+<link nextPageId="0AN"/>
+</page>
+
+
+<page id="0AN" type="character" stage="2.1" idleMediaType="graphic" idleMediaSource="0AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="0AN.png" audioSource="0AN.mp3">
+<theme>XXXX</theme>
+<dialogue>（微笑等待George詢問）</dialogue>
+<options header="請選擇最佳的引導說明：" coachHeader="您的選擇：" pos="2,1">
+<link optionId="1AO" />
+<link optionId="1BO" />
+</options>
+</page>
+
+
+<option id="1AO" source="1AO.mp3">
+<theme>詢問正面經歷</theme>
+<scores>
+<score objective="C1">5</score>
+<score objective="2.1">5</score>
+<score objective="2.2">5</score>
+</scores>
+<text> Lisa，你的履歷表顯示，你在B公司工作期間，曾經當選優秀員工。這是相當傑出的表現，能不能跟我分享一下你的獲獎原因？</text>
+
+<feedback>很好。剛開始詢問履歷資料時，最好先問正面的經歷，獲得對方信任之後，再詢問負面的經歷。</feedback>
+<link nextPageId="1AN"/>
+</option>
+
+<page id="1AN" type="character" stage="2.1" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="1AN.png" audioSource="1AN.mp3">
+<theme>XXXX</theme>
+<dialogue>喔，也沒什麼啦。我們公司每季都會舉行一次績效評鑑。</dialogue>
+<link nextPageId="1AN2"/>
+</page>
+<page id="1AN2" type="character" stage="2.1" idleMediaType="graphic" idleMediaSource="1AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="1AN2.png" audioSource="1AN2.mp3">
+<theme>XXXX</theme>
+<dialogue>我連續四季的評鑑都是優等，所以就當選優秀員工囉。</dialogue>
+<options header="請選擇最佳追問：" pos="2,1">
+<link optionId="2AO" />
+<link optionId="2BO" />
+</options>
+</page>	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<option id="1BO" source="aside.mp3">
+<theme>詢問負面經歷</theme>
+<scores>
+<score objective="C1">1</score>
+<score objective="2.1">1</score>
+<score objective="2.2">5</score>
+</scores>
+<text>Lisa，你的履歷表顯示，您在2018年期間，曾經有長達六個月的時間是失業的，你可以解釋一下為什麼失業嗎？</text>
+<feedback>剛開始詢問履歷經驗時，最好先問正面的經歷。若要詢問負面經歷，也應謹慎用詞，以免傷害對方自尊心！請再選一次。</feedback>
+</option>	
+<option id="2AO" source="2AO.mp3">
+<theme>尊重、釐清</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="2.2">5</score>
+</scores>
+<text>恩，這是相當高的肯定。那當年度你們部門有多少人獲得這個獎勵呢？</text>
+
+<feedback>很好。要瞭解這個獎項的價值，的確得參考獲獎的人數比例。</feedback>
+<link nextPageId="2AN"/>
+</option>
+
+<page id="2AN" type="character" stage="2.2" idleMediaType="graphic" idleMediaSource="2AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="2AN.png" audioSource="2AN.mp3">
+<theme>XXXX</theme>
+<dialogue>我們部門有八個人，就我一個人獲得優秀員工。</dialogue>
+<options header="請選擇最佳提問：" pos="3,1,2">
+<link optionId="3AO" />
+<link optionId="3BO" />
+<link optionId="3CO" />
+</options>
+</page>	<option id="2BO" source="aside.mp3">
+<theme>不尊重，有釐清，主觀意見</theme>
+<scores>
+<score objective="C2">3</score>
+<score objective="2.2">5</score>
+</scores>
+<text>獎勵的價值，要看獲獎比例才知道。來，你說說看，你們部門當年度有多少人拿到這個獎勵呢？</text>
+
+<feedback>這個說法的語氣顯得輕視懷疑。不宜，請再選一次。</feedback>
+</option>	
+<option id="3AO" source="3AO.mp3">
+<theme>尊重，釐清</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="2.2">5</score>
+</scores>
+<text>恩，的確很傑出。對了，資料上也顯示，你在2018年期間，曾經有六個月的工作資歷是中斷的，方便告訴我原因嗎？</text>
+<feedback>很好，以尊重與開放的語氣，請對方解釋矛盾之處。</feedback>
+<link nextPageId="3AN"/>
+</option>
+
+
+<page id="3AN" type="character" stage="2.1" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="3AN.png" audioSource="3AN.mp3">
+<theme>XXX</theme>
+<dialogue>說來還真有些不好意思。當初是因為金融海嘯，公司結束營業，我就跟著失業了。</dialogue>
+<link nextPageId="3AN2"/>
+</page>
+<page id="3AN2" type="character" stage="2.1" idleMediaType="graphic" idleMediaSource="3AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="3AN2.png" audioSource="3AN2.mp3">
+<theme>XXX</theme>
+<dialogue>由於之前就一直想要環遊世界，所以我乾脆趁機把夢想完成，回來之後才繼續工作。</dialogue>
+<options header="請選擇最佳追問：" pos="2,1,3">
+<link optionId="4AO" />
+<link optionId="4BO" />
+<link optionId="4CO" />
+</options>
+</page>	<option id="3BO" source="aside.mp3">
+<theme>不尊重，釐清</theme>
+<scores>
+<score objective="C2">3</score>
+<score objective="2.2">5</score>
+</scores>
+<text>恩，相當好。不過資料上也顯示，你在2018年之間，有連續六個月是失業的，怎麼會這樣呢？ </text>
+
+<feedback>你應該用尊重與開放的語句，來詢問這種敏感性的問題，不要有所假設。請再選一次。</feedback>
+</option>
+
+	<option id="3CO" source="aside.mp3">
+<theme>不尊重，釐清，主觀</theme>
+<scores>
+<score objective="C2">1</score>
+<score objective="2.2">5</score>
+</scores>
+<text>恩，相當好。不過資料上也顯示，你在2018年之間，剛好有連續六個月是失業的，你是去申請失業救濟金嗎？ </text>
+<feedback>你應該用更尊重的語句來詢問這種敏感性的問題，不要輕率假設。請再選一次。</feedback>
+</option>
+<option id="4AO" source="4AO.mp3">
+<theme>釐清尊重客觀</theme>
+<scores>
+<score objective="C2">5</score>
+<score objective="C4">5</score>
+<score objective="2.2">5</score>
+</scores>
+<text>恩，真棒的人生經驗！那你去了哪些地方？做些什麼事情呢？</text>
+
+<feedback>很好，以開放式問句，瞭解那段時間Lisa在做些什麼事情。</feedback>
+<link nextPageId="4AN"/>
+</option>
+
+
+<page id="4AN" type="character" stage="2.2" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="4AN.png" audioSource="4AN.mp3">
+<theme>XXX</theme>
+<dialogue>我先去美國的語言學校進修了三個月的英文，然後到歐洲自助旅行兩個月，最後又到印度禪修一個月。</dialogue>
+<link nextPageId="4AN2"/>
+</page>
+<page id="4AN2" type="character" stage="2.2" idleMediaType="graphic" idleMediaSource="4AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="4AN2.png" audioSource="4AN2.mp3">
+<theme>XXX</theme>
+<dialogue>這半年可說是我有生以來最難忘的一段日子了。</dialogue>
+<options header="請選擇最佳引導說明：" pos="1,2">
+<link optionId="5AO" />
+<link optionId="5BO" />
+</options>
+</page>	<option id="4BO" source="aside.mp3">
+<theme>主觀，不尊重，不釐清</theme>
+<scores>
+<score objective="C2">1</score>
+<score objective="C4">1</score>
+<score objective="2.2">1</score>
+</scores>
+<text>哇，沒工作還有心情去環遊世界啊？這樣會不會太沒有責任感了呢？ </text>
+<feedback>你不該在面談時批評應徵者的經歷，這樣會讓應徵者不敢講真話，評鑑就不容易準確了。請再選一次。</feedback>
+</option>
+
+	<option id="4CO" source="aside.mp3">
+<theme>主觀意見、不尊重，不釐清</theme>
+<scores>
+<score objective="C2">3</score>
+<score objective="C4">1</score>
+<score objective="2.2">1</score>
+</scores>
+<text>恩，真羨慕你們這一代年輕人，想做什麼就做什麼，無牽無掛。像我就沒有這種福氣，每天都忙到快翻了，哪有空去環遊世界啊？</text>
+<feedback>你說的可能是真心話，可是對於評鑑沒有幫助，應避免發表這種無關的言論。請再選一次。</feedback>
+</option>
+
+
+<option id="5AO" source="5AO.mp3">
+<theme>鼓勵參與，客觀，掌控流程</theme>
+<scores>
+<score objective="C4">5</score>
+<score objective="C7">5</score>
+<score objective="C8">5</score>
+</scores>
+<text>恩，這段經歷的確相當精彩，對你的成長也一定很有幫助。好，履歷表的補充也差不多了，接下來就讓我們來聊聊你的工作經驗吧。</text>
+
+
+<feedback>很好，藉由適當的轉折語，將面談引導至下一個階段。</feedback>
+<link nextPageId="5AN"/> 
+</option>
+
+
+
+
+<page id="5AN" type="character" stage="2.3" idleMediaType="graphic" idleMediaSource="5AN_Idle.png" name="Lisa" mediaType="graphic" background="S402.jpg" graphicSource="5AN.png" audioSource="5AN.mp3">
+<theme>XXX</theme>
+<dialogue>好的，沒問題。</dialogue>
+<link nextPageId="5AEND"/> 
+</page>
+
+<page id="5AEND" type="scoreCard" background="S402.jpg" >
+<text>「釐清履歷」之演練到此告一段落，請繼續閱讀下個章節，或在右下角點選「重新開始」，再演練一次。</text>
+</page>	<option id="5BO" source="aside.mp3">
+<theme>不鼓勵，主觀意見，無掌控</theme>
+<scores>
+<score objective="C4">1</score>
+<score objective="C7">1</score>
+<score objective="C8">1</score>
+</scores>
+<text>Lisa，我們今天也算有緣，我就提醒你一下好了。以後你寫履歷表的時候，要注意工作資歷的連慣性，中間如果停頓太久，一定要有很好的理由。還有，工作不要換來換去，所從事的領域最好有相關才好…。像我們公司就很注意這幾點。</text>
+<feedback>你現在的任務是評鑑Lisa 的職能，不是來交朋友。所以，跟評鑑無關的閒聊瞎扯，都應該盡量避免。請再選一次。</feedback> 
+</option>
+	
+</nodes>
+<objectives>
+
+<category id="C" name="溝通原則">
+<objective id="C1" name="尊重肯定"/>
+<objective id="C2" name="避免批評"/>
+<objective id="C3" name="主動釐清"/>
+<objective id="C4" name="鼓勵參與"/>
+<objective id="C5" name="耐心等候"/>
+<objective id="C6" name="正確引導"/>
+<objective id="C7" name="掌握流程"/>
+<objective id="C8" name="轉折自然"/>
+</category>
+
+<category id="2" name="釐清技巧">
+<objective id="2.1" name="肯定成就"/>
+<objective id="2.2" name="釐清疑點"/>
+<objective id="2.3" name="尋找議題"/>
+</category>
+</objectives>
+<stages>
+<stage id="2.1" name="詢問不明之處"/>
+<stage id="2.2" name="追問細節"/>
+<stage id="2.3" name="引導到下一步驟"/>
+</stages>
+</simulation>		
