@@ -410,10 +410,18 @@ export default function SimulationPage() {
                {/* Chapter 4 */}
                <div 
                  onClick={() => setExpandedMod1Chap4(prev => !prev)}
-                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-blue-700 transition-colors flex items-center"
                >
                  <span className={`mr-2 text-[10px] ${expandedMod1Chap4 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap4 ? '▼' : '▶'}</span> 行為事例面談法
                </div>
+               {expandedMod1Chap4 && (
+                 <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">傳統面談的挑戰</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">行為事例的應用</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">行為事例面談法的優點</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">課後提醒</div>
+                 </div>
+               )}
             </div>
           )}
 
