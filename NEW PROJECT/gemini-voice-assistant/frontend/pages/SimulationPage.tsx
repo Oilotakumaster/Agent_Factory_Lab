@@ -184,8 +184,11 @@ export default function SimulationPage() {
   // 模組一子選單狀態
   const [expandedMod1Chap1, setExpandedMod1Chap1] = useState(true);
   const [expandedMod1Chap2, setExpandedMod1Chap2] = useState(false);
-  const [expandedMod1Chap3, setExpandedMod1Chap3] = useState(false);
+  const [expandedMod1Chap3, setExpandedMod1Chap3] = useState(true);
   const [expandedMod1Chap4, setExpandedMod1Chap4] = useState(false);
+  
+  const [expandedMod1Chap3_1, setExpandedMod1Chap3_1] = useState(true);
+  const [expandedMod1Chap3_2, setExpandedMod1Chap3_2] = useState(false);
 
   // 當路由改變時，自動展開對應的步驟
   useEffect(() => {
@@ -376,6 +379,33 @@ export default function SimulationPage() {
                >
                  <span className={`mr-2 text-[10px] ${expandedMod1Chap3 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap3 ? '▼' : '▶'}</span> 以職能為基礎的選才策略
                </div>
+               {expandedMod1Chap3 && (
+                 <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
+                   <div 
+                     onClick={() => setExpandedMod1Chap3_1(prev => !prev)}
+                     className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors flex items-center"
+                   >
+                     <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedMod1Chap3_1 ? '▼' : '▶'}</span> 簡介職能
+                   </div>
+                   {expandedMod1Chap3_1 && (
+                     <div className="pl-6 space-y-0.5">
+                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">核心職能</div>
+                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">管理職能</div>
+                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">專業職能</div>
+                     </div>
+                   )}
+                   
+                   <div 
+                     onClick={() => setExpandedMod1Chap3_2(prev => !prev)}
+                     className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors flex items-center"
+                   >
+                     <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedMod1Chap3_2 ? '▼' : '▶'}</span> 行為指標與職能
+                   </div>
+                   
+                   <div className="py-1.5 pl-7 hover:text-blue-600 cursor-pointer transition-colors">考核應徵者的七種方法</div>
+                   <div className="py-1.5 pl-7 hover:text-blue-600 cursor-pointer transition-colors">職能選才的作業流程</div>
+                 </div>
+               )}
 
                {/* Chapter 4 */}
                <div 
