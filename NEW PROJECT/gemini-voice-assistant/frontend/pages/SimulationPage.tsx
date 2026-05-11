@@ -176,6 +176,16 @@ export default function SimulationPage() {
   });
 
   const [expandedPrinciples, setExpandedPrinciples] = useState(true);
+  
+  // 模組展開狀態
+  const [expandedModule1, setExpandedModule1] = useState(false);
+  const [expandedModule2, setExpandedModule2] = useState(true);
+  
+  // 模組一子選單狀態
+  const [expandedMod1Chap1, setExpandedMod1Chap1] = useState(true);
+  const [expandedMod1Chap2, setExpandedMod1Chap2] = useState(false);
+  const [expandedMod1Chap3, setExpandedMod1Chap3] = useState(false);
+  const [expandedMod1Chap4, setExpandedMod1Chap4] = useState(false);
 
   // 當路由改變時，自動展開對應的步驟
   useEffect(() => {
@@ -317,17 +327,68 @@ export default function SimulationPage() {
         </div>
         <div className="flex-1 overflow-y-auto py-2">
           {/* 模組一 */}
-          <div className="px-5 py-3 hover:bg-slate-50 cursor-pointer text-sm flex items-center text-slate-600 transition-colors">
-            <div className="w-1.5 h-1.5 bg-slate-400 mr-3 rounded-sm"></div> 模組一：基礎知識
+          <div 
+            onClick={() => { setExpandedModule1(true); setExpandedModule2(false); }}
+            className={`px-5 py-3 cursor-pointer text-sm flex items-center transition-colors ${expandedModule1 ? 'bg-[#bce6f2] font-bold text-slate-800' : 'hover:bg-slate-50 text-slate-600'}`}
+          >
+            <div className={`w-1.5 h-1.5 mr-3 rounded-sm ${expandedModule1 ? 'bg-slate-800' : 'bg-slate-400'}`}></div> 模組一：基礎知識
           </div>
           
+          {expandedModule1 && (
+            <div className="bg-slate-50/50 border-y border-slate-100 text-sm py-2">
+               {/* Chapter 1 */}
+               <div 
+                 onClick={() => setExpandedMod1Chap1(prev => !prev)}
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-blue-700 transition-colors flex items-center"
+               >
+                 <span className={`mr-2 text-[10px] ${expandedMod1Chap1 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap1 ? '▼' : '▶'}</span> 選才的價值與挑戰
+               </div>
+               {expandedMod1Chap1 && (
+                 <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">課程簡介</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">選才是主管的關鍵任務</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">主管常缺乏選才策略</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">主管常覺得預算不夠</div>
+                 </div>
+               )}
+               
+               {/* Chapter 2 */}
+               <div 
+                 onClick={() => setExpandedMod1Chap2(prev => !prev)}
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
+               >
+                 <span className={`mr-2 text-[10px] ${expandedMod1Chap2 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap2 ? '▼' : '▶'}</span> 史上最佳選才案例
+               </div>
+               
+               {/* Chapter 3 */}
+               <div 
+                 onClick={() => setExpandedMod1Chap3(prev => !prev)}
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
+               >
+                 <span className={`mr-2 text-[10px] ${expandedMod1Chap3 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap3 ? '▼' : '▶'}</span> 以職能為基礎的選才策略
+               </div>
+
+               {/* Chapter 4 */}
+               <div 
+                 onClick={() => setExpandedMod1Chap4(prev => !prev)}
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
+               >
+                 <span className={`mr-2 text-[10px] ${expandedMod1Chap4 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap4 ? '▼' : '▶'}</span> 行為事例面談法
+               </div>
+            </div>
+          )}
+
           {/* 模組二 */}
-          <div className="px-5 py-3 bg-blue-50/50 cursor-pointer text-sm font-bold flex items-center text-blue-900 border-l-4 border-blue-500">
-            <div className="w-1.5 h-1.5 bg-blue-600 mr-3 rounded-sm"></div> 模組二：面談步驟
+          <div 
+            onClick={() => { setExpandedModule2(true); setExpandedModule1(false); }}
+            className={`px-5 py-3 cursor-pointer text-sm flex items-center transition-colors ${expandedModule2 ? 'bg-blue-50/50 font-bold text-blue-900 border-l-4 border-blue-500' : 'hover:bg-slate-50 text-slate-600'}`}
+          >
+            <div className={`w-1.5 h-1.5 mr-3 rounded-sm ${expandedModule2 ? 'bg-blue-600' : 'bg-slate-400'}`}></div> 模組二：面談步驟
           </div>
           
           {/* 模組二子選單 */}
-          <div className="bg-slate-50/50 border-y border-slate-100 text-sm py-2">
+          {expandedModule2 && (
+            <div className="bg-slate-50/50 border-y border-slate-100 text-sm py-2">
             <div 
               onClick={() => setExpandedPrinciples(prev => !prev)}
               className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
@@ -519,6 +580,7 @@ export default function SimulationPage() {
                </div>
             </div>
           </div>
+          )}
 
           {/* 模組三 */}
           <div className="px-5 py-3 hover:bg-slate-50 cursor-pointer text-sm flex items-center text-slate-600 transition-colors">
