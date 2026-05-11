@@ -15,6 +15,7 @@ export function useLiveAPI() {
   const [transcripts, setTranscripts] = useState<TranscriptMessage[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [currentEmotion, setCurrentEmotion] = useState<string>('neutral');
+  const [emotionTick, setEmotionTick] = useState<number>(0);
   const [volume, setVolume] = useState<number>(0);
 
   // Refs to hold mutable state that shouldn't trigger re-renders
@@ -24,6 +25,7 @@ export function useLiveAPI() {
   const sourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
   const nextStartTimeRef = useRef<number>(0);
   const animationFrameRef = useRef<number>(0);
+  const isInterruptedRef = useRef<boolean>(false);
   
   // Transcription accumulation refs
   const currentInputTranscription = useRef('');
@@ -151,6 +153,7 @@ export function useLiveAPI() {
                 const emotion = call.args.emotion as string;
                 if (EMOTIONS.includes(emotion)) {
                   setCurrentEmotion(emotion);
+                  setEmotionTick(prev => prev + 1);
                 }
                 // Respond immediately to keep audio flowing
                 sessionPromise.then(session => {
@@ -174,8 +177,13 @@ export function useLiveAPI() {
 
             if (message.serverContent?.turnComplete) {
               const userInput = currentInputTranscription.current.trim();
-              const modelOutput = currentOutputTranscription.current.trim();
+              let modelOutput = currentOutputTranscription.current.trim();
               const now = Date.now();
+
+              // 標示被打斷的狀態
+              if (isInterruptedRef.current && modelOutput) {
+                modelOutput += ' ... (被打斷)';
+              }
 
               if (userInput || modelOutput) {
                 setTranscripts(prev => {
@@ -183,7 +191,15 @@ export function useLiveAPI() {
                   if (userInput) {
                     newTranscripts.push({ id: `${now}-user`, role: 'user', text: userInput, timestamp: now });
                   }
+                  
                   if (modelOutput) {
+                    const lastMsg = newTranscripts[newTranscripts.length - 1];
+                    // 防呆機制：如果 AI 產出的內容跟上一句自己的話高度重複（子字串關係），代表是回音或雜音觸發的重複生成，則直接拋棄。
+                    if (lastMsg && lastMsg.role === 'model' && userInput === '') {
+                      if (modelOutput.includes(lastMsg.text) || lastMsg.text.includes(modelOutput)) {
+                        return newTranscripts;
+                      }
+                    }
                     newTranscripts.push({ id: `${now}-model`, role: 'model', text: modelOutput, timestamp: now + 1 });
                   }
                   return newTranscripts;
@@ -192,6 +208,7 @@ export function useLiveAPI() {
 
               currentInputTranscription.current = '';
               currentOutputTranscription.current = '';
+              isInterruptedRef.current = false;
             }
 
             // Handle Audio Output
@@ -226,6 +243,7 @@ export function useLiveAPI() {
 
             // Handle Interruption
             if (message.serverContent?.interrupted) {
+              isInterruptedRef.current = true;
               sourcesRef.current.forEach(source => {
                 try { source.stop(); } catch (e) {}
                 sourcesRef.current.delete(source);
@@ -245,6 +263,11 @@ export function useLiveAPI() {
           },
         },
         config: {
+          generationConfig: {
+            temperature: 1.1,         // 稍微提高溫度，增加隨機性與多樣性
+            frequencyPenalty: 0.3,    // 懲罰重複出現的字詞
+            presencePenalty: 0.2,     // 鼓勵帶入新話題
+          },
           responseModalities: [Modality.AUDIO],
           speechConfig: {
             voiceConfig: {
@@ -255,7 +278,7 @@ export function useLiveAPI() {
           },
           outputAudioTranscription: {},
           inputAudioTranscription: {},
-          systemInstruction: systemInstruction + '\n\n【重要設定】每次你開口說話前，請務必先呼叫 setEmotion 函式，傳遞你當下最符合的情緒狀態。使用者會使用繁體中文（台灣）與你對話，請你務必專注精準辨識使用者的語音內容，並完全以繁體中文回應。',
+          systemInstruction: systemInstruction + '\n\n【重要設定】每次你開口說話前，請務必先呼叫 setEmotion 函式，傳遞你當下最符合的情緒狀態。使用者會使用繁體中文（台灣）與你對話，請你務必專注精準辨識使用者的語音內容，並完全以繁體中文回應。\n如果對話過程中因為雜音導致你被打斷，請你「接著」被打斷的地方繼續講就好，絕對不要把整句話重頭唸一次。',
           tools: [{
             functionDeclarations: [{
               name: 'setEmotion',
@@ -296,6 +319,7 @@ export function useLiveAPI() {
     transcripts,
     error,
     currentEmotion,
+    emotionTick,
     volume,
     connect,
     disconnect

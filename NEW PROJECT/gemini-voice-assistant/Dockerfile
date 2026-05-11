@@ -1,24 +1,25 @@
-FROM node:20-alpine
+FROM node:20-slim AS builder
 
-# Set working directory
 WORKDIR /app
+COPY . .
 
-# Avoid npm issues inside standard un-cached environments occasionally
-RUN npm cache clean --force
+# Build frontend
+WORKDIR /app/frontend
+RUN npm install
+RUN npm run build
 
-# Copy frontend code and build it
-COPY frontend ./frontend
-RUN cd frontend && npm install && npm run build
+# Setup backend
+FROM node:20-slim
+WORKDIR /app
+COPY --from=builder /app/backend ./backend
+COPY --from=builder /app/frontend/dist ./frontend/dist
 
-# Copy backend code
-COPY backend ./backend
-RUN cd backend && npm install
+WORKDIR /app/backend
+RUN npm install --production
 
-# Expose the API port
-ENV API_BACKEND_PORT=8080
-ENV API_BACKEND_HOST=0.0.0.0
+# 雲端執行環境變數會由 Cloud Run 提供
+ENV NODE_ENV=production
+ENV PORT=8080
 EXPOSE 8080
 
-# Start the application from the backend directory
-WORKDIR /app/backend
 CMD ["node", "server.js"]

@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "latest",
+    "@react-oauth/google": "^0.13.5",
+    "framer-motion": "^12.38.0",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "@google/genai": "latest",
-    "lucide-react": "latest"
+    "react-router-dom": "^7.14.2",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@types/node": "latest",

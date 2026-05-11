@@ -23,6 +23,7 @@ app.use(express.json({limit: process?.env?.API_PAYLOAD_MAX_SIZE || "7mb"}));
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 
+
 const PORT = process.env.PORT || process?.env?.API_BACKEND_PORT || 5000;
 const API_BACKEND_HOST = process?.env?.API_BACKEND_HOST || "0.0.0.0";
 
@@ -322,6 +323,11 @@ app.post('/api-proxy', async (req, res) => {
 // Catch-all to serve the frontend for any other routes (SPA fallback)
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
+// SPA Fallback Route (for React Router)
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
 const server = app.listen(PORT, API_BACKEND_HOST, () => {
