@@ -176,7 +176,6 @@ export default function SimulationPage() {
   });
 
   const [expandedPrinciples, setExpandedPrinciples] = useState(true);
-  const [expandedIntro, setExpandedIntro] = useState(true);
 
   // 當路由改變時，自動展開對應的步驟
   useEffect(() => {
@@ -337,24 +336,15 @@ export default function SimulationPage() {
             </div>
             {expandedPrinciples && (
                <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
-                 <div 
-                   onClick={() => setExpandedIntro(prev => !prev)}
-                   className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors flex items-center"
-                 >
-                   <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedIntro ? '▼' : '▶'}</span> 簡介
-                 </div>
-                 {expandedIntro && (
-                   <div className="pl-6 space-y-0.5">
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">1.尊重肯定</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">2.避免批評</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">3.主動釐清</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">4.鼓勵參與</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">5.耐心等候</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">6.正確引導</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">7.掌握流程</div>
-                     <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">8.轉折自然</div>
-                   </div>
-                 )}
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">簡介</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">1.尊重肯定</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">2.避免批評</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">3.主動釐清</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">4.鼓勵參與</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">5.耐心等候</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">6.正確引導</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">7.掌握流程</div>
+                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">8.轉折自然</div>
                </div>
             )}
             <div className="px-9 py-2">
