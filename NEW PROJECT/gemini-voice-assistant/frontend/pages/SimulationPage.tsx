@@ -355,10 +355,19 @@ export default function SimulationPage() {
                {/* Chapter 2 */}
                <div 
                  onClick={() => setExpandedMod1Chap2(prev => !prev)}
-                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-slate-600 transition-colors flex items-center"
+                 className="px-9 py-2 hover:bg-slate-100 cursor-pointer text-blue-700 transition-colors flex items-center"
                >
                  <span className={`mr-2 text-[10px] ${expandedMod1Chap2 ? 'text-blue-500' : 'opacity-50'}`}>{expandedMod1Chap2 ? '▼' : '▶'}</span> 史上最佳選才案例
                </div>
+               {expandedMod1Chap2 && (
+                 <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">簡介「魔球」</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">找出關鍵能力</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">注重實際表現</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">訂定量化指標</div>
+                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">結合團隊目標</div>
+                 </div>
+               )}
                
                {/* Chapter 3 */}
                <div 
