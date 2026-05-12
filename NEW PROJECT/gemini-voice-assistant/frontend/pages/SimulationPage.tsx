@@ -20,6 +20,64 @@ import courseEvaluatingCoachSkill from '../skills/course_evaluating_coach.md?raw
 import courseProbingCoachSkill from '../skills/course_probing_coach.md?raw';
 import courseClosingCoachSkill from '../skills/course_closing_coach.md?raw';
 import evaluationSopSkill from '../skills/evaluation_sop.md?raw';
+import module3Case1Skill from '../skills/module3_case1.md?raw';
+import module3Case1CoachSkill from '../skills/module3_case1_coach.md?raw';
+import module3Case2Skill from '../skills/module3_case2.md?raw';
+import module3Case2CoachSkill from '../skills/module3_case2_coach.md?raw';
+import module3Case3Skill from '../skills/module3_case3.md?raw';
+import module3Case3CoachSkill from '../skills/module3_case3_coach.md?raw';
+import module3Case4Skill from '../skills/module3_case4.md?raw';
+import module3Case4CoachSkill from '../skills/module3_case4_coach.md?raw';
+import module3Case5Skill from '../skills/module3_case5.md?raw';
+import module3Case5CoachSkill from '../skills/module3_case5_coach.md?raw';
+
+
+const VIDEO_MAP: Record<string, {file: string, title: string}> = {
+  '1-1': { file: 'TS_1.1_課程簡介-720p-210310.mp4', title: '課程簡介' },
+  '1-2': { file: 'TS_1.2_選才是主管的關鍵任務-720p-210310.mp4', title: '選才是主管的關鍵任務' },
+  '1-3': { file: 'TS_1.3_主管常缺乏選才策略-720p-210316.mp4', title: '主管常缺乏選才策略' },
+  '1-4': { file: 'TS_1.4_主管常覺得預算不夠-720p-210311.mp4', title: '主管常覺得預算不夠' },
+  '2-1': { file: 'TS_2.1_史上最佳選才案例-720p-210309.mp4', title: '簡介「魔球」' },
+  '2-2': { file: 'TS_2.2_找出關鍵能力-720p-210310.mp4', title: '找出關鍵能力' },
+  '2-3': { file: 'TS_2.3_注重實際表現-720p-210309.mp4', title: '注重實際表現' },
+  '2-4': { file: 'TS_2.4_訂定量化指標-720p-210309.mp4', title: '訂定量化指標' },
+  '2-5': { file: 'TS_2.5_結合團隊目標-720p-210311.mp4', title: '結合團隊目標' },
+  '3-2': { file: 'TS_3.2_核心職能-720p-210310.mp4', title: '核心職能' },
+  '3-3': { file: 'TS_3.3_管理職能-720p-210310.mp4', title: '管理職能' },
+  '3-4': { file: 'TS_3.4_專業職能-720p-210310.mp4', title: '專業職能' },
+  '3-5': { file: 'TS_3.5_以行為指標定義職能-720p-210309.mp4', title: '以行為指標定義職能' },
+  '3-6': { file: 'TS_3.6_行為指標的功用-720p-210311.mp4', title: '行為指標的功用' },
+  '3-7': { file: 'TS_3.7_行為指標的設計原則-720p-210310.mp4', title: '行為指標的設計原則' },
+  '3-8': { file: 'TS_3.8_如何以行為指標幫應徵者的職能評分-720p-210311.mp4', title: '職能評分方式' },
+  '3-9': { file: 'TS_3.9_七種間接評鑑職能的方法-720p-210311 (1).mp4', title: '考核應徵者的七種方法' },
+  '3-10': { file: 'TS_3.10_以職能選才的作業流程-720p-210311.mp4', title: '職能選才的作業流程' },
+  '4-1': { file: 'TS_4.1面談的挑戰-720p-210311 (1).mp4', title: '傳統面談的挑戰' },
+  '4-2': { file: 'TS_4.2行為事例的功用-720p-210311.mp4', title: '行為事例的應用' },
+  '4-3': { file: 'TS_4.3_本面談法之優點-720p-210309.mp4', title: '行為事例面談法的優點' },
+  '4-4': { file: 'TS_4.4_課後提醒.mp4', title: '課後提醒' },
+
+  'm2-1-1': { file: '../module2/TS_1.1_面談溝通原則-720p-240314.mp4', title: '簡介' },
+  'm2-1-2': { file: '../module2/TS_1.2_尊重肯定-720p-210309.mp4', title: '1.尊重肯定' },
+  'm2-1-3': { file: '../module2/TS_1.3_避免批評_20210309-720p-210311.mp4', title: '2.避免批評' },
+  'm2-1-4': { file: '../module2/TS_1.4_主動釐清-720p-210311.mp4', title: '3.主動釐清' },
+  'm2-1-5': { file: '../module2/TS_1.5_鼓勵參與-720p-210311.mp4', title: '4.鼓勵參與' },
+  'm2-1-6': { file: '../module2/TS_1.6_耐心等候-720p-210309.mp4', title: '5.耐心等候' },
+  'm2-1-7': { file: '../module2/TS_1.7_正確引導-720p-210311.mp4', title: '6.正確引導' },
+  'm2-1-8': { file: '../module2/TS_1.8_掌握流程-720p-210309.mp4', title: '7.掌握流程' },
+  'm2-1-9': { file: '../module2/TS_1.9_轉折自然-720p-210311.mp4', title: '8.轉折自然' },
+
+  'm2-2-1': { file: '../module2/TS_2.1_面談六大步驟-720p-210311.mp4', title: '面談六大步驟簡介' },
+  'm2-2-2': { file: '../module2/TS_2.2_開場步驟說明-720p-210309.mp4', title: '開場步驟說明' },
+  'm2-2-5': { file: '../module2/TS_2.5_釐清履歷步驟說明-720p-210309.mp4', title: '釐清履歷步驟說明' },
+  'm2-2-8': { file: '../module2/TS_2.8_提問步驟說明-720p-210310 (1).mp4', title: '提問步驟說明' },
+  'm2-2-11': { file: '../module2/TS_2.11_評估步驟說明-720p-210309.mp4', title: '評估步驟說明' },
+  'm2-2-14': { file: '../module2/TS_2.14_追問步驟說明-720p-210309.mp4', title: '追問步驟說明' },
+  'm2-2-17': { file: '../module2/TS_2.17_結語步驟說明-720p-210309.mp4', title: '結語步驟說明' },
+  'm2-2-20': { file: '../module2/TS_2.20.mp4', title: '課後提醒' },
+
+  'm3-intro': { file: '../module3/TS_1.1.mp4', title: '簡介' },
+  'm3-outro': { file: '../module3/TS_1.7.mp4', title: '課程結束' },
+};
 
 const ChatBubble: React.FC<{ message: TranscriptMessage }> = ({ message }) => {
   const isUser = message.role === 'user';
@@ -79,6 +137,28 @@ const contextSummaries: Record<string, string[]> = {
     "經過了一番深入且充滿挑戰的對談，這次的面試終於來到了尾聲。",
     "無論剛才的表現如何，George 都準備展現出主管的專業與風度，給予 Lisa 提問的機會，並向她說明後續的評估流程。",
     "「好的，我們今天的面談大概就到這邊。不曉得妳針對這個職缺或我們公司，有沒有什麼想問的問題？」George 微笑著說..."
+  ],
+  module3_case1: [
+    "鴻展公司資訊部門將招聘一名MIS工程師，負責網路系統之維護營運工作，Simon是應徵者之一，由George負責面試。",
+    "此時George已經完成開場、釐清履歷等步驟，即將進入探問職能階段。於是他瀏覽了職能清單，首先要探問的是「持續學習」職能..."
+  ],
+  module3_case2: [
+    "鴻展公司資訊部門將招聘一名MIS工程師，Simon是應徵者之一，由George負責面試。",
+    "此時George已經完成對持續學習職能的探問，但他卻無法從Simon的回應中，辨別出所隱含的職能高低。",
+    "所以他就把Simon的各種回應都彙集起來，請你幫忙評估…"
+  ],
+  module3_case3: [
+    "鴻展公司業務部門將招聘一名業務專員，負責公司產品之銷售推廣，Janie是應徵者之一，由George負責面試。",
+    "此時George已經完成開場、釐清履歷等步驟，即將進入探問職能階段。於是他瀏覽了職能清單，首先要探問的是「團隊合作」職能..."
+  ],
+  module3_case4: [
+    "鴻展公司業務部門將招聘一名業務專員，Janie是應徵者之一，由George負責面試。",
+    "此時George已經完成對團隊合作職能的探問，但他卻無法從Janie的回應中，辨別出所隱含的職能高低。",
+    "所以他就把Janie的各種回應都彙集起來，請你幫忙評估…"
+  ],
+  module3_case5: [
+    "鴻展公司管理部門將招聘一名管理師，Sophia是應徵者之一，由George負責面試。",
+    "此時George已經完成開場、釐清履歷等步驟，即將進入探問職能階段。於是他瀏覽了職能清單，首先要探問的是「研發創新」職能..."
   ]
 };
 
@@ -88,7 +168,12 @@ const taskInstructions: Record<string, string> = {
   course_questioning: "行為提問技巧",
   course_evaluating: "評估技巧",
   course_probing: "追問技巧",
-  course_closing: "結語技巧"
+  course_closing: "結語技巧",
+  module3_case1: "持續學習 (提問及追問)",
+  module3_case2: "持續學習 (評估)",
+  module3_case3: "團隊合作 (提問及追問)",
+  module3_case4: "團隊合作 (評估)",
+  module3_case5: "研發創新 (提問及追問)"
 };
 
 const commonCommunicationSkills = [
@@ -120,6 +205,26 @@ const evaluationCriteriaMap: Record<string, { title: string; skills: string[] }>
   course_closing: {
     title: "6 結語技巧",
     skills: ["6.1 提供發問機會", "6.2 說明後續流程", "6.3 表達感謝尊重"]
+  },
+  module3_case1: {
+    title: "持續學習 (綜合測驗：提問及追問)",
+    skills: ["包含情境衝突", "契合目標職能", "要求真實經驗", "避免暗示誘導", "保持觀點平衡", "追問欠缺的元素", "追問具體經驗", "避免誘答"]
+  },
+  module3_case2: {
+    title: "持續學習 (綜合測驗：評估)",
+    skills: ["辨識假設性言論", "指出具體經驗不足", "正確選出高分行為事例"]
+  },
+  module3_case3: {
+    title: "團隊合作 (綜合測驗：提問及追問)",
+    skills: ["包含情境衝突", "契合目標職能", "要求真實經驗", "避免暗示誘導", "保持觀點平衡", "追問欠缺的元素", "追問具體經驗", "避免誘答"]
+  },
+  module3_case4: {
+    title: "團隊合作 (綜合測驗：評估)",
+    skills: ["辨識假設性言論", "指出單打獨鬥之瑕疵", "正確選出高分行為事例"]
+  },
+  module3_case5: {
+    title: "研發創新 (綜合測驗：提問及追問)",
+    skills: ["包含情境衝突", "契合目標職能", "要求真實經驗", "避免暗示誘導", "保持觀點平衡", "追問欠缺的元素", "追問具體經驗", "避免誘答"]
   }
 };
 
@@ -129,7 +234,12 @@ const nextStepMap: Record<string, string | null> = {
   course_questioning: "/simulation/course_evaluating",
   course_evaluating: "/simulation/course_probing",
   course_probing: "/simulation/course_closing",
-  course_closing: null
+  course_closing: null,
+  module3_case1: "/simulation/module3_case2",
+  module3_case2: "/simulation/module3_case3",
+  module3_case3: "/simulation/module3_case4",
+  module3_case4: "/simulation/module3_case5",
+  module3_case5: null
 };
 
 export default function SimulationPage() {
@@ -147,6 +257,11 @@ export default function SimulationPage() {
     mode === 'course_evaluating' ? courseEvaluatingSkill : 
     mode === 'course_probing' ? courseProbingSkill : 
     mode === 'course_closing' ? courseClosingSkill : 
+    mode === 'module3_case1' ? module3Case1Skill : 
+    mode === 'module3_case2' ? module3Case2Skill : 
+    mode === 'module3_case3' ? module3Case3Skill : 
+    mode === 'module3_case4' ? module3Case4Skill : 
+    mode === 'module3_case5' ? module3Case5Skill : 
     friendlyAssistantSkill;
 
   useEffect(() => {
@@ -180,6 +295,7 @@ export default function SimulationPage() {
   // 模組展開狀態
   const [expandedModule1, setExpandedModule1] = useState(false);
   const [expandedModule2, setExpandedModule2] = useState(true);
+  const [expandedModule3, setExpandedModule3] = useState(false);
   
   // 模組一子選單狀態
   const [expandedMod1Chap1, setExpandedMod1Chap1] = useState(true);
@@ -226,6 +342,30 @@ export default function SimulationPage() {
       return;
     }
 
+    // 判斷是否為 Sophia 角色 (module3_case5)
+    if (mode === 'module3_case5') {
+      const allowedSophiaEmotions = ['neutral', 'smiling', 'thinking', 'talking'];
+      const finalEmotion = allowedSophiaEmotions.includes(currentEmotion) ? currentEmotion : 'neutral';
+      setAvatarImage(`/avatar_sophia_${finalEmotion}.png`);
+      return;
+    }
+
+    // 判斷是否為 Janie 角色 (module3_case3, module3_case4)
+    if (mode === 'module3_case3' || mode === 'module3_case4') {
+      const allowedJanieEmotions = ['neutral', 'smiling', 'thinking', 'talking'];
+      const finalEmotion = allowedJanieEmotions.includes(currentEmotion) ? currentEmotion : 'neutral';
+      setAvatarImage(`/avatar_janie_${finalEmotion}.png`);
+      return;
+    }
+
+    // 判斷是否為 Simon 角色 (module3_case1, module3_case2)
+    if (mode === 'module3_case1' || mode === 'module3_case2') {
+      const allowedSimonEmotions = ['neutral', 'smiling', 'thinking', 'talking'];
+      const finalEmotion = allowedSimonEmotions.includes(currentEmotion) ? currentEmotion : 'neutral';
+      setAvatarImage(`/avatar_simon_${finalEmotion}.png`);
+      return;
+    }
+
     // 判斷是否為課程模式 (Lisa 的角色)
     if (mode?.startsWith('course_')) {
       const allowedLisaEmotions = ['neutral', 'smiling', 'thinking', 'talking'];
@@ -266,6 +406,11 @@ export default function SimulationPage() {
       else if (mode === 'course_evaluating') coachPersona = courseEvaluatingCoachSkill;
       else if (mode === 'course_probing') coachPersona = courseProbingCoachSkill;
       else if (mode === 'course_closing') coachPersona = courseClosingCoachSkill;
+      else if (mode === 'module3_case1') coachPersona = module3Case1CoachSkill;
+      else if (mode === 'module3_case2') coachPersona = module3Case2CoachSkill;
+      else if (mode === 'module3_case3') coachPersona = module3Case3CoachSkill;
+      else if (mode === 'module3_case4') coachPersona = module3Case4CoachSkill;
+      else if (mode === 'module3_case5') coachPersona = module3Case5CoachSkill;
 
       // 建立原始 Vertex AI REST API Request Body
       const requestBody = {
@@ -331,7 +476,7 @@ export default function SimulationPage() {
         <div className="flex-1 overflow-y-auto py-2">
           {/* 模組一 */}
           <div 
-            onClick={() => { setExpandedModule1(true); setExpandedModule2(false); }}
+            onClick={() => { setExpandedModule1(true); setExpandedModule2(false); setExpandedModule3(false); }}
             className={`px-5 py-3 cursor-pointer text-sm flex items-center transition-colors ${expandedModule1 ? 'bg-[#bce6f2] font-bold text-slate-800' : 'hover:bg-slate-50 text-slate-600'}`}
           >
             <div className={`w-1.5 h-1.5 mr-3 rounded-sm ${expandedModule1 ? 'bg-slate-800' : 'bg-slate-400'}`}></div> 模組一：基礎知識
@@ -348,10 +493,10 @@ export default function SimulationPage() {
                </div>
                {expandedMod1Chap1 && (
                  <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">課程簡介</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">選才是主管的關鍵任務</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">主管常缺乏選才策略</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">主管常覺得預算不夠</div>
+                   <div onClick={() => navigate('/simulation/video-1-1')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-1-1' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>課程簡介</div>
+                   <div onClick={() => navigate('/simulation/video-1-2')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-1-2' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>選才是主管的關鍵任務</div>
+                   <div onClick={() => navigate('/simulation/video-1-3')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-1-3' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>主管常缺乏選才策略</div>
+                   <div onClick={() => navigate('/simulation/video-1-4')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-1-4' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>主管常覺得預算不夠</div>
                  </div>
                )}
                
@@ -364,11 +509,11 @@ export default function SimulationPage() {
                </div>
                {expandedMod1Chap2 && (
                  <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">簡介「魔球」</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">找出關鍵能力</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">注重實際表現</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">訂定量化指標</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">結合團隊目標</div>
+                   <div onClick={() => navigate('/simulation/video-2-1')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-2-1' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>簡介「魔球」</div>
+                   <div onClick={() => navigate('/simulation/video-2-2')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-2-2' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>找出關鍵能力</div>
+                   <div onClick={() => navigate('/simulation/video-2-3')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-2-3' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>注重實際表現</div>
+                   <div onClick={() => navigate('/simulation/video-2-4')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-2-4' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>訂定量化指標</div>
+                   <div onClick={() => navigate('/simulation/video-2-5')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-2-5' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>結合團隊目標</div>
                  </div>
                )}
                
@@ -389,9 +534,9 @@ export default function SimulationPage() {
                    </div>
                    {expandedMod1Chap3_1 && (
                      <div className="pl-6 space-y-0.5">
-                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">核心職能</div>
-                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">管理職能</div>
-                       <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">專業職能</div>
+                       <div onClick={() => navigate('/simulation/video-3-2')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-2' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>核心職能</div>
+                       <div onClick={() => navigate('/simulation/video-3-3')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-3' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>管理職能</div>
+                       <div onClick={() => navigate('/simulation/video-3-4')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-4' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>專業職能</div>
                      </div>
                    )}
                    
@@ -401,9 +546,17 @@ export default function SimulationPage() {
                    >
                      <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedMod1Chap3_2 ? '▼' : '▶'}</span> 行為指標與職能
                    </div>
+                   {expandedMod1Chap3_2 && (
+                     <div className="pl-6 space-y-0.5">
+                       <div onClick={() => navigate('/simulation/video-3-5')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-5' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>以行為指標定義職能</div>
+                       <div onClick={() => navigate('/simulation/video-3-6')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-6' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>行為指標的功用</div>
+                       <div onClick={() => navigate('/simulation/video-3-7')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-7' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>行為指標的設計原則</div>
+                       <div onClick={() => navigate('/simulation/video-3-8')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-3-8' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>職能評分方式</div>
+                     </div>
+                   )}
                    
-                   <div className="py-1.5 pl-7 hover:text-blue-600 cursor-pointer transition-colors">考核應徵者的七種方法</div>
-                   <div className="py-1.5 pl-7 hover:text-blue-600 cursor-pointer transition-colors">職能選才的作業流程</div>
+                   <div onClick={() => navigate('/simulation/video-3-9')} className={`py-1.5 pl-7 cursor-pointer transition-colors ${mode === 'video-3-9' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-6 pl-9 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>考核應徵者的七種方法</div>
+                   <div onClick={() => navigate('/simulation/video-3-10')} className={`py-1.5 pl-7 cursor-pointer transition-colors ${mode === 'video-3-10' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-6 pl-9 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>職能選才的作業流程</div>
                  </div>
                )}
 
@@ -416,10 +569,10 @@ export default function SimulationPage() {
                </div>
                {expandedMod1Chap4 && (
                  <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">傳統面談的挑戰</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">行為事例的應用</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">行為事例面談法的優點</div>
-                   <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">課後提醒</div>
+                   <div onClick={() => navigate('/simulation/video-4-1')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-4-1' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>傳統面談的挑戰</div>
+                   <div onClick={() => navigate('/simulation/video-4-2')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-4-2' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>行為事例的應用</div>
+                   <div onClick={() => navigate('/simulation/video-4-3')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-4-3' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>行為事例面談法的優點</div>
+                   <div onClick={() => navigate('/simulation/video-4-4')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-4-4' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>課後提醒</div>
                  </div>
                )}
             </div>
@@ -427,7 +580,7 @@ export default function SimulationPage() {
 
           {/* 模組二 */}
           <div 
-            onClick={() => { setExpandedModule2(true); setExpandedModule1(false); }}
+            onClick={() => { setExpandedModule2(true); setExpandedModule1(false); setExpandedModule3(false); }}
             className={`px-5 py-3 cursor-pointer text-sm flex items-center transition-colors ${expandedModule2 ? 'bg-blue-50/50 font-bold text-blue-900 border-l-4 border-blue-500' : 'hover:bg-slate-50 text-slate-600'}`}
           >
             <div className={`w-1.5 h-1.5 mr-3 rounded-sm ${expandedModule2 ? 'bg-blue-600' : 'bg-slate-400'}`}></div> 模組二：面談步驟
@@ -444,15 +597,15 @@ export default function SimulationPage() {
             </div>
             {expandedPrinciples && (
                <div className="pl-[3.25rem] pr-4 mt-1 text-slate-600 space-y-0.5 mb-2">
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">簡介</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">1.尊重肯定</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">2.避免批評</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">3.主動釐清</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">4.鼓勵參與</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">5.耐心等候</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">6.正確引導</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">7.掌握流程</div>
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">8.轉折自然</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-1')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-1' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>簡介</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-2')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-2' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>1.尊重肯定</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-3')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-3' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>2.避免批評</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-4')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-4' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>3.主動釐清</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-5')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-5' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>4.鼓勵參與</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-6')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-6' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>5.耐心等候</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-7')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-7' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>6.正確引導</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-8')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-8' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>7.掌握流程</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-9')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-9' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>8.轉折自然</div>
                </div>
             )}
             <div className="px-9 py-2">
@@ -460,13 +613,13 @@ export default function SimulationPage() {
                  <span className="mr-2 text-[10px]">▼</span> 面談實施步驟
                </div>
                <div className="pl-5 mt-1 text-slate-600 space-y-0.5 border-l border-slate-200 ml-1">
-                 <div className="py-1.5 pl-3 hover:text-blue-600 cursor-pointer transition-colors">簡介</div>
+                 <div onClick={() => navigate('/simulation/video-m2-1-1')} className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-1-1' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}>簡介</div>
                  
                  {/* 步驟一：開場 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('1')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_interview') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('1'); navigate('/simulation/video-m2-2-2'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_interview') || mode === 'video-m2-2-2') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['1'] ? '▼' : '▶'}</span> 步驟一：開場
                    </div>
@@ -491,8 +644,8 @@ export default function SimulationPage() {
                  {/* 步驟二：釐清履歷 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('2')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_resume') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('2'); navigate('/simulation/video-m2-2-5'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_resume') || mode === 'video-m2-2-5') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['2'] ? '▼' : '▶'}</span> 步驟二：釐清履歷
                    </div>
@@ -517,8 +670,8 @@ export default function SimulationPage() {
                  {/* 步驟三：提問 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('3')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_questioning') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('3'); navigate('/simulation/video-m2-2-8'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_questioning') || mode === 'video-m2-2-8') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['3'] ? '▼' : '▶'}</span> 步驟三：提問
                    </div>
@@ -543,8 +696,8 @@ export default function SimulationPage() {
                  {/* 步驟四：評估 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('4')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_evaluating') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('4'); navigate('/simulation/video-m2-2-11'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_evaluating') || mode === 'video-m2-2-11') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['4'] ? '▼' : '▶'}</span> 步驟四：評估
                    </div>
@@ -569,8 +722,8 @@ export default function SimulationPage() {
                  {/* 步驟五：追問 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('5')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_probing') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('5'); navigate('/simulation/video-m2-2-14'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_probing') || mode === 'video-m2-2-14') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['5'] ? '▼' : '▶'}</span> 步驟五：追問
                    </div>
@@ -595,8 +748,8 @@ export default function SimulationPage() {
                  {/* 步驟六：結語 */}
                  <div className="py-1.5 pl-3">
                    <div 
-                     onClick={() => toggleStep('6')}
-                     className={`cursor-pointer font-medium flex items-center transition-colors ${mode?.includes('course_closing') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md' : 'text-slate-600 hover:text-blue-600'}`}
+                     onClick={() => { toggleStep('6'); navigate('/simulation/video-m2-2-17'); }}
+                     className={`cursor-pointer font-medium flex items-center transition-colors ${ (mode?.includes('course_closing') || mode === 'video-m2-2-17') ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-2 rounded-l-md font-bold' : 'text-slate-600 hover:text-blue-600' }`}
                    >
                       <span className="mr-1.5 text-[10px] w-3 flex justify-center text-blue-500 opacity-70">{expandedSteps['6'] ? '▼' : '▶'}</span> 步驟六：結語
                    </div>
@@ -619,10 +772,16 @@ export default function SimulationPage() {
                  </div>
 
                   <div 
+                    onClick={() => navigate('/simulation/video-m2-2-20')}
+                    className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'video-m2-2-20' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}
+                  >
+                    課後提醒 (影片)
+                  </div>
+                  <div 
                     onClick={() => navigate('/simulation/course_completion')}
                     className={`py-1.5 pl-3 cursor-pointer transition-colors ${mode === 'course_completion' ? 'text-blue-700 bg-blue-50/50 py-1 -ml-2 pl-5 rounded-l-md font-bold' : 'hover:text-blue-600'}`}
                   >
-                    課後提醒
+                    結訓證書
                   </div>
                </div>
             </div>
@@ -630,9 +789,60 @@ export default function SimulationPage() {
           )}
 
           {/* 模組三 */}
-          <div className="px-5 py-3 hover:bg-slate-50 cursor-pointer text-sm flex items-center text-slate-600 transition-colors">
-            <div className="w-1.5 h-1.5 bg-slate-400 mr-3 rounded-sm"></div> 模組三：模擬演練
+          <div 
+            onClick={() => { setExpandedModule3(true); setExpandedModule1(false); setExpandedModule2(false); }}
+            className={`px-5 py-3 cursor-pointer text-sm flex items-center transition-colors ${expandedModule3 ? 'bg-blue-50/50 font-bold text-blue-900 border-l-4 border-blue-500' : 'hover:bg-slate-50 text-slate-600'}`}
+          >
+            <div className={`w-1.5 h-1.5 mr-3 rounded-sm ${expandedModule3 ? 'bg-blue-600' : 'bg-slate-400'}`}></div> 模組三：模擬演練
           </div>
+          
+          {/* 模組三子選單 */}
+          {expandedModule3 && (
+            <div className="bg-slate-50/50 border-y border-slate-100 text-sm py-2">
+              <div 
+                onClick={() => navigate('/simulation/video-m3-intro')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'video-m3-intro' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                簡介
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/module3_case1')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'module3_case1' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                1.持續學習【提問及追問】
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/module3_case2')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'module3_case2' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                2.持續學習【評估】
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/module3_case3')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'module3_case3' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                3.團隊合作【提問及追問】
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/module3_case4')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'module3_case4' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                4.團隊合作【評估】
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/module3_case5')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'module3_case5' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                5.研發創新【提問及追問】
+              </div>
+              <div 
+                onClick={() => navigate('/simulation/video-m3-outro')}
+                className={`py-1.5 pl-9 cursor-pointer transition-colors ${mode === 'video-m3-outro' ? 'text-blue-700 bg-blue-50/50 py-1 pl-[2.1rem] border-l-4 border-blue-500 font-bold' : 'hover:text-blue-600 text-slate-600'}`}
+              >
+                課程結束
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -640,6 +850,68 @@ export default function SimulationPage() {
       <div className="flex-1 flex flex-col bg-[#f8fafc] relative overflow-hidden">
         
         {(() => {
+
+          if (mode?.startsWith('video-')) {
+            const videoId = mode.replace('video-', '');
+            const videoData = VIDEO_MAP[videoId];
+            if (videoData) {
+              const videoKeys = Object.keys(VIDEO_MAP);
+              const currentIndex = videoKeys.indexOf(videoId);
+              const prevVideoId = currentIndex > 0 ? videoKeys[currentIndex - 1] : null;
+              const nextVideoId = currentIndex !== -1 && currentIndex < videoKeys.length - 1 ? videoKeys[currentIndex + 1] : null;
+
+              return (
+                <div className="w-full h-full flex flex-col p-8 md:p-12 overflow-y-auto bg-gradient-to-br from-[#f8fafc] to-[#e0f2fe] items-center justify-center">
+                  <div className="w-full max-w-5xl">
+                    <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                       <div>
+                         <span className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-2 block opacity-80">{videoId.startsWith('m3') ? 'Module 3 : 模擬演練' : videoId.startsWith('m2') ? 'Module 2 : 面談步驟' : 'Module 1 : 基礎知識'}</span>
+                         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-800 drop-shadow-sm tracking-tight">{videoData.title}</h1>
+                       </div>
+                       
+                       <div className="flex gap-3 shrink-0">
+                         <button 
+                           onClick={() => prevVideoId && navigate(`/simulation/video-${prevVideoId}`)}
+                           disabled={!prevVideoId}
+                           className={`px-4 py-2 rounded-lg font-bold border transition-all flex items-center gap-2 ${!prevVideoId ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed opacity-70' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow'}`}
+                         >
+                           <span className="text-lg leading-none -mt-0.5">‹</span> 上一頁
+                         </button>
+                         <button 
+                           onClick={() => nextVideoId ? navigate(`/simulation/video-${nextVideoId}`) : navigate('/simulation/course_completion')}
+                           className={`px-4 py-2 rounded-lg font-bold border transition-all flex items-center gap-2 ${!nextVideoId ? 'bg-blue-600 text-white border-blue-700 hover:bg-blue-700 shadow-sm hover:shadow shadow-blue-500/20' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50 hover:border-slate-400 shadow-sm hover:shadow'}`}
+                         >
+                           {nextVideoId ? '下一頁' : '完成模組'} <span className="text-lg leading-none -mt-0.5">›</span>
+                         </button>
+                       </div>
+                    </div>
+                    
+                    <div className="w-full bg-black rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.15)] border border-white/40 relative group ring-1 ring-slate-900/5">
+                       {/* 裝飾性漸層光暈 */}
+                       <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-indigo-500/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                       <video controls className="w-full relative z-10 block" autoPlay key={videoData.file} style={{ outline: 'none' }}>
+                          <source src={`/videos/module1/${videoData.file}`} type="video/mp4" />
+                          您的瀏覽器不支援影片播放。
+                       </video>
+                    </div>
+
+                    <div className="mt-8 bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-white/60 flex gap-5 items-start transition-all hover:shadow-md hover:bg-white">
+                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-indigo-50 flex items-center justify-center shrink-0 shadow-inner">
+                         <span className="text-blue-600 text-xl">💡</span>
+                       </div>
+                       <div>
+                         <h3 className="text-lg font-bold text-slate-800 mb-1.5 tracking-wide">學習重點提示</h3>
+                         <p className="text-slate-600 leading-relaxed text-[15px] font-medium">
+                           請專心觀看本段教學影片。在播放過程中，您可以隨時暫停並做筆記；若有不清楚的地方，建議重複觀看以加深印象。看完後可由上方按鈕進入下一章節！
+                         </p>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+          }
+
           if (mode === 'course_completion') {
             return (
               <div className="w-full h-full flex flex-col items-center justify-center p-10 bg-slate-50 relative z-10">
@@ -678,10 +950,10 @@ export default function SimulationPage() {
               title: '開場技巧',
               nextRoute: '/simulation/course_interview',
               buttons: [
-                { id: '1.1', title: '1.1 表達歡迎', content: '感謝應徵者前來面談，展現親切的態度，讓對方覺得受歡迎與尊重。' },
-                { id: '1.2', title: '1.2 自我介紹', content: '雙方交互名片，進行簡單自我介紹，也可以聊一些共同經歷或朋友，拉近彼此距離。' },
-                { id: '1.3', title: '1.3 說明流程', content: '向應徵者說明本次面談的流程及預計時間，以降低應徵者的不確定感及焦慮。' },
-                { id: '1.4', title: '1.4 承諾保密', content: '主動承諾將對面談內容保密，建立信任感，鼓勵應徵者在接下來的面談中誠實回應。' }
+                { id: '1.1', title: '1.1 表達歡迎', content: '感謝應徵者前來面談，讓對方覺得受歡迎與尊重。' },
+                { id: '1.2', title: '1.2 自我介紹', content: '雙方交互名片，進行簡單自我介紹，聊一些共同經歷或朋友。' },
+                { id: '1.3', title: '1.3 說明流程', content: '說明本次面談的流程及時間，降低應徵者的不確定感。' },
+                { id: '1.4', title: '1.4 承諾保密', content: '主動承諾將對面談內容保密，鼓勵應徵者誠實回應。' }
               ]
             },
             course_resume_theory: {
@@ -775,12 +1047,12 @@ export default function SimulationPage() {
                  </div>
                  
                  {/* Main Content Area */}
-                 <div className="flex-1 relative flex flex-col bg-cover bg-center" style={{ backgroundImage: `url('/virtual_office_background_1777643605271.png')` }}>
+                 <div className="flex-1 relative flex flex-col bg-cover bg-center" style={{ backgroundImage: `url('/theory_background.png')` }}>
                     <div className="absolute inset-0 bg-white/40"></div>
                     
-                    <div className="w-full max-w-6xl mx-auto flex gap-16 z-10 pt-20 px-8 flex-1">
+                    <div className="w-full max-w-[1000px] ml-4 md:ml-12 flex gap-8 md:gap-12 z-10 pt-16 px-4 md:px-8 flex-1">
                       {/* Left Side Buttons */}
-                      <div className="w-1/3 flex flex-col gap-6 pl-4 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
+                      <div className="w-[300px] md:w-[320px] shrink-0 flex flex-col gap-4 md:gap-6 pl-2 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
                         {currentTheory.groups ? (
                           <div className="flex flex-col gap-6">
                             {currentTheory.groups.map((group: any, idx: number) => (
@@ -832,8 +1104,8 @@ export default function SimulationPage() {
                       </div>
                       
                       {/* Right Side Text Content */}
-                      <div className="w-2/3 flex items-start justify-start relative pt-2 pl-4 pr-12">
-                         <div className="bg-white/90 backdrop-blur-md border border-white/60 shadow-[0_15px_40px_rgba(0,0,0,0.06)] rounded-2xl p-10 w-full min-h-[300px] transition-all relative overflow-hidden flex flex-col justify-center">
+                      <div className="w-[450px] md:w-[500px] shrink-0 flex items-start justify-start relative pt-2">
+                         <div className="bg-white/90 backdrop-blur-md border border-white/60 shadow-[0_15px_40px_rgba(0,0,0,0.06)] rounded-2xl p-8 w-full min-h-[200px] transition-all relative overflow-hidden flex flex-col justify-center">
                            {selectedTheoryBtn ? (
                               <>
                                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#4fa7c7] to-[#8cbccc]"></div>
@@ -887,12 +1159,24 @@ export default function SimulationPage() {
 
           const tabs = mode === 'course_evaluating' 
             ? ['1.前情提要', '2.任務說明', '3.職能清單', '4.進行演練', '5.技巧檢討']
+            : (mode === 'module3_case1' || mode === 'module3_case2' || mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5')
+            ? ['1.前情提要', '2.任務說明', '3.職能清單', '4.履歷資料', '5.進行演練', '6.技巧檢討']
             : ['1.前情提要', '2.任務說明', '3.進行演練', '4.技巧檢討'];
+          
           const isIntro = activeTab === 0;
           const isTask = activeTab === 1;
-          const isCompetency = mode === 'course_evaluating' && activeTab === 2;
-          const isSim = mode === 'course_evaluating' ? activeTab === 3 : activeTab === 2;
-          const isReview = mode === 'course_evaluating' ? activeTab === 4 : activeTab === 3;
+          const isCompetency = (mode === 'course_evaluating' || mode === 'module3_case1' || mode === 'module3_case2' || mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5') && activeTab === 2;
+          const isResume = (mode === 'module3_case1' || mode === 'module3_case2' || mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5') && activeTab === 3;
+          
+          let simTabIndex = 2;
+          if (mode === 'course_evaluating') simTabIndex = 3;
+          if (mode === 'module3_case1' || mode === 'module3_case2' || mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5') simTabIndex = 4;
+          const isSim = activeTab === simTabIndex;
+
+          let reviewTabIndex = 3;
+          if (mode === 'course_evaluating') reviewTabIndex = 4;
+          if (mode === 'module3_case1' || mode === 'module3_case2' || mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5') reviewTabIndex = 5;
+          const isReview = activeTab === reviewTabIndex;
 
           return (
             <>
@@ -958,22 +1242,53 @@ export default function SimulationPage() {
                     </h2>
                     
                     <div className="space-y-8 text-[18px] leading-[2] text-slate-700 font-medium tracking-wide">
-                      <div className="flex gap-4">
-                        <span className="text-blue-500 mt-1">✓</span>
-                        <p>在本演練中，你將扮演面試主管 <strong>George</strong>，與螢幕中人物～應徵者 <strong>Lisa</strong>，進行互動！</p>
-                      </div>
-                      <div className="flex gap-4">
-                        <span className="text-blue-500 mt-1">✓</span>
-                        <p>在過程中，你必須採取正確的<strong>「{taskInstructions[mode]}」</strong>以及<strong>「溝通原則」</strong>，才能順利完成本任務。</p>
-                      </div>
-                      <div className="flex gap-4">
-                        <span className="text-blue-500 mt-1">✓</span>
-                        <p>請先在「前情提要」中瞭解劇情，接著在「進行演練」中與 Lisa 互動，最後在「技巧檢討」中，瀏覽演練成績。</p>
-                      </div>
+                      {(mode === 'module3_case2' || mode === 'module3_case4') ? (
+                        <>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>你這次的任務，是擔任主管 <strong>George</strong> 的顧問，協助他從應徵者 <strong>{mode === 'module3_case4' ? 'Janie' : 'Simon'}</strong> 的多個回應中，挑出可獲得最高職能評分的回應！</p>
+                          </div>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>在過程中，你必須具備正確的<strong>「評估技巧」</strong>，才能順利完成本任務。</p>
+                          </div>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>請先在「職能清單」中瞭解{mode === 'module3_case4' ? '團隊合作' : '持續學習'}的行為指標，接著在「進行演練」中與 George 互動，最後在「技巧檢討」中瀏覽評估結果。</p>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>在本演練中，你將扮演面試主管 <strong>George</strong>，與螢幕中人物～應徵者 <strong>{mode === 'module3_case5' ? 'Sophia' : mode === 'module3_case3' ? 'Janie' : mode === 'module3_case1' ? 'Simon' : 'Lisa'}</strong>，進行互動！</p>
+                          </div>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>在過程中，你必須採取正確的<strong>「{taskInstructions[mode]}」</strong>以及<strong>「溝通原則」</strong>，才能順利完成本任務。</p>
+                          </div>
+                          <div className="flex gap-4">
+                            <span className="text-blue-500 mt-1">✓</span>
+                            <p>請先在「前情提要」中瞭解劇情，接著在「進行演練」中與 {mode === 'module3_case5' ? 'Sophia' : mode === 'module3_case3' ? 'Janie' : mode === 'module3_case1' ? 'Simon' : 'Lisa'} 互動，最後在「技巧檢討」中，瀏覽演練成績。</p>
+                          </div>
+                        </>
+                      )}
                       {mode === 'course_evaluating' && (
                         <div className="flex gap-4">
                           <span className="text-blue-500 mt-1">✓</span>
                           <p>如果你選擇接受本任務，請先在<span className="text-red-500 font-bold">職能清單</span>中，瞭解主動積極的行為指標，然後再開始<span className="text-red-500 font-bold">進行演練</span>。</p>
+                        </div>
+                      )}
+                      {(mode === 'module3_case2' || mode === 'module3_case4') && (
+                        <div className="flex gap-4">
+                          <span className="text-blue-500 mt-1">✓</span>
+                          <p>如果你選擇接受本任務，請先在<span className="text-red-500 font-bold">職能清單</span>中，瞭解該職能及其行為指標，然後再開始進行演練。</p>
+                        </div>
+                      )}
+                      {(mode === 'module3_case1' || mode === 'module3_case3' || mode === 'module3_case5' || mode === 'module4_case1') && (
+                        <div className="flex gap-4">
+                          <span className="text-blue-500 mt-1">✓</span>
+                          <p>如果你選擇接受本任務，請先在<span className="text-red-500 font-bold">職能清單</span>中，瞭解該職能及其行為指標，然後在<span className="text-red-500 font-bold">履歷資料</span>中，瞭解 {mode === 'module3_case5' ? 'Sophia' : mode === 'module3_case3' ? 'Janie' : mode === 'module3_case1' ? 'Simon' : '張小姐'} 的背景，然後進行演練。</p>
                         </div>
                       )}
                     </div>
@@ -990,7 +1305,7 @@ export default function SimulationPage() {
               </div>
             )}
 
-            {/* Tab 2.5: 職能清單 (course_evaluating 專屬) */}
+            {/* Tab 2.5: 職能清單 */}
             {isCompetency && (
               <div className="flex-1 overflow-y-auto p-10 flex flex-col items-center justify-start bg-slate-50">
                 <div className="max-w-3xl w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 p-10 md:p-14 relative overflow-hidden">
@@ -998,18 +1313,124 @@ export default function SimulationPage() {
                   
                   <div className="mb-10 text-center">
                     <h2 className="text-3xl font-bold text-slate-800 tracking-wider">
-                      職能清單 (目標職能：<span className="text-red-500 font-black">主動積極</span>)
+                      職能清單 (目標職能：<span className="text-red-500 font-black">{mode === 'module3_case1' || mode === 'module3_case2' ? '持續學習' : (mode === 'module3_case3' || mode === 'module3_case4') ? '團隊合作' : mode === 'module3_case5' ? '研發創新' : '主動積極'}</span>)
                     </h2>
                   </div>
 
                   <div className="space-y-4 text-[18px] leading-[2] text-slate-700 font-medium tracking-wide bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <ul className="list-disc pl-6 space-y-3">
-                      <li>歸屬不明之任務，能主動爭取。</li>
-                      <li>不清楚之處，能主動澄清、詢問、確認。</li>
-                      <li>採取預防性措施，避免問題發生。</li>
-                      <li>獨立作業，不需監督。</li>
-                      <li>超越工作範圍。</li>
-                    </ul>
+                    {(mode === 'module3_case1' || mode === 'module3_case2') ? (
+                      <ul className="list-disc pl-6 space-y-3">
+                        <li>把挑戰視為學習機會。</li>
+                        <li>能分辨出自己需要學習的地方。</li>
+                        <li>能找出適合自己的學習方式。</li>
+                        <li>積極將學習成果應用在工作中。</li>
+                        <li>願意承擔學習中所遭遇的困難或風險。</li>
+                      </ul>
+                    ) : (mode === 'module3_case3' || mode === 'module3_case4') ? (
+                      <ul className="list-disc pl-6 space-y-3">
+                        <li>瞭解團隊目標以及各成員之角色職責。</li>
+                        <li>執行團隊決議，置團隊利益於個人利益之上。</li>
+                        <li>樂意分享訊息，提供支援，促進團隊成功。</li>
+                        <li>以公平、誠信、尊重、體諒之方式對待成員。</li>
+                        <li>願意給予回饋，也樂於接受回饋。</li>
+                      </ul>
+                    ) : mode === 'module3_case5' ? (
+                      <ul className="list-disc pl-6 space-y-3">
+                        <li>辨別效益瓶頸，關注創新契機。</li>
+                        <li>樂於接受新知，擁有多元知識來源。</li>
+                        <li>進行跨領域思考，在看似無關之處找出關聯性。</li>
+                        <li>挑戰既有模式，嘗試以非傳統方法解決問題。</li>
+                        <li>評估創新效益，預想落實之障礙及化解方式。</li>
+                      </ul>
+                    ) : (
+                      <ul className="list-disc pl-6 space-y-3">
+                        <li>歸屬不明之任務，能主動爭取。</li>
+                        <li>不清楚之處，能主動澄清、詢問、確認。</li>
+                        <li>採取預防性措施，避免問題發生。</li>
+                        <li>獨立作業，不需監督。</li>
+                        <li>超越工作範圍。</li>
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+            
+            {/* Tab 3: 履歷資料 (module3_case1 專屬) */}
+            {isResume && (
+              <div className="flex-1 overflow-y-auto p-10 flex flex-col items-center justify-start bg-slate-50">
+                <div className="max-w-3xl w-full bg-white rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-slate-100 p-10 md:p-14 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
+                  
+                  <div className="mb-8 flex items-center gap-6 border-b border-slate-100 pb-8">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-slate-50 shadow-sm bg-white">
+                      <img src={mode === 'module3_case5' ? "/avatar_sophia_neutral.png" : (mode === 'module3_case3' || mode === 'module3_case4') ? "/avatar_janie_neutral.png" : "/avatar_simon_neutral.png"} alt={mode === 'module3_case5' ? "Sophia" : (mode === 'module3_case3' || mode === 'module3_case4') ? "Janie" : "Simon"} className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h2 className="text-4xl font-black text-slate-800 tracking-wider mb-2">{mode === 'module3_case5' ? "Sophia" : (mode === 'module3_case3' || mode === 'module3_case4') ? "Janie" : "Simon"}</h2>
+                      <div className="text-slate-500 text-lg font-medium flex gap-4">
+                        <span>{(mode === 'module3_case3' || mode === 'module3_case4' || mode === 'module3_case5') ? "女" : "男"}</span>
+                        <span>|</span>
+                        <span>{mode === 'module3_case5' ? "30歲" : "27歲"}</span>
+                        <span>|</span>
+                        <span>應徵：{mode === 'module3_case5' ? "管理師" : (mode === 'module3_case3' || mode === 'module3_case4') ? "業務專員" : "MIS工程師"}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8 text-[18px] leading-[1.8] text-slate-700 font-medium tracking-wide">
+                    <div>
+                      <h3 className="text-xl font-bold text-teal-600 mb-3 flex items-center gap-2">
+                        <span>🎯</span> 嗜好
+                      </h3>
+                      <p className="bg-slate-50 px-5 py-3 rounded-xl">
+                        {mode === 'module3_case5' ? '喜歡閱讀、看展覽、自助旅行、瑜珈。' : (mode === 'module3_case3' || mode === 'module3_case4') ? '柔道、看電影、自助旅行、聽音樂。' : '喜歡爬山、攀岩、騎腳踏車、聽音樂。'}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-bold text-teal-600 mb-3 flex items-center gap-2">
+                        <span>🎓</span> 學歷
+                      </h3>
+                      <ul className="bg-slate-50 px-5 py-3 rounded-xl list-none space-y-2">
+                        {mode === 'module3_case5' ? (
+                          <>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2016.07～2018.05</span> G大學 碩士</li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2012.07～2016.05</span> G大學 學士</li>
+                          </>
+                        ) : (mode === 'module3_case3' || mode === 'module3_case4') ? (
+                          <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2017.09～2021.05</span> Ｆ大學中文系 學士</li>
+                        ) : (
+                          <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2015.09～2018.05</span> D大學資訊管理系 學士</li>
+                        )}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-bold text-teal-600 mb-3 flex items-center gap-2">
+                        <span>💼</span> 經歷
+                      </h3>
+                      <ul className="bg-slate-50 px-5 py-4 rounded-xl list-none space-y-4">
+                        {mode === 'module3_case5' ? (
+                          <>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2019.04～至今</span> <strong>I公司 專案經理</strong></li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2018.07～2019.02</span> <strong>H公司 業務專員</strong></li>
+                          </>
+                        ) : (mode === 'module3_case3' || mode === 'module3_case4') ? (
+                          <>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2020.09～2021.05</span> <strong>達美樂 工讀</strong></li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2019.03～2021.05</span> <strong>柔道社 副社長</strong></li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2017.12～2018.12</span> <strong>山地服務社 社員</strong></li>
+                          </>
+                        ) : (
+                          <>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2019.03～至今</span> <strong>E公司 軟體工程師</strong></li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2018.07～2019.02</span> <strong>D公司 測試工程師</strong></li>
+                            <li className="flex gap-4"><span className="text-slate-400 font-mono w-40 shrink-0">2017.09～2018.05</span> <strong>系學會副會長</strong></li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

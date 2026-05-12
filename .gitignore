@@ -1,11 +1,10 @@
-# 忽略大檔案
-project2/app/*.zip
+# 忽略大�?�?project2/app/*.zip
 *.zip
 *.mp4
 *.pth
 *.db
 
-# 忽略虛擬環境與套件夾
+# 忽略?�擬?��??��?件夾
 venv/
 .venv/
 env/
@@ -16,3 +15,5 @@ __pycache__/
 *-key.json
 credentials.json
 .env*
+
+!NEW PROJECT/gemini-voice-assistant/frontend/public/videos/**/*.mp4
